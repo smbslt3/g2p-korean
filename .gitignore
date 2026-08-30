@@ -1,0 +1,37 @@
+# Python 바이트코드와 테스트 산출물
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# uv와 가상환경
+.venv/
+.uv-cache/
+.uv-python/
+
+# 빌드 산출물
+build/
+dist/
+*.egg-info/
+
+# 도구별 로컬 설정
+.env
+.mypy_cache/
+.ruff_cache/
+.idea/
+.vscode/
+
+# 로컬 데이터와 개발·평가 산출물
+/data/
+/benchmarks/
+/tools/data/
+/tools/*number_read*.py
+/tests/test_*number_read*.py
+/tests/test_*eval*.py
+
+# 로컬 임시 디렉터리
+/.*_tmp/
+
+# 로컬 조사·설계 메모
+/ignores/

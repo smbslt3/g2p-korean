@@ -1,0 +1,69 @@
+Data and Model Notice / 데이터 및 모델 고지
+
+한국어
+
+이 배포물에는 숫자 읽기 분류 모델
+`g2p_ko/data/number_reading_model.json`이 포함됩니다. 이 모델은
+과학기술정보통신부의 재원으로 한국지능정보사회진흥원(NIA)의 지원을 받아 구축된
+AI 허브의 "159. 숫자가 포함된 패턴 발화 데이터" 버전 1.1(2023-06-28)을
+기반으로 학습했습니다.
+
+데이터 안내:
+https://www.aihub.or.kr/aihubdata/data/view.do?aihubDataSe=data&dataSetSn=484
+
+AI 허브 이용정책:
+https://www.aihub.or.kr/intrcn/guid/usagepolicy.do?currMenu=151&topMenu=105
+
+AI 허브 FAQ:
+https://www.aihub.or.kr/aihubnews/faq/list.do
+
+배포 파일에는 학습된 계수, 자질 이름과 모델 메타데이터만 들어 있습니다. AI 허브의
+원문·발화형·라벨·오디오·화자 메타데이터·분할 파일·학습 자질 행은 저장소와
+배포물에 포함하지 않습니다. 자세한 모델 구조와 생성 절차는
+`docs/NUMBER_READING_MODEL.md`에 기록되어 있습니다.
+
+AI 허브는 해당 데이터를 이용해 개발한 모델과 서비스의 배포·활용을 허용하며 사용한
+데이터셋과 AI 허브를 출처로 표시하도록 안내합니다. 원 데이터의 권리와 이용 조건은
+AI 허브 이용정책을 따르며, 이 저장소의 MIT 라이선스는 원 데이터를 재라이선스하지
+않습니다.
+
+`number_reading_model.json`을 포함한 g2p-ko 배포물을 재배포할 때는 LICENSE와 이
+NOTICE를 함께 보존하십시오.
+
+런타임 의존성인 `kiwipiepy`와 관련 언어 모델은 g2p-ko wheel에 포함되지 않고 별도
+배포물로 설치됩니다. 각 배포물에는 해당 배포물의 라이선스와 고지가 적용됩니다.
+
+English
+
+This distribution includes the number-reading classifier
+`g2p_ko/data/number_reading_model.json`. It was trained from version 1.1
+(2023-06-28) of AI-Hub dataset 159, "숫자가 포함된 패턴 발화 데이터". The
+dataset was built with funding from the Ministry of Science and ICT and support
+from the National Information Society Agency (NIA), Republic of Korea.
+
+Dataset information:
+https://www.aihub.or.kr/aihubdata/data/view.do?aihubDataSe=data&dataSetSn=484
+
+AI-Hub usage policy:
+https://www.aihub.or.kr/intrcn/guid/usagepolicy.do?currMenu=151&topMenu=105
+
+AI-Hub FAQ:
+https://www.aihub.or.kr/aihubnews/faq/list.do
+
+The distributed file contains only trained coefficients, feature names, and
+model metadata. AI-Hub source texts, spoken forms, labels, audio, speaker
+metadata, split files, and training feature rows are not included in the
+repository or distribution. Model structure and generation details are recorded
+in `docs/NUMBER_READING_MODEL.md`.
+
+AI-Hub permits distribution and use of models and services developed from its
+data and requires attribution of the dataset and AI-Hub. Rights and terms for
+the source dataset remain governed by the AI-Hub usage policy; this repository's
+MIT License does not relicense the source dataset.
+
+When redistributing a g2p-ko distribution containing
+`number_reading_model.json`, preserve both LICENSE and this NOTICE.
+
+The runtime dependency `kiwipiepy` and related language models are installed as
+separate distributions and are not bundled in the g2p-ko wheel. Each separate
+distribution remains subject to its own license and notices.
