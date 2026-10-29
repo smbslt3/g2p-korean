@@ -1,0 +1,180 @@
+{
+  "format": "r48_long_negative_refs_v1",
+  "records": [
+    {
+      "id": "LN046",
+      "scope": "controlled_analysis",
+      "premises": {
+        "binding": "bound",
+        "required": [
+          "의도한 분석을 원래 SemanticToken 필드로 직접 공급하는 통제 참고; 실제 Kiwi 포장은 아직 미관측"
+        ],
+        "unfulfilled": []
+      },
+      "targets": [
+        {
+          "id": "t1",
+          "start": 4,
+          "end": 6,
+          "spelling": "물질",
+          "premises": {
+            "semantic": "fulfilled",
+            "structure": "fulfilled",
+            "required": [
+              "원래 표적 구간·원형·원태그와 해당 논항/독립 근거가 제공됨"
+            ],
+            "unfulfilled": []
+          },
+          "expected": {
+            "decision": "selected",
+            "sense_id": "muljil.diving",
+            "reason_allowed": [],
+            "licensed_complexes": [
+              {
+                "anchor": [
+                  4,
+                  12
+                ],
+                "count": 1
+              }
+            ],
+            "unresolved_complexes": [],
+            "required_evidence": [
+              {
+                "relation": "predicate_argument",
+                "semantic_class": "activity",
+                "anchor": null
+              }
+            ],
+            "forbidden_relations": [],
+            "phone_ref_id": null
+          }
+        }
+      ],
+      "text": "사람이 물질하지 않았다.",
+      "tokens": [
+        {
+          "form": "사람",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "사람",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "물",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "물",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "질",
+          "tag": "XSN",
+          "start": 5,
+          "end": 6,
+          "morphemes": [
+            [
+              "질",
+              "XSN"
+            ]
+          ]
+        },
+        {
+          "form": "하",
+          "tag": "XSV",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ]
+          ]
+        },
+        {
+          "form": "지",
+          "tag": "EC",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "지",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": "않",
+          "tag": "VX",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "않",
+              "VX"
+            ]
+          ]
+        },
+        {
+          "form": "았",
+          "tag": "EP",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": []
+    }
+  ]
+}

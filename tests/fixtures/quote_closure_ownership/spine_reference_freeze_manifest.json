@@ -1,0 +1,45 @@
+{
+  "status": "FROZEN_BEFORE_C02_IMPLEMENTATION",
+  "records": 3,
+  "semantic_scenes": 3,
+  "target_occurrences": 4,
+  "controlled_inputs": 3,
+  "native_recognizer_and_relation_applicability": "UNMEASURED_MUST_BE_OBSERVED_NOT_INJECTED",
+  "full_phone_gold": 0,
+  "headword_phone_gold": 0,
+  "nominal_unit_counts": [
+    3,
+    4,
+    5
+  ],
+  "core_original_records": 41,
+  "original_reference_freeze_sha256": "5aa12a1fc6e374ed8c4b489553c8207e9115875e50009d1ba64b02e6386cb036",
+  "original_checker_freeze_sha256": "b72c69bd71e5c71e15f450cf4f4068766075717ee017db22a196d70acefef805",
+  "contracts": {
+    "contract/Existing_Quoted_Nominal_Spine_API_Addendum_KO.json": "f9090bed8b06ff3ab07089fa2e99551fc4fe52c50413c3d5a43e321efd436b67",
+    "contract/Existing_Typed_Source_Lexical_Key_Declaration_KO.json": "54169897bd88c096144fdac65398b257d5f5c0554b09e7d764327ef9421e559a",
+    "contract/Quote_Closure_Ownership_Contract_KO.md": "ed88ea2ca88b987870e2d23181912f815dbced9b40e5eb2cda6b9df06b6506d4",
+    "contract/Semantic_Fact_API_Metadata_KO.json": "b2ecab9c27c6a3f2e9accf6cc49c7468619af4846b291f0a01f844cf4dcb5b14"
+  },
+  "files": [
+    {
+      "path": "spine_refs_private/references.json",
+      "sha256": "80ba1e203148dadc8651c1e756157884046bf7ea3f77af480db6e2329731d58f"
+    },
+    {
+      "path": "spine_refs_private/Original_Preservation_Protocol_KO.md",
+      "sha256": "fd8db0faede19701297160cbf5a8592ee2674692d4d0b1bc3a3bcf854d5360f1"
+    },
+    {
+      "path": "spine_refs_private/prepare_addendum.py",
+      "sha256": "6ac50ac8822307ef4ea4d28f79cb30b6546813bd43b871eeda1d77b102c8435c"
+    }
+  ],
+  "preflight_sha256": "6d2c66057d44bdd5e75b9c5838277919edf6c8e4631f29efc40a9a5cfa3c5a45",
+  "runtime_calls": 0,
+  "candidate_body_reads": 0,
+  "old_reference_changes": 0,
+  "D03": "OPEN_UNCHANGED",
+  "D11": "OPEN_UNCHANGED",
+  "QC031": "ABSTENTION_MATCHED_IN_BOTH_SOURCES_OWNER_PREMISE_PARTIAL_UNOBSERVED"
+}

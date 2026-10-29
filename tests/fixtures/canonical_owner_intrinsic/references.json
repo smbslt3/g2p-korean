@@ -1,0 +1,1228 @@
+{
+  "schema_version": "r45-independent-reference-v1",
+  "frozen_at_utc": "2026-10-27T21:16:16Z",
+  "purpose": "정확 정규 소유 원형의 국소 내재 속성을 구현과 독립적으로 검증하는 동결 참조",
+  "units": {
+    "source_offsets": "NFC로 주어진 원문 유니코드 문자 기준 0 시작 반열림 범위",
+    "canonical_boundary": "정규 소유 원형 문자 사이의 0 시작 경계 offset",
+    "absolute_boundary": "원문에서 오른쪽 문자 시작 위치"
+  },
+  "labels": {
+    "actual": "공식 사전에서 실제 관측한 표면과 발음. 분석기 입력은 포함하지 않음",
+    "constructed": "독립적으로 구성한 문맥·표현·의미 조건. 분석기 토큰 출력이나 새 사전 표제라는 주장이 아님",
+    "abstract": "소비 계약의 의미 조건. 구현 API나 구체 토큰으로 아직 바인딩하지 않은 가드"
+  },
+  "decisions": {
+    "conditional": "소비 증명이 갖춰지면 해당 국소 속성 적용. 현재 사전 관측만으로 사건 수를 단정하지 않음",
+    "apply": "명시한 의미 조건이 모두 성립할 때 내재 속성 적용",
+    "withhold": "이 내재 사실의 소비를 보류. 다른 경로의 발음을 지정하지 않음",
+    "no_override": "구조 충돌을 내재 속성 우선 선택으로 덮지 않음",
+    "deduplicate": "이미 소비된 동일 경계에 추가 내재 연산을 생산하지 않음"
+  },
+  "scoring_separation": "full_output은 공식 사전의 직접 관측 4건만 채점 가능하다. intrinsic은 국소 사건, metadata는 입력 보존·추론 금지, API 지원 여부는 별개로 보고한다. abstract를 바인딩하지 못하면 미지원으로 보고하며 가짜 입력이나 통과 결과를 만들지 않는다.",
+  "records": [
+    {
+      "id": "R45-IREF-01",
+      "scope": "actual",
+      "input": {
+        "text": "곧이듣다",
+        "analysis_facts": null,
+        "conditions": [
+          "표면형과 전체 발음은 공식 사전에 직접 제시됨",
+          "사전은 분석기 토큰·태그·원문 대응을 제공하지 않으므로 실제 분석 표현을 가정하지 않음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "conditional",
+          "count": null,
+          "sites": [
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "사전 표제 또는 활용형의 단일 출현",
+              "absolute_boundary": 1,
+              "source_pair_spans": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "scope_note": "내재 사건은 소비 조건이 별도로 모두 입증될 때 정확히 1회다. 전체 발음 관측과 사건 발생을 동일시하지 않는다."
+        },
+        "full_output": {
+          "phones": "고지듣따",
+          "status": "direct_observed"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic",
+        "nikl_krdict_27702"
+      ]
+    },
+    {
+      "id": "R45-IREF-02",
+      "scope": "actual",
+      "input": {
+        "text": "곧이듣는",
+        "analysis_facts": null,
+        "conditions": [
+          "표면형과 전체 발음은 공식 사전에 직접 제시됨",
+          "사전은 분석기 토큰·태그·원문 대응을 제공하지 않으므로 실제 분석 표현을 가정하지 않음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "conditional",
+          "count": null,
+          "sites": [
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "사전 표제 또는 활용형의 단일 출현",
+              "absolute_boundary": 1,
+              "source_pair_spans": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "scope_note": "내재 사건은 소비 조건이 별도로 모두 입증될 때 정확히 1회다. 전체 발음 관측과 사건 발생을 동일시하지 않는다."
+        },
+        "full_output": {
+          "phones": "고지든는",
+          "status": "direct_observed"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic",
+        "nikl_krdict_27702"
+      ]
+    },
+    {
+      "id": "R45-IREF-03",
+      "scope": "actual",
+      "input": {
+        "text": "곧이들어",
+        "analysis_facts": null,
+        "conditions": [
+          "표면형과 전체 발음은 공식 사전에 직접 제시됨",
+          "사전은 분석기 토큰·태그·원문 대응을 제공하지 않으므로 실제 분석 표현을 가정하지 않음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "conditional",
+          "count": null,
+          "sites": [
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "사전 표제 또는 활용형의 단일 출현",
+              "absolute_boundary": 1,
+              "source_pair_spans": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "scope_note": "내재 사건은 소비 조건이 별도로 모두 입증될 때 정확히 1회다. 전체 발음 관측과 사건 발생을 동일시하지 않는다."
+        },
+        "full_output": {
+          "phones": "고지드러",
+          "status": "direct_observed"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic",
+        "nikl_krdict_27702"
+      ]
+    },
+    {
+      "id": "R45-IREF-04",
+      "scope": "actual",
+      "input": {
+        "text": "곧이들으니",
+        "analysis_facts": null,
+        "conditions": [
+          "표면형과 전체 발음은 공식 사전에 직접 제시됨",
+          "사전은 분석기 토큰·태그·원문 대응을 제공하지 않으므로 실제 분석 표현을 가정하지 않음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "conditional",
+          "count": null,
+          "sites": [
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "사전 표제 또는 활용형의 단일 출현",
+              "absolute_boundary": 1,
+              "source_pair_spans": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "scope_note": "내재 사건은 소비 조건이 별도로 모두 입증될 때 정확히 1회다. 전체 발음 관측과 사건 발생을 동일시하지 않는다."
+        },
+        "full_output": {
+          "phones": "고지드르니",
+          "status": "direct_observed"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic",
+        "nikl_krdict_27702"
+      ]
+    },
+    {
+      "id": "R45-IREF-05",
+      "scope": "constructed",
+      "input": {
+        "text": "곧이듣다",
+        "analysis_facts": {
+          "canonical_owner": "곧이듣",
+          "raw_owner_tag": "VV",
+          "representation": "핵심과 합법 꼬리가 논리적으로 구별되는 표현",
+          "owner_occurrences": [
+            {
+              "id": "소유-가",
+              "source_span": [
+                0,
+                3
+              ],
+              "canonical_boundary_offset": 1
+            }
+          ]
+        },
+        "conditions": [
+          "정확한 정규 소유 곧이듣/VV와 그 출현이 독립적으로 확인됨",
+          "전체 꼬리 사슬이 기존 문법에서 합법 판정됨",
+          "원형 offset 1의 앞뒤 문자가 해당 출현에 단독 소유됨",
+          "대상 물리 경계의 독립 대응이 입증됨",
+          "대상 경계의 보호·음운 장벽·휴지·명시 읽기 검사가 통과함",
+          "구조 권한과 충돌하거나 같은 경계를 이미 소비한 사건이 없음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "apply",
+          "count": 1,
+          "sites": [
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "소유-가",
+              "absolute_boundary": 1,
+              "source_pair_spans": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "scope_note": "구성한 의미 조건이며 실제 분석기의 토큰 출력이라는 주장이 아니다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [
+            "공급된 원 분석 태그",
+            "공급된 원형 문자열",
+            "형태소열과 출현 소유 관계"
+          ],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic",
+        "nikl_krdict_27702"
+      ]
+    },
+    {
+      "id": "R45-IREF-06",
+      "scope": "constructed",
+      "input": {
+        "text": "곧이들어",
+        "analysis_facts": {
+          "canonical_owner": "곧이듣",
+          "raw_owner_tag": "VV",
+          "representation": "대상 경계 밖의 불규칙 활용 구간을 별도 입증한 표현",
+          "owner_occurrences": [
+            {
+              "id": "소유-나",
+              "source_span": [
+                0,
+                3
+              ],
+              "canonical_boundary_offset": 1
+            }
+          ]
+        },
+        "conditions": [
+          "정확한 정규 소유 곧이듣/VV와 그 출현이 독립적으로 확인됨",
+          "전체 꼬리 사슬이 기존 문법에서 합법 판정됨",
+          "원형 offset 1의 앞뒤 문자가 해당 출현에 단독 소유됨",
+          "대상 물리 경계의 독립 대응이 입증됨",
+          "대상 경계의 보호·음운 장벽·휴지·명시 읽기 검사가 통과함",
+          "구조 권한과 충돌하거나 같은 경계를 이미 소비한 사건이 없음",
+          "첫 두 문자의 직접 원형 대응은 보존되며, 남은 활용 표면의 불투명 구간은 [2,4)로 대상 경계 밖에 한정됨"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "apply",
+          "count": 1,
+          "sites": [
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "소유-나",
+              "absolute_boundary": 1,
+              "source_pair_spans": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "scope_note": "불규칙 부분의 세부 분해·접미사 신원을 추론하지 않는다. 첫 내부 경계만 판정한다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [
+            "공급된 원 분석 태그",
+            "공급된 원형 문자열",
+            "형태소열과 출현 소유 관계"
+          ],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic",
+        "nikl_krdict_27702"
+      ]
+    },
+    {
+      "id": "R45-IREF-07",
+      "scope": "constructed",
+      "input": {
+        "text": "곧이듣다",
+        "analysis_facts": {
+          "canonical_owner": "곧이듣",
+          "raw_owner_tag": "VV",
+          "representation": "연속 표면 전체를 한 덩어리로 제시하되 핵심·합법 꼬리·대상 경계 증명을 별도 보유한 표현",
+          "owner_occurrences": [
+            {
+              "id": "소유-다",
+              "source_span": [
+                0,
+                3
+              ],
+              "canonical_boundary_offset": 1
+            }
+          ]
+        },
+        "conditions": [
+          "정확한 정규 소유 곧이듣/VV와 그 출현이 독립적으로 확인됨",
+          "전체 꼬리 사슬이 기존 문법에서 합법 판정됨",
+          "원형 offset 1의 앞뒤 문자가 해당 출현에 단독 소유됨",
+          "대상 물리 경계의 독립 대응이 입증됨",
+          "대상 경계의 보호·음운 장벽·휴지·명시 읽기 검사가 통과함",
+          "구조 권한과 충돌하거나 같은 경계를 이미 소비한 사건이 없음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "apply",
+          "count": 1,
+          "sites": [
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "소유-다",
+              "absolute_boundary": 1,
+              "source_pair_spans": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ]
+            }
+          ],
+          "scope_note": "표현의 분절 모양이 달라도 동일한 원형 경계와 소유 출현이면 결과가 같다. 구현 API의 실제 지원을 주장하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [
+            "공급된 원 분석 태그",
+            "공급된 원형 문자열",
+            "형태소열과 출현 소유 관계"
+          ],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic",
+        "nikl_krdict_27702"
+      ]
+    },
+    {
+      "id": "R45-IREF-08",
+      "scope": "constructed",
+      "input": {
+        "text": "곧이듣다 곧이듣다",
+        "analysis_facts": {
+          "canonical_owner": "곧이듣",
+          "raw_owner_tag": "VV",
+          "representation": "동일 원형의 서로 다른 두 출현",
+          "owner_occurrences": [
+            {
+              "id": "소유-라1",
+              "source_span": [
+                0,
+                3
+              ],
+              "canonical_boundary_offset": 1
+            },
+            {
+              "id": "소유-라2",
+              "source_span": [
+                5,
+                8
+              ],
+              "canonical_boundary_offset": 1
+            }
+          ]
+        },
+        "conditions": [
+          "정확한 정규 소유 곧이듣/VV와 그 출현이 독립적으로 확인됨",
+          "전체 꼬리 사슬이 기존 문법에서 합법 판정됨",
+          "원형 offset 1의 앞뒤 문자가 해당 출현에 단독 소유됨",
+          "대상 물리 경계의 독립 대응이 입증됨",
+          "대상 경계의 보호·음운 장벽·휴지·명시 읽기 검사가 통과함",
+          "구조 권한과 충돌하거나 같은 경계를 이미 소비한 사건이 없음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "apply",
+          "count": 2,
+          "sites": [
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "소유-라1",
+              "absolute_boundary": 1,
+              "source_pair_spans": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  2
+                ]
+              ]
+            },
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "소유-라2",
+              "absolute_boundary": 6,
+              "source_pair_spans": [
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ]
+              ]
+            }
+          ],
+          "scope_note": "각 출현당 1회이며 첫 출현의 국소 offset 1을 두 번째 출현의 절대 경계로 재사용하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [
+            "공급된 원 분석 태그",
+            "공급된 원형 문자열",
+            "형태소열과 출현 소유 관계"
+          ],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic",
+        "nikl_krdict_27702"
+      ]
+    },
+    {
+      "id": "R45-IREF-09",
+      "scope": "constructed",
+      "input": {
+        "text": "그 말을 곧이듣다",
+        "analysis_facts": {
+          "canonical_owner": "곧이듣",
+          "raw_owner_tag": "VV",
+          "representation": "앞 문맥이 있는 단일 출현",
+          "owner_occurrences": [
+            {
+              "id": "소유-마",
+              "source_span": [
+                5,
+                8
+              ],
+              "canonical_boundary_offset": 1
+            }
+          ]
+        },
+        "conditions": [
+          "정확한 정규 소유 곧이듣/VV와 그 출현이 독립적으로 확인됨",
+          "전체 꼬리 사슬이 기존 문법에서 합법 판정됨",
+          "원형 offset 1의 앞뒤 문자가 해당 출현에 단독 소유됨",
+          "대상 물리 경계의 독립 대응이 입증됨",
+          "대상 경계의 보호·음운 장벽·휴지·명시 읽기 검사가 통과함",
+          "구조 권한과 충돌하거나 같은 경계를 이미 소비한 사건이 없음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "apply",
+          "count": 1,
+          "sites": [
+            {
+              "canonical_owner": "곧이듣",
+              "owner_pos": "VV",
+              "canonical_boundary_offset": 1,
+              "property": "intrinsic_palatalization",
+              "source": "intrinsic_lexical",
+              "source_ids": [
+                "nikl_krdict_27702"
+              ],
+              "owner_occurrence": "소유-마",
+              "absolute_boundary": 6,
+              "source_pair_spans": [
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  7
+                ]
+              ]
+            }
+          ],
+          "scope_note": "국소 원형 offset은 1, 원문 절대 경계는 6이다. 문장 전체 발음은 채점하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [
+            "공급된 원 분석 태그",
+            "공급된 원형 문자열",
+            "형태소열과 출현 소유 관계"
+          ],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic",
+        "nikl_krdict_27702"
+      ]
+    },
+    {
+      "id": "R45-IREF-10",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "관측된 ㄷ+이 유사 경계가 있으나 실제 확인된 정규 어휘 소유는 곧이듣과 다른 원형임"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "정확 소유 신원 불일치에 이 사실을 상속하지 않는다. 다른 실제 표제·발음을 새로 주장하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-11",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "표면 철자가 일치하더라도 공급된 실제 소유 품사는 VV와 비호환으로 확인됨"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "품사 문자열을 임의 정규화하거나 명사·부사에 이 동사 사실을 상속하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-12",
+      "scope": "constructed",
+      "input": {
+        "text": "가곧이듣다",
+        "analysis_facts": null,
+        "conditions": [
+          "의도적으로 만든 가짜 철자이며 실재 표제나 합법 파생어라는 주장이 아님",
+          "전체 소유 원형은 곧이듣이 아닌 더 긴 인공 문자열로 주어짐",
+          "그 내부에 곧이듣 부분 문자열이 들어 있다는 정보만 있음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "더 긴 소유 원형의 부분 문자열만으로 정확 원형 출현을 만들지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-13",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "일치하는 표면과 VV 범주만 주어지고 실제 정규 소유 원형 신원은 확인할 수 없음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "미확인 신원은 미해결이다. 신원 부재를 특정 분석기 토큰·가짜 결측 API 입력으로 변환하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-14",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "정확 원형 신원과 합법 사슬은 확인됨",
+          "공급된 대상 경계 대응이 비단조이거나 원문 범위 밖을 가리키는 등 유효성 검사에 실패함"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "발음 결과나 인접 문자열로 손상된 대응을 복구했다고 가정하지 않는다. 구체 API 매핑을 만들지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-15",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "정확 원형 신원과 표면 인접성은 확인됨",
+          "전체 꼬리 사슬의 문법 적법성은 실패하거나 미입증임"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "꼬리 철자가 익숙하거나 표면이 인접한다는 이유로 합법 사슬을 인정하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-16",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "나머지 소비 조건은 통과함",
+          "대상 앞뒤 문자 사이에 기존 체계가 확인한 HARD 음운 장벽이 있음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "정확 어휘 사실이 실제 대상 경계의 HARD 장벽을 우회하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-17",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "나머지 소비 조건은 통과함",
+          "대상 앞뒤 문자 또는 그 경계가 기존 보호 구간과 충돌함"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "내재 속성으로 보호 구간을 덮어쓰지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-18",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "나머지 소비 조건은 통과함",
+          "대상 쌍 바로 사이의 기존 휴지 관계가 음운 결합을 허용하지 않음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "휴지 판단은 실제 대상 문자 쌍에 국소적이어야 한다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-19",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "나머지 소비 조건은 통과함",
+          "대상 쌍의 명시 읽기 관계가 내재 경계 대응 또는 음운 결합과 충돌함"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "내재 속성으로 대상 쌍의 명시 읽기를 우선 덮어쓰지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-20",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "정확한 정규 소유 곧이듣/VV와 그 출현이 독립적으로 확인됨",
+          "전체 꼬리 사슬이 기존 문법에서 합법 판정됨",
+          "원형 offset 1의 앞뒤 문자가 해당 출현에 단독 소유됨",
+          "대상 물리 경계의 독립 대응이 입증됨",
+          "대상 경계의 보호·음운 장벽·휴지·명시 읽기 검사가 통과함",
+          "구조 권한과 충돌하거나 같은 경계를 이미 소비한 사건이 없음",
+          "휴지·명시 읽기 표지는 존재하지만 대상 쌍과 무관한 다른 물리 경계에만 귀속됨"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "apply",
+          "count": 1,
+          "sites": [],
+          "scope_note": "대상 쌍이 아닌 곳의 표지만으로 전역 차단하지 않는다. 실제 사건 위치·API 지원을 제공한 입력은 아니므로 이 조건의 구체 바인딩 가능성은 별도 보고해야 한다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-21",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "정확 원형 신원과 합법 사슬은 확인됨",
+          "대상 경계의 문자 하나가 분할·삭제·공동 유래되었으며 독립 대응 증명은 없거나 지원되지 않음"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "미지원 대응은 미해결로 남긴다. 원형 철자를 보고 단독 소유 범위를 조작하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-22",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "같은 대상 경계에 구조 권한의 해석과 내재 어휘 속성의 해석이 실제로 충돌함"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "no_override",
+          "count": 0,
+          "sites": [],
+          "scope_note": "내재 속성을 먼저 골라 충돌을 덮지 않는다. 이 자료는 충돌 해결 순서나 다른 경로의 최종 발음을 지정하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-23",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "정확한 정규 소유 곧이듣/VV와 그 출현이 독립적으로 확인됨",
+          "전체 꼬리 사슬이 기존 문법에서 합법 판정됨",
+          "원형 offset 1의 앞뒤 문자가 해당 출현에 단독 소유됨",
+          "대상 물리 경계의 독립 대응이 입증됨",
+          "대상 경계의 보호·음운 장벽·휴지·명시 읽기 검사가 통과함",
+          "구조 권한과 충돌하거나 같은 경계를 이미 소비한 사건이 없음",
+          "동일 원형·출현·물리 경계에서 기존 정당한 경로가 이미 같은 국소 구개음화 연산을 소비함"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "deduplicate",
+          "count": 0,
+          "sites": [],
+          "scope_note": "추가 내재 연산은 0회다. 전체 시스템의 이미 소비된 1회와 별개로 사건을 중복 생산하지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    },
+    {
+      "id": "R45-IREF-24",
+      "scope": "abstract",
+      "input": {
+        "text": null,
+        "analysis_facts": null,
+        "conditions": [
+          "정확 원형 곧이듣/VV가 확인되었으나 현재 질의하는 경계는 이 사실의 원형 offset 1이 아님"
+        ]
+      },
+      "expected": {
+        "intrinsic": {
+          "decision": "withhold",
+          "count": 0,
+          "sites": [],
+          "scope_note": "같은 소유 원형의 다른 경계까지 속성을 넓히지 않는다."
+        },
+        "full_output": {
+          "phones": null,
+          "status": "not_scored"
+        },
+        "metadata": {
+          "preserve_input": [],
+          "must_not_infer": [
+            "XSM/XSV 등 접미사 신원",
+            "합성 경계",
+            "제29항 권한"
+          ]
+        }
+      },
+      "evidence": [
+        "contract_owner_intrinsic"
+      ]
+    }
+  ]
+}

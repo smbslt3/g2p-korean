@@ -1,0 +1,128 @@
+{
+  "artifact": "productive-contractions-permanent-fixture-v1",
+  "state": "staged_for_atomic_publication",
+  "created_utc": "2026-10-27T20:27:02.9050700+00:00",
+  "runner_sha256": "6c31e4cf083060abed732c72d61847f917f73af003a24d9269e583b257dd014e",
+  "gold_manifest_sha256": "53eb135e3e83f0c156c175a4ed1f9e3858d405f9d63acb9be540d48edddb6dce",
+  "source_binding_v2_manifest_sha256": "7dd97efc0173d439cbfbbd9b8889b8709a3e07def726e4cd8f0a483b7efdefd7",
+  "copied_original_files": 7,
+  "original_bytes_preserved": true,
+  "saved_result_bodies": 0,
+  "phone_gold": 0,
+  "runtime_executed_by_packager": false,
+  "test_relative_path": "../../test_productive_contractions.py",
+  "test_sha256": "c42c694c10f32ed9dd775f8b99e68150c29eb0440ec1eaa0fa6235f59e2bf1fb",
+  "native_support_closure": {
+    "g2p_ko.analysis_features": "g2p_ko/analysis_features.py",
+    "g2p_ko.model": "g2p_ko/model.py",
+    "g2p_ko.korean.hangul": "g2p_ko/korean/hangul.py",
+    "g2p_ko.korean.word_grammar": "g2p_ko/korean/word_grammar.py",
+    "g2p_ko.korean.surface_proof": "g2p_ko/korean/surface_proof.py"
+  },
+  "frozen_binding": {
+    "fully_bound_ids": [
+      "N01",
+      "N02",
+      "N03",
+      "N04",
+      "N05",
+      "N06",
+      "N07",
+      "N08",
+      "P01",
+      "P02",
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12",
+      "G01",
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G06",
+      "G07",
+      "G08",
+      "G09",
+      "G10",
+      "G11",
+      "G14",
+      "G15",
+      "G16",
+      "G19",
+      "G20",
+      "G21",
+      "G22",
+      "G24",
+      "G25",
+      "G26",
+      "G27",
+      "G28"
+    ],
+    "abstract_ids": [
+      "G14",
+      "G15",
+      "G26"
+    ],
+    "partial_ids": [
+      "G18",
+      "G23"
+    ],
+    "unbound_ids": [
+      "G12",
+      "G13",
+      "G17"
+    ],
+    "future_partial_or_unbound_improvement_allowed": true,
+    "fixed_aggregate_pass_count_asserted": false
+  },
+  "publication": "완성된 fixture 디렉터리의 같은 볼륨 rename 뒤 테스트 파일을 마지막에 rename함.",
+  "files": [
+    {
+      "path": "Expected_Facts_KO.json",
+      "sha256": "a95fa30bb98109fb7ef4b8e898688d98f51b211f275c2981afaeb0bff665deea",
+      "bytes": 79793
+    },
+    {
+      "path": "Primary_Sources_KO.json",
+      "sha256": "44ede737b423c1319d88959f75329b92c392e966e78a6e534e4e702188f5c3af",
+      "bytes": 2031
+    },
+    {
+      "path": "Primary_Source_Rationale_KO.md",
+      "sha256": "ec85cf376ad86444a2daa074c762ca1728750a6455e35b5dded7cf3d5fa94cc9",
+      "bytes": 4576
+    },
+    {
+      "path": "README_KO.md",
+      "sha256": "272fc35dfa9065fefe75a871abd221813ace11ea7c0007134f6eb434583e2467",
+      "bytes": 2858
+    },
+    {
+      "path": "manifest.json",
+      "sha256": "53eb135e3e83f0c156c175a4ed1f9e3858d405f9d63acb9be540d48edddb6dce",
+      "bytes": 1741
+    },
+    {
+      "path": "FREEZE.json",
+      "sha256": "55b425a1abfb259b8a34130830ef8d1bfa8cda052612b4fab76a403ccac98fce",
+      "bytes": 397
+    },
+    {
+      "path": "binding/run_semantic_refs_v2.py",
+      "sha256": "6c31e4cf083060abed732c72d61847f917f73af003a24d9269e583b257dd014e",
+      "bytes": 28178
+    },
+    {
+      "path": "PACKAGING_RECEIPT_KO.md",
+      "sha256": "644773fec095d1b2fa8eedf3e4488d2e12f7e3550a4a99db31661e8473a21f98",
+      "bytes": 1454
+    }
+  ]
+}

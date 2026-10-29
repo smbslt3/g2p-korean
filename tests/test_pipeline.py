@@ -8,12 +8,12 @@ from g2p_ko.routing import is_han
 from tests._internal_pipeline import convert_pipeline
 
 
-def test_g2p_runs_normalizer_and_pronunciation_in_one_call() -> None:
-    assert G2P()("사과 3개와 국물") == "사과 세 개와 궁물"
+def test_g2p_reads_upstream_normalized_input() -> None:
+    assert G2P()("사과 세 개와 국물") == "사과 세 개와 궁물"
 
 
-def test_g2p_applies_user_lexicon_in_the_same_call() -> None:
-    assert G2P(lexicon={"NAVER": "네이버"})("NAVER 뉴스") == "네이버 뉴스"
+def test_g2p_reads_reviewed_brand_names() -> None:
+    assert G2P()("NAVER 뉴스") == "네이버 뉴스"
 
 
 def test_g2p_can_skip_normalizer_for_pre_normalized_text() -> None:
@@ -21,14 +21,14 @@ def test_g2p_can_skip_normalizer_for_pre_normalized_text() -> None:
     normalized = KoreanTTSNormalizer()(source)
     g2p = G2P()
 
-    assert g2p(normalized, normalize=False) == g2p(source)
+    assert g2p(normalized, normalize=False) == g2p(normalized)
 
 
-def test_g2p_skip_normalizer_bypasses_user_lexicon() -> None:
-    g2p = G2P(lexicon={"NAVER": "네이버"})
+def test_legacy_normalize_flag_does_not_change_spelling() -> None:
+    g2p = G2P()
 
     assert g2p("NAVER") == "네이버"
-    assert g2p("NAVER", normalize=False) == "에네이브이이알"
+    assert g2p("NAVER", normalize=False) == "네이버"
 
 
 def test_g2p_rejects_non_boolean_normalize_option() -> None:
@@ -54,7 +54,8 @@ def test_g2p_string_api_uses_the_text_only_pipeline(
     g2p = G2P()
     calls: list[str] = []
 
-    def run_text(source: str) -> str:
+    def run_text(source: str, *, pause_boundaries: tuple[int, ...] = ()) -> str:
+        assert pause_boundaries == ()
         calls.append(source)
         return "문자열 경로"
 
@@ -136,23 +137,23 @@ def test_japanese_kana_is_unsupported() -> None:
 
 
 @pytest.mark.parametrize("source", ["123", "٤٢", "²Ⅳ", "四五"])
-def test_unicode_numbers_are_unchanged_complete_passthrough(source: str) -> None:
+def test_unconverted_numbers_are_preserved_and_incomplete(source: str) -> None:
     result = convert_pipeline(source)
 
     assert result.normalized_text == source
     assert result.surface_pronunciation == source
-    assert result.diagnostics == ()
-    assert result.complete
+    assert result.diagnostics
+    assert not result.complete
 
 
 @pytest.mark.parametrize("source", ["테스트3", "가3", "3가"])
-def test_hangul_numeric_structure_is_complete_passthrough(source: str) -> None:
+def test_hangul_numeric_structure_reports_upstream_omission(source: str) -> None:
     result = convert_pipeline(source)
 
     assert result.normalized_text == source
     assert result.surface_pronunciation == source
-    assert result.diagnostics == ()
-    assert result.complete
+    assert result.diagnostics
+    assert not result.complete
 
 
 def test_protected_unsupported_script_is_preserved_and_reported() -> None:

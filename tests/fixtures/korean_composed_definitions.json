@@ -1,0 +1,5234 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-25T15:14:27.867628+00:00",
+  "source_ko": "교정한 수동 17입력에 이미 저장된 실제 변환의 명확한 관계 4입력을 추가했다. 단어·정답·형태소의 출처는 각각 보존한다.",
+  "exposed_development_diagnostic": true,
+  "source_raw_path": "output/g2p_semantic_phrase_cycle_20261025/research/adversarial_phrase/raw_candidate02_contracts_v1.json",
+  "source_raw_sha256": "297b73936b67e96a60425fbb14933d50003b737728bf3d0e674ca78d9bda5907",
+  "cases": [
+    {
+      "id": "C12_v4_P02_GOGA_OLD_HOUSE_TYPED_HEAD",
+      "text": "“고가”는 낡은 한옥 건물의 옛 이름이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "고가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "낡은",
+          "tag": "VA+ETM",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "낡",
+              "VA"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "한옥",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "건물",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "건물",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "옛",
+          "tag": "MM",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "옛",
+              "MM"
+            ]
+          ]
+        },
+        {
+          "form": "이름",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "이름",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 1,
+          "end": 3,
+          "sense_id": "goga.old_house",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P04_GOGA_ELEVATED_STRUCTURE_TYPED_HEAD",
+      "text": "“고가”는 지면보다 높은 도로 구조물이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "고가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "지면",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "지면",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "보다",
+          "tag": "JKB",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "보다",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "높은",
+          "tag": "VA+ETM",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "높",
+              "VA"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "도로",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "도로",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "구조물",
+          "tag": "NNG",
+          "start": 17,
+          "end": 20,
+          "morphemes": [
+            [
+              "구조물",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 1,
+          "end": 3,
+          "sense_id": "goga.elevated_structure",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P05_SIGA_POETRY_TYPED_HEAD",
+      "text": "“시가”는 시와 노래를 아우르는 운문 문학의 갈래이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "시가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "시",
+          "tag": "NNG",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "시",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "와",
+          "tag": "JC",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "와",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "노래",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "노래",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "아우르는",
+          "tag": "VV+ETM",
+          "start": 13,
+          "end": 17,
+          "morphemes": [
+            [
+              "아우르",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "운문",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "운문",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "문학",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "문학",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "갈래",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": [
+            [
+              "갈래",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 27,
+          "end": 29,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 29,
+          "end": 30,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 1,
+          "end": 3,
+          "sense_id": "siga.literary_poetry",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P08_SIGA_SIBLING_OCCURRENCES_LOCAL_TYPES",
+      "text": "문학 분류의 “시가”는 시와 노래의 운문 갈래이고, 가격표의 “시가”는 거래 값이다.",
+      "tokens": [
+        {
+          "form": "문학",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "문학",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분류",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": [
+            [
+              "분류",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 5,
+          "end": 6,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "시가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "시",
+          "tag": "NNG",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "시",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "와",
+          "tag": "JC",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "와",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "노래",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "노래",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "운문",
+          "tag": "NNG",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "운문",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "갈래",
+          "tag": "NNG",
+          "start": 23,
+          "end": 25,
+          "morphemes": [
+            [
+              "갈래",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 25,
+          "end": 26,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ]
+          ]
+        },
+        {
+          "form": "고",
+          "tag": "EC",
+          "start": 26,
+          "end": 27,
+          "morphemes": [
+            [
+              "고",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": ",",
+          "tag": "SP",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              ",",
+              "SP"
+            ]
+          ]
+        },
+        {
+          "form": "가격표",
+          "tag": "NNG",
+          "start": 29,
+          "end": 32,
+          "morphemes": [
+            [
+              "가격표",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 32,
+          "end": 33,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 35,
+          "end": 37,
+          "morphemes": [
+            [
+              "시가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 37,
+          "end": 38,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 38,
+          "end": 39,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "거래",
+          "tag": "NNG",
+          "start": 40,
+          "end": 42,
+          "morphemes": [
+            [
+              "거래",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "값",
+          "tag": "NNG",
+          "start": 43,
+          "end": 44,
+          "morphemes": [
+            [
+              "값",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 44,
+          "end": 46,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 46,
+          "end": 47,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 8,
+          "end": 10,
+          "sense_id": "siga.literary_poetry",
+          "criterion": "unique_sense"
+        },
+        {
+          "spelling": "시가",
+          "start": 35,
+          "end": 37,
+          "sense_id": "siga.market_price",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 35,
+        "end": 37
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P11_SABEOP_JUDICIAL_FUNCTION_TYPED_HEAD",
+      "text": "“사법”은 법원에서 민사와 형사 재판을 맡는 국가 기능이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "에서",
+          "tag": "JKB",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "에서",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "민사",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "민사",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "와",
+          "tag": "JC",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "와",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "형사",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": [
+            [
+              "형사",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "재판",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "맡",
+          "tag": "VV",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              "맡",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "ETM",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "국가",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": [
+            [
+              "국가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "기능",
+          "tag": "NNG",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "기능",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 30,
+          "end": 32,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 32,
+          "end": 33,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 1,
+          "end": 3,
+          "sense_id": "sabeop.judicial_function",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P12_SABEOP_NEGATED_PRIVATE_POSITIVE_JUDICIAL",
+      "text": "“사법”은 민법 분야가 아니라 법원에서 형사 재판을 맡는 국가 기능이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKC",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "가",
+              "JKC"
+            ]
+          ]
+        },
+        {
+          "form": "아니라",
+          "tag": "VCN+EC",
+          "start": 13,
+          "end": 16,
+          "morphemes": [
+            [
+              "아니",
+              "VCN"
+            ],
+            [
+              "라",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "에서",
+          "tag": "JKB",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "에서",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "형사",
+          "tag": "NNG",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "형사",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "재판",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "맡",
+          "tag": "VV",
+          "start": 29,
+          "end": 30,
+          "morphemes": [
+            [
+              "맡",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "ETM",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "국가",
+          "tag": "NNG",
+          "start": 32,
+          "end": 34,
+          "morphemes": [
+            [
+              "국가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "기능",
+          "tag": "NNG",
+          "start": 35,
+          "end": 37,
+          "morphemes": [
+            [
+              "기능",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 37,
+          "end": 39,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 39,
+          "end": 40,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 1,
+          "end": 3,
+          "sense_id": "sabeop.judicial_function",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P15_SOSU_MINORITY_DEFINITION",
+      "text": "“소수”는 전체 인원 가운데 적은 일부이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "소수",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "소수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "전체",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "전체",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "인원",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "인원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가운데",
+          "tag": "NNG",
+          "start": 12,
+          "end": 15,
+          "morphemes": [
+            [
+              "가운데",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "적은",
+          "tag": "VA+ETM",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "적",
+              "VA"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "일부",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "일부",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "소수",
+          "start": 1,
+          "end": 3,
+          "sense_id": "sosu.minority_quantity",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P16_SOSU_DECIMAL_DEFINITION",
+      "text": "“소수”는 소수점 아래에 숫자가 있는 수이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "소수",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "소수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "소수점",
+          "tag": "NNG",
+          "start": 6,
+          "end": 9,
+          "morphemes": [
+            [
+              "소수점",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "아래",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": [
+            [
+              "아래",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "에",
+          "tag": "JKB",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "에",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "숫자",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "숫자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "있",
+          "tag": "VA",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "있",
+              "VA"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "ETM",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "수",
+          "tag": "NNG",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 24,
+          "end": 25,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "소수",
+          "start": 1,
+          "end": 3,
+          "sense_id": "sosu.decimal_number",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P17_SOSU_SIBLING_OCCURRENCES_LOCAL_TYPES",
+      "text": "통계의 “소수”는 적은 인원이고, 수학의 “소수”는 약수가 둘뿐인 자연수이다.",
+      "tokens": [
+        {
+          "form": "통계",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "통계",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "소수",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "소수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "적은",
+          "tag": "VA+ETM",
+          "start": 10,
+          "end": 12,
+          "morphemes": [
+            [
+              "적",
+              "VA"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "인원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "인원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ]
+          ]
+        },
+        {
+          "form": "고",
+          "tag": "EC",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "고",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": ",",
+          "tag": "SP",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              ",",
+              "SP"
+            ]
+          ]
+        },
+        {
+          "form": "수학",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "수학",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "소수",
+          "tag": "NNG",
+          "start": 24,
+          "end": 26,
+          "morphemes": [
+            [
+              "소수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 26,
+          "end": 27,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "약수",
+          "tag": "NNG",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "약수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 31,
+          "end": 32,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "둘",
+          "tag": "NR",
+          "start": 33,
+          "end": 34,
+          "morphemes": [
+            [
+              "둘",
+              "NR"
+            ]
+          ]
+        },
+        {
+          "form": "뿐",
+          "tag": "JX",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              "뿐",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 35,
+          "end": 36,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "자연수",
+          "tag": "NNG",
+          "start": 37,
+          "end": 40,
+          "morphemes": [
+            [
+              "자연수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 40,
+          "end": 42,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 42,
+          "end": 43,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "소수",
+          "start": 5,
+          "end": 7,
+          "sense_id": "sosu.minority_quantity",
+          "criterion": "unique_sense"
+        },
+        {
+          "spelling": "소수",
+          "start": 24,
+          "end": 26,
+          "sense_id": "sosu.prime_number",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 5,
+        "end": 7
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P19_NESTED_DEFINITION_UNRELATED_OUTER_TITLE",
+      "text": "교재 제목 “소수”와 본문 인용문 ‘“사법”은 민법과 상법의 법 분야이다.’는 서로 다르다.",
+      "tokens": [
+        {
+          "form": "교재",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "교재",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "제목",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": [
+            [
+              "제목",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "소수",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": [
+            [
+              "소수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "와",
+          "tag": "JC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "와",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "본문",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "본문",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "인용문",
+          "tag": "NNG",
+          "start": 15,
+          "end": 18,
+          "morphemes": [
+            [
+              "인용문",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "‘",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 24,
+          "end": 25,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 28,
+          "end": 29,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 30,
+          "end": 32,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 32,
+          "end": 33,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 36,
+          "end": 38,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 38,
+          "end": 40,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 40,
+          "end": 41,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 41,
+          "end": 42,
+          "morphemes": [
+            [
+              "’",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 42,
+          "end": 43,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "서로",
+          "tag": "MAG",
+          "start": 44,
+          "end": 46,
+          "morphemes": [
+            [
+              "서로",
+              "MAG"
+            ]
+          ]
+        },
+        {
+          "form": "다르다",
+          "tag": "VA+EF",
+          "start": 47,
+          "end": 50,
+          "morphemes": [
+            [
+              "다르",
+              "VA"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 50,
+          "end": 51,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "소수",
+          "start": 7,
+          "end": 9,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        },
+        {
+          "spelling": "사법",
+          "start": 21,
+          "end": 23,
+          "sense_id": "sabeop.private_law",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 21,
+        "end": 23
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P21_MISMATCHED_QUOTE_THEN_LOCAL_DEFINITION",
+      "text": "“고가’는 안내문 표제이다. 다음 문장의 고가는 지면보다 높은 도로 구조물이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "고가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "’",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "안내문",
+          "tag": "NNG",
+          "start": 6,
+          "end": 9,
+          "morphemes": [
+            [
+              "안내문",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "표제",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": [
+            [
+              "표제",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        },
+        {
+          "form": "다음",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "다음",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "문장",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "문장",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 23,
+          "end": 25,
+          "morphemes": [
+            [
+              "고가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 25,
+          "end": 26,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "지면",
+          "tag": "NNG",
+          "start": 27,
+          "end": 29,
+          "morphemes": [
+            [
+              "지면",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "보다",
+          "tag": "JKB",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "보다",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "높은",
+          "tag": "VA+ETM",
+          "start": 32,
+          "end": 34,
+          "morphemes": [
+            [
+              "높",
+              "VA"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "도로",
+          "tag": "NNG",
+          "start": 35,
+          "end": 37,
+          "morphemes": [
+            [
+              "도로",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "구조물",
+          "tag": "NNG",
+          "start": 38,
+          "end": 41,
+          "morphemes": [
+            [
+              "구조물",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 41,
+          "end": 43,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 43,
+          "end": 44,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 1,
+          "end": 3,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        },
+        {
+          "spelling": "고가",
+          "start": 23,
+          "end": 25,
+          "sense_id": "goga.elevated_structure",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 23,
+        "end": 25
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P22_MULJIL_SUBSTANCE_DEFINITION",
+      "text": "“물질”은 물체의 본바탕이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "물질",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "물질",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "물체",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "물체",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 8,
+          "end": 9,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "본바탕",
+          "tag": "NNG",
+          "start": 10,
+          "end": 13,
+          "morphemes": [
+            [
+              "본바탕",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "물질",
+          "start": 1,
+          "end": 3,
+          "sense_id": "muljil.substance",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C12_v4_P24_JAMJARI_SIBLING_OCCURRENCES_LOCAL_TYPES",
+      "text": "“잠자리”는 날개가 있는 곤충이고, “잠자리”는 밤에 사람이 눕는 곳이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "잠자리",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 5,
+          "end": 6,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "날개",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": [
+            [
+              "날개",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "있",
+          "tag": "VA",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "있",
+              "VA"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "ETM",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "곤충",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "곤충",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ]
+          ]
+        },
+        {
+          "form": "고",
+          "tag": "EC",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "고",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": ",",
+          "tag": "SP",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              ",",
+              "SP"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 21,
+          "end": 24,
+          "morphemes": [
+            [
+              "잠자리",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 24,
+          "end": 25,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 25,
+          "end": 26,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              "밤",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "에",
+          "tag": "JKB",
+          "start": 28,
+          "end": 29,
+          "morphemes": [
+            [
+              "에",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "사람",
+          "tag": "NNG",
+          "start": 30,
+          "end": 32,
+          "morphemes": [
+            [
+              "사람",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 32,
+          "end": 33,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "눕",
+          "tag": "VV",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              "눕",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "ETM",
+          "start": 35,
+          "end": 36,
+          "morphemes": [
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "곳",
+          "tag": "NNG",
+          "start": 37,
+          "end": 38,
+          "morphemes": [
+            [
+              "곳",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 38,
+          "end": 40,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 40,
+          "end": 41,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 1,
+          "end": 4,
+          "sense_id": "jamjari.insect",
+          "criterion": "unique_sense"
+        },
+        {
+          "spelling": "잠자리",
+          "start": 21,
+          "end": 24,
+          "sense_id": "jamjari.bedding",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 21,
+        "end": 24
+      },
+      "source_group": "C12_v4",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C11_v2_Q02_GOGA_QUOTED_OLD_HOUSE_DEFINITION",
+      "text": "‘고가’는 기와와 대들보가 남은 옛 한옥을 가리키는 말이다.",
+      "tokens": [
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "‘",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "고가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "’",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "기와",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "기와",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "와",
+          "tag": "JC",
+          "start": 8,
+          "end": 9,
+          "morphemes": [
+            [
+              "와",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "대들보",
+          "tag": "NNG",
+          "start": 10,
+          "end": 13,
+          "morphemes": [
+            [
+              "대들보",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "남",
+          "tag": "VV",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "남",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "ETM",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "옛",
+          "tag": "MM",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "옛",
+              "MM"
+            ]
+          ]
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "한옥",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "가리키",
+          "tag": "VV",
+          "start": 24,
+          "end": 27,
+          "morphemes": [
+            [
+              "가리키",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "ETM",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 29,
+          "end": 30,
+          "morphemes": [
+            [
+              "말",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 31,
+          "end": 32,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 32,
+          "end": 33,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 1,
+          "end": 3,
+          "sense_id": "goga.old_house",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C11_v2",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C10_v3_C10_A01_GOGA_PRICE_CATEGORY_LABEL",
+      "text": "거래가가 높은 가격 구간을 ‘고가’라고 분류했다.",
+      "tokens": [
+        {
+          "form": "거래가",
+          "tag": "NNG",
+          "start": 0,
+          "end": 3,
+          "morphemes": [
+            [
+              "거래가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "높",
+          "tag": "VA",
+          "start": 5,
+          "end": 6,
+          "morphemes": [
+            [
+              "높",
+              "VA"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "ETM",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "가격",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "구간",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "구간",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "‘",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "고가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "’",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "라고",
+          "tag": "JKB",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "라고",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "분류",
+          "tag": "NNG",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "분류",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "했다",
+          "tag": "XSV+EP+EF",
+          "start": 24,
+          "end": 26,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "였",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 26,
+          "end": 27,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 16,
+          "end": 18,
+          "sense_id": "goga.expensive_price",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 16,
+        "end": 18
+      },
+      "source_group": "C10_v3",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C10_v3_C10_A02_GOGA_OLD_HOUSE_NAME",
+      "text": "기와와 대들보가 남은 오래된 한옥을 ‘고가’라고 불렀다.",
+      "tokens": [
+        {
+          "form": "기와",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "기와",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "와",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "와",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "대들보",
+          "tag": "NNG",
+          "start": 4,
+          "end": 7,
+          "morphemes": [
+            [
+              "대들보",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "남",
+          "tag": "VV",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "남",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "ETM",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "오래된",
+          "tag": "VA+ETM",
+          "start": 12,
+          "end": 15,
+          "morphemes": [
+            [
+              "오래되",
+              "VA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "한옥",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "‘",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "고가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "’",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "라고",
+          "tag": "JKB",
+          "start": 24,
+          "end": 26,
+          "morphemes": [
+            [
+              "라고",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "불렀다",
+          "tag": "VV+EP+EF",
+          "start": 27,
+          "end": 30,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 21,
+          "end": 23,
+          "sense_id": "goga.old_house",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 21,
+        "end": 23
+      },
+      "source_group": "C10_v3",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "C10_v3_C10_A04_SABEOP_PRIVATE_FIELD_LABEL",
+      "text": "개정된 민법과 상법을 묶는 법 분야를 ‘사법’이라고 불렀다.",
+      "tokens": [
+        {
+          "form": "개정",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "개정",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "된",
+          "tag": "XSV+ETM",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "되",
+              "XSV"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶",
+          "tag": "VV",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "ETM",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "‘",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 24,
+          "end": 25,
+          "morphemes": [
+            [
+              "’",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "이라고",
+          "tag": "JKB",
+          "start": 25,
+          "end": 28,
+          "morphemes": [
+            [
+              "이라고",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "불렀다",
+          "tag": "VV+EP+EF",
+          "start": 29,
+          "end": 32,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 32,
+          "end": 33,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 22,
+          "end": 24,
+          "sense_id": "sabeop.private_law",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 22,
+        "end": 24
+      },
+      "source_group": "C10_v3",
+      "note_ko": "기존 독립 계약에서 미선택으로 남은 개발 노출 사례; 금 표준과 형태소를 보존했다."
+    },
+    {
+      "id": "FIXED_S03_PRIVATE_LAW_OBJECT_LIAISON",
+      "text": "민법과 상법처럼 개인 간 재산과 계약을 규율하는 사법을 공부했다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "처럼",
+          "tag": "JKB",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "처럼",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "개인",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "개인",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "간",
+          "tag": "NNB",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "간",
+              "NNB"
+            ]
+          ]
+        },
+        {
+          "form": "재산",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "재산",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "계약",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "계약",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "규율",
+          "tag": "NNG",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "규율",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "하",
+          "tag": "XSV",
+          "start": 24,
+          "end": 25,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "ETM",
+          "start": 25,
+          "end": 26,
+          "morphemes": [
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 27,
+          "end": 29,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 29,
+          "end": 30,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "공부",
+          "tag": "NNG",
+          "start": 31,
+          "end": 33,
+          "morphemes": [
+            [
+              "공부",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 33,
+          "end": 34,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 35,
+          "end": 36,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 27,
+          "end": 29,
+          "sense_id": "sabeop.private_law",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 27,
+        "end": 29
+      },
+      "source_group": "cycle08_approved31",
+      "note_ko": "기존 실제 변환에서 저장한 정상 관계 입력을 그대로 사용한다. 형태소 강제 보정은 없다."
+    },
+    {
+      "id": "FIXED_M06_HARD_BOUNDARY_AMBIGUOUS_SECOND",
+      "text": "“소수의 주민만 찬성했다.” 그 뒤의 표에는 소수만 적혀 있었다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "소수",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "소수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "주민",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "주민",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "만",
+          "tag": "JX",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "만",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "찬성",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "찬성",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "그",
+          "tag": "MM",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "그",
+              "MM"
+            ]
+          ]
+        },
+        {
+          "form": "뒤",
+          "tag": "NNG",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "뒤",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "표",
+          "tag": "NNG",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "표",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "에",
+          "tag": "JKB",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              "에",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "소수",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": [
+            [
+              "소수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "만",
+          "tag": "JX",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              "만",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "적혀",
+          "tag": "VV+EC",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "적히",
+              "VV"
+            ],
+            [
+              "어",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": "있",
+          "tag": "VX",
+          "start": 32,
+          "end": 33,
+          "morphemes": [
+            [
+              "있",
+              "VX"
+            ]
+          ]
+        },
+        {
+          "form": "었",
+          "tag": "EP",
+          "start": 33,
+          "end": 34,
+          "morphemes": [
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 35,
+          "end": 36,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "소수",
+          "start": 1,
+          "end": 3,
+          "sense_id": "sosu.minority_quantity",
+          "criterion": "unique_sense"
+        },
+        {
+          "spelling": "소수",
+          "start": 25,
+          "end": 27,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "cycle08_approved31",
+      "note_ko": "기존 실제 변환에서 저장한 정상 관계 입력을 그대로 사용한다. 형태소 강제 보정은 없다."
+    },
+    {
+      "id": "FIXED_capture_plus_body_part_chain",
+      "text": "잠자리를 붙잡아 날개를 살피고 놓아주었다.",
+      "tokens": [
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 0,
+          "end": 3,
+          "morphemes": [
+            [
+              "잠자리",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "붙잡",
+          "tag": "VV-R",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "붙잡",
+              "VV-R"
+            ]
+          ]
+        },
+        {
+          "form": "아",
+          "tag": "EC",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "어",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": "날개",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "날개",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "살피",
+          "tag": "VV",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "살피",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "고",
+          "tag": "EC",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "고",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": "놓",
+          "tag": "VV",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "놓",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "아",
+          "tag": "EC",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "어",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": "주",
+          "tag": "VX",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "주",
+              "VX"
+            ]
+          ]
+        },
+        {
+          "form": "었",
+          "tag": "EP",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 0,
+          "end": 3,
+          "sense_id": "jamjari.insect",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 0,
+        "end": 3
+      },
+      "source_group": "cycle06_structuralv1",
+      "note_ko": "기존 실제 변환에서 저장한 정상 관계 입력을 그대로 사용한다. 형태소 강제 보정은 없다."
+    },
+    {
+      "id": "FIXED_relative_human_agent_substance",
+      "text": "해녀가 채취한 물질은 밀도가 낮았다.",
+      "tokens": [
+        {
+          "form": "해녀",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "해녀",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "채취",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "채취",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "한",
+          "tag": "XSV+ETM",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "물질",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "물질",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "밀도",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "밀도",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "낮",
+          "tag": "VA",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "낮",
+              "VA"
+            ]
+          ]
+        },
+        {
+          "form": "았",
+          "tag": "EP",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "물질",
+          "start": 8,
+          "end": 10,
+          "sense_id": "muljil.substance",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 8,
+        "end": 10
+      },
+      "source_group": "cycle07_v2",
+      "note_ko": "기존 실제 변환에서 저장한 정상 관계 입력을 그대로 사용한다. 형태소 강제 보정은 없다."
+    },
+    {
+      "id": "ACTUAL_DECIMAL_SAISIOT_DIGIT_COMPOUND",
+      "text": "“소수”는 소수점 아래에 숫자가 있는 수이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "소수",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "소수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "소수점",
+          "tag": "NNG",
+          "start": 6,
+          "end": 9,
+          "morphemes": [
+            [
+              "소수점",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "아래",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": [
+            [
+              "아래",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "에",
+          "tag": "JKB",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "에",
+              "JKB"
+            ]
+          ]
+        },
+        {
+          "form": "숫",
+          "tag": "NNG+Z_SIOT",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "수",
+              "NNG"
+            ],
+            [
+              "ᆺ",
+              "Z_SIOT"
+            ]
+          ]
+        },
+        {
+          "form": "자",
+          "tag": "NNB",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "자",
+              "NNB"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "있",
+          "tag": "VV",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "있",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "ETM",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "수",
+          "tag": "NNG",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "수",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 24,
+          "end": 25,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "소수",
+          "start": 1,
+          "end": 3,
+          "sense_id": "sosu.decimal_number",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      },
+      "source_group": "C13_actual_semantic17",
+      "note_ko": "기존 뜻 기대를 유지하며 실제 숫/NNG+Z_SIOT와 자/NNB의 연속 성분 표현을 회귀 사례로 추가했다. 후보01 관찰 후 추가한 개발 노출 검사다."
+    }
+  ],
+  "status": "adds_exposed_actual_compound_variant_after_candidate01_before_revision02",
+  "supersedes_contract_sha256": "54b5301119d713f07de76d2dc09442a475128c03a0ea9e4796bbe39f8a16980c",
+  "additional_actual_source_path": "output/g2p_semantic_composition_cycle_20261025/research/evaluation/exposed_fixed_behavior_tokens_v1.json",
+  "additional_actual_source_sha256": "e0e4c3cd3f6d01abc9db2271ed48a8f9c42379b84402ad966ad3e663608f3576",
+  "compound_variant_source_path": "output/g2p_semantic_composition_cycle_20261025/research/evaluation/runs/actual_semantic17_c12_baseline_v1/actual_semantic_raw_v1.json",
+  "compound_variant_source_sha256": "c1d18d5057862db37f2ab670f09e5bb944025c93d1038de25f577c0c64a68124"
+}

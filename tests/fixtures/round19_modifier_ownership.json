@@ -1,0 +1,6695 @@
+{
+  "created_utc": "2026-10-26T18:32:49.351079+00:00",
+  "scope_ko": "정상 제공 형태소를 정답 계약으로 삼는다. 실제 cong 소비 분석은 별도 관측이다. 최초 R04 실패 기록을 변경하거나 과거 점수를 재계산하지 않는다.",
+  "supported_ko": "단순 긍정 용언과 실제 ETM으로 닫힌 선행 관형절 및 순수 명사 연쇄. 내부 논항은 외부 정의 소유자로 승격하지 않는다.",
+  "unresolved_ko": "부정 명사ㆍ부정 보조 용언ㆍ후치 관형절ㆍ복합 연결절ㆍ일반 한국어 구문 분석은 이번 지원 밖이다.",
+  "cases": [
+    {
+      "id": "M01_original_R04",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    },
+    {
+      "id": "M02_simple_VA",
+      "text": "“높은 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "높은",
+          "tag": "VA+ETM",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "높",
+              "VA"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 20,
+          "end": 24,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 27,
+          "end": 29,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 29,
+          "end": 30,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 4,
+          "end": 6,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M03_simple_VV",
+      "text": "“시행하는 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "시행하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 1,
+          "end": 5,
+          "morphemes": [
+            [
+              "시행",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 22,
+          "end": 26,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 27,
+          "end": 29,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 31,
+          "end": 32,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 6,
+          "end": 8,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M04_past_EP",
+      "text": "“시행했던 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "시행했던",
+          "tag": "NNG+XSV+EP+ETM",
+          "start": 1,
+          "end": 5,
+          "morphemes": [
+            [
+              "시행",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "던",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 22,
+          "end": 26,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 27,
+          "end": 29,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 31,
+          "end": 32,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 6,
+          "end": 8,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M05_future_ETM",
+      "text": "“검토할 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "검토할",
+          "tag": "NNG+XSV+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "검토",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ㄹ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M06_irregular_VA",
+      "text": "“새로운 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "새로운",
+          "tag": "VA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "새롭",
+              "VA"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M07_internal_subject",
+      "text": "“시민이 검토한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "시민",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "시민",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "검토한",
+          "tag": "NNG+XSV+ETM",
+          "start": 5,
+          "end": 8,
+          "morphemes": [
+            [
+              "검토",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 25,
+          "end": 29,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 30,
+          "end": 32,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 32,
+          "end": 34,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 9,
+          "end": 11,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M08_internal_subject_object",
+      "text": "“시민이 규칙을 검토한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "시민",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "시민",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "규칙",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "규칙",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "검토한",
+          "tag": "NNG+XSV+ETM",
+          "start": 9,
+          "end": 12,
+          "morphemes": [
+            [
+              "검토",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 29,
+          "end": 33,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 34,
+          "end": 36,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 36,
+          "end": 38,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 38,
+          "end": 39,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 13,
+          "end": 15,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M09_adverb",
+      "text": "“매우 공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "매우",
+          "tag": "MAG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "매우",
+              "MAG"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 4,
+          "end": 7,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 24,
+          "end": 28,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 31,
+          "end": 33,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 33,
+          "end": 34,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 8,
+          "end": 10,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M10_two_modifiers",
+      "text": "“공정한 명확한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "명확한",
+          "tag": "NNG+XSA+ETM",
+          "start": 5,
+          "end": 8,
+          "morphemes": [
+            [
+              "명확",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 25,
+          "end": 29,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 30,
+          "end": 32,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 32,
+          "end": 34,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 9,
+          "end": 11,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M11_long_nominal_spine",
+      "text": "“공정한 사법 공판 재판 진행 심리 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "공판",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "공판",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "재판",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "진행",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "진행",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "심리",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "심리",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 31,
+          "end": 32,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 33,
+          "end": 37,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 38,
+          "end": 40,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 40,
+          "end": 42,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 42,
+          "end": 43,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M12_target_in_internal_object",
+      "text": "“사법을 설명한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "설명한",
+          "tag": "NNG+XSV+ETM",
+          "start": 5,
+          "end": 8,
+          "morphemes": [
+            [
+              "설명",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 25,
+          "end": 29,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 30,
+          "end": 32,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 32,
+          "end": 34,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 1,
+          "end": 3,
+          "sense_id": null
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": "앞 목적어 출현은 외부 절차 정의의 소유자가 아니다."
+    },
+    {
+      "id": "M13_target_in_internal_subject",
+      "text": "“사법이 등장한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "등장한",
+          "tag": "NNG+XSV+ETM",
+          "start": 5,
+          "end": 8,
+          "morphemes": [
+            [
+              "등장",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 25,
+          "end": 29,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 30,
+          "end": 32,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 32,
+          "end": 34,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 1,
+          "end": 3,
+          "sense_id": null
+        },
+        {
+          "start": 9,
+          "end": 11,
+          "sense_id": "sabeop.judicial_function"
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M14_title_only",
+      "text": "“공정한 사법 절차”를 읽었다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "읽었다",
+          "tag": "VV+EP+EF",
+          "start": 13,
+          "end": 16,
+          "morphemes": [
+            [
+              "읽",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M15_wrong_outer_entity",
+      "text": "“공정한 사법 절차”는 교사가 학생을 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "교사",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "교사",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "학생",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "학생",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M16_outer_negative_nominal",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차가 아니다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKC",
+          "start": 28,
+          "end": 29,
+          "morphemes": [
+            [
+              "가",
+              "JKC"
+            ]
+          ]
+        },
+        {
+          "form": "아니다",
+          "tag": "VCN+EF",
+          "start": 30,
+          "end": 33,
+          "morphemes": [
+            [
+              "아니",
+              "VCN"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 33,
+          "end": 34,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M17_inner_negative_nominal_unresolved",
+      "text": "“재판 절차가 아닌 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "재판",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKC",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "가",
+              "JKC"
+            ]
+          ]
+        },
+        {
+          "form": "아닌",
+          "tag": "VCN+ETM",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "아니",
+              "VCN"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 23,
+          "end": 25,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 25,
+          "end": 26,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 27,
+          "end": 31,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 32,
+          "end": 34,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 34,
+          "end": 36,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 36,
+          "end": 37,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 11,
+          "end": 13,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "부정 명사 관형절의 범위는 이번 지원 문법에서 유보하며 외부 긍정으로 덮지 않는다."
+    },
+    {
+      "id": "M18_inner_verbal_negative_unresolved",
+      "text": "“공정하지 않은 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정하지",
+          "tag": "NNG+XSA+EC",
+          "start": 1,
+          "end": 5,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "지",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": "않은",
+          "tag": "VX+ETM",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "않",
+              "VX"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 25,
+          "end": 29,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 30,
+          "end": 32,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 32,
+          "end": 34,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 9,
+          "end": 11,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M19_multiple_spine_targets",
+      "text": "“공정한 사법 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 14,
+          "end": 15,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 24,
+          "end": 28,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 31,
+          "end": 33,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 33,
+          "end": 34,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        },
+        {
+          "start": 8,
+          "end": 10,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M20_finite_modifier_rejected",
+      "text": "“공정하다 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정하다",
+          "tag": "NNG+XSA+EF",
+          "start": 1,
+          "end": 5,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 22,
+          "end": 26,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 27,
+          "end": 29,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 31,
+          "end": 32,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 6,
+          "end": 8,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M21_missing_ETM_rejected",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M22_post_spine_modifier_unresolved",
+      "text": "“사법 공정한 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 4,
+          "end": 7,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 1,
+          "end": 3,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "M23_negative_adverb_unresolved",
+      "text": "“안 공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "안",
+          "tag": "MAG",
+          "start": 1,
+          "end": 2,
+          "morphemes": [
+            [
+              "안",
+              "MAG"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 3,
+          "end": 6,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 23,
+          "end": 27,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 30,
+          "end": 32,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 32,
+          "end": 33,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 7,
+          "end": 9,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": ""
+    },
+    {
+      "id": "H_prefix",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [
+        2
+      ],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    },
+    {
+      "id": "H_target",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [
+        5
+      ],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    },
+    {
+      "id": "H_head",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [
+        8
+      ],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    },
+    {
+      "id": "H_outer",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [
+        12
+      ],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    },
+    {
+      "id": "A_surface",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "명확한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    },
+    {
+      "id": "A_tags",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+EF",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    },
+    {
+      "id": "A_gap",
+      "text": "“공정한 사법 절차”는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    },
+    {
+      "id": "A_open_quote",
+      "text": "“공정한 사법 절차 는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    },
+    {
+      "id": "A_cross_quote",
+      "text": "“공정한 사법 절차’는 법원이 피고를 재판하는 절차이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "공정한",
+          "tag": "NNG+XSA+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "공정",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "’",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법원",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "법원",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "피고",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "피고",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "재판하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 21,
+          "end": 25,
+          "morphemes": [
+            [
+              "재판",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 28,
+          "end": 30,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard": [],
+      "targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "sense_id": null
+        }
+      ],
+      "basis_ko": "R12에 원래 실패로 보존한 R04의 정상 제공 분석과 기대를 그대로 재사용한다."
+    }
+  ]
+}

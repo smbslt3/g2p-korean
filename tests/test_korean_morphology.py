@@ -243,87 +243,34 @@ def test_stem_tensing_covers_all_ported_final_groups() -> None:
         assert rule_id in [item.rule_id for item in result.rewrites]
 
 
-def test_deferred_balb_candidate_skips_positive_and_negative_analyzers() -> None:
-    source = "밟다"
-    factories = (
-        lambda _text: (
-            _token("밟", "VV", 0, 1),
-            _token("다", "EF", 1, 2),
-        ),
-        lambda _text: (
-            _token("밟", "NNG", 0, 1),
-            _token("다", "JKS", 1, 2),
-        ),
-    )
-
-    for factory in factories:
-        analyzer = FakeAnalyzer(factory)
-
-        result = _pronounce((_segment(source),), analyzer)
-
-        assert result.text == source
-        assert analyzer.calls == 0
-        assert any(
-            item.code == "morphology_rule_skipped"
-            and item.rule_id == "ko.lexical.balb_neolb"
-            for item in result.diagnostics
-        )
-        assert "ko.stem.tensing.25" not in [item.rule_id for item in result.rewrites]
+@pytest.mark.parametrize(
+    ("source", "expected"),
+    [("밟", "밥"), ("밟다", "밥따"), ("밟고", "밥꼬"), ("밟는", "밤는"),
+     ("밟히다", "발피다"), ("밟아", "발바"), ("넓죽하다", "넙쭈카다"),
+     ("넓둥글다", "넙뚱글다"), ("넓죽한", "넙쭈칸"), ("넓적해", "넙쩌캐")],
+)
+def test_official_balb_neolb_rule_is_complete(source: str, expected: str) -> None:
+    result = convert_pipeline(source)
+    assert result.surface_pronunciation == expected
+    assert result.complete
+    assert not result.diagnostics
 
 
-def test_official_neolb_forms_supersede_the_deferred_lexical_pair() -> None:
-    for source, expected in (("넓죽하다", "넙쭈카다"), ("넓둥글다", "넙뚱글다")):
-        analyzer = FakeAnalyzer(lambda _text: ())
-
-        result = _pronounce((_segment(source),), analyzer)
-
-        assert result.text == expected
-        assert analyzer.calls == 0
-        assert any(
-            item.code == "morphology_rule_skipped"
-            and item.rule_id == "ko.lexical.balb_neolb"
-            for item in result.diagnostics
-        )
-        assert "ko.official.enumerated" in [item.rule_id for item in result.rewrites]
-        assert "ko.stem.tensing.25" not in [item.rule_id for item in result.rewrites]
-
-
-def test_deferred_balb_does_not_suppress_confirmed_neolb_stem_rule() -> None:
+def test_balb_rule_keeps_other_confirmed_stem_rules() -> None:
     source = "밟다 넓게"
     analyzer = FakeAnalyzer(
         lambda _text: (
-            _token("밟", "NNG", 0, 1),
-            _token("다", "JKS", 1, 2),
-            _token("넓", "VA", 3, 4),
-            _token("게", "EC", 4, 5),
+            _token("밟", "VV", 0, 1), _token("다", "EF", 1, 2),
+            _token("넓", "VA", 3, 4), _token("게", "EC", 4, 5),
         )
     )
-
     result = _pronounce((_segment(source),), analyzer)
-
-    assert result.text == "밟다 널께"
+    assert result.text == "밥따 널께"
     assert analyzer.calls == 1
-    assert any(item.rule_id == "ko.lexical.balb_neolb" for item in result.diagnostics)
-    assert "ko.stem.tensing.25" in [item.rule_id for item in result.rewrites]
-
-
-def test_default_engine_preserves_deferred_balb_coda_but_keeps_vowel_liaison() -> None:
-    for source in ("밟", "밟.", "밟다"):
-        result = convert_pipeline(source)
-
-        assert result.surface_pronunciation == source
-        assert not result.complete
-        assert any(
-            item.code == "morphology_rule_skipped"
-            and item.rule_id == "ko.lexical.balb_neolb"
-            for item in result.diagnostics
-        )
-
-    liaison = convert_pipeline("밟아")
-
-    assert liaison.surface_pronunciation == "발바"
-    assert liaison.complete
-    assert not any(item.rule_id == "ko.lexical.balb_neolb" for item in liaison.diagnostics)
+    assert not result.diagnostics
+    assert {"ko.lexical.balb_neolb", "ko.stem.tensing.25"} <= {
+        item.rule_id for item in result.rewrites
+    }
 
 
 def test_non_ending_pos_does_not_guess_stem_tensing() -> None:
@@ -342,28 +289,39 @@ def test_non_ending_pos_does_not_guess_stem_tensing() -> None:
     assert "ko.stem.tensing.24" not in [item.rule_id for item in result.rewrites]
 
 
-def test_official_exact_form_remains_available_without_analyzer() -> None:
+def test_merged_lexical_verb_tag_is_not_a_palatalizing_suffix() -> None:
+    """다음 동사에 어미 태그가 섞였다는 이유로 어근 경계를 구개음화하지 않는다."""
+    source = "곧이어서"
+    analyzer = FakeAnalyzer(lambda _: (
+        _token("곧", "MAG", 0, 1), _token("이어서", "VV-I+EC", 1, 4),
+    ))
+    result = _pronounce((_segment(source),), analyzer)
+    assert result.text == "고디어서"
+    assert "ko.palatalization" not in [item.rule_id for item in result.rewrites]
+
+
+def test_generalized_stem_rule_preserves_input_without_analyzer() -> None:
     source = "맑게"
     analyzer = RaisingAnalyzer(BackendUnavailableError("테스트용 미설치"))
 
     result = _pronounce((_segment(source),), analyzer)
 
-    assert result.text == "말께"
+    assert result.text == source
     assert analyzer.calls == 1
     assert any(item.code == "analyzer_unavailable" for item in result.diagnostics)
     assert any(item.code == "morphology_rule_skipped" for item in result.diagnostics)
-    assert "ko.official.enumerated" in [item.rule_id for item in result.rewrites]
+    assert not result.rewrites
 
 
-def test_official_exact_form_remains_available_after_invalid_analysis() -> None:
+def test_generalized_stem_rule_preserves_input_after_invalid_analysis() -> None:
     source = "맑게"
     failed = RaisingAnalyzer(RuntimeError("테스트용 분석 실패"))
 
     failed_result = _pronounce((_segment(source),), failed)
 
-    assert failed_result.text == "말께"
+    assert failed_result.text == source
     assert any(item.code == "analyzer_failed" for item in failed_result.diagnostics)
-    assert "ko.official.enumerated" in [item.rule_id for item in failed_result.rewrites]
+    assert not failed_result.rewrites
 
     mismatch = FakeAnalyzer(
         lambda _text: (
@@ -373,10 +331,10 @@ def test_official_exact_form_remains_available_after_invalid_analysis() -> None:
     )
     mismatch_result = _pronounce((_segment(source),), mismatch)
 
-    assert mismatch_result.text == "말께"
+    assert mismatch_result.text == source
     assert mismatch.calls == 1
     assert any(item.code == "analyzer_failed" for item in mismatch_result.diagnostics)
-    assert "ko.official.enumerated" in [item.rule_id for item in mismatch_result.rewrites]
+    assert not mismatch_result.rewrites
 
 
 def test_default_kiwi_confirms_stem_pair(default_pipeline: Pipeline) -> None:

@@ -98,6 +98,32 @@ jobs:
           assert first == second, (first, second)
           PY
       - run: uv run --no-sync python tools/check_artifacts.py dist-a/*.whl dist-a/*.tar.gz
+      - name: sdist에 포함된 전체 테스트 실행
+        run: |
+          uv run --no-sync python - <<'PY'
+          import os
+          from pathlib import Path
+          import subprocess
+          import sys
+          import tarfile
+          from tempfile import TemporaryDirectory
+
+          with TemporaryDirectory() as directory:
+              artifact = next(Path("dist-a").glob("*.tar.gz"))
+              with tarfile.open(artifact, "r:gz") as archive:
+                  archive.extractall(directory, filter="data")
+              source_root = next(Path(directory).iterdir())
+              assert (source_root / "tests/test_packaging.py").is_file()
+              assert not (source_root / "tests/test_repository_policy.py").exists()
+              environment = os.environ.copy()
+              environment["PYTHONPATH"] = str(source_root / "src")
+              subprocess.run(
+                  [sys.executable, "-m", "pytest", "-q"],
+                  cwd=source_root,
+                  env=environment,
+                  check=True,
+              )
+          PY
       - name: wheel 의존성 포함 새 환경 설치 확인
         run: |
           uv venv --python 3.13 .ci-runtime-venv
@@ -116,18 +142,22 @@ jobs:
           uv venv --python 3.13 .ci-wheel-venv
           uv pip install --python .ci-wheel-venv/bin/python --no-deps dist-a/*.whl
           .ci-wheel-venv/bin/python - <<'PY'
-          from g2p_ko import G2P, KoreanTTSNormalizer
+          from g2p_ko import G2P, KoreanTTSNormalizer, normalize_numbers
 
           assert KoreanTTSNormalizer()("사과 3개") == "사과 세 개"
           assert callable(G2P())
+          assert normalize_numbers("사과 3개") == "사과 3개"
+          assert G2P()("123") == "123"
           PY
       - name: sdist 최소 설치 및 지연 import 확인
         run: |
           uv venv --python 3.13 .ci-sdist-venv
           uv pip install --python .ci-sdist-venv/bin/python --no-deps dist-a/*.tar.gz
           .ci-sdist-venv/bin/python - <<'PY'
-          from g2p_ko import G2P, KoreanTTSNormalizer
+          from g2p_ko import G2P, KoreanTTSNormalizer, normalize_numbers
 
           assert KoreanTTSNormalizer()("사과 3개") == "사과 세 개"
           assert callable(G2P())
+          assert normalize_numbers("사과 3개") == "사과 3개"
+          assert G2P()("123") == "123"
           PY

@@ -1,0 +1,28 @@
+{
+  "version": "r42-saved-v6-partial-observation-v1",
+  "classification": "post_output_observation_scope_supplement",
+  "sha256": {
+    "observation_scope_postprocess_v1.py": "507c8fe57fdd3e7cdaa92e2fa3ab82fb2fd9bd45b8f76b0cda1d9c6eeacf867e",
+    "observation_scope_v1_synthetic_receipt.json": "51c6916ca164ddfac962fd27f800194e2befc622198c0bba9a1dbd1205662f4f",
+    "Observation_Scope_Disposition_v1_KO.md": "04c72979cacff6c9907caf046fee8883048fa1761a6f19388ce8ae92e56e0419",
+    "candidate06_controlled_v6_observation_v1.json": "f64870c42ddad9ef14bf6250b5ee372cf4720583f9dcb73a6bdcc4ce9ef66853"
+  },
+  "preserved_inputs_sha256": {
+    "FREEZE.json": "fff8acea6bcd14174a154a320e12ede08a12d68c734e537e3a1d23abd8a8a20f",
+    "cases.jsonl": "f54177527be196a4b29d81abe22d4906d8f55c2cce7a92ada40bc957765b4e31",
+    "EVALUATOR_V5_FREEZE.json": "c134eafb50fde3a9bb52199f89b37030d03bbc6ab2cdd1635481070c0dbc55a5",
+    "EVALUATOR_V6_FREEZE.json": "56b5dc2e19893f30ee1dcaffecbbf21a66cd4a23076afae61f241c96a734873a",
+    "candidate06_controlled_v6_final.json": "110f7fdaf5e6cb5d1160e7913c36e0803bbdd64beec32e128263f979137c0dee"
+  },
+  "synthetic_checks_passed": 19,
+  "project_imported": false,
+  "new_runtime_executed": false,
+  "new_baseline_executed": false,
+  "gold_modified": false,
+  "one_row_phone_correction_applied": false,
+  "full_78_of_78_proof_claim": false,
+  "required_support_files": [
+    "observation_scope_postprocess_v1.py",
+    "selected_preserved_v6_result.json"
+  ]
+}

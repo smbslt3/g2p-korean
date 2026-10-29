@@ -1,0 +1,77 @@
+{
+  "schema": "r41.legacy_authority_disposition.v1",
+  "evaluation_role": "development_policy_migration_post03",
+  "runtime_observation_used": false,
+  "original_gold_edited": false,
+  "preserve_original_raw_results": true,
+  "policies": [
+    "Shared_Grammatical_Word_Certificate_KO.md",
+    "Post03_Class_Authority_And_Migration_Adjudication_KO.md",
+    "Post03_Contextual_Recipient_Authority_Addendum_KO.md"
+  ],
+  "cases": [
+    {
+      "source_path": "tests/compositional_surface_proof_cases_v1.json",
+      "source_sha256": "c47beb78ed6563724d58c0c28ac9f885b4d742d6aa27b3bdf633bd19d618b74d",
+      "case_id": "formal_guard_mismatched_source",
+      "harness": "tests/_surface_proof_reference.py::evaluate_case",
+      "harness_only_overrides": {
+        "expect_role": null
+      },
+      "required_unchanged_assertions": [
+        "token expect_proof and atom/origin inventory",
+        "formal status/applicability unknown",
+        "formal unchanged surface, no effect and no rule IDs"
+      ],
+      "reason_ko": "독립 토큰 표면 증명은 유효하나 make_context가 unit source provenance를 원래 segment/source-map과 다르게 바꾼다. source-owned exactDerivedWordRole은 이 모순을 통과할 수 없으므로 역할 기대만 None으로 이관한다. 토큰 원자 증명과 형식 장벽 기대는 변경하지 않는다."
+    },
+    {
+      "source_path": "tests/derived_ha_contraction_cases_v1.json",
+      "source_sha256": "f679e02e2049514b1bfd1d4ab95c16e0a2556bb4c56d2ac181d75ff37277f1e0",
+      "case_id": "missing_raw_spans_guard",
+      "harness": "tests/test_derived_word_n_insertion.py::run_case",
+      "harness_only_overrides": {
+        "expect_role": null,
+        "expect_word_rule_count": 1,
+        "expect_local_right": "뉴"
+      },
+      "additional_authority_expectations": {
+        "lexical_status": "eligible",
+        "surface_status": "unavailable",
+        "exact_source_derived_role": null,
+        "invented_raw_spans": false,
+        "new_atom_owners": false
+      },
+      "normative_local_composition": {
+        "source_first_syllable": "유",
+        "source_onset": "ㅇ",
+        "required_onset": "ㄴ",
+        "retained_vowel": "ㅠ",
+        "retained_coda": null,
+        "expected_first_syllable": "뉴"
+      },
+      "required_unchanged_assertions": [
+        "failure diagnostics empty",
+        "exact-source role None",
+        "original token canonical forms/tags and absence of raw spans",
+        "source-provenance and rule stage/handler checks"
+      ],
+      "reason_ko": "정확한 원문 소유·원형·태그·허용 파생과 승인된 전체 하 축약 실현은 이미 범주 근거를 제공한다. 원시 범위가 없다는 이유만으로 그 범주를 지우지 않는 post03 A 정책에 따라 단어 ㄴ 첨가 1회와 첫 음절의 규범적 ㄴ 조립만 기대한다. 강한 자모 증명과 exact-source 파생 역할은 계속 unavailable/None이다."
+    }
+  ],
+  "instrumentation_disposition": {
+    "source_path": "tests/test_round10_sino_derivational_sino.py",
+    "symbol": "owned",
+    "old_nominal_tail_validator": "_has_licensed_nominal_tail",
+    "approved_intrinsic_tail_validator": "_has_intrinsic_nominal_tail",
+    "positive_phone_expectations_unchanged": true,
+    "preserve_original_helper_snapshot": true,
+    "reason_ko": "이 도우미가 확인할 것은 이미 증명한 내부 한자어 범위다. 실제 내부 음운 소비자와 같은 intrinsic callback을 연결해야 하며 전체 ETM→JX 부착이 허가되었다고 주장하지 않는다. 전체 명사 꼬리 소비자는 엄격 callback을 계속 사용한다."
+  },
+  "constraints_ko": [
+    "원본 JSON이나 고정 기대값을 덮어쓰지 않는다. 하네스의 버전 명시 복사본 또는 명시적인 평가 전용 오버라이드로만 사용한다.",
+    "원시 기존 점수·XML과 이 정책 이관 이후 결과를 별도로 보존한다. 이관 후 결과를 손대지 않은 holdout 결과라고 부르지 않는다.",
+    "위 두 행과 명시 도우미 이외의 기대값을 포괄적으로 변경하는 허가가 아니다.",
+    "기대는 이미 고정된 정책과 규범적 자모 조립에서 결정했으며 새 후보 실행 결과에서 만들지 않았다."
+  ]
+}

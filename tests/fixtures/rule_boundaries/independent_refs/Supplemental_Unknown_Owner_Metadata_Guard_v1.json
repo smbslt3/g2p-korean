@@ -1,0 +1,32 @@
+{
+  "schema_version": "r42-abstract-owner-metadata-guard-v1",
+  "case_id": "S-G10-01",
+  "classification": "supplemental_metadata_robustness_only",
+  "input": {
+    "source": "텓이",
+    "route": "engine.pronounce",
+    "packaging": "opaque",
+    "analysis_tokens": [
+      {"form": "텓이", "tag": "MAG", "start": 0, "end": 2, "morphemes": [["텓이", "MAG"]], "morpheme_spans": [[0, 2]]}
+    ],
+    "canonical_parts": [{"id": "p0", "form": "텓이", "tag": "MAG", "span": [0, 2]}],
+    "pause_boundaries": [],
+    "dictionary_structure": [],
+    "grammatical_structure": []
+  },
+  "metadata_assertions": {
+    "pair": [0, 1],
+    "no_verified_internal_formal_suffix_identity": ["formal_suffix_i", "formal_suffix_hi"],
+    "no_eligible_rule_events": ["15", "17", "29"],
+    "whole_word_grammar_may_be_verified": true,
+    "require_raw_word_status_unresolved": false
+  },
+  "selection_basis": "abstract modern-Hangul owner with opaque MAG packaging, independently chosen after excluding only the five licensed canonical owners",
+  "licensed_owner_set_source": "contract/Opaque_Canonical_Lexical_Structure_Facts.json",
+  "phone_gold": null,
+  "real_language_accuracy_word": false,
+  "pronunciation_accuracy_credit": false,
+  "normative_generalization_credit": false,
+  "implementer_disclosure_allowed": false,
+  "runtime_or_outputs_used_for_selection": false
+}

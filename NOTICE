@@ -1,69 +1,36 @@
-Data and Model Notice / 데이터 및 모델 고지
+g2p-ko의 자체 작성 소스코드는 LICENSE의 MIT 조건으로 제공됩니다.
 
-한국어
+한국어 숫자 읽기 학습·평가·모델 자산은 별도 korean-number-reader 프로젝트로 이전했습니다.
+기본 wheel과 sdist에는 숫자 분류기 계수나 ONNX 모델을 포함하지 않습니다.
+기본 숫자 전처리는 입력을 그대로 반환하는 더미이며 외부 모델을 요청하지 않습니다.
+문맥 기반 숫자 읽기를 지정하면 Hugging Face에서 받은 모델·토크나이저·추론 코드를
+사용합니다. 해당 묶음의 NOTICE, DATA_SOURCES.json, MODEL_LICENSE.md 조건을 따릅니다.
 
-이 배포물에는 숫자 읽기 분류 모델
-`g2p_ko/data/number_reading_model.json`이 포함됩니다. 이 모델은
-과학기술정보통신부의 재원으로 한국지능정보사회진흥원(NIA)의 지원을 받아 구축된
-AI 허브의 "159. 숫자가 포함된 패턴 발화 데이터" 버전 1.1(2023-06-28)을
-기반으로 학습했습니다.
+관용 영어 읽기 규칙의 AI Hub 분석 출처는 docs/ENGLISH_RULE_DATA_SOURCES.json과
+아래 데이터 출처 목록에 기록했습니다.
+데이터 원문·오디오·화자 정보·학습 분할은 이 배포물에 포함하지 않습니다.
+AI Hub: https://www.aihub.or.kr
+이용 정책: https://www.aihub.or.kr/intrcn/guid/usagepolicy.do
 
-데이터 안내:
-https://www.aihub.or.kr/aihubdata/data/view.do?aihubDataSe=data&dataSetSn=484
+Kiwi는 G2P 형태소 분석에 사용하는 외부 라이브러리입니다.
+현재 의존성 kiwipiepy 0.24.1과 kiwipiepy_model 0.24.0은 Apache-2.0으로 배포됩니다.
+두 의존성의 코드·바이너리·모델을 이 패키지에 복사해 포함하지 않으며 별도로 설치합니다.
+의존성을 함께 재배포할 때는 해당 배포물의 LICENSE와 NOTICE도 유지해야 합니다.
+- kiwipiepy: https://pypi.org/project/kiwipiepy/0.24.1/
+- kiwipiepy_model: https://pypi.org/project/kiwipiepy-model/0.24.0/
+소스코드의 MIT 조건이 외부 데이터와 모델의 조건을 대체하지 않습니다.
 
-AI 허브 이용정책:
-https://www.aihub.or.kr/intrcn/guid/usagepolicy.do?currMenu=151&topMenu=105
-
-AI 허브 FAQ:
-https://www.aihub.or.kr/aihubnews/faq/list.do
-
-배포 파일에는 학습된 계수, 자질 이름과 모델 메타데이터만 들어 있습니다. AI 허브의
-원문·발화형·라벨·오디오·화자 메타데이터·분할 파일·학습 자질 행은 저장소와
-배포물에 포함하지 않습니다. 자세한 모델 구조와 생성 절차는
-`docs/NUMBER_READING_MODEL.md`에 기록되어 있습니다.
-
-AI 허브는 해당 데이터를 이용해 개발한 모델과 서비스의 배포·활용을 허용하며 사용한
-데이터셋과 AI 허브를 출처로 표시하도록 안내합니다. 원 데이터의 권리와 이용 조건은
-AI 허브 이용정책을 따르며, 이 저장소의 MIT 라이선스는 원 데이터를 재라이선스하지
-않습니다.
-
-`number_reading_model.json`을 포함한 g2p-ko 배포물을 재배포할 때는 LICENSE와 이
-NOTICE를 함께 보존하십시오.
-
-런타임 의존성인 `kiwipiepy`와 관련 언어 모델은 g2p-ko wheel에 포함되지 않고 별도
-배포물로 설치됩니다. 각 배포물에는 해당 배포물의 라이선스와 고지가 적용됩니다.
-
-English
-
-This distribution includes the number-reading classifier
-`g2p_ko/data/number_reading_model.json`. It was trained from version 1.1
-(2023-06-28) of AI-Hub dataset 159, "숫자가 포함된 패턴 발화 데이터". The
-dataset was built with funding from the Ministry of Science and ICT and support
-from the National Information Society Agency (NIA), Republic of Korea.
-
-Dataset information:
-https://www.aihub.or.kr/aihubdata/data/view.do?aihubDataSe=data&dataSetSn=484
-
-AI-Hub usage policy:
-https://www.aihub.or.kr/intrcn/guid/usagepolicy.do?currMenu=151&topMenu=105
-
-AI-Hub FAQ:
-https://www.aihub.or.kr/aihubnews/faq/list.do
-
-The distributed file contains only trained coefficients, feature names, and
-model metadata. AI-Hub source texts, spoken forms, labels, audio, speaker
-metadata, split files, and training feature rows are not included in the
-repository or distribution. Model structure and generation details are recorded
-in `docs/NUMBER_READING_MODEL.md`.
-
-AI-Hub permits distribution and use of models and services developed from its
-data and requires attribution of the dataset and AI-Hub. Rights and terms for
-the source dataset remain governed by the AI-Hub usage policy; this repository's
-MIT License does not relicense the source dataset.
-
-When redistributing a g2p-ko distribution containing
-`number_reading_model.json`, preserve both LICENSE and this NOTICE.
-
-The runtime dependency `kiwipiepy` and related language models are installed as
-separate distributions and are not bundled in the g2p-ko wheel. Each separate
-distribution remains subject to its own license and notices.
+고빈도 영어 읽기 규칙의 분석에 사용한 데이터 출처:
+- 고객 응대 음성 (AI Hub 87): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=87
+- 상담 음성 (AI Hub 100): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=100
+- 한국어 강의 음성 (AI Hub 115): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=115
+- 한국어 음성 (AI Hub 123): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=123
+- 회의 음성 (AI Hub 132): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=132
+- 방송 콘텐츠 대화체 음성인식 데이터 (AI Hub 463): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=463
+- 주요 영역별 회의 음성인식 데이터 (AI Hub 464): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=464
+- 한영 혼합 인식 데이터 (AI Hub 71260): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71260
+- 방송콘텐츠 대화체 음성인식 데이터 (AI Hub 71314): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71314
+- 감성 및 발화스타일 동시 고려 음성합성 데이터 (AI Hub 71349): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71349
+- 전문분야 심층인터뷰 데이터 (AI Hub 71481): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71481
+- 뉴스 대본 및 앵커 음성 데이터 (AI Hub 71557): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71557
+- 한국어 대학 강의 데이터 (AI Hub 71627): https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71627

@@ -1,0 +1,77 @@
+{
+  "source": "AI Hub",
+  "role": "train_reviewed_high_frequency_english_reading_rules",
+  "used_datasets": [
+    {
+      "id": 87,
+      "name": "고객 응대 음성",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=87"
+    },
+    {
+      "id": 100,
+      "name": "상담 음성",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=100"
+    },
+    {
+      "id": 115,
+      "name": "한국어 강의 음성",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=115"
+    },
+    {
+      "id": 123,
+      "name": "한국어 음성",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=123"
+    },
+    {
+      "id": 132,
+      "name": "회의 음성",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=132"
+    },
+    {
+      "id": 463,
+      "name": "방송 콘텐츠 대화체 음성인식 데이터",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=463"
+    },
+    {
+      "id": 464,
+      "name": "주요 영역별 회의 음성인식 데이터",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=464"
+    },
+    {
+      "id": 71260,
+      "name": "한영 혼합 인식 데이터",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71260"
+    },
+    {
+      "id": 71314,
+      "name": "방송콘텐츠 대화체 음성인식 데이터",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71314"
+    },
+    {
+      "id": 71349,
+      "name": "감성 및 발화스타일 동시 고려 음성합성 데이터",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71349"
+    },
+    {
+      "id": 71481,
+      "name": "전문분야 심층인터뷰 데이터",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71481"
+    },
+    {
+      "id": 71557,
+      "name": "뉴스 대본 및 앵커 음성 데이터",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71557"
+    },
+    {
+      "id": 71627,
+      "name": "한국어 대학 강의 데이터",
+      "url": "https://aihub.or.kr/aihubdata/data/view.do?dataSetSn=71627"
+    }
+  ],
+  "raw_sentences_included": false,
+  "scope": "기존 선별 읽기표의 자료 출처이며 모든 항목의 개별 발음 규범을 입증하지 않는다.",
+  "additional_primary_source_reviews": [
+    "ENGLISH_NAME_CANDIDATES_20261023.json",
+    "ENGLISH_READING_ADDITIONS_20261023.json"
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "source_ko": "원자 계약에서 독립 작성한 합성 입력과 위치별 속성 기대이며 외부 평가 사례를 열지 않았다.",
+  "cases": [
+    {
+      "id": "text_composition_spaced",
+      "text": "문자 메시지",
+      "rows": [
+        [
+          "문자",
+          "NNG",
+          0,
+          2
+        ],
+        [
+          "메시지",
+          "NNG",
+          3,
+          6
+        ]
+      ],
+      "rule": "ko.lexical.tensing",
+      "affected": 1
+    },
+    {
+      "id": "text_composition_joined",
+      "text": "문자메시지",
+      "rows": [
+        [
+          "문자메시지",
+          "NNG",
+          0,
+          5
+        ]
+      ],
+      "rule": "ko.lexical.tensing",
+      "affected": 1
+    },
+    {
+      "id": "text_split_root",
+      "text": "문자 메시지",
+      "rows": [
+        [
+          "문",
+          "NNG",
+          0,
+          1
+        ],
+        [
+          "자",
+          "NNG",
+          1,
+          2
+        ],
+        [
+          "메시지",
+          "NNG",
+          3,
+          6
+        ]
+      ],
+      "rule": "ko.lexical.tensing",
+      "affected": 1
+    },
+    {
+      "id": "place_whole_proper",
+      "text": "일산동구",
+      "rows": [
+        [
+          "일산동구",
+          "NNP",
+          0,
+          4
+        ]
+      ],
+      "rule": "ko.sino.tensing.26",
+      "affected": 1
+    },
+    {
+      "id": "place_whole_nominal",
+      "text": "일산동구",
+      "rows": [
+        [
+          "일산동구",
+          "NNG",
+          0,
+          4
+        ]
+      ],
+      "rule": "ko.sino.tensing.26",
+      "affected": 1
+    },
+    {
+      "id": "place_split_proper",
+      "text": "일산동구",
+      "rows": [
+        [
+          "일산",
+          "NNP",
+          0,
+          2
+        ],
+        [
+          "동구",
+          "NNP",
+          2,
+          4
+        ]
+      ],
+      "rule": "ko.sino.tensing.26",
+      "affected": 1
+    },
+    {
+      "id": "place_split_nominal",
+      "text": "일산동구",
+      "rows": [
+        [
+          "일산",
+          "NNG",
+          0,
+          2
+        ],
+        [
+          "동구",
+          "NNG",
+          2,
+          4
+        ]
+      ],
+      "rule": "ko.sino.tensing.26",
+      "affected": 1
+    },
+    {
+      "id": "place_split_suffix",
+      "text": "일산동구",
+      "rows": [
+        [
+          "일산",
+          "NNP",
+          0,
+          2
+        ],
+        [
+          "동",
+          "NNG",
+          2,
+          3
+        ],
+        [
+          "구",
+          "XSN",
+          3,
+          4
+        ]
+      ],
+      "rule": "ko.sino.tensing.26",
+      "affected": 1
+    },
+    {
+      "id": "place_particle",
+      "text": "일산동구에서",
+      "rows": [
+        [
+          "일산동구",
+          "NNP",
+          0,
+          4
+        ],
+        [
+          "에서",
+          "JKB",
+          4,
+          6
+        ]
+      ],
+      "rule": "ko.sino.tensing.26",
+      "affected": 1
+    },
+    {
+      "id": "unregistered_place",
+      "text": "일산서구",
+      "rows": [
+        [
+          "일산서구",
+          "NNP",
+          0,
+          4
+        ]
+      ],
+      "rule": null
+    },
+    {
+      "id": "bare_place_ambiguous",
+      "text": "일산",
+      "rows": [
+        [
+          "일산",
+          "NNP",
+          0,
+          2
+        ]
+      ],
+      "rule": null
+    },
+    {
+      "id": "separate_place_words",
+      "text": "일산 동구",
+      "rows": [
+        [
+          "일산",
+          "NNP",
+          0,
+          2
+        ],
+        [
+          "동구",
+          "NNP",
+          3,
+          5
+        ]
+      ],
+      "rule": null
+    },
+    {
+      "id": "place_in_name",
+      "text": "새일산동구",
+      "rows": [
+        [
+          "새일산동구",
+          "NNP",
+          0,
+          5
+        ]
+      ],
+      "rule": null
+    },
+    {
+      "id": "place_nominal_neighbor",
+      "text": "일산동구판",
+      "rows": [
+        [
+          "일산동구",
+          "NNP",
+          0,
+          4
+        ],
+        [
+          "판",
+          "NNG",
+          4,
+          5
+        ]
+      ],
+      "rule": null
+    },
+    {
+      "id": "text_proper_homograph",
+      "text": "문자 메시지",
+      "rows": [
+        [
+          "문자",
+          "NNP",
+          0,
+          2
+        ],
+        [
+          "메시지",
+          "NNG",
+          3,
+          6
+        ]
+      ],
+      "rule": null
+    },
+    {
+      "id": "text_unknown_long_whole",
+      "text": "표문자메시지판",
+      "rows": [
+        [
+          "표문자메시지판",
+          "NNG",
+          0,
+          7
+        ]
+      ],
+      "rule": null
+    },
+    {
+      "id": "text_unknown_compound",
+      "text": "문자판",
+      "rows": [
+        [
+          "문자",
+          "NNG",
+          0,
+          2
+        ],
+        [
+          "판",
+          "NNG",
+          2,
+          3
+        ]
+      ],
+      "rule": null
+    },
+    {
+      "id": "historical_sense_unresolved",
+      "text": "문자는 한문이다",
+      "rows": [
+        [
+          "문자",
+          "NNG",
+          0,
+          2
+        ],
+        [
+          "는",
+          "JX",
+          2,
+          3
+        ],
+        [
+          "한문",
+          "NNG",
+          4,
+          6
+        ],
+        [
+          "이",
+          "VCP",
+          6,
+          7
+        ],
+        [
+          "다",
+          "EF",
+          7,
+          8
+        ]
+      ],
+      "rule": null
+    }
+  ]
+}

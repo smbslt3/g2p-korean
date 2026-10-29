@@ -1,0 +1,14 @@
+{
+  "status": "DECLARED_BEFORE_CANDIDATE_OUTPUTS",
+  "purpose_ko": "기존 자체 음운 규칙의 명시 조건 실행을 검증하는 소규모 독립 합성 사례이며 새 규범 정답이나 말뭉치 정확도 평가가 아니다.",
+  "source_prosody_observed": false,
+  "excluded_families_ko": ["평가 조건 파일에 노출된 실제 창", "호격", "필러", "지시대명사", "인용 질문", "계사 서술", "활용형 표적"],
+  "cases": [
+    {"id":"noun_i", "source":"곰 인형", "offset":2, "ordinary_liaison":"고 민형", "one_madi":"곰 닌형", "pause":"곰 인형", "family_ko":"명사 경계의 ㅁ 받침과 ㅣ: 일반 연음/ㄴ 첨가 분기"},
+    {"id":"noun_y_liquid", "source":"달 여행", "offset":2, "ordinary_liaison":"다 려행", "one_madi":"달 려행", "pause":"달 여행", "family_ko":"명사 경계의 ㄹ 받침과 y계 모음: ㄴ 첨가 뒤 유음 동화"},
+    {"id":"noun_non_i", "source":"옷 안", "offset":2, "ordinary_liaison":"오 단", "one_madi":"오 단", "pause":"옫 안", "family_ko":"기존 독립 휴지 테스트의 제15항: 비ㅣ 모음에는 ㄴ 강제 금지"},
+    {"id":"consonant_nasal", "source":"국 물", "offset":2, "ordinary_liaison":"궁 물", "one_madi":"궁 물", "pause":"국 물", "family_ko":"기존 독립 휴지 테스트의 비음화: 모음 ㄴ 첨가와 분리"}
+  ],
+  "structural_checks_ko": ["NFD 원문 원자 경계와 원문 정렬", "영문 확장 뒤 경계 이동과 내부 거부", "같은 공백열의 상충 관계 거부", "기존 휴지와 비휴지 조건 충돌 거부", "HARD/보호 우선", "형태소 분석 실패의 unknown", "무조건 호출 결과 호환", "전체 분석 문맥 보존", "시작/끝 휴지 허용"],
+  "linguistic_scope_ko": "새 어휘 예외나 담화 운율 추론 없이 현재 자체 런타임의 받침 대표음 연음과 문법 허가를 받은 제29항 경로만 선택한다. 직접 근거가 없는 필러·호격·인용 경계의 새 발음 규칙은 구현하지 않는다."
+}

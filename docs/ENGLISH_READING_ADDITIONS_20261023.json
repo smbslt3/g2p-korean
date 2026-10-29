@@ -1,0 +1,34 @@
+{
+  "review_date": "2026-10-23",
+  "token": "MIDI",
+  "reading_ko": "미디",
+  "decision": "added",
+  "scope": "대소문자 및 NFKC 동등 독립 토큰. 한글 인접 허용. URL·코드·경로·식별자 안에서는 철자 읽기 유지.",
+  "ambiguity": "음악 약어와 의류 길이 표현의 의미는 다르지만 한국어 관용 읽기는 미디로 같음.",
+  "sources": [
+    {
+      "title": "Kurzweil MP20 공식 한국어 사용자 매뉴얼",
+      "url": "https://kurzweil.com/wp-content/uploads/2019/10/MP20_User_Manual_Korean.pdf",
+      "evidence": "Chapter 11 MIDI(미디), 인쇄 40쪽. 표준 명칭과 한국어 읽기를 직접 병기한다.",
+      "type": "악기 제조사 공식 한국어 자료",
+      "verification": "검색 인덱스 본문 확인. 웹 도구의 PDF 직접 열기는 파싱 오류로 실패했으므로 원문 파일 수신 검증과 구분한다."
+    },
+    {
+      "title": "Yamaha LS9 공식 한국어 설명서",
+      "url": "https://usa.yamaha.com/files/download/other_assets/6/324376/ls9_ko_om_ymk.pdf",
+      "evidence": "MIDI (미디) 메시지 형식과 포트·채널을 병기한다.",
+      "type": "악기 제조사 공식 한국어 자료",
+      "verification": "검색 인덱스 본문 확인. PDF 직접 열기는 18,419,001바이트 크기 제한으로 실패했다."
+    },
+    {
+      "title": "ZARA 대한민국 여성 미디 스커트",
+      "url": "https://www.zara.com/kr/ko/woman-skirts-midi-l1305.html",
+      "evidence": "한국어 미디 스커트와 URL의 midi가 대응한다.",
+      "type": "브랜드 소유자 공식 한국어 자료",
+      "verification": "검색 본문 확인",
+      "scope": "의류 길이 midi는 음악 약어와 의미가 다르지만 한국어 읽기 미디는 같다."
+    }
+  ],
+  "parent_verified_source": "https://kr.yamaha.com/ko/support/faq/digital-pianos/",
+  "validation": "독립 토큰 32개와 구조 보호 대조군 28개를 영구 회귀 테스트로 추가"
+}

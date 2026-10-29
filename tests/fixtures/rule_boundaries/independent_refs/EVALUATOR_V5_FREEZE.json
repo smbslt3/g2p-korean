@@ -1,0 +1,20 @@
+{
+  "frozen_at_utc": "2026-10-27T19:03:28.678166+00:00",
+  "project_runtime_executed": false,
+  "candidate_results_inspected": false,
+  "default_reference": "original_frozen_gold_unchanged",
+  "one_row_development_disposition_auto_applied": false,
+  "prior_adapter_and_gold_hashes_valid": true,
+  "sha256": {
+    "evaluator_runner_v5.py": "d80716930f22fa64c332bea30e47aa37e5d7a14198e1b492d4ab2e9d90f2daf1",
+    "evaluator_binding_v3.py": "f887bbab1c0d0aa4e43329dab096a222f45aa28df44a87b2b136218f293f5289",
+    "input_binding_v2.py": "dd464c8030c71b79a6ae7387fad0dda978f03da3537571ae66835b2e17e08d2b",
+    "Input_Binding_Disposition_v3_KO.md": "197e18c62fc36429eda54ecc0830881bc2b37f7f588b2c2e638f1b5fda69acbb",
+    "Evaluator_Binding_v5_Receipt_KO.md": "4fa2ae708231f88ffc3cafcc31107148a39c43bdc9f5e66042c16bfe3f0efaa0",
+    "evaluator_v5_synthetic_receipt.json": "9c8a6bfc9501d747325e851a7783347bc719acd17121eda5f54b58c2fa771605",
+    "Normative_Disposition_A17_14_v1_KO.md": "5701816675ad1a799789adcbb8c6f9042b9088b16c018fedff36febc7948e136",
+    "normative_disposition_A17_14_v1.json": "93bb71a9b5bb7c38bcd5eb24a12c844f51056342adb3103a95c8463993d527c1",
+    "EVALUATOR_V4_FREEZE.json": "05c8c20d51c309bdc4fb9f19c26e1dacbf9a15a120a5640d64d6c3f0332f5396",
+    "FREEZE.json": "fff8acea6bcd14174a154a320e12ede08a12d68c734e537e3a1d23abd8a8a20f"
+  }
+}

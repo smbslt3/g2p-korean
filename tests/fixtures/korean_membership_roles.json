@@ -1,0 +1,3110 @@
+{
+  "schema_version": 1,
+  "source_sha256": "5075dc1940614357c13115ccbd5271685c39eb47d4216a350b62a1df21d3ede2",
+  "provenance_ko": "부모가 사전 계약의 품사·관계·보류 범위를 검토한 독립 진단이다. 제3자 구현에서 가져오지 않았다. 별도 평가에서 공개한 세 양성과 명시 행위자·바깥 화제의 정상 형태 대조 두 개를 추가했다. 초기 10개 기대는 그대로다. 독립 재현된 피동 명명의 두 정상 분석을 보존 회귀로 추가했다. 앞선 정답은 바꾸지 않았다.",
+  "cases": [
+    {
+      "id": "C14_GUARD08_SAVED_ORIGINAL",
+      "text": "“사법”은 민법과 상법을 묶은 법 분야이다. 반면, 별도 표제 “시가”는 뜻풀이가 없다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 8,
+          "end": 9,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶은",
+          "tag": "VV+ETM",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        },
+        {
+          "form": "반면",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": [
+            [
+              "반면",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": ",",
+          "tag": "SP",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              ",",
+              "SP"
+            ]
+          ]
+        },
+        {
+          "form": "별도",
+          "tag": "NNG",
+          "start": 29,
+          "end": 31,
+          "morphemes": [
+            [
+              "별도",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "표제",
+          "tag": "NNG",
+          "start": 32,
+          "end": 34,
+          "morphemes": [
+            [
+              "표제",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 35,
+          "end": 36,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 36,
+          "end": 38,
+          "morphemes": [
+            [
+              "시가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 38,
+          "end": 39,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 39,
+          "end": 40,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "뜻풀이",
+          "tag": "NNG",
+          "start": 41,
+          "end": 44,
+          "morphemes": [
+            [
+              "뜻풀이",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 44,
+          "end": 45,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "없다",
+          "tag": "VA+EF",
+          "start": 46,
+          "end": 48,
+          "morphemes": [
+            [
+              "없",
+              "VA"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 48,
+          "end": 49,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 1,
+          "end": 3,
+          "sense_id": "sabeop.private_law"
+        },
+        {
+          "start": 36,
+          "end": 38,
+          "sense_id": null
+        }
+      ],
+      "isolation_target": {
+        "start": 1,
+        "end": 3
+      }
+    },
+    {
+      "id": "C14_LOCAL_FUSED_PAST_MEMBERSHIP",
+      "text": "사법은 민법과 상법을 묶은 법 분야이다.",
+      "tokens": [
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶은",
+          "tag": "VV+ETM",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 0,
+          "end": 2,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 0,
+        "end": 2
+      }
+    },
+    {
+      "id": "C14_LOCAL_SPLIT_PAST_MEMBERSHIP",
+      "text": "사법은 민법과 상법을 묶은 법 분야이다.",
+      "tokens": [
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶",
+          "tag": "VV",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "ETM",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 0,
+          "end": 2,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 0,
+        "end": 2
+      }
+    },
+    {
+      "id": "C14_PRESENT_MEMBERSHIP",
+      "text": "사법은 민법과 상법을 묶는 법 분야이다.",
+      "tokens": [
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶는",
+          "tag": "VV+ETM",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 0,
+          "end": 2,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 0,
+        "end": 2
+      }
+    },
+    {
+      "id": "C14_INCLUDED_MEMBERSHIP",
+      "text": "사법은 민법과 상법을 포함하는 법 분야이다.",
+      "tokens": [
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "포함하는",
+          "tag": "NNG+XSV+ETM",
+          "start": 12,
+          "end": 16,
+          "morphemes": [
+            [
+              "포함",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 0,
+          "end": 2,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 0,
+        "end": 2
+      }
+    },
+    {
+      "id": "C14_ENCOMPASS_MEMBERSHIP",
+      "text": "사법은 민법과 상법을 아우르는 법 분야이다.",
+      "tokens": [
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "아우르는",
+          "tag": "VV+ETM",
+          "start": 12,
+          "end": 16,
+          "morphemes": [
+            [
+              "아우르",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 21,
+          "end": 23,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 23,
+          "end": 24,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 0,
+          "end": 2,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 0,
+        "end": 2
+      }
+    },
+    {
+      "id": "C14_EXPLICIT_LABEL_OF_MEMBERSHIP_HEAD",
+      "text": "민법과 상법을 묶은 법 분야를 “사법”이라고 부른다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶은",
+          "tag": "VV+ETM",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "이라고",
+          "tag": "JKQ",
+          "start": 21,
+          "end": 24,
+          "morphemes": [
+            [
+              "이라고",
+              "JKQ"
+            ]
+          ]
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 25,
+          "end": 28,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ㄴ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 28,
+          "end": 29,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 18,
+          "end": 20,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 18,
+        "end": 20
+      }
+    },
+    {
+      "id": "C14_MIXED_BRANCHES_MUST_NOT_FORCE_PRIVATE_LAW",
+      "text": "사법은 민법과 형법을 묶은 법 분야이다.",
+      "tokens": [
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "형법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "형법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶은",
+          "tag": "VV+ETM",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 0,
+          "end": 2,
+          "sense_id": null
+        }
+      ],
+      "isolation_target": {
+        "start": 0,
+        "end": 2
+      }
+    },
+    {
+      "id": "C14_SIBLING_SENTENCE_DOES_NOT_DEFINE_TARGET",
+      "text": "민법과 상법을 묶은 법 분야이다. 별도 표제 “사법”은 뜻풀이가 없다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶은",
+          "tag": "VV+ETM",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 15,
+          "end": 17,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        },
+        {
+          "form": "별도",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "별도",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "표제",
+          "tag": "NNG",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "표제",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 25,
+          "end": 26,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 28,
+          "end": 29,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 29,
+          "end": 30,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "뜻풀이",
+          "tag": "NNG",
+          "start": 31,
+          "end": 34,
+          "morphemes": [
+            [
+              "뜻풀이",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "없다",
+          "tag": "VA+EF",
+          "start": 36,
+          "end": 38,
+          "morphemes": [
+            [
+              "없",
+              "VA"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 38,
+          "end": 39,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 26,
+          "end": 28,
+          "sense_id": null
+        }
+      ],
+      "isolation_target": {
+        "start": 26,
+        "end": 28
+      }
+    },
+    {
+      "id": "C14_BOOK_TITLE_IS_NOT_A_CATEGORY_DEFINITION",
+      "text": "민법과 상법을 묶은 책의 제목은 “사법”이다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶은",
+          "tag": "VV+ETM",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "책",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "책",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "의",
+              "JKG"
+            ]
+          ]
+        },
+        {
+          "form": "제목",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "제목",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 24,
+          "end": 25,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 19,
+          "end": 21,
+          "sense_id": null
+        }
+      ],
+      "isolation_target": {
+        "start": 19,
+        "end": 21
+      }
+    },
+    {
+      "id": "C14_MG03_OVERT_RELATIVE_AGENT_OUTER_CATEGORY",
+      "text": "법학자가 민법과 상법을 묶은 법 분야는 사법이다.",
+      "tokens": [
+        {
+          "form": "법학자",
+          "tag": "NNG",
+          "start": 0,
+          "end": 3,
+          "morphemes": [
+            [
+              "법학자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶은",
+          "tag": "VV+ETM",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 24,
+          "end": 26,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 26,
+          "end": 27,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "start": 22,
+          "end": 24,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 22,
+        "end": 24
+      }
+    },
+    {
+      "id": "C14_MG06_INTEGRATED_LEGAL_SYSTEM",
+      "text": "민법과 상법을 통합한 법 체계는 사법이다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "통합한",
+          "tag": "NNG+XSV+ETM",
+          "start": 8,
+          "end": 11,
+          "morphemes": [
+            [
+              "통합",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "체계",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "체계",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "start": 18,
+          "end": 20,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 18,
+        "end": 20
+      }
+    },
+    {
+      "id": "C14_MG08_EXPLICIT_GROUP_SUBJECT_COPULAR_DEFINITION",
+      "text": "민법과 상법을 묶은 법 분야가 사법이라고 법학자가 설명했다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶은",
+          "tag": "VV+ETM",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이라고",
+          "tag": "VCP+EC",
+          "start": 19,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "라고",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": "법학자",
+          "tag": "NNG",
+          "start": 23,
+          "end": 26,
+          "morphemes": [
+            [
+              "법학자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 26,
+          "end": 27,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "설명했다",
+          "tag": "NNG+XSV+EP+EF",
+          "start": 28,
+          "end": 32,
+          "morphemes": [
+            [
+              "설명",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "았",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 32,
+          "end": 33,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "start": 17,
+          "end": 19,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "hard_boundaries": [],
+      "isolation_target": {
+        "start": 17,
+        "end": 19
+      }
+    },
+    {
+      "id": "C14_PARENT_14_OUTER_TOPIC_OVERT_AGENT",
+      "text": "사법은 법학자가 민법과 상법을 묶은 법 분야이다.",
+      "tokens": [
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법학자",
+          "tag": "NNG",
+          "start": 4,
+          "end": 7,
+          "morphemes": [
+            [
+              "법학자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "묶은",
+          "tag": "VV+ETM",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "묶",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 24,
+          "end": 26,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 26,
+          "end": 27,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 0,
+          "end": 2,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 0,
+        "end": 2
+      }
+    },
+    {
+      "id": "C14_PARENT_15_OUTER_TOPIC_OVERT_AGENT",
+      "text": "사법은 법학자가 민법과 상법을 통합한 법 분야이다.",
+      "tokens": [
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "법학자",
+          "tag": "NNG",
+          "start": 4,
+          "end": 7,
+          "morphemes": [
+            [
+              "법학자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "가",
+              "JKS"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "민법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "과",
+              "JC"
+            ]
+          ]
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "상법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "통합한",
+          "tag": "NNG+XSV+ETM",
+          "start": 17,
+          "end": 20,
+          "morphemes": [
+            [
+              "통합",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ㄴ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 23,
+          "end": 25,
+          "morphemes": [
+            [
+              "분야",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 25,
+          "end": 27,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 27,
+          "end": 28,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 0,
+          "end": 2,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 0,
+        "end": 2
+      }
+    },
+    {
+      "id": "C14_PASSIVE_NAMING_copula_ec",
+      "text": "민법과 상법을 묶은 법 분야는 사법이라고 불린다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "묶",
+          "tag": "VV",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "ETM",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "EC",
+          "start": 20,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "불린다",
+          "tag": "VV+EF",
+          "start": 23,
+          "end": 26,
+          "morphemes": [
+            [
+              "불리",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 26,
+          "end": 27,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 17,
+          "end": 19,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 17,
+        "end": 19
+      }
+    },
+    {
+      "id": "C14_PASSIVE_NAMING_jkq",
+      "text": "민법과 상법을 묶은 법 분야는 사법이라고 불린다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "상법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "묶",
+          "tag": "VV",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "ETM",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "법",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "이라고",
+          "tag": "JKQ",
+          "start": 19,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "불린다",
+          "tag": "VV+EF",
+          "start": 23,
+          "end": 26,
+          "morphemes": [
+            [
+              "불리",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 26,
+          "end": 27,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "start": 17,
+          "end": 19,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "isolation_target": {
+        "start": 17,
+        "end": 19
+      }
+    }
+  ],
+  "version": 3
+}

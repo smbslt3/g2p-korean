@@ -144,7 +144,6 @@ def test_speed_units_move_the_rate_word_before_the_quantity(
         "981P 적립",
         "22P 그릇세트",
         "241.1p 하락",
-        "4천167㎢",
         "1Km",
         "3kg/s",
         "3kg²",

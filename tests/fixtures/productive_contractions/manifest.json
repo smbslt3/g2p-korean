@@ -1,0 +1,51 @@
+{
+  "artifact": "R43-independent-semantic-1",
+  "status": "frozen",
+  "frozen_at_utc": "2026-10-27T18:29:54.3492645+00:00",
+  "runner_binding": "unbound",
+  "implementation_execution": "not_performed",
+  "phone_gold_cases": 0,
+  "counts": {
+    "total_semantic_cases": 48,
+    "normative_cited": 8,
+    "productive_generalizations": 12,
+    "guards_and_representation": 28,
+    "abstract_diagnostic_conditions": 3
+  },
+  "contract": {
+    "relative_path": "../contract/Productive_Contractions_39_40_KO.md",
+    "sha256": "7f82ddb9a3f0c6ec1e09652b1e06eb557b4271ffabf79db2852389c3fe440a9a"
+  },
+  "independent_source_policy": "계약 및 그 계약에 연결된 공식 일차 자료만 열람. 프로젝트 런타임·평가·메모리·외부 구현 미열람.",
+  "disclosure_policy": "구체 사례는 최종 동결 전 구현자 또는 상위 에이전트에게 미공개.",
+  "validation": {
+    "json_parsed": true,
+    "ids_unique": true,
+    "declared_counts_checked": true,
+    "supplied_intervals_in_bounds": true,
+    "utf8_lf_checked": true,
+    "project_or_g2p_execution": false
+  },
+  "files": [
+    {
+      "file": "Expected_Facts_KO.json",
+      "bytes": 79793,
+      "sha256": "a95fa30bb98109fb7ef4b8e898688d98f51b211f275c2981afaeb0bff665deea"
+    },
+    {
+      "file": "Primary_Sources_KO.json",
+      "bytes": 2031,
+      "sha256": "44ede737b423c1319d88959f75329b92c392e966e78a6e534e4e702188f5c3af"
+    },
+    {
+      "file": "Primary_Source_Rationale_KO.md",
+      "bytes": 4576,
+      "sha256": "ec85cf376ad86444a2daa074c762ca1728750a6455e35b5dded7cf3d5fa94cc9"
+    },
+    {
+      "file": "README_KO.md",
+      "bytes": 2858,
+      "sha256": "272fc35dfa9065fefe75a871abd221813ace11ea7c0007134f6eb434583e2467"
+    }
+  ]
+}

@@ -47,6 +47,21 @@ def _part(form: str, tag: str, start: int, length: int) -> SimpleNamespace:
     return SimpleNamespace(form=form, tag=tag, start=start, len=length)
 
 
+def test_components_keep_saisiot_metadata_in_one_analysis(monkeypatch: pytest.MonkeyPatch) -> None:
+    kiwi = FakeSaisiotKiwi([
+        _part("뒤", "NNG", 0, 1),
+        _part("ㅅ", "Z_SIOT", 0, 1),
+        _part("얘기", "NNG", 1, 2),
+    ])
+    monkeypatch.setattr(analyzer_module, "_runtime_kiwi", kiwi)
+
+    assert KiwiAnalyzer().analyze_components("뒷얘기") == (
+        AnalysisToken("뒷", "NNG+Z_SIOT", 0, 1, (("뒤", "NNG"), ("ㅅ", "Z_SIOT"))),
+        AnalysisToken("얘기", "NNG", 1, 3, (("얘기", "NNG"),)),
+    )
+    assert kiwi.calls == [("뒷얘기", True, True)]
+
+
 def test_tokenize_decompositions_are_merged_by_source_coordinates(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
@@ -61,8 +76,8 @@ def test_tokenize_decompositions_are_merged_by_source_coordinates(
 
     assert kiwi.calls == ["했다"]
     assert tokens == (
-        AnalysisToken("했", "VV+EP", 0, 1),
-        AnalysisToken("다", "EF", 1, 2),
+        AnalysisToken("했", "VV+EP", 0, 1, (("하", "VV"), ("었", "EP"))),
+        AnalysisToken("다", "EF", 1, 2, (("다", "EF"),)),
     )
 
 
@@ -77,8 +92,8 @@ def test_nested_source_spans_are_merged_to_the_outer_surface(
     monkeypatch.setattr(analyzer_module, "_runtime_kiwi", kiwi)
 
     assert KiwiAnalyzer().analyze("입니다.") == (
-        AnalysisToken("입니다", "VCP+EF", 0, 3),
-        AnalysisToken(".", "SF", 3, 4),
+        AnalysisToken("입니다", "VCP+EF", 0, 3, (("이", "VCP"), ("ᆸ니다", "EF"))),
+        AnalysisToken(".", "SF", 3, 4, ((".", "SF"),)),
     )
 
 
@@ -94,9 +109,9 @@ def test_nested_source_spans_are_merged_to_the_outer_surface(
                 _part("라고", "EC", 2, 2),
             ],
             (
-                AnalysisToken("3", "SN", 0, 1),
-                AnalysisToken("개", "NNB", 1, 2),
-                AnalysisToken("라고", "VCP+EC", 2, 4),
+                AnalysisToken("3", "SN", 0, 1, (("3", "SN"),)),
+                AnalysisToken("개", "NNB", 1, 2, (("개", "NNB"),)),
+                AnalysisToken("라고", "VCP+EC", 2, 4, (("이", "VCP"), ("라고", "EC"))),
             ),
         ),
         (
@@ -106,7 +121,7 @@ def test_nested_source_spans_are_merged_to_the_outer_surface(
                 _part("다", "EF", 0, 1),
                 _part("ᆨ", "Z_CODA", 0, 1),
             ],
-            (AnalysisToken("닥", "VV+EF+Z_CODA", 0, 1),),
+            (AnalysisToken("닥", "VV+EF+Z_CODA", 0, 1, (("하", "VV"), ("다", "EF"), ("ᆨ", "Z_CODA"))),),
         ),
     ],
 )

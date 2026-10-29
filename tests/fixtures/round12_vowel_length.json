@@ -1,0 +1,713 @@
+{
+  "conditional_positive_fixtures": [
+    {
+      "case_id": "direct_01",
+      "input": "알다",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_AL"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_02",
+      "input": "아는",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_AL"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_03",
+      "input": "알아",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "short",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_AL"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_04",
+      "input": "아니",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_AL"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_05",
+      "input": "압니다",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        3
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_AL"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_06",
+      "input": "좋다",
+      "required_lemma": "좋다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_JOH"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_07",
+      "input": "좋은",
+      "required_lemma": "좋다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_JOH"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_08",
+      "input": "좋아",
+      "required_lemma": "좋다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_JOH"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_09",
+      "input": "좋으니",
+      "required_lemma": "좋다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        3
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_JOH"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_10",
+      "input": "좋습니다",
+      "required_lemma": "좋다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        4
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_JOH"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_11",
+      "input": "없다",
+      "required_lemma": "없다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_EOP"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_12",
+      "input": "없는",
+      "required_lemma": "없다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_EOP"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_13",
+      "input": "없어",
+      "required_lemma": "없다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_EOP"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_14",
+      "input": "없으니",
+      "required_lemma": "없다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        3
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_EOP"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_15",
+      "input": "없습니다",
+      "required_lemma": "없다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        4
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_EOP"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_16",
+      "input": "없고",
+      "required_lemma": "없다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_EOP"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_17",
+      "input": "없지",
+      "required_lemma": "없다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "KRD_EOP"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "direct_18",
+      "input": "알면",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "direct",
+      "source_ids": [
+        "NIKL_6_7"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "composed_01",
+      "input": "알고",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "rule_composed",
+      "source_ids": [
+        "KRD_AL",
+        "NIKL_6_7"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "composed_02",
+      "input": "알며",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "rule_composed",
+      "source_ids": [
+        "KRD_AL",
+        "NIKL_6_7"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "composed_03",
+      "input": "알아도",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        3
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "short",
+      "expected_status": "supported",
+      "evidence_kind": "rule_composed",
+      "source_ids": [
+        "KRD_AL",
+        "NIKL_6_7"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "composed_04",
+      "input": "알아서",
+      "required_lemma": "알다",
+      "required_pos": "verb",
+      "owner_source_span": [
+        0,
+        3
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "short",
+      "expected_status": "supported",
+      "evidence_kind": "rule_composed",
+      "source_ids": [
+        "KRD_AL",
+        "NIKL_6_7"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "composed_05",
+      "input": "좋고",
+      "required_lemma": "좋다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "rule_composed",
+      "source_ids": [
+        "KRD_JOH",
+        "NIKL_6_7"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "composed_06",
+      "input": "좋지",
+      "required_lemma": "좋다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        2
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "rule_composed",
+      "source_ids": [
+        "KRD_JOH",
+        "NIKL_6_7"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "composed_07",
+      "input": "좋아도",
+      "required_lemma": "좋다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        3
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "rule_composed",
+      "source_ids": [
+        "KRD_JOH",
+        "NIKL_6_7"
+      ],
+      "whole_owner_required": true
+    },
+    {
+      "case_id": "composed_08",
+      "input": "없으면",
+      "required_lemma": "없다",
+      "required_pos": "adjective",
+      "owner_source_span": [
+        0,
+        3
+      ],
+      "nucleus_source_span": [
+        0,
+        1
+      ],
+      "output_nucleus_syllable_span": [
+        0,
+        1
+      ],
+      "expected_value": "long",
+      "expected_status": "supported",
+      "evidence_kind": "rule_composed",
+      "source_ids": [
+        "KRD_EOP",
+        "NIKL_6_7"
+      ],
+      "whole_owner_required": true
+    }
+  ],
+  "additional_predeclared_generalization_probes": [
+    {
+      "input": "알더라",
+      "required_lemma": "알다",
+      "expected_value": "long"
+    },
+    {
+      "input": "알지만",
+      "required_lemma": "알다",
+      "expected_value": "long"
+    },
+    {
+      "input": "알았지만",
+      "required_lemma": "알다",
+      "expected_value": "short"
+    },
+    {
+      "input": "좋았지만",
+      "required_lemma": "좋다",
+      "expected_value": "long"
+    },
+    {
+      "input": "없었더라",
+      "required_lemma": "없다",
+      "expected_value": "long"
+    },
+    {
+      "input": "알아",
+      "required_lemma": "알다",
+      "nucleus_source_span": [
+        0,
+        3
+      ],
+      "owner_source_span": [
+        0,
+        4
+      ],
+      "expected_value": "short"
+    },
+    {
+      "input": "알다 알아",
+      "required_lemmas": [
+        "알다",
+        "알다"
+      ],
+      "expected_values": [
+        "long",
+        "short"
+      ]
+    }
+  ]
+}

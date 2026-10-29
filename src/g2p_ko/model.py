@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass, fields, is_dataclass
+from dataclasses import dataclass, field, fields, is_dataclass
 from enum import Enum
 from typing import Any, Mapping
+
+from .analysis_features import freeze_morphemes
 
 
 class RewriteStage(str, Enum):
@@ -76,10 +78,21 @@ class AnalysisToken:
     tag: str
     normalized_start: int
     normalized_end: int
+    morphemes: tuple[tuple[str, str], ...] = ()
+    morpheme_spans: tuple[tuple[int, int], ...] = field(default=(), compare=False, repr=False)
 
     def __post_init__(self) -> None:
         if self.normalized_start < 0 or self.normalized_end <= self.normalized_start:
             raise ValueError("AnalysisToken 정규화 좌표가 올바르지 않습니다.")
+        object.__setattr__(self, "morphemes", freeze_morphemes(self.morphemes))
+        spans = tuple(tuple(span) for span in self.morpheme_spans)
+        if spans and (len(spans) != len(self.morphemes) or any(
+            len(span) != 2 or any(isinstance(value, bool) or not isinstance(value, int) for value in span)
+            or not self.normalized_start <= span[0] <= span[1] <= self.normalized_end
+            for span in spans
+        )):
+            raise ValueError("형태소 원시 범위가 표면 token과 일치하지 않습니다.")
+        object.__setattr__(self, "morpheme_spans", spans)
 
     def to_dict(self) -> dict[str, Any]:
         return _to_json_value(self)

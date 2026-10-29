@@ -1,0 +1,47 @@
+{
+  "schema_version": "R48_single_record_semantic_expectation_view_v1",
+  "case_id": "M18_inner_verbal_negative_unresolved",
+  "original_fixture_sha256": "6f240ceb7e7df603db52d399973c3f849b151974518af7533be00d8e31a1205e",
+  "original_input_sha256": "5b090d767beee0db368d96c86dcb3d4e2fb39f576453fbdc17d92fbba5e9f40a",
+  "semantic_expectation_overlay": {
+    "start": 9,
+    "end": 11,
+    "original_sense_id": null,
+    "corrected_sense_id": "sabeop.judicial_function"
+  },
+  "scoped_local_owner_nonparticipation": {
+    "scope": "same_original_target_and_same_local_P_owner_only",
+    "target_start": 9,
+    "target_end": 11,
+    "source_P_token_index": 1,
+    "source_P_canonical_indices": [
+      0,
+      1
+    ],
+    "owned_auxiliary_token_index": 2,
+    "source_P_start": 1,
+    "confirmed_local_core_end": 8,
+    "quote_owner": [
+      0,
+      15
+    ],
+    "relations": [
+      "licensed_long_negative_complex",
+      "unresolved_long_negative_complex"
+    ],
+    "predicate_ko": "모든 반환 근거 중 해당 표적 구간에 바인딩되고 관계가 위 두 표지 중 하나이며 anchor_start가 이 고정 원래 P의 시작과 같은 행이 없어야 한다. 공개 표지 계약에서 anchor_start는 실제 P 시작이다. 이 입력 바인딩에서 그 P/관형 소유는 다른 명사 핵어를 가지므로 해당 표적의 참여를 근접으로 보충할 수 없다. 다른 P/소유의 별도 독립 표지에는 이 금지를 적용하지 않는다.",
+    "not_a_blanket_record_marker_ban": true,
+    "no_all_anchors_inside_quote_rule_added": true
+  },
+  "authority": {
+    "blind_judgment_sha256": "a909d694cb707bc16240935b71e1295390f917a797af744bd46a30ab978da2ea",
+    "full_DTO_verdict_sha256": "032275be9f0e747ff5bd22accc2654d9936aab78f7fd454c09ea6d3193abd681",
+    "private_amendment_proposal_sha256": "474befcdb8d8f4a66d28d3c89ccf2cd4725153b3b23248dce1cc646e797f954f"
+  },
+  "preservation": {
+    "original_fixture_bytes_immutable": true,
+    "original_input_and_target_coordinates_unchanged": true,
+    "original_boundary_evidence_checks_unchanged": true,
+    "no_runtime_dependency_on_output_artifacts": true
+  }
+}

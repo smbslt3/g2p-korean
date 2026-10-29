@@ -1,0 +1,90 @@
+{
+  "format": "portable_nominal_source_packaging_support_v1",
+  "note_ko": "노출된 개발 입력의 실제 selector 포장 회귀. 원래 LN046 표적/의미/구조/근거 제약은 그대로 두고 실제 저장된 selector 입력만 기계적으로 복사. 독립 holdout이나 새 어휘/골드가 아님. 실행 시 output/ 의존 없음.",
+  "files_sha256": {
+    "references.json": "665a51e4b717d1e9ac1f34aeaac9c4c3883791a182f5e940dd1ff37bab64eaf1",
+    "pure_checker.py": "0796904450e2ba9517cf03e3dc01365985ca09c5d3896e220f35897544243d85",
+    "run_controlled_selector.py": "9bcb7626d25e91a00b80e8d7d3a9a45ff3fd91c3e507ad9e9550dd0bd09b54c4"
+  },
+  "provenance": {
+    "original_capture": "output/g2p_progressive_round48_20261028/actual_evaluation_private/candidate07_v4/LN046.json",
+    "original_capture_sha256": "6587cacef9be21b882ffbd1c5799032856c8fe5a4f620472b40932a31a59ce34",
+    "original_reference": "output/g2p_progressive_round48_20261028/long_negative_refs_private/references.json",
+    "original_reference_sha256": "3588412428d750a7f48ed41399459069f028a2485109afb5d61c1aa2922041b3",
+    "captured_input_selector": "selectors[0].text/tokens_before/hard_boundaries",
+    "forbidden_capture_fields_copied": false,
+    "captured_choices_results_phones_diagnostics_copied": false,
+    "original_target_subtree_canonical_sha256": "6149185b26be3de73b40c57eca64b75ee0cf93313cfcbd7668276371c1c50c1f",
+    "projected_target_subtree_canonical_sha256": "6149185b26be3de73b40c57eca64b75ee0cf93313cfcbd7668276371c1c50c1f",
+    "captured_input_canonical_sha256": "49869da8507268b4161e4a4b7070ee98aef8d760d22ee9448ad7b4630e096921",
+    "checker_origin": "output/g2p_progressive_round48_20261028/evaluation_binding/v7/pure_checker.py",
+    "runner_origin": "output/g2p_progressive_round48_20261028/evaluation_binding/v7/run_controlled_selector.py",
+    "v7_ready_receipt_sha256": "a4430b752512b6ea34503fdcbef59371060be61e1fd0156495b983af380d2fe2",
+    "input_only_authority_sha256": {
+      "actual_evaluation_metadata/input_equivalence_supplement/Input_Equivalence_Criteria_KO.json": "1e3486d427e3a040b1d8faa6950cef00aa677c3c971ef82ec61248794b03c160",
+      "actual_evaluation_metadata/input_equivalence_supplement/criteria_freeze.json": "efe437cdc96c1a1988a6d2162509a61232f2d549509ddbf1db1c469637deccaa",
+      "actual_evaluation_private/input_equivalence_supplement/Nominal_Composition_License_KO.json": "a575b1dfb096fb8e537cbd366d188a5eee622cf6ecc34fac6d2112754ed90548",
+      "actual_evaluation_private/input_equivalence_supplement/Input_Only_Source_Proofs_KO.json": "ae54b5969dfe17569ae5c574e81b87e50b8f1f1d15606533d75e74ce50f7f3d2",
+      "contract/source_review/R47_Nominal_Source_Projection_API_Metadata_KO.md": "9cb3690f3f4b560537d6099f9c5e311036d2ee8e07d9bfa809592472b4ac5c83"
+    }
+  },
+  "record_ids": [
+    "LN046"
+  ],
+  "target_ids_by_record": {
+    "LN046": [
+      "t1"
+    ]
+  },
+  "counts": {
+    "records": 1,
+    "targets": 1,
+    "controlled_calls_expected": 1,
+    "original_semantic_targets": 1,
+    "tokens": 10,
+    "hard_boundaries": 0,
+    "licensed_positive_anchors": 1,
+    "ordinary_required_constraints": 1
+  },
+  "schema_preflight_passed": true,
+  "original_target_constraints_unchanged": true,
+  "raw_tags_morphemes_order_and_coordinates_preserved": true,
+  "source_hash_or_file_count_pinned": false,
+  "runtime_or_model_preparation_calls": 0,
+  "input_only_license_checks": {
+    "selected_record_id": "LN046",
+    "selected_target_id": "t1",
+    "finite_whole_key_license_exact": true,
+    "original_canonical_semantic_window_match": true,
+    "original_canonical_structure_window_match": true,
+    "unique_exact_licensed_source_spans": [
+      {
+        "token_start": 2,
+        "token_end_exclusive": 4,
+        "start": 4,
+        "end": 6
+      }
+    ],
+    "unrelated_proof_bodies_inspected": false,
+    "raw_tags_rewritten": false,
+    "class_or_result_used_as_identity": false
+  },
+  "status": "NOMINAL_SOURCE_PACKAGING_REGRESSION_FROZEN_PREPARATION_ONLY",
+  "prepared_utc": "2026-10-28T13:26:57.899955+00:00",
+  "test_file_sha256": "32564723a098bbab4e477ca497366b0c294c9256cd5ebc81cdb160ef7dac0c82",
+  "document_sha256": "6ec10ac9d32225c2ab069ef2e964eee49182aabfe9de66457917ff96ee5535c6",
+  "preparation_checks": {
+    "pure_schema_valid_record": 1,
+    "pure_invalid_coordinate_guard": 1,
+    "static_ast_compile_files": 3,
+    "one_parametrization_one_record_one_target": true,
+    "portable_support_exact_v7_bytes": true,
+    "existing58_fixture_original_reference_capture_and_test_bytes_unchanged": true,
+    "executable_output_dependency": false,
+    "source_hash_or_60_file_count_pinned": false,
+    "selector_pytest_production_import_Kiwi_G2P_model_calls": 0
+  },
+  "controlled_command_powershell": "& \".\\.venv\\Scripts\\python.exe\" -I -X utf8 -B \".\\tests\\fixtures\\nominal_source_packaging\\run_controlled_selector.py\" --src $approvedNominalSrc --refs \".\\tests\\fixtures\\nominal_source_packaging\\references.json\" --out $freshNominalOut",
+  "permanent_test_command_powershell": "& \".\\.venv\\Scripts\\python.exe\" -X utf8 -B -m pytest -q tests/test_nominal_source_packaging.py",
+  "execution_limits_ko": "실행 전 준비만 완료. 저장된 실제 입력을 공개 selector에 직접 전달하며 미래 native 분석 생성 자체나 일반 정확도는 검증하지 않음. 부모가 별도 실행. 런타임 작성자에게 픽스처/참고/결과 전달 금지."
+}

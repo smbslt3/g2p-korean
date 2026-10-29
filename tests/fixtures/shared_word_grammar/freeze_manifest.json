@@ -1,0 +1,34 @@
+{
+  "schema": "r41_independent_freeze.v1",
+  "frozen_at_utc": "2026-10-27T16:55:59.032291+00:00",
+  "phase": "expectations_and_runner_frozen_before_any_project_runtime",
+  "project_runtime_imported_or_executed": false,
+  "kiwi_executed": false,
+  "candidate_viewed": false,
+  "legacy_tests_fixtures_gold_results_viewed": false,
+  "sha256": {
+    "frozen_cases.json": "9b7accff964c1918ec099eaf2036b68cd2b575ef266ff178f307b70b95d751f6",
+    "run_frozen.py": "5cce5d215081152c2002d2d93d6dcd08d3c9bd99de38eda5ee6a5d7cd53f6fce",
+    "build_reference.py": "a194b11c1ac4092605d51da49bcfb35a1d29b68931a0adbc5d258dcb6443f8af",
+    "Freeze_Protocol_KO.md": "8c96d146bccde7dbdd802f7d4a85a81c20ef207764991b4a9da31f0796194681",
+    "Draft_Expectation_Revision_Log_KO.md": "a416640142c5d753ebbc3679245b12f451051015a8d13efebed06277e4ab6779"
+  },
+  "contracts_sha256": {
+    "output/g2p_progressive_round39_20261028/contract/prefix_nominal_base_scope_ko.md": "1d33eb3ca99be1cedf595cf2b288850ada87306a3df89e2eef09c8b918974c87",
+    "output/g2p_progressive_round41_20261028/contract/Shared_Grammatical_Word_Certificate_KO.md": "2873b90c583e06a852b75ec51cc8afa946188d502720ad603de3a9a1fa02f116",
+    "output/g2p_progressive_round41_20261028/contract/Prefix_Outer_Tail_Witness_V2_KO.md": "498dfab6dc226dd37700507925fa4a8968cb0ea27b67842805f749c2e4d205d4"
+  },
+  "certificate_cases": 84,
+  "certificate_variants": 158,
+  "by_expected_status": {
+    "eligible": 50,
+    "excluded": 17,
+    "unresolved": 17
+  },
+  "public_gap_cases": 20,
+  "constructor_rejections": 5,
+  "public_api_rejections": 4,
+  "barrier_cases": 3,
+  "actual_kiwi_observation_inputs": 5,
+  "pre_execution_revision_log": "Draft_Expectation_Revision_Log_KO.md"
+}

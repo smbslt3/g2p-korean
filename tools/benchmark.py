@@ -648,6 +648,19 @@ def _worker_payload(args: argparse.Namespace) -> dict[str, Any]:
     raise ValueError(f"알 수 없는 내부 작업자입니다: {args.worker}")
 
 
+def _has_measurement_error(value: object) -> bool:
+    """측정 트리의 실패 상태를 찾고 의도적 미측정은 허용한다."""
+
+    if isinstance(value, dict):
+        status = value.get("status")
+        if status is not None and status not in {"ok", "not_measured"}:
+            return True
+        return any(_has_measurement_error(item) for item in value.values())
+    if isinstance(value, (list, tuple)):
+        return any(_has_measurement_error(item) for item in value)
+    return False
+
+
 def main(argv: list[str] | None = None) -> int:
     """명시한 옵션만 사용해 network 없는 benchmark JSON을 출력한다."""
 
@@ -690,12 +703,24 @@ def main(argv: list[str] | None = None) -> int:
         result = run_benchmark(repeats=args.repeats)
     except ValueError as error:
         parser.error(str(error))
+    result["status"] = "error" if _has_measurement_error(result) else "ok"
     payload = json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
     if args.output is None:
         print(payload, end="")
     else:
-        args.output.write_text(payload, encoding="utf-8")
-    return 0
+        try:
+            args.output.write_text(payload, encoding="utf-8")
+        except OSError as error:
+            print(
+                json.dumps(
+                    {"status": "error", "error": "output_failed", "reason": str(error)},
+                    ensure_ascii=False,
+                    sort_keys=True,
+                ),
+                file=sys.stderr,
+            )
+            return 1
+    return 0 if result["status"] == "ok" else 1
 
 
 if __name__ == "__main__":

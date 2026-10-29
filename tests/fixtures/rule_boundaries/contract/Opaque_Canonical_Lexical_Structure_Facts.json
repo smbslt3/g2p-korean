@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-28",
+  "purpose_ko": "정상 통짜 VV/MAG의 제17항 소비에 필요한 최소 원형 구조 사실이다. 완성 발음이나 활용 표면 자료가 아니다.",
+  "coordinate_system_ko": "canonical_owner_form의 유니코드 문자 기준 0 시작 반열린 범위이다. boundary_offset은 뒤 조각의 시작이다. headword의 다는 사전 기본형 표지이며 공급된 분석 원형을 수정하지 않는다.",
+  "common_guards": {
+    "scope": "exact_canonical_lexeme",
+    "requires_owner_identity": true,
+    "requires_original_category_compatibility": true,
+    "requires_full_grammatical_chain": true,
+    "requires_surface_proof": true,
+    "requires_original_occurrence_ownership": true,
+    "token_packaging_invariant": true,
+    "arbitrary_startswith_or_endswith": false,
+    "infer_suffix_from_pos_or_letters": false,
+    "rewrite_supplied_canonical_identity": false,
+    "canonical_i_plus_a_to_yeo_under_article36": false,
+    "note_ko": "같은 구조를 직접 제공하는 분석에는 이 표가 없어도 일반 규칙을 쓴다. 이 사실은 정확 원형의 합법적 활용/구성 증명에 재사용하되 임의 합성어·접두 범위로 확대하지 않는다."
+  },
+  "facts": [
+    {
+      "id": "butida_causative_i",
+      "dictionary_headword": "붙이다",
+      "canonical_owner_form": "붙이",
+      "owner_pos": [
+        "VV"
+      ],
+      "base": {
+        "form": "붙",
+        "span": [
+          0,
+          1
+        ],
+        "dictionary_headword": "붙다"
+      },
+      "affix": {
+        "form": "이",
+        "span": [
+          1,
+          2
+        ],
+        "role": "formal_suffix_i",
+        "function": "causative"
+      },
+      "boundary_offset": 1,
+      "derivational_relation": "causative",
+      "semantic_scope_ko": "붙다에서 파생한 사동 동사 신원. 독립 표제 부치다와 구별한다.",
+      "source_ids": [
+        "orthography6_commentary",
+        "qna318232",
+        "opendict31751"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "guthida_causative_hi",
+      "dictionary_headword": "굳히다",
+      "canonical_owner_form": "굳히",
+      "owner_pos": [
+        "VV"
+      ],
+      "base": {
+        "form": "굳",
+        "span": [
+          0,
+          1
+        ],
+        "dictionary_headword": "굳다"
+      },
+      "affix": {
+        "form": "히",
+        "span": [
+          1,
+          2
+        ],
+        "role": "formal_suffix_hi",
+        "function": "causative"
+      },
+      "boundary_offset": 1,
+      "derivational_relation": "causative",
+      "semantic_scope_ko": "굳다에 사동 히가 결합한 동사 신원.",
+      "source_ids": [
+        "orthography6_commentary",
+        "qna336018"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "dathida_passive_hi",
+      "dictionary_headword": "닫히다",
+      "canonical_owner_form": "닫히",
+      "owner_pos": [
+        "VV"
+      ],
+      "base": {
+        "form": "닫",
+        "span": [
+          0,
+          1
+        ],
+        "dictionary_headword": "닫다"
+      },
+      "affix": {
+        "form": "히",
+        "span": [
+          1,
+          2
+        ],
+        "role": "formal_suffix_hi",
+        "function": "passive"
+      },
+      "boundary_offset": 1,
+      "derivational_relation": "passive",
+      "semantic_scope_ko": "닫다에서 파생한 피동 동사 신원. 닫치다와 구별한다.",
+      "source_ids": [
+        "orthography6_commentary",
+        "nklife1992_close",
+        "qna336018"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "muthida_hi",
+      "dictionary_headword": "묻히다",
+      "canonical_owner_form": "묻히",
+      "owner_pos": [
+        "VV"
+      ],
+      "base": {
+        "form": "묻",
+        "span": [
+          0,
+          1
+        ],
+        "dictionary_headword": "묻다"
+      },
+      "affix": {
+        "form": "히",
+        "span": [
+          1,
+          2
+        ],
+        "role": "formal_suffix_hi"
+      },
+      "boundary_offset": 1,
+      "established_relations": [
+        {
+          "relation": "passive",
+          "base_sense_ko": "무언가를 안에 넣어 덮는 묻다",
+          "source_ids": [
+            "qna316918"
+          ]
+        },
+        {
+          "relation": "causative",
+          "base_sense_ko": "가루나 액체 등이 다른 물체에 들러붙는 묻다",
+          "source_ids": [
+            "qna316918",
+            "qna335457",
+            "orthography6_commentary"
+          ]
+        }
+      ],
+      "identity_resolution_ko": "두 확인된 관계는 같은 원형 히 경계 권한을 공유한다. 형태소 분석이 뜻을 구별하지 않으면 피동/사동 중 하나를 임의 선택하지 않고 확인된 두 관계의 대안으로 남긴다. 질문 뜻 묻다의 사동·피동을 생성하는 생산 규칙으로 쓰지 않는다.",
+      "source_ids": [
+        "orthography6_commentary",
+        "qna336018",
+        "qna316918",
+        "qna335457"
+      ],
+      "status": "verified"
+    },
+    {
+      "id": "gudi_adverbial_i",
+      "dictionary_headword": "굳이",
+      "canonical_owner_form": "굳이",
+      "owner_pos": [
+        "MAG"
+      ],
+      "base": {
+        "form": "굳",
+        "span": [
+          0,
+          1
+        ],
+        "grammatical_class": "root",
+        "dictionary_headword": null,
+        "original_pos": null,
+        "precise_sense": null
+      },
+      "affix": {
+        "form": "이",
+        "span": [
+          1,
+          2
+        ],
+        "role": "formal_suffix_i",
+        "function": "adverbial_derivation"
+      },
+      "boundary_offset": 1,
+      "derivational_relation": "adverbial_derivation",
+      "uncertainty_ko": "굳- 어근과 부사 파생 이 결합은 확인된다. 기저 굳-의 정확한 원형 품사와 의미는 공식 상담에서도 근거 부족을 명시하므로 VA/VV 또는 특정 굳다 의미로 채우지 않는다.",
+      "source_ids": [
+        "orthography6_commentary",
+        "qna323107",
+        "qna319604"
+      ],
+      "status": "verified_boundary_base_identity_partly_unknown"
+    }
+  ],
+  "sources": {
+    "orthography6_commentary": {
+      "url": "https://korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=98&pageIndex=1&qna_seq=324560",
+      "authority_ko": "국립국어원 온라인가나다가 재현한 한글 맞춤법 제6항 해설",
+      "supports_ko": "이의 부사 파생·사동 역할, 히의 피동·사동 역할 및 해당 규범 표제의 구조."
+    },
+    "qna318232": {
+      "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=318232",
+      "authority_ko": "국립국어원 온라인가나다",
+      "supports_ko": "붙이다의 동사 품사와 붙다에 대한 사동 관계."
+    },
+    "opendict31751": {
+      "url": "https://opendict.korean.go.kr/dictionary/view?sense_no=31751&viewType=confirm",
+      "authority_ko": "위 공식 상담에서 연결한 우리말샘 사전 뜻풀이",
+      "supports_ko": "붙이다 동사 표제와 붙다의 사동 관계. 발음·활용란은 사실 자료로 옮기지 않았다."
+    },
+    "qna336018": {
+      "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=336018&searchCondition=&searchKeyword=",
+      "authority_ko": "국립국어원 온라인가나다",
+      "supports_ko": "굳히다의 사동 관계와 제17항 붙임의 세 히 규범 표제."
+    },
+    "nklife1992_close": {
+      "url": "https://www.korean.go.kr/nkview/nklife/1992_3/3_19.html",
+      "authority_ko": "국립국어원 새국어생활 1992년 가을호 상담",
+      "supports_ko": "닫다에 대한 닫히다의 피동 관계."
+    },
+    "qna316918": {
+      "url": "https://m.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=316918",
+      "authority_ko": "국립국어원 온라인가나다",
+      "supports_ko": "묻다의 의미별 파생 관계를 구별한다."
+    },
+    "qna335457": {
+      "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=335457",
+      "authority_ko": "국립국어원 온라인가나다의 표준국어대사전 관계 확인",
+      "supports_ko": "들러붙음 의미의 묻다에 대한 묻히다의 사동 관계."
+    },
+    "qna323107": {
+      "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=323107&searchCondition=&searchKeyword=",
+      "authority_ko": "국립국어원 온라인가나다",
+      "supports_ko": "굳이의 굳- 어근과 부사 파생 이 구조."
+    },
+    "qna319604": {
+      "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=73&pageIndex=1&qna_seq=319604",
+      "authority_ko": "국립국어원 온라인가나다",
+      "supports_ko": "굳이의 기저 굳- 원형 품사 등의 근거가 불충분하다는 한계."
+    }
+  },
+  "excluded_additions_ko": [
+    "정확 서술격 이+E는 문법 일반 규칙으로 처리하므로 명사별 항목을 추가하지 않는다.",
+    "기존 같이·곧이·명사 파생 경계 사실은 중복 열거하지 않는다.",
+    "새 임의 용언·부사, 완성 발음, 활용 표면 목록, 평가 입력이나 정답은 추가하지 않는다."
+  ],
+  "provenance_ko": "후속 사실 수집은 공식 도메인 검색·공식 본문만 사용했다. 분석기·프로젝트 실행·평가·시험·결과·비공개 자료·기억 파일에 접근하지 않았다. 선행 계약 조사 초기에 인접 함수 문맥 및 비공식 검색 스니펫이 우연히 반환되었으며, 비공식 원문을 열거나 근거로 사용하지 않았다는 기존 공개를 유지한다."
+}

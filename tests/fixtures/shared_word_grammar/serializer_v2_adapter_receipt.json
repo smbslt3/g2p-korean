@@ -1,0 +1,33 @@
+{
+  "schema": "r41_serializer_adapter_freeze.v1",
+  "frozen_at_utc": "2026-10-27T17:06:46.176735+00:00",
+  "scope": "capture_only_set_frozenset_serializer",
+  "expectations_selection_metrics_unchanged": true,
+  "original_manifest_sha256": "395a7b88b5f3e033edf631d881aeae7879686c491b0e8d2770329d85f7ee5668",
+  "original_gold_sha256": "9b7accff964c1918ec099eaf2036b68cd2b575ef266ff178f307b70b95d751f6",
+  "original_runner_sha256": "5cce5d215081152c2002d2d93d6dcd08d3c9bd99de38eda5ee6a5d7cd53f6fce",
+  "sha256": {
+    "run_frozen_v2.py": "bc7ed89154f07d7418475f06954a0b769715bfa3e69896ed36d41a13dc81231f",
+    "serializer_v2_preflight.py": "ce0725886d00d22f4955d5fe51eb822daa4e4027fc938dae3695c5ed5cccea00",
+    "serializer_v2_preflight.json": "68a8b41d3de07c4488c4fa8deef848b16eafb28ccfac6ba12604628e58517191",
+    "Serialization_Amendment_V2_KO.md": "f87eb97599f2ec604fa5338dc7de12169680ec4c144d262a6837d6a61169c337"
+  },
+  "preflight": {
+    "schema": "r41_serializer_v2_preflight.v1",
+    "passed": true,
+    "original_frozen_files_unchanged": true,
+    "outside_plain_ast_unchanged": true,
+    "exact_set_frozenset_addition_only": true,
+    "nested_dataclasses_containers_sets_primitive": true,
+    "set_order_deterministic": true,
+    "project_imported_or_executed": false,
+    "g2p_or_kiwi_executed": false,
+    "candidate_or_case_outputs_viewed": false,
+    "original_runner_sha256": "5cce5d215081152c2002d2d93d6dcd08d3c9bd99de38eda5ee6a5d7cd53f6fce",
+    "v2_runner_sha256": "bc7ed89154f07d7418475f06954a0b769715bfa3e69896ed36d41a13dc81231f",
+    "synthetic_capture_sha256": "afd802ff5817ac103ac58c604b9d6687354422973dd979b6b151b6daf0a84d3e"
+  },
+  "candidate_bodies_or_case_outputs_viewed": false,
+  "project_runtime_or_g2p_kiwi_executed": false,
+  "recapture_authority": "parent will recapture only the missing candidate artifact; existing baseline remains preserved"
+}

@@ -1,0 +1,19 @@
+{
+  "version": "r42-one-row-normative-disposition-v1",
+  "classification": "development_reference_correction",
+  "case_id": "A17-14",
+  "source": "붙였다",
+  "original_allowed_phones": ["부쳗따"],
+  "development_corrected_allowed_phones": ["부첟따"],
+  "changed_phoneme": "U+1167 -> U+1165",
+  "retained_past_coda": "U+11AE",
+  "reason_ko": "제17항 구개음화 뒤 제5항 다만 1의 활용형 ㅕ→ㅓ 표준 표면 표기를 적용한다.",
+  "source_basis": ["clean_contract_Article5_post_palatalization", "frozen_S5", "frozen_S17"],
+  "comparison_scope": "raw_hangul_without_vowel_length",
+  "candidate_outputs_consulted": false,
+  "untouched_holdout": false,
+  "original_gold_changed": false,
+  "effective_in_default_runner": false,
+  "original_cases_sha256": "f54177527be196a4b29d81abe22d4906d8f55c2cce7a92ada40bc957765b4e31",
+  "original_freeze_sha256": "fff8acea6bcd14174a154a320e12ede08a12d68c734e537e3a1d23abd8a8a20f"
+}

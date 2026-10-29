@@ -44,13 +44,13 @@ def test_real_tokens_merge_into_source_aligned_analysis_tokens(kiwi: Kiwi) -> No
     tokens = KiwiAnalyzer().analyze(source)
 
     assert tokens == (
-        AnalysisToken("우리", "NP", 0, 2),
-        AnalysisToken("의", "JKG", 2, 3),
-        AnalysisToken("맑", "VA", 4, 5),
-        AnalysisToken("게", "EC", 5, 6),
-        AnalysisToken("할", "VX+ETM", 7, 8),
-        AnalysisToken("것", "NNB", 9, 10),
-        AnalysisToken("을", "JKO", 10, 11),
+        AnalysisToken("우리", "NP", 0, 2, (("우리", "NP"),)),
+        AnalysisToken("의", "JKG", 2, 3, (("의", "JKG"),)),
+        AnalysisToken("맑", "VA", 4, 5, (("맑", "VA"),)),
+        AnalysisToken("게", "EC", 5, 6, (("게", "EC"),)),
+        AnalysisToken("할", "VX+ETM", 7, 8, (("하", "VX"), ("ᆯ", "ETM"))),
+        AnalysisToken("것", "NNB", 9, 10, (("것", "NNB"),)),
+        AnalysisToken("을", "JKO", 10, 11, (("을", "JKO"),)),
     )
 
 
@@ -60,19 +60,19 @@ def test_real_tokens_merge_into_source_aligned_analysis_tokens(kiwi: Kiwi) -> No
         (
             "3개라고",
             (
-                AnalysisToken("3", "SN", 0, 1),
-                AnalysisToken("개", "NNB", 1, 2),
-                AnalysisToken("라고", "VCP+EC", 2, 4),
+                AnalysisToken("3", "SN", 0, 1, (("3", "SN"),)),
+                AnalysisToken("개", "NNB", 1, 2, (("개", "NNB"),)),
+                AnalysisToken("라고", "VCP+EC", 2, 4, (("이", "VCP"), ("라고", "EC"))),
             ),
         ),
         (
             "회사다",
             (
-                AnalysisToken("회사", "NNG", 0, 2),
-                AnalysisToken("다", "VCP+EF", 2, 3),
+                AnalysisToken("회사", "NNG", 0, 2, (("회사", "NNG"),)),
+                AnalysisToken("다", "VCP+EF", 2, 3, (("이", "VCP"), ("다", "EF"))),
             ),
         ),
-        ("닥", (AnalysisToken("닥", "VV+EF+Z_CODA", 0, 1),)),
+        ("닥", (AnalysisToken("닥", "VV+EF+Z_CODA", 0, 1, (("하", "VV"), ("다", "EF"), ("ᆨ", "Z_CODA"))),)),
     ],
 )
 def test_zero_length_morpheme_tags_keep_the_split_style_contract(
@@ -112,10 +112,10 @@ def test_real_kiwi_analyzes_many_candidates_in_one_tokenize_call(
     class CountingKiwi:
         """실제 Kiwi에 위임하면서 tokenize 호출 수만 기록한다."""
 
-        def tokenize(self, text: str):
+        def tokenize(self, text: str, **options):
             nonlocal calls
             calls += 1
-            return kiwi.tokenize(text)
+            return kiwi.tokenize(text, **options)
 
     monkeypatch.setattr(analyzer_module, "_runtime_kiwi", CountingKiwi())
     result = convert_pipeline(source, max_length=len(source))

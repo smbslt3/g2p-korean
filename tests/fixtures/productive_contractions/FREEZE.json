@@ -1,0 +1,9 @@
+{
+  "artifact": "R43-independent-semantic-1",
+  "state": "frozen",
+  "frozen_at_utc": "2026-10-27T18:29:54.3492645+00:00",
+  "manifest": "manifest.json",
+  "manifest_sha256": "53eb135e3e83f0c156c175a4ed1f9e3858d405f9d63acb9be540d48edddb6dce",
+  "runner_binding": "unbound",
+  "statement": "기대 사실과 근거를 이 해시에 고정함. 이후 러너 결속과 실행은 별도 작업임."
+}

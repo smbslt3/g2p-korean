@@ -1,0 +1,310 @@
+{
+  "format": "portable_long_negative_complex_support_v1",
+  "note_ko": "원참고/의미/앵커/사유/구조/분모를 그대로 보존. v7은 공개 tuple 스키마와 kind·role의 두 특수 가족만 요구/금지에 대칭 추가. v6 일반 논항 및 v5 관찰 제외 유지. 실행 시 output/ 의존 없음.",
+  "files_sha256": {
+    "references.json": "3588412428d750a7f48ed41399459069f028a2485109afb5d61c1aa2922041b3",
+    "pure_checker.py": "0796904450e2ba9517cf03e3dc01365985ca09c5d3896e220f35897544243d85",
+    "run_controlled_selector.py": "9bcb7626d25e91a00b80e8d7d3a9a45ff3fd91c3e507ad9e9550dd0bd09b54c4"
+  },
+  "provenance": {
+    "original_files": {
+      "references.json": "output/g2p_progressive_round48_20261028/long_negative_refs_private/references.json",
+      "pure_checker.py": "output/g2p_progressive_round48_20261028/evaluation_binding/v7/pure_checker.py",
+      "run_controlled_selector.py": "output/g2p_progressive_round48_20261028/evaluation_binding/v6/run_controlled_selector.py"
+    },
+    "reference_freeze_manifest_sha256": "2b3717638e0cccdf4ec9051d9577dd908d4fc65bf6c0f80aead0c227f0bffdf0",
+    "binding_preparation_v4_sha256": "7ddbe10cdd25a35ecc70c78b4b536c139c0a627cb31f3e4992a3e077836b407f",
+    "contract_freeze_sha256": "4192387882f871b333e333a0915777124cf535b6a4365855b2cd56e6ff64a491",
+    "final_contract_sha256": "fee18db6e3b788b05bea17581012496f7e82223429aeb841de92ca578afd3383",
+    "ordinary_meaning_interface_version": "v7_specialized_restriction_families_with_v6_argument_family_and_v5_observation_exclusion",
+    "historical_v4_semantic_provenance_retained": true,
+    "source_only_relation_family_declaration_sha256": "c69a14009b3f3e0d521fec1299819515fc3309e27e47a18ad5a47f02b3e43416",
+    "source_only_specialized_family_declaration_sha256": "6c76b21d0504ee7d08f41ebef873e1d92d739dd4e2dfaef89652f47237dbc982",
+    "source_identity_primitive_schema_sha256": "3d7f6a77e586d94705a4d340ba1d3e0c7383fab24f812a4476e473ebc573fb34",
+    "case_free_family_api_spec_sha256": "b57ebb2e3a61f7b0c6defd5e6f08a756bc76e62a2841283ecae7451a3556ea4b"
+  },
+  "counts": {
+    "records": 58,
+    "targets": 58,
+    "controlled_records": 56,
+    "abstract_records": 2,
+    "semantic_eligible_fixed": 54,
+    "semantic_decisions": {
+      "selected": 36,
+      "abstain": 18,
+      "unscored": 4
+    },
+    "licensed_positive_anchors": 43,
+    "licensed_absence_targets": 11,
+    "licensed_unscored_targets": 4,
+    "unresolved_positive_anchors": 0,
+    "unresolved_absence_targets": 50,
+    "selected_with_ordinary_requirements": 36
+  },
+  "record_ids": [
+    "LN001",
+    "LN002",
+    "LN003",
+    "LN004",
+    "LN005",
+    "LN006",
+    "LN007",
+    "LN008",
+    "LN009",
+    "LN010",
+    "LN011",
+    "LN012",
+    "LN013",
+    "LN014",
+    "LN015",
+    "LN016",
+    "LN017",
+    "LN018",
+    "LN019",
+    "LN020",
+    "LN021",
+    "LN022",
+    "LN023",
+    "LN024",
+    "LN025",
+    "LN026",
+    "LN027",
+    "LN028",
+    "LN029",
+    "LN030",
+    "LN031",
+    "LN032",
+    "LN033",
+    "LN034",
+    "LN035",
+    "LN036",
+    "LN037",
+    "LN038",
+    "LN039",
+    "LN040",
+    "LN041",
+    "LN042",
+    "LN043",
+    "LN044",
+    "LN045",
+    "LN046",
+    "LN047",
+    "LN048",
+    "LN049",
+    "LN050",
+    "LN051",
+    "LN052",
+    "LN053",
+    "LN054",
+    "LN055",
+    "LN056",
+    "LN057",
+    "LN058"
+  ],
+  "abstract_record_ids": [
+    "LN057",
+    "LN058"
+  ],
+  "target_ids_by_record": {
+    "LN001": [
+      "t1"
+    ],
+    "LN002": [
+      "t1"
+    ],
+    "LN003": [
+      "t1"
+    ],
+    "LN004": [
+      "t1"
+    ],
+    "LN005": [
+      "t1"
+    ],
+    "LN006": [
+      "t1"
+    ],
+    "LN007": [
+      "t1"
+    ],
+    "LN008": [
+      "t1"
+    ],
+    "LN009": [
+      "t1"
+    ],
+    "LN010": [
+      "t1"
+    ],
+    "LN011": [
+      "t1"
+    ],
+    "LN012": [
+      "t1"
+    ],
+    "LN013": [
+      "t1"
+    ],
+    "LN014": [
+      "t1"
+    ],
+    "LN015": [
+      "t1"
+    ],
+    "LN016": [
+      "t1"
+    ],
+    "LN017": [
+      "t1"
+    ],
+    "LN018": [
+      "t1"
+    ],
+    "LN019": [
+      "t1"
+    ],
+    "LN020": [
+      "t1"
+    ],
+    "LN021": [
+      "t1"
+    ],
+    "LN022": [
+      "t1"
+    ],
+    "LN023": [
+      "t1"
+    ],
+    "LN024": [
+      "t1"
+    ],
+    "LN025": [
+      "t1"
+    ],
+    "LN026": [
+      "t1"
+    ],
+    "LN027": [
+      "t1"
+    ],
+    "LN028": [
+      "t1"
+    ],
+    "LN029": [
+      "t1"
+    ],
+    "LN030": [
+      "t1"
+    ],
+    "LN031": [
+      "t1"
+    ],
+    "LN032": [
+      "t1"
+    ],
+    "LN033": [
+      "t1"
+    ],
+    "LN034": [
+      "t1"
+    ],
+    "LN035": [
+      "t1"
+    ],
+    "LN036": [
+      "t1"
+    ],
+    "LN037": [
+      "t1"
+    ],
+    "LN038": [
+      "t1"
+    ],
+    "LN039": [
+      "t1",
+      "t2"
+    ],
+    "LN040": [
+      "t1"
+    ],
+    "LN041": [
+      "t1"
+    ],
+    "LN042": [
+      "t1"
+    ],
+    "LN043": [
+      "t1"
+    ],
+    "LN044": [
+      "t1"
+    ],
+    "LN045": [
+      "t1"
+    ],
+    "LN046": [
+      "t1"
+    ],
+    "LN047": [
+      "t1"
+    ],
+    "LN048": [
+      "t1"
+    ],
+    "LN049": [
+      "t1"
+    ],
+    "LN050": [
+      "t1"
+    ],
+    "LN051": [
+      "t1"
+    ],
+    "LN052": [
+      "t1"
+    ],
+    "LN053": [
+      "t1",
+      "t2"
+    ],
+    "LN054": [
+      "t1"
+    ],
+    "LN055": [
+      "t1"
+    ],
+    "LN056": [
+      "t1"
+    ],
+    "LN057": [],
+    "LN058": []
+  },
+  "scope_ko": "통제 선택기의 원래 의미54·미채점 guard4·양성 구조43 및 명시 부재/일반 근거/보존 검증. abstract2는 미실행. 구체 C 양성 참고0은 전역 C 능력 부재를 요구하지 않음.",
+  "preparation_runtime_or_test_calls": 0,
+  "copied_unused_authoring_or_phone_or_source_catalog_files": 0,
+  "non_meaning_observation_relation_prefix": "lexical_domain_observation/",
+  "meaning_restriction_prefix_not_blanket_rejected": "lexical_domain_restriction/",
+  "relation_family_binding": {
+    "legacy_relation": "predicate_argument",
+    "restriction_prefix": "lexical_domain_restriction/argument/",
+    "required_forbidden_symmetric": true,
+    "nonempty_opaque_source_id_required": true,
+    "relative_nominal_or_global_alias": false,
+    "neutral_observations_excluded": true
+  },
+  "specialized_relation_family_binding": {
+    "relative_part_owner": {
+      "kind": "relative",
+      "role": "direct_part_owner"
+    },
+    "transaction_price": {
+      "kind": "argument",
+      "role": "transaction_price"
+    },
+    "required_forbidden_symmetric": true,
+    "kind_alone_is_not_specialized": true,
+    "exact_six_field_primitive_source_tuple_required": true,
+    "observations_excluded": true,
+    "language_or_raw_tag_identity_inference_added": false
+  }
+}

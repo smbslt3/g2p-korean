@@ -7,8 +7,9 @@ import time
 
 import pytest
 
-from g2p_ko import InputValidationError
+from g2p_ko import HuggingFaceNumberReader, InputValidationError
 import g2p_ko.normalizer.engine as normalizer_engine
+import g2p_ko.normalizer.grammar as normalizer_grammar
 from g2p_ko.normalizer import KoreanTTSNormalizer
 
 
@@ -46,19 +47,20 @@ def test_korean_suffix_order_is_precomputed_for_regex_and_runtime(
 
     expected_order = tuple(
         sorted(
-            normalizer_engine._KOREAN_SUFFIXES,
+            normalizer_grammar._KOREAN_SUFFIXES,
             key=lambda item: (-len(item), item),
         )
     )
-    assert normalizer_engine._SORTED_KOREAN_SUFFIXES == expected_order
-    assert normalizer_engine._KOREAN_SUFFIX_PATTERN == "(?:" + "|".join(
-        normalizer_engine.re.escape(item) for item in expected_order
+    assert normalizer_grammar._SORTED_KOREAN_SUFFIXES == expected_order
+    assert normalizer_grammar._KOREAN_SUFFIX_PATTERN == "(?:" + "|".join(
+        normalizer_grammar.re.escape(item) for item in expected_order
     ) + ")"
 
     def unexpected_sort(*_args: object, **_kwargs: object) -> list[object]:
         raise AssertionError("runtime에서 한국어 suffix를 다시 정렬했습니다.")
 
     monkeypatch.setattr(normalizer_engine, "sorted", unexpected_sort, raising=False)
+    monkeypatch.setattr(normalizer_grammar, "sorted", unexpected_sort, raising=False)
 
     assert normalizer("3.3V까지는.") == "삼 점 삼 볼트까지는."
 
@@ -446,13 +448,30 @@ def test_emergency_rule_does_not_capture_ordinary_quantities(
     assert normalizer(source) == expected
 
 
-def test_unseparated_hotline_digits_use_learned_digitwise_reading(
+@pytest.mark.parametrize(
+    ("source", "expected"),
+    [
+        ("15881234", "천오백팔십팔만천이백삼십사"),
+        ("전화번호는 15881234입니다.", "전화번호는 일 오 팔 팔 일 이 삼 사입니다."),
+        ("대표번호는 15881234입니다.", "대표번호는 일 오 팔 팔 일 이 삼 사입니다."),
+        ("1588-1234", "일 오 팔 팔 일 이 삼 사"),
+        ("예산은 15881234원이다", "예산은 천오백팔십팔만천이백삼십사 원이다"),
+    ],
+)
+def test_hotline_reading_requires_phone_format_or_number_context(
     normalizer: KoreanTTSNormalizer,
+    source: str,
+    expected: str,
 ) -> None:
-    """구분자 없는 대표번호형 숫자는 학습 판별기가 자릿수대로 읽는다."""
+    """자릿수만으로 전화번호를 추정하지 않고 형식과 번호 문맥을 구분한다."""
 
-    assert normalizer("15881234") == "일 오 팔 팔 일 이 삼 사"
-    assert normalizer("예산은 18000000원이다") == "예산은 천팔백만 원이다"
+    class Runtime:
+        def decide(self, text, start, end, **options):
+            return "digitwise" if "전화번호" in text or "대표번호" in text else None
+
+    # 문맥 판별은 별도로 준비한 실행기를 지정했을 때 적용한다.
+    configured = KoreanTTSNormalizer(number_reader=HuggingFaceNumberReader(Runtime()))
+    assert configured(source) == expected
 
 
 def test_measurement_decimals_before_history_suffixes_stay_decimal(

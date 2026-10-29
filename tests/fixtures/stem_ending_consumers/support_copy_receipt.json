@@ -1,0 +1,43 @@
+{
+  "created_utc": "2026-10-27T22:31:52.000393+00:00",
+  "purpose": "현재 src의 어간·어미 제어 포장 회귀를 위한 최소 영구 지원 복사 영수증",
+  "accepted_binding_freeze_sha256": "e1754a5a9c8e1fd89b9907bb178c66b98c0fb36cc41c23b0b9f9ee18fb6d23f5",
+  "original_reference_manifest_sha256": "b485ec6c78f287caf9cc508be650842aeffa04af3edb0f2049fa7dac9cbd49c4",
+  "origin_sha256": {
+    "runner": "12f7e6c52cfc6cc9238040c5405eb317949abf860f2985ceb5a299d5912805e4",
+    "binding_plan": "139b358621cfb2b2e33cba8c1a14f95d9bd49b0c20d73da985b388d688452983",
+    "references": "0b70534533e2a074b0cff6b24239953c0b1cd3d891e667cee10d422e80c2e96c"
+  },
+  "portable_adjustments": [
+    "참조·계획·영수증을 같은 폴더에서 읽음",
+    "출력 폴더의 동결 manifest 대신 이 지원 영수증으로 지원 파일을 확인함",
+    "계획에는 frozen 상태·기존 rule IDs·공개 route·유한 실행 범위만 보존함",
+    "지원 해시는 체크아웃 줄바꿈만 정규화하며 원본 raw SHA-256은 따로 보존함"
+  ],
+  "artifact_hash_policy": "UTF-8 텍스트를 universal newline으로 읽고 BOM 없는 UTF-8로 해시",
+  "scope": {
+    "controlled_semantics": 9,
+    "packagings_per_semantic": 2,
+    "controlled_conversions": 18,
+    "abstract_unbound": 4
+  },
+  "unknown_scope": [
+    "공개 custom-analyzer 지원이 아님",
+    "실제 Kiwi 포장 미측정",
+    "전체 단어 문법 권한 미관측",
+    "실제 적용 횟수 미노출"
+  ],
+  "validation": "AST 파싱·검사기 의미 함수 보존·계획 축약 동등성·원본 참조 byte 동일성·출력 폴더 의존성 부재 확인",
+  "runtime_calls_during_copy": 0,
+  "source_imports_during_copy": 0,
+  "gold_changes": 0,
+  "new_reference_cases": 0,
+  "original_binding_and_reference_artifacts_verified_unchanged": true,
+  "test_path": "tests/test_stem_ending_consumers.py",
+  "test_sha256": "f1094e26d7e43a2c51ecbdc09d803e73667ce99a2d9e23b1520253ba1e3664f4",
+  "artifact_sha256": {
+    "run_references.py": "5727b6b11e4cfb76d9bd637030f4cb6bea9fbc561f13af736ad59bbea8ed592f",
+    "binding_plan.json": "3fd6cafe1d80e604947f3f92e4e947cc959d3eda0d8cdd4e9915168a1fc8982c",
+    "references.json": "0b70534533e2a074b0cff6b24239953c0b1cd3d891e667cee10d422e80c2e96c"
+  }
+}

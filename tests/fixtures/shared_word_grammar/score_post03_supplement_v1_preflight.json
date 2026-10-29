@@ -1,0 +1,102 @@
+{
+  "schema": "r41_post03_score_adapter_preflight.v1",
+  "passed": true,
+  "synthetic_dto_json_only": true,
+  "project_runtime_or_g2p_kiwi_executed": false,
+  "actual_result_or_candidate_source_read": false,
+  "adapter_sha256": "9376a1dad8dc36d4918fc880b25503daf158189172915394b3d4510f308f13a5",
+  "checks": [
+    {
+      "name": "보완 대상만 재판정하고 원점수 보존",
+      "passed": true
+    },
+    {
+      "name": "다른 행 실패는 그대로 실패",
+      "passed": true
+    },
+    {
+      "name": "증명 필수 필드 누락 start",
+      "passed": true
+    },
+    {
+      "name": "증명 필수 필드 누락 end",
+      "passed": true
+    },
+    {
+      "name": "증명 필수 필드 누락 parts",
+      "passed": true
+    },
+    {
+      "name": "증명 필수 필드 누락 lexical_status",
+      "passed": true
+    },
+    {
+      "name": "증명 필수 필드 누락 final_category",
+      "passed": true
+    },
+    {
+      "name": "증명 필수 필드 누락 host_state",
+      "passed": true
+    },
+    {
+      "name": "증명 필수 필드 누락 tail_state",
+      "passed": true
+    },
+    {
+      "name": "증명 필수 필드 누락 surface_status",
+      "passed": true
+    },
+    {
+      "name": "증명 필수 필드 누락 reason",
+      "passed": true
+    },
+    {
+      "name": "보완 증명 상태 불일치 lexical_status",
+      "passed": true
+    },
+    {
+      "name": "보완 증명 상태 불일치 final_category",
+      "passed": true
+    },
+    {
+      "name": "보완 증명 상태 불일치 host_state",
+      "passed": true
+    },
+    {
+      "name": "보완 증명 상태 불일치 tail_state",
+      "passed": true
+    },
+    {
+      "name": "보완 증명 상태 불일치 surface_status",
+      "passed": true
+    },
+    {
+      "name": "소비자 투영 누락 liaison_target",
+      "passed": true
+    },
+    {
+      "name": "소비자 투영 정수 우회 금지 liaison_target",
+      "passed": true
+    },
+    {
+      "name": "소비자 투영 누락 n_target",
+      "passed": true
+    },
+    {
+      "name": "소비자 투영 정수 우회 금지 n_target",
+      "passed": true
+    },
+    {
+      "name": "보완 행의 다른 불변 조건 실패 보존",
+      "passed": true
+    },
+    {
+      "name": "원본 집계 불일치 거부",
+      "passed": true
+    },
+    {
+      "name": "중복 원본 행 거부",
+      "passed": true
+    }
+  ]
+}

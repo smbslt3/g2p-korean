@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "purpose_ko": "원래 R47 의미·범위 검사기의 최소 이식 지원 복사 영수증이다.",
+  "original_files": [
+    {
+      "path": "output/g2p_progressive_round47_20261028/quote_binding/run_quote_refs.py",
+      "sha256": "49126a110db2a6913a9b65b3e90470311e791f465a10e5854dc4773dd5c7304d"
+    },
+    {
+      "path": "output/g2p_progressive_round47_20261028/spine_binding/run_spine_addendum.py",
+      "sha256": "ad0bffef01818fb49981ad09f860cc61bdc08f14942107175f78d3b70a286f5b"
+    },
+    {
+      "path": "output/g2p_progressive_round47_20261028/quote_refs_private/references.json",
+      "sha256": "805f48cd76d8a92f80e735ad76927007fd75e5babbc331adad662ed84e1771a6"
+    },
+    {
+      "path": "output/g2p_progressive_round47_20261028/spine_refs_private/references.json",
+      "sha256": "80ba1e203148dadc8651c1e756157884046bf7ea3f77af480db6e2329731d58f"
+    },
+    {
+      "path": "output/g2p_progressive_round47_20261028/contract/Semantic_Fact_API_Metadata_KO.json",
+      "sha256": "b2ecab9c27c6a3f2e9accf6cc49c7468619af4846b291f0a01f844cf4dcb5b14"
+    },
+    {
+      "path": "output/g2p_progressive_round47_20261028/quote_reference_metadata/reference_freeze_manifest.json",
+      "sha256": "5aa12a1fc6e374ed8c4b489553c8207e9115875e50009d1ba64b02e6386cb036"
+    },
+    {
+      "path": "output/g2p_progressive_round47_20261028/spine_reference_metadata/reference_freeze_manifest.json",
+      "sha256": "b6db68d523aeb569b90c62a144716ad0c429fdced51206c3b9e045e02151e51f"
+    },
+    {
+      "path": "output/g2p_progressive_round47_20261028/quote_binding/binding_freeze.json",
+      "sha256": "b72c69bd71e5c71e15f450cf4f4068766075717ee017db22a196d70acefef805"
+    },
+    {
+      "path": "output/g2p_progressive_round47_20261028/spine_binding/binding_freeze.json",
+      "sha256": "8c5b1512171970bde878d2b38a917d02178d20be52da5757be71c334a0c07305"
+    }
+  ],
+  "portable_files": [
+    {
+      "path": "quote_reference_freeze_manifest.json",
+      "sha256": "5aa12a1fc6e374ed8c4b489553c8207e9115875e50009d1ba64b02e6386cb036",
+      "bytes": 2522
+    },
+    {
+      "path": "quote_references.json",
+      "sha256": "805f48cd76d8a92f80e735ad76927007fd75e5babbc331adad662ed84e1771a6",
+      "bytes": 156216
+    },
+    {
+      "path": "run_quote_refs.py",
+      "sha256": "34bbd24c4a7a3f2102db2d68d0a4b1fe403d1ba0da22feae983f94f98483883a",
+      "bytes": 15300
+    },
+    {
+      "path": "run_spine_addendum.py",
+      "sha256": "564621147d6d7f8c1aace14d5464877a31e5c206e10765a68a2ad486dac24740",
+      "bytes": 3870
+    },
+    {
+      "path": "semantic_fact_catalog.json",
+      "sha256": "b2ecab9c27c6a3f2e9accf6cc49c7468619af4846b291f0a01f844cf4dcb5b14",
+      "bytes": 8746
+    },
+    {
+      "path": "spine_reference_freeze_manifest.json",
+      "sha256": "b6db68d523aeb569b90c62a144716ad0c429fdced51206c3b9e045e02151e51f",
+      "bytes": 1912
+    },
+    {
+      "path": "spine_references.json",
+      "sha256": "80ba1e203148dadc8651c1e756157884046bf7ea3f77af480db6e2329731d58f",
+      "bytes": 19234
+    }
+  ],
+  "byte_exact_data_and_manifest_copies": [
+    "quote_references.json",
+    "spine_references.json",
+    "semantic_fact_catalog.json",
+    "quote_reference_freeze_manifest.json",
+    "spine_reference_freeze_manifest.json"
+  ],
+  "unchanged_checker_function_AST_sha256": {
+    "sha": "0ea2335b65e3d031aa4d0d1e4b9892b5c4d4c9026f09f9a70c0c04be7974ab06",
+    "dump": "0cecb34472844dc09f2aec4722dd87eef9fe23f91a876749d145f74900d98d7c",
+    "check_target": "cc6c8172e160ffcfd41fbda39345517631c5a4a9f56a0935eb94d70ad8a805cf",
+    "check_ranges": "a58be8267f9b41fbdb9ab8e932941518222f802f98498c81b526aa6af7a7e277",
+    "synthetic_preflight": "3ef512e7148de3f027b39e998933b35d6472c3d883d89723d26ce080d3d4c8e3",
+    "token_snapshot": "ad3848f88218f10e5fe32794b029807b9072e87b23782af5c0588dc1d4a6ef15",
+    "choice_snapshot": "278d40373e6b8a7b370a2b4e564f642a4b04ee3c833fcc6a2dd991bc941ab79e",
+    "source_inventory": "0c1554c6446a817556bdeecccaabe3052562a3b9bb7fe9a4680d047aec2d4bef",
+    "module_origins": "8b95ab212af049a94f3d533c9d5fe92cc8b5af538ad839818a425aa3f78f13d9",
+    "run": "1737ed0a62bbb5c41ba8d71eebd9573b5ee2628452250aa964d8ce8abb9e9dbf"
+  },
+  "catalog_projection_AST_unchanged": true,
+  "quote_main_except_freeze_plumbing_AST_unchanged": true,
+  "spine_main_except_freeze_plumbing_AST_unchanged": true,
+  "loader_changes_ko": [
+    "원래 매니페스트와 참조/카탈로그의 정확한 해시는 유지한다.",
+    "작성용 생성기·계획·증거 문서는 실행에 필요하지 않아 복사하지 않는다.",
+    "지원 파일은 현재 fixture 폴더에서만 읽고 해시는 이 영수증으로 확인한다. 의미·소유·범위 검사 로직은 바꾸지 않는다."
+  ],
+  "original_R47_files_modified": false,
+  "production_runtime_imports_or_executions_during_preparation": 0,
+  "validation_scope": "static_AST_and_fixture_copy_closure_only",
+  "permanent_test": {
+    "path": "tests/test_quote_closure_ownership.py",
+    "sha256": "6581fa0a121e0170f2c41b5b669c0bcfcfd93bb2e06f610a5d23bb6ee07e18db",
+    "test_functions": 1
+  },
+  "static_validation": {
+    "AST_parse": true,
+    "portable_file_hashes": true,
+    "original_R47_hashes_unchanged": true,
+    "exact_JSON_copies": 5,
+    "quote_records": 41,
+    "quote_constructed_records": 40,
+    "quote_targets": 48,
+    "abstract_unbound_records": 1,
+    "spine_records": 3,
+    "spine_targets": 4,
+    "no_output_path_literal_in_executable_support": true,
+    "production_imports_or_executions": 0,
+    "pytest_runs": 0,
+    "actual_Kiwi_calls": 0,
+    "case_or_phone_values_printed": false
+  }
+}

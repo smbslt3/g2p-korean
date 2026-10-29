@@ -1,0 +1,3360 @@
+{
+  "cases": [
+    {
+      "id": "author_atomic_quantity",
+      "text": "물건의 개수를 헤아렸다",
+      "tokens": [
+        {
+          "form": "물건",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "헤아렸다",
+          "tag": "VV+EP+EF",
+          "start": 8,
+          "end": 12,
+          "morphemes": [
+            [
+              "헤아리",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "gaesu.count_quantity"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_quantity_variant",
+      "text": "상품의 개수를 집계했다",
+      "tokens": [
+        {
+          "form": "상품",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "집계했다",
+          "tag": "VV+EP+EF",
+          "start": 8,
+          "end": 12,
+          "morphemes": [
+            [
+              "집계하",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "gaesu.count_quantity"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_quantity_focus",
+      "text": "학생의 개수만 계산했다",
+      "tokens": [
+        {
+          "form": "학생",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "만",
+          "tag": "JX",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "계산했다",
+          "tag": "VV+EP+EF",
+          "start": 8,
+          "end": 12,
+          "morphemes": [
+            [
+              "계산하",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "gaesu.count_quantity"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_quantity_unrelated_object",
+      "text": "개수는 그림을 헤아렸다",
+      "tokens": [
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "그림",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "헤아렸다",
+          "tag": "VV+EP+EF",
+          "start": 8,
+          "end": 12,
+          "morphemes": [
+            [
+              "헤아리",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_quantity_negated",
+      "text": "개수를 안 헤아렸다",
+      "tokens": [
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "안",
+          "tag": "MAG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "헤아렸다",
+          "tag": "VV+EP+EF",
+          "start": 6,
+          "end": 10,
+          "morphemes": [
+            [
+              "헤아리",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "gaesu.count_quantity"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_quantity_duplicate",
+      "text": "개수는 개수를 헤아렸다",
+      "tokens": [
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "헤아렸다",
+          "tag": "VV+EP+EF",
+          "start": 8,
+          "end": 12,
+          "morphemes": [
+            [
+              "헤아리",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null,
+        "gaesu.count_quantity"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_quantity_hard",
+      "text": "개수를 헤아렸다",
+      "tokens": [
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "헤아렸다",
+          "tag": "VV+EP+EF",
+          "start": 4,
+          "end": 8,
+          "morphemes": [
+            [
+              "헤아리",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [
+        3
+      ],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_quantity_new_topic",
+      "text": "개수는 건물은 헤아렸다",
+      "tokens": [
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "건물",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "헤아렸다",
+          "tag": "VV+EP+EF",
+          "start": 8,
+          "end": 12,
+          "morphemes": [
+            [
+              "헤아리",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_atomic_ability",
+      "text": "말발은 말로 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 10,
+          "end": 14,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_variant",
+      "text": "말발은 언어로 사람을 납득시키는 능력이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "언어",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "사람",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "납득시키는",
+          "tag": "VV+ETM",
+          "start": 12,
+          "end": 17,
+          "morphemes": [
+            [
+              "납득시키",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "능력",
+          "tag": "NNG",
+          "start": 18,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_topic_variant",
+      "text": "말발도 대화로 학생을 설득하는 재주이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "도",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "대화",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "학생",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 12,
+          "end": 16,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "재주",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 19,
+          "end": 21,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_body_medium",
+      "text": "말발은 몸로 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "몸",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 10,
+          "end": 14,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_animal_argument",
+      "text": "말발은 말로 동물을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "동물",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 11,
+          "end": 15,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_unrelated_object",
+      "text": "말발은 말로 그림을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "그림",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 11,
+          "end": 15,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_negated",
+      "text": "말발은 말로 남을 안 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "안",
+          "tag": "MAG",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 12,
+          "end": 16,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_incompatible_head",
+      "text": "말발은 말로 남을 설득하는 건물이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 10,
+          "end": 14,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "건물",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_explicit_actor",
+      "text": "말발은 학생가 말로 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "학생",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 14,
+          "end": 18,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_bare_power",
+      "text": "말발은 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 5,
+          "end": 7,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_bare_ability",
+      "text": "말발은 능력이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "능력",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_animal_body",
+      "text": "말발은 동물의 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "동물",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_quoted_explicit_definition",
+      "text": "“말발”은 말로 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SS",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SS",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 12,
+          "end": 16,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_new_topic",
+      "text": "말발은 재치는 말로 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "재치",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 14,
+          "end": 18,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_hard",
+      "text": "말발은 말로 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 10,
+          "end": 14,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [
+        3
+      ],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_count_control",
+      "text": "개수는 수량이다",
+      "tokens": [
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "수량",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "gaesu.count_quantity"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_wash_control",
+      "text": "개수는 개숫물이다",
+      "tokens": [
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "개숫물",
+          "tag": "NNG",
+          "start": 4,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 7,
+          "end": 9,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "gaesu.washing_water"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_armour_control",
+      "text": "개수는 갑옷소매이다",
+      "tokens": [
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "갑옷소매",
+          "tag": "NNG",
+          "start": 4,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 8,
+          "end": 10,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "gaesu.armour_sleeve"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_renovation_control",
+      "text": "개수했다",
+      "tokens": [
+        {
+          "form": "개수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "했다",
+          "tag": "XSV+EP+EF",
+          "start": 2,
+          "end": 4,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "gaesu.renovation"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_speech_control",
+      "text": "말발은 언변이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "언변",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_equinus_control",
+      "text": "말발은 첨족이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "첨족",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.equinus"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_duplicate_definitions",
+      "text": "말발은 말로 남을 설득하는 힘이다. 말발은 첨족이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 10,
+          "end": 14,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 20,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        },
+        {
+          "form": "첨족",
+          "tag": "NNG",
+          "start": 24,
+          "end": 26,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 26,
+          "end": 28,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability",
+        "malbal.equinus"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_conflicting_definition",
+      "text": "말발은 언변과 첨족이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "언변",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "첨족",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 10,
+          "end": 12,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_copula_negated",
+      "text": "말발은 말로 남을 설득하는 힘이 아니다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 10,
+          "end": 14,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "JKC",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "아니다",
+          "tag": "VCN+EF",
+          "start": 18,
+          "end": 21,
+          "morphemes": [
+            [
+              "아니",
+              "VCN"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "author_ability_title_mention",
+      "text": "“말발”이라는 제목을 읽었다",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SS",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SS",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "이라는",
+          "tag": "VCP+ETM",
+          "start": 4,
+          "end": 7,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "라는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "제목",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "읽었다",
+          "tag": "VV+EP+EF",
+          "start": 12,
+          "end": 15,
+          "morphemes": [
+            [
+              "읽",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    },
+    {
+      "id": "review_different_final_clause",
+      "text": "말발은 동물의 힘이다. 학생은 말로 남을 설득한다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "동물",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "학생",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 20,
+          "end": 21,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 21,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "설득한다",
+          "tag": "VV+EF",
+          "start": 23,
+          "end": 27,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": []
+    },
+    {
+      "id": "review_different_connected_clause",
+      "text": "말발은 동물의 힘이고 학생은 말로 남을 설득한다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "동물",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "이고",
+          "tag": "VCP+EC",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "고",
+              "EC"
+            ]
+          ]
+        },
+        {
+          "form": "학생",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 20,
+          "end": 21,
+          "morphemes": []
+        },
+        {
+          "form": "설득한다",
+          "tag": "VV+EF",
+          "start": 22,
+          "end": 26,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": []
+    },
+    {
+      "id": "review_animal_actor",
+      "text": "말발은 동물이 말로 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "동물",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 14,
+          "end": 18,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": []
+    },
+    {
+      "id": "review_owned_object",
+      "text": "말발은 말로 학생의 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "학생",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 14,
+          "end": 18,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": []
+    },
+    {
+      "id": "review_incompatible_relative_head",
+      "text": "말발은 말로 남을 설득하는 동물이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 10,
+          "end": 14,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "동물",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        null
+      ],
+      "hard_boundaries": []
+    },
+    {
+      "id": "review_human_actor",
+      "text": "말발은 사람이 말로 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "사람",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 14,
+          "end": 18,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": []
+    },
+    {
+      "id": "review_limited_focus",
+      "text": "말발만 말로 남을 설득하는 능력이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "만",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 10,
+          "end": 14,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "능력",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 17,
+          "end": 19,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": []
+    },
+    {
+      "id": "review_focus_homograph_첨족",
+      "text": "말발도 첨족이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "도",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "첨족",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.equinus"
+      ],
+      "hard_boundaries": []
+    },
+    {
+      "id": "review_focus_homograph_언변",
+      "text": "말발도 언변이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "도",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "언변",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": []
+    }
+  ],
+  "known_deferred_diagnostics": [
+    {
+      "id": "ability_subject_particle",
+      "text": "말발이 말로 남을 설득하는 힘이다",
+      "tokens": [
+        {
+          "form": "말발",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "남",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "설득하는",
+          "tag": "VV+ETM",
+          "start": 10,
+          "end": 14,
+          "morphemes": [
+            [
+              "설득하",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "힘",
+          "tag": "NNG",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 16,
+          "end": 18,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "expected": [
+        "malbal.speech_ability"
+      ],
+      "hard_boundaries": [],
+      "analysis_source": "source_owned_manual"
+    }
+  ],
+  "scope_ko": "수용한 관계의42회귀다. 바깥JKS와 안쪽 행위자를 구별하지 못하는 원래 진단은 expected를 바꾸지 않고 별도로 보존하며 D-15 전체 완료로 세지 않는다."
+}

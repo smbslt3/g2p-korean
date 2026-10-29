@@ -22,16 +22,15 @@ dist/
 .idea/
 .vscode/
 
-# 로컬 데이터와 개발·평가 산출물
-/data/
+# 로컬 개발·평가 산출물
 /benchmarks/
-/tools/data/
-/tools/*number_read*.py
-/tests/test_*number_read*.py
-/tests/test_*eval*.py
 
 # 로컬 임시 디렉터리
 /.*_tmp/
+/.tmp/
 
 # 로컬 조사·설계 메모
 /ignores/
+
+# 외부 구현·라이선스 자료·이전 실험은 로컬 증거로만 보존한다.
+/output/

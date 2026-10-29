@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_REFERENCE_TEST_ONLY_CORRECTION",
+  "purpose_ko": "원래 바이트와 실패 실행을 보존하면서 독립적으로 동결한 반복 소유 계약만 적용한다.",
+  "provenance_sha256": {
+    "output/g2p_progressive_round47_20261028/full_regression_reference_proposal/proposal_freeze_manifest.json": "a26df0fc9013350a3d735453c5f2205e62857971d1c6b26e0a596b7c18fb3b08",
+    "output/g2p_progressive_round47_20261028/full_regression_reference_proposal/Correction_Invariants_KO.json": "fe2f7704354987b6392b5037ab6d7fd16892e5a38c29a27239103c9e179bc1ce",
+    "output/g2p_progressive_round47_20261028/full_regression_reference_proposal/P21_Standalone_Correction_Addendum_KO.json": "d23d7922a6d0f97d584aeaacfb01c7590289133f5eaa9e584b2c29804ed8b297",
+    "output/g2p_progressive_round47_20261028/cleanroom/quote_closure/candidate02/Quote_Closure_API_Observations_KO.json": "f48a66c3f37497d422771680fe9def3f43f99032de51df69525883db3f3eb6db",
+    "output/g2p_progressive_round47_20261028/full_regression_reference_proposal/hard_control_addendum/parent_safe_manifest.json": "f143134b0ae875fbb07538e3d922b3212a1f29a2975f3f170a0c7df22e7267a7"
+  },
+  "private_hard_payload_sha256": "c71db6117c2a6c95365ee044ce245f679fda36a299dd8d4aa338f1dcc0977026",
+  "original_fixture_sha256": {
+    "tests/fixtures/korean_composed_definitions.json": "9791303e186a20f823db2b0f98001b3512ca94d56ffe49428026bc97fcbfb697",
+    "tests/fixtures/korean_semantic_quotation.json": "37f624d45fc0943100aedf76397c01639696ee8f41af17138bebf9da5e033db9",
+    "tests/fixtures/round19_modifier_ownership.json": "6f240ceb7e7df603db52d399973c3f849b151974518af7533be00d8e31a1205e"
+  },
+  "case_contracts": {
+    "C12_v4_P21_MISMATCHED_QUOTE_THEN_LOCAL_DEFINITION": {
+      "raw_repeat_policy": "all_occurrences_abstain_global_owner_exact_ordinary_translation",
+      "root_scope": "first_reference_unclosed_opening_to_actual_HARD_or_full_input_end",
+      "target_count": 2
+    },
+    "Q10": {
+      "raw_repeat_policy": "all_occurrences_abstain_global_owner_exact_ordinary_translation",
+      "root_scope": "first_reference_unclosed_opening_to_actual_HARD_or_full_input_end",
+      "target_count": 1
+    },
+    "A_open_quote": {
+      "raw_repeat_policy": "all_occurrences_abstain_global_owner_exact_ordinary_translation",
+      "root_scope": "first_reference_unclosed_opening_to_actual_HARD_or_full_input_end",
+      "target_count": 1
+    },
+    "A_cross_quote": {
+      "raw_repeat_policy": "all_occurrences_abstain_global_owner_exact_ordinary_translation",
+      "root_scope": "first_reference_unclosed_opening_to_actual_HARD_or_full_input_end",
+      "target_count": 1
+    }
+  },
+  "standalone_overlay": {
+    "case_id": "C12_v4_P21_MISMATCHED_QUOTE_THEN_LOCAL_DEFINITION",
+    "target_selector": "later_same_spelling_occurrence_in_original_input_order",
+    "expected_sense_id": null,
+    "expected_selection": "abstain",
+    "reason_constraint": "not_selected"
+  },
+  "owner_evidence": {
+    "relation": "unresolved_quote_ownership",
+    "semantic_class": "unresolved_relation",
+    "primary_reason": "unresolved_quote_ownership",
+    "permitted_reasons": [
+      "unresolved_quote_ownership",
+      "unsupported_analysis",
+      "conflicting_evidence"
+    ],
+    "stronger_reasons_preserved": [
+      "unsupported_analysis",
+      "conflicting_evidence"
+    ]
+  },
+  "opening_glyphs": [
+    "'",
+    "\"",
+    "‘",
+    "“",
+    "「",
+    "『",
+    "«",
+    "‹",
+    "〈",
+    "《"
+  ],
+  "hard_controls": [
+    {
+      "control_id": "C12_v4_P21_MISMATCHED_QUOTE_THEN_LOCAL_DEFINITION__HARD_SEPARATED_COPY",
+      "source_case_id": "C12_v4_P21_MISMATCHED_QUOTE_THEN_LOCAL_DEFINITION",
+      "source_fixture": "tests/fixtures/korean_composed_definitions.json",
+      "source_fixture_sha256": "9791303e186a20f823db2b0f98001b3512ca94d56ffe49428026bc97fcbfb697",
+      "kind": "repeat",
+      "separator": " ",
+      "copy_offset": 45,
+      "new_hard_boundaries": [
+        44
+      ],
+      "expected_targets": [
+        {
+          "start": 1,
+          "end": 3,
+          "copy_index": 0,
+          "original_target_index": 0,
+          "expectation": "abstain"
+        },
+        {
+          "start": 23,
+          "end": 25,
+          "copy_index": 0,
+          "original_target_index": 1,
+          "expectation": "abstain"
+        },
+        {
+          "start": 46,
+          "end": 48,
+          "copy_index": 1,
+          "original_target_index": 0,
+          "expectation": "abstain"
+        },
+        {
+          "start": 68,
+          "end": 70,
+          "copy_index": 1,
+          "original_target_index": 1,
+          "expectation": "abstain"
+        }
+      ]
+    },
+    {
+      "control_id": "Q10__HARD_SEPARATED_COPY",
+      "source_case_id": "Q10",
+      "source_fixture": "tests/fixtures/korean_semantic_quotation.json",
+      "source_fixture_sha256": "37f624d45fc0943100aedf76397c01639696ee8f41af17138bebf9da5e033db9",
+      "kind": "repeat",
+      "separator": " ",
+      "copy_offset": 16,
+      "new_hard_boundaries": [
+        15
+      ],
+      "expected_targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "copy_index": 0,
+          "original_target_index": 0,
+          "expectation": "abstain"
+        },
+        {
+          "start": 21,
+          "end": 23,
+          "copy_index": 1,
+          "original_target_index": 0,
+          "expectation": "abstain"
+        }
+      ]
+    },
+    {
+      "control_id": "A_open_quote__HARD_SEPARATED_COPY",
+      "source_case_id": "A_open_quote",
+      "source_fixture": "tests/fixtures/round19_modifier_ownership.json",
+      "source_fixture_sha256": "6f240ceb7e7df603db52d399973c3f849b151974518af7533be00d8e31a1205e",
+      "kind": "repeat",
+      "separator": " ",
+      "copy_offset": 32,
+      "new_hard_boundaries": [
+        31
+      ],
+      "expected_targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "copy_index": 0,
+          "original_target_index": 0,
+          "expectation": "abstain"
+        },
+        {
+          "start": 37,
+          "end": 39,
+          "copy_index": 1,
+          "original_target_index": 0,
+          "expectation": "abstain"
+        }
+      ]
+    },
+    {
+      "control_id": "A_cross_quote__HARD_SEPARATED_COPY",
+      "source_case_id": "A_cross_quote",
+      "source_fixture": "tests/fixtures/round19_modifier_ownership.json",
+      "source_fixture_sha256": "6f240ceb7e7df603db52d399973c3f849b151974518af7533be00d8e31a1205e",
+      "kind": "repeat",
+      "separator": " ",
+      "copy_offset": 32,
+      "new_hard_boundaries": [
+        31
+      ],
+      "expected_targets": [
+        {
+          "start": 5,
+          "end": 7,
+          "copy_index": 0,
+          "original_target_index": 0,
+          "expectation": "abstain"
+        },
+        {
+          "start": 37,
+          "end": 39,
+          "copy_index": 1,
+          "original_target_index": 0,
+          "expectation": "abstain"
+        }
+      ]
+    },
+    {
+      "control_id": "P21__LATER_LOCAL_CLAUSE_HARD",
+      "source_case_id": "C12_v4_P21_MISMATCHED_QUOTE_THEN_LOCAL_DEFINITION",
+      "source_fixture": "tests/fixtures/korean_composed_definitions.json",
+      "source_fixture_sha256": "9791303e186a20f823db2b0f98001b3512ca94d56ffe49428026bc97fcbfb697",
+      "kind": "local_clause",
+      "separator": "",
+      "copy_offset": null,
+      "new_hard_boundaries": [
+        16
+      ],
+      "expected_targets": [
+        {
+          "start": 1,
+          "end": 3,
+          "copy_index": 0,
+          "original_target_index": 0,
+          "expectation": "abstain"
+        },
+        {
+          "start": 23,
+          "end": 25,
+          "copy_index": 0,
+          "original_target_index": 1,
+          "expectation": "original_fixture_gold"
+        }
+      ]
+    }
+  ],
+  "full_original_gold_values_copied": false,
+  "bodies_or_phone_values_included": false,
+  "candidate_outputs_used_to_define_expected_coordinates": false,
+  "raw_whitespace_repetitions_retained": true,
+  "ordinary_evidence_filtering_except_declared_owner_relation": false
+}

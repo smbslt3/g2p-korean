@@ -3,36 +3,43 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Callable
 from dataclasses import dataclass
 from email.parser import Parser
+from hashlib import sha256
 import json
 from pathlib import Path
 import tarfile
 from typing import Iterable
 import zipfile
 
-from g2p_ko.normalizer.number_context import _parse_model
+try:
+    import tomllib
+except ModuleNotFoundError:  # Python 3.10
+    import tomli as tomllib
+
+from packaging.requirements import Requirement
+from packaging.markers import Marker
 
 
 _ROOT = Path(__file__).resolve().parents[1]
+_PROJECT_VERSION = tomllib.loads(
+    (_ROOT / "pyproject.toml").read_text(encoding="utf-8")
+)["project"]["version"]
 _PACKAGE_DATA = (
     "g2p_ko/py.typed",
-    "g2p_ko/data/number_reading_model.json",
 )
 _JSON_PACKAGE_DATA = tuple(item for item in _PACKAGE_DATA if item.endswith(".json"))
-_FORBIDDEN_ARCHIVE_SUFFIXES = (".pyc", ".pyo", ".tsv", ".tsv.gz", ".csv", ".csv.gz")
+_FORBIDDEN_ARCHIVE_SUFFIXES = (".pyc", ".pyo", ".tsv", ".tsv.gz", ".csv", ".csv.gz", ".onnx", ".safetensors", ".npy", ".sqlite")
 _REQUIRED_LICENSES = ("LICENSE", "NOTICE")
 _MIT_LICENSE_MARKERS = (
     "MIT License",
     "Permission is hereby granted, free of charge",
     'THE SOFTWARE IS PROVIDED "AS IS"',
 )
-_NOTICE_MARKERS = (
-    "159. 숫자가 포함된 패턴 발화 데이터",
-    "https://www.aihub.or.kr/aihubdata/data/view.do?aihubDataSe=data&dataSetSn=484",
-    "https://www.aihub.or.kr/intrcn/guid/usagepolicy.do",
-)
-_RUNTIME_DEPENDENCIES = ("kiwipiepy>=0.23.2",)
+_NOTICE_MARKERS = ("Hugging Face", "한국어 숫자 읽기")
+
+_RUNTIME_DEPENDENCIES = ("kiwipiepy==0.24.1",)
 
 
 @dataclass(frozen=True, slots=True)
@@ -62,90 +69,57 @@ def _matching_member(names: Iterable[str], expected: str) -> tuple[str, ...]:
     )
 
 
+def _read_unique_text(
+    names: tuple[str, ...],
+    read: Callable[[str], bytes | None],
+) -> str | None:
+    """정확히 한 멤버가 있을 때만 압축 안 UTF-8 본문을 읽는다."""
+
+    if len(names) != 1:
+        return None
+    body = read(names[0])
+    return None if body is None else body.decode("utf-8")
+
+
+def _contents_from_members(
+    kind: str,
+    names: tuple[str, ...],
+    read: Callable[[str], bytes | None],
+) -> ArtifactContents:
+    """wheel·sdist의 같은 파일 계약을 한 번만 읽어 결과에 담는다."""
+
+    metadata_suffix = ".dist-info/METADATA" if kind == "wheel" else "/PKG-INFO"
+    metadata_names = tuple(
+        name for name in names if _normalized_name(name).endswith(metadata_suffix)
+    )
+    return ArtifactContents(
+        kind=kind,
+        members=tuple(_normalized_name(name) for name in names),
+        json_assets=tuple(
+            (expected, body)
+            for expected in _JSON_PACKAGE_DATA
+            if (body := _read_unique_text(_matching_member(names, expected), read)) is not None
+        ),
+        metadata=_read_unique_text(metadata_names, read),
+        license_text=_read_unique_text(_matching_member(names, "LICENSE"), read),
+        notice=_read_unique_text(_matching_member(names, "NOTICE"), read),
+    )
+
+
 def _contents(path: Path) -> ArtifactContents:
-    """압축을 풀지 않고 배포물 멤버 목록을 읽는다."""
+    """압축을 풀지 않고 wheel·sdist를 공통 멤버 모델로 읽는다."""
 
     if path.suffix == ".whl":
         with zipfile.ZipFile(path) as archive:
-            archive_members = tuple(archive.namelist())
-            members = tuple(_normalized_name(item) for item in archive_members)
-            json_assets = tuple(
-                (expected, archive.read(matches[0]).decode("utf-8"))
-                for expected in _JSON_PACKAGE_DATA
-                if len(matches := _matching_member(archive_members, expected)) == 1
-            )
-            metadata_names = tuple(
-                item
-                for item in archive_members
-                if _normalized_name(item).endswith(".dist-info/METADATA")
-            )
-            metadata = (
-                archive.read(metadata_names[0]).decode("utf-8")
-                if len(metadata_names) == 1
-                else None
-            )
-            license_names = _matching_member(archive_members, "LICENSE")
-            license_text = (
-                archive.read(license_names[0]).decode("utf-8")
-                if len(license_names) == 1
-                else None
-            )
-            notice_names = _matching_member(archive_members, "NOTICE")
-            notice = (
-                archive.read(notice_names[0]).decode("utf-8")
-                if len(notice_names) == 1
-                else None
-            )
-            return ArtifactContents(
-                kind="wheel",
-                members=members,
-                json_assets=json_assets,
-                metadata=metadata,
-                license_text=license_text,
-                notice=notice,
-            )
+            return _contents_from_members("wheel", tuple(archive.namelist()), archive.read)
     if path.name.endswith(".tar.gz") or path.suffix in {".tgz", ".tar"}:
         with tarfile.open(path, "r:*") as archive:
-            archive_members = tuple(archive.getmembers())
-            names = tuple(item.name for item in archive_members)
-            json_assets: list[tuple[str, str]] = []
-            for expected in _JSON_PACKAGE_DATA:
-                matches = _matching_member(names, expected)
-                if len(matches) != 1:
-                    continue
-                member = archive.getmember(matches[0])
-                extracted = archive.extractfile(member)
-                if extracted is not None:
-                    json_assets.append((expected, extracted.read().decode("utf-8")))
-            metadata_names = tuple(
-                item.name
-                for item in archive_members
-                if _normalized_name(item.name).endswith("/PKG-INFO")
-            )
-            metadata = None
-            if len(metadata_names) == 1:
-                extracted = archive.extractfile(metadata_names[0])
-                if extracted is not None:
-                    metadata = extracted.read().decode("utf-8")
-            license_names = _matching_member(names, "LICENSE")
-            license_text = None
-            if len(license_names) == 1:
-                extracted = archive.extractfile(license_names[0])
-                if extracted is not None:
-                    license_text = extracted.read().decode("utf-8")
-            notice_names = _matching_member(names, "NOTICE")
-            notice = None
-            if len(notice_names) == 1:
-                extracted = archive.extractfile(notice_names[0])
-                if extracted is not None:
-                    notice = extracted.read().decode("utf-8")
-            return ArtifactContents(
-                kind="sdist",
-                members=tuple(_normalized_name(item.name) for item in archive_members),
-                json_assets=tuple(json_assets),
-                metadata=metadata,
-                license_text=license_text,
-                notice=notice,
+            def read(name: str) -> bytes | None:
+                extracted = archive.extractfile(name)
+                return None if extracted is None else extracted.read()
+
+            return _contents_from_members(
+                "sdist", tuple(item.name for item in archive.getmembers()), read
             )
     raise ValueError(f"지원하지 않는 artifact 형식입니다: {path}")
 
@@ -189,24 +163,38 @@ def _contains_legacy(members: Iterable[str]) -> bool:
     )
 
 
-def _runtime_dependency_check(metadata: str | None) -> dict[str, object]:
-    """wheel이 정확한 최소 런타임 의존성만 선언하는지 검사한다."""
+def _runtime_dependency_check(metadata):
+    """기본 Kiwi와 HF 숫자 읽기 선택 의존성의 선언을 함께 대조한다."""
+    parsed = Parser().parsestr(metadata) if metadata is not None else None
+    project = tomllib.loads((_ROOT / "pyproject.toml").read_text(encoding="utf-8"))["project"]
+    extras = project.get("optional-dependencies", {})
+    expected = set(str(Requirement(value)) for value in project["dependencies"])
+    for name, requirements in extras.items():
+        for value in requirements:
+            requirement = Requirement(value)
+            marker = f'extra == "{name}"'
+            if requirement.marker is not None:
+                marker = str(requirement.marker) + ' and ' + marker
+            requirement.marker = Marker(marker)
+            expected.add(str(requirement))
+    try:
+        actual = set(str(Requirement(value)) for value in parsed.get_all("Requires-Dist", [])) if parsed else set()
+    except ValueError:
+        actual = set()
+    actual_extras = set(parsed.get_all("Provides-Extra", [])) if parsed else set()
+    ok = metadata is not None and actual == expected and actual_extras == set(extras)
+    return {"ok": ok, "detail": "" if ok else "배포 의존성이 pyproject.toml과 다릅니다."}
+
+
+def _version_check(metadata: str | None) -> dict[str, object]:
+    """빌드 결과의 버전을 원천 프로젝트 메타데이터와 대조한다."""
 
     parsed = Parser().parsestr(metadata) if metadata is not None else None
-    requirements = parsed.get_all("Requires-Dist", []) if parsed is not None else []
-    extras = parsed.get_all("Provides-Extra", []) if parsed is not None else []
-    normalized = tuple(sorted("".join(item.split()).casefold() for item in requirements))
-    expected = tuple(
-        sorted("".join(item.split()).casefold() for item in _RUNTIME_DEPENDENCIES)
-    )
-    normalized_extras = [item.strip().casefold() for item in extras]
-    valid = metadata is not None and normalized == expected and not normalized_extras
+    version = parsed.get("Version") if parsed is not None else None
     return {
-        "ok": valid,
+        "ok": version == _PROJECT_VERSION,
         "detail": (
-            ""
-            if valid
-            else "기본 wheel은 Kiwi 런타임 의존성만 정확히 선언해야 합니다."
+            "" if version == _PROJECT_VERSION else "배포 메타데이터 버전이 pyproject.toml과 다릅니다."
         ),
     }
 
@@ -243,7 +231,7 @@ def _license_body_check(license_text: str | None) -> dict[str, object]:
 
 
 def _model_notice_check(notice: str | None) -> dict[str, object]:
-    """AI Hub 학습 모델의 출처와 이용정책 고지가 실제 산출물에 있는지 본다."""
+    """외부 한국어 숫자 읽기 모델의 연결 고지가 실제 산출물에 있는지 본다."""
 
     missing = [marker for marker in _NOTICE_MARKERS if notice is None or marker not in notice]
     return {
@@ -251,40 +239,14 @@ def _model_notice_check(notice: str | None) -> dict[str, object]:
         "detail": (
             ""
             if not missing
-            else "NOTICE에 AI Hub 모델의 필수 출처 고지가 없습니다."
+            else "NOTICE에 외부 한국어 숫자 읽기 모델의 연결 고지가 없습니다."
         ),
     }
 
 
-def _validate_json_schema(asset: str, payload: object) -> None:
-    """패키지 JSON의 런타임에 필요한 최소 계약을 검증한다."""
-
-    if not asset.endswith("number_reading_model.json"):
-        raise ValueError(f"알 수 없는 JSON 자산입니다: {asset}")
-    _parse_model(payload)
-
-
-def _json_assets_check(
-    assets: tuple[tuple[str, str], ...],
-) -> dict[str, object]:
-    """압축 안 JSON을 직접 파싱하고 배포 스키마를 검증한다."""
-
-    by_name = dict(assets)
-    errors: list[str] = []
-    for expected in _JSON_PACKAGE_DATA:
-        raw = by_name.get(expected)
-        if raw is None:
-            errors.append(f"{expected}: 읽을 수 없음")
-            continue
-        try:
-            payload = json.loads(raw)
-            _validate_json_schema(expected, payload)
-        except (KeyError, TypeError, ValueError) as error:
-            errors.append(f"{expected}: {error}")
-    return {
-        "ok": not errors,
-        "detail": "; ".join(errors),
-    }
+def _json_assets_check(assets):
+    """외부 HF 묶음의 모델은 wheel이나 sdist에 포함하지 않는다."""
+    return {"ok": not assets, "detail": "" if not assets else "외부 숫자 모델이 기본 배포물에 포함됐습니다."}
 
 
 def _archive_hygiene_check(members: tuple[str, ...]) -> dict[str, object]:
@@ -307,7 +269,7 @@ def _archive_hygiene_check(members: tuple[str, ...]) -> dict[str, object]:
 
 
 def _package_payload_check(members: tuple[str, ...]) -> dict[str, object]:
-    """패키지 namespace의 비코드 데이터는 명시한 두 자산만 허용한다."""
+    """패키지 namespace의 비코드 데이터는 명시한 py.typed만 허용한다."""
 
     unexpected: list[str] = []
     allowed = set(_PACKAGE_DATA)
@@ -359,6 +321,7 @@ def check_artifact(path: str | Path) -> dict[str, object]:
         "license": _required_files_check(members, _REQUIRED_LICENSES),
         "license_body": _license_body_check(contents.license_text),
         "license_metadata": _license_metadata_check(contents.metadata),
+        "version": _version_check(contents.metadata),
         "model_notice": _model_notice_check(contents.notice),
         "no_legacy": {
             "ok": not _contains_legacy(members),

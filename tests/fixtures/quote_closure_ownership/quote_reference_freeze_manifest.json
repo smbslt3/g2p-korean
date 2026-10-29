@@ -1,0 +1,67 @@
+{
+  "status": "FROZEN_BEFORE_IMPLEMENTATION",
+  "counts": {
+    "records": 41,
+    "semantic_scenes": 17,
+    "core_glyph_variants": 20,
+    "quote_pairs": 10,
+    "additional_records": 21,
+    "constructed_records": 40,
+    "abstract_unbound_records": 1,
+    "existing_family_count": 3,
+    "full_phone_gold_records": 0,
+    "selected_headword_phone_references": 21,
+    "target_occurrences": 48,
+    "runtime_calls": 0,
+    "project_module_imports": 0,
+    "model_calls": 0,
+    "kiwi_calls": 0
+  },
+  "contracts": {
+    "contract/Quote_Closure_Ownership_Contract_KO.md": "ed88ea2ca88b987870e2d23181912f815dbced9b40e5eb2cda6b9df06b6506d4",
+    "contract/Quote_Closure_API_Observations_KO.json": "b98e6aa5224374cf16e29891ceb513266c733d142b7c2c590b6d2824887e1764",
+    "contract/Semantic_Fact_API_Metadata_KO.json": "b2ecab9c27c6a3f2e9accf6cc49c7468619af4846b291f0a01f844cf4dcb5b14",
+    "contract/Existing_Derivation_Fact_API_Addendum_KO.json": "1ca9e2d601065694bc493247d4cf6264b6f602a03eb5fede777b9c21a7eed162"
+  },
+  "files": [
+    {
+      "path": "quote_refs_private/references.json",
+      "sha256": "805f48cd76d8a92f80e735ad76927007fd75e5babbc331adad662ed84e1771a6",
+      "bytes": 156216
+    },
+    {
+      "path": "quote_refs_private/official_evidence.json",
+      "sha256": "51ab1280eca56c68b3a00906eb516715770fca9020bd287354052ac5f55dac79",
+      "bytes": 5677
+    },
+    {
+      "path": "quote_refs_private/Original_Reference_Protocol_KO.md",
+      "sha256": "00fc5ca02db40fa5f64aa0162c7b25dfd65742bda034da34ac4a223fb30b72f9",
+      "bytes": 4898
+    },
+    {
+      "path": "quote_refs_private/prepare_original_references.py",
+      "sha256": "3597b760aee886f608e7535e5f874a88c775a7c8df6c51d058147ad94e14e47b",
+      "bytes": 12914
+    }
+  ],
+  "preflight": {
+    "path": "quote_reference_metadata/preflight.json",
+    "sha256": "e03599ad99fe5fc7ec9c706826c844ee5dad7d38cde4a7f55df76bc1ce04835c"
+  },
+  "unbound_ids": [
+    "QC041"
+  ],
+  "candidate_or_runtime_result_reads": 0,
+  "no_new_lexical_facts": true,
+  "D03_status": "OPEN_UNCHANGED",
+  "D11_status": "OPEN_UNCHANGED",
+  "public_observation_api": [
+    "select_senses",
+    "SemanticToken",
+    "SenseSelection",
+    "SenseEvidence"
+  ],
+  "supplementary_topology_helper": "_balanced_quote_ranges",
+  "limitations_ko": "구성 분석에 대한 의미·출현 소유 참고다. 실제 Kiwi 산출·말뭉치 정확도·전체 문장 발음·D03/D11 해결을 주장하지 않는다. 구현 작성자는 비공개 원문·정답을 읽지 않는다."
+}

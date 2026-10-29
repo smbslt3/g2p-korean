@@ -1,0 +1,875 @@
+{
+  "status": "구현 전 별도 보존 참고",
+  "schema": "원래 인용 참고와 같은 원문·토큰·출현별 스키마",
+  "records": [
+    {
+      "id": "SP001",
+      "scene_id": "F01S01",
+      "scope": "constructed",
+      "input": "“사법 권력 기능”은 재판권을 뜻한다.",
+      "supplied_tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "권력",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "권력",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "기능",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": [
+            [
+              "기능",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "재판권",
+          "tag": "NNG",
+          "start": 12,
+          "end": 15,
+          "morphemes": [
+            [
+              "재판권",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "뜻한다",
+          "tag": "VV+EF",
+          "start": 17,
+          "end": 20,
+          "morphemes": [
+            [
+              "뜻하",
+              "VV"
+            ],
+            [
+              "ㄴ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "structure_points": {
+        "open": [
+          0,
+          1
+        ],
+        "t1": [
+          1,
+          3
+        ],
+        "n1": [
+          4,
+          6
+        ],
+        "n2": [
+          7,
+          9
+        ],
+        "close": [
+          9,
+          10
+        ],
+        "a1": [
+          12,
+          15
+        ]
+      },
+      "expected_topology": [
+        {
+          "state": "valid",
+          "start": 0,
+          "end": 10
+        }
+      ],
+      "targets": [
+        {
+          "id": "t1",
+          "start": 1,
+          "end": 3,
+          "surface": "사법",
+          "expected_semantics": {
+            "selection": "selected",
+            "sense_id": "sabeop.judicial_function",
+            "reason": "selected",
+            "source_anchors": [
+              {
+                "label": "a1",
+                "start": 12,
+                "end": 15,
+                "surface": "재판권"
+              }
+            ],
+            "ownership": "same_occurrence_and_existing_positive_definition_or_naming",
+            "must_not_have_unresolved_quote_ownership": true
+          },
+          "target_phone_reference": {
+            "scope": "none",
+            "expected": null,
+            "source_ids": []
+          }
+        }
+      ],
+      "full_phone_reference": null,
+      "coverage": [
+        "existing_closed_pure_nominal_spine",
+        "intermediate_component_preservation",
+        "definition"
+      ],
+      "original_nominal_component_spans": [
+        {
+          "start": 1,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 6
+        },
+        {
+          "start": 7,
+          "end": 9
+        }
+      ],
+      "nominal_unit_count": 3,
+      "intermediate_unit_count": 1,
+      "applicability": {
+        "status": "declared_existing_input_shape_satisfied_native_recognizer_unmeasured",
+        "premises": [
+          "valid_closed_root",
+          "only_supplied_NNG_units",
+          "exact_surface_and_absolute_spans",
+          "whitespace_between_every_nominal_unit",
+          "one_registered_target_with_existing_judicial_function_candidate",
+          "existing_function_or_procedure_head",
+          "existing_typed_source_key",
+          "explicit_positive_definition_or_naming_roles"
+        ]
+      },
+      "sources": [
+        "final_quote_contract",
+        "existing_spine_API_addendum",
+        "existing_typed_source_declaration",
+        "existing_sense_catalog",
+        "official_KRDICT_61371"
+      ],
+      "note_ko": "기존 형상 요건을 만족하도록 독립 구성했다. native 인식·관계 소유가 실제 반환 API에서 관찰되지 않으면 그 적용성은 별도 조건부/미연결로 남기며 내부 객체를 주입하지 않는다."
+    },
+    {
+      "id": "SP002",
+      "scene_id": "F01S02",
+      "scope": "constructed",
+      "input": "재판권을 “국가 사법 권력 절차”라고 부른다.",
+      "supplied_tokens": [
+        {
+          "form": "재판권",
+          "tag": "NNG",
+          "start": 0,
+          "end": 3,
+          "morphemes": [
+            [
+              "재판권",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 3,
+          "end": 4,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 5,
+          "end": 6,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "국가",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": [
+            [
+              "국가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "권력",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "권력",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "절차",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": [
+            [
+              "절차",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "라고",
+              "JKQ"
+            ]
+          ]
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 21,
+          "end": 24,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ㄴ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 24,
+          "end": 25,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "structure_points": {
+        "a1": [
+          0,
+          3
+        ],
+        "open": [
+          5,
+          6
+        ],
+        "n0": [
+          6,
+          8
+        ],
+        "t1": [
+          9,
+          11
+        ],
+        "n2": [
+          12,
+          14
+        ],
+        "n3": [
+          15,
+          17
+        ],
+        "close": [
+          17,
+          18
+        ]
+      },
+      "expected_topology": [
+        {
+          "state": "valid",
+          "start": 5,
+          "end": 18
+        }
+      ],
+      "targets": [
+        {
+          "id": "t1",
+          "start": 9,
+          "end": 11,
+          "surface": "사법",
+          "expected_semantics": {
+            "selection": "selected",
+            "sense_id": "sabeop.judicial_function",
+            "reason": "selected",
+            "source_anchors": [
+              {
+                "label": "a1",
+                "start": 0,
+                "end": 3,
+                "surface": "재판권"
+              }
+            ],
+            "ownership": "same_occurrence_and_existing_positive_definition_or_naming",
+            "must_not_have_unresolved_quote_ownership": true
+          },
+          "target_phone_reference": {
+            "scope": "none",
+            "expected": null,
+            "source_ids": []
+          }
+        }
+      ],
+      "full_phone_reference": null,
+      "coverage": [
+        "existing_closed_pure_nominal_spine",
+        "intermediate_component_preservation",
+        "naming"
+      ],
+      "original_nominal_component_spans": [
+        {
+          "start": 6,
+          "end": 8
+        },
+        {
+          "start": 9,
+          "end": 11
+        },
+        {
+          "start": 12,
+          "end": 14
+        },
+        {
+          "start": 15,
+          "end": 17
+        }
+      ],
+      "nominal_unit_count": 4,
+      "intermediate_unit_count": 2,
+      "applicability": {
+        "status": "declared_existing_input_shape_satisfied_native_recognizer_unmeasured",
+        "premises": [
+          "valid_closed_root",
+          "only_supplied_NNG_units",
+          "exact_surface_and_absolute_spans",
+          "whitespace_between_every_nominal_unit",
+          "one_registered_target_with_existing_judicial_function_candidate",
+          "existing_function_or_procedure_head",
+          "existing_typed_source_key",
+          "explicit_positive_definition_or_naming_roles"
+        ]
+      },
+      "sources": [
+        "final_quote_contract",
+        "existing_spine_API_addendum",
+        "existing_typed_source_declaration",
+        "existing_sense_catalog",
+        "official_KRDICT_61371"
+      ],
+      "note_ko": "기존 형상 요건을 만족하도록 독립 구성했다. native 인식·관계 소유가 실제 반환 API에서 관찰되지 않으면 그 적용성은 별도 조건부/미연결로 남기며 내부 객체를 주입하지 않는다."
+    },
+    {
+      "id": "SP003",
+      "scene_id": "F01S03",
+      "scope": "constructed",
+      "input": "“사법 국가 권력 행사 기능”은 재판권을 뜻한다. 잠자리는 침구이다.",
+      "supplied_tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": [
+            [
+              "“",
+              "SSO"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": [
+            [
+              "사법",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "국가",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "국가",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "권력",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": [
+            [
+              "권력",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "행사",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": [
+            [
+              "행사",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "기능",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "기능",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "”",
+              "SSC"
+            ]
+          ]
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "재판권",
+          "tag": "NNG",
+          "start": 18,
+          "end": 21,
+          "morphemes": [
+            [
+              "재판권",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 21,
+          "end": 22,
+          "morphemes": [
+            [
+              "을",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "뜻한다",
+          "tag": "VV+EF",
+          "start": 23,
+          "end": 26,
+          "morphemes": [
+            [
+              "뜻하",
+              "VV"
+            ],
+            [
+              "ㄴ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 26,
+          "end": 27,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 28,
+          "end": 31,
+          "morphemes": [
+            [
+              "잠자리",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 31,
+          "end": 32,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "침구",
+          "tag": "NNG",
+          "start": 33,
+          "end": 35,
+          "morphemes": [
+            [
+              "침구",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이다",
+          "tag": "VCP+EF",
+          "start": 35,
+          "end": 37,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 37,
+          "end": 38,
+          "morphemes": [
+            [
+              ".",
+              "SF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "structure_points": {
+        "open": [
+          0,
+          1
+        ],
+        "t1": [
+          1,
+          3
+        ],
+        "n1": [
+          4,
+          6
+        ],
+        "n2": [
+          7,
+          9
+        ],
+        "n3": [
+          10,
+          12
+        ],
+        "n4": [
+          13,
+          15
+        ],
+        "close": [
+          15,
+          16
+        ],
+        "a1": [
+          18,
+          21
+        ],
+        "t2": [
+          28,
+          31
+        ],
+        "a2": [
+          33,
+          35
+        ]
+      },
+      "expected_topology": [
+        {
+          "state": "valid",
+          "start": 0,
+          "end": 16
+        }
+      ],
+      "targets": [
+        {
+          "id": "t1",
+          "start": 1,
+          "end": 3,
+          "surface": "사법",
+          "expected_semantics": {
+            "selection": "selected",
+            "sense_id": "sabeop.judicial_function",
+            "reason": "selected",
+            "source_anchors": [
+              {
+                "label": "a1",
+                "start": 18,
+                "end": 21,
+                "surface": "재판권"
+              }
+            ],
+            "ownership": "same_occurrence_and_existing_positive_definition_or_naming",
+            "must_not_have_unresolved_quote_ownership": true
+          },
+          "target_phone_reference": {
+            "scope": "none",
+            "expected": null,
+            "source_ids": []
+          }
+        },
+        {
+          "id": "t2",
+          "start": 28,
+          "end": 31,
+          "surface": "잠자리",
+          "expected_semantics": {
+            "selection": "selected",
+            "sense_id": "jamjari.bedding",
+            "reason": "selected",
+            "source_anchors": [
+              {
+                "label": "a2",
+                "start": 33,
+                "end": 35,
+                "surface": "침구"
+              }
+            ],
+            "ownership": "same_occurrence_and_existing_positive_definition_or_naming",
+            "must_not_have_unresolved_quote_ownership": true
+          },
+          "target_phone_reference": {
+            "scope": "none",
+            "expected": null,
+            "source_ids": []
+          }
+        }
+      ],
+      "full_phone_reference": null,
+      "coverage": [
+        "existing_closed_pure_nominal_spine",
+        "intermediate_component_preservation",
+        "definition_independent"
+      ],
+      "original_nominal_component_spans": [
+        {
+          "start": 1,
+          "end": 3
+        },
+        {
+          "start": 4,
+          "end": 6
+        },
+        {
+          "start": 7,
+          "end": 9
+        },
+        {
+          "start": 10,
+          "end": 12
+        },
+        {
+          "start": 13,
+          "end": 15
+        }
+      ],
+      "nominal_unit_count": 5,
+      "intermediate_unit_count": 3,
+      "applicability": {
+        "status": "declared_existing_input_shape_satisfied_native_recognizer_unmeasured",
+        "premises": [
+          "valid_closed_root",
+          "only_supplied_NNG_units",
+          "exact_surface_and_absolute_spans",
+          "whitespace_between_every_nominal_unit",
+          "one_registered_target_with_existing_judicial_function_candidate",
+          "existing_function_or_procedure_head",
+          "existing_typed_source_key",
+          "explicit_positive_definition_or_naming_roles"
+        ]
+      },
+      "sources": [
+        "final_quote_contract",
+        "existing_spine_API_addendum",
+        "existing_typed_source_declaration",
+        "existing_sense_catalog",
+        "official_KRDICT_61371"
+      ],
+      "note_ko": "기존 형상 요건을 만족하도록 독립 구성했다. native 인식·관계 소유가 실제 반환 API에서 관찰되지 않으면 그 적용성은 별도 조건부/미연결로 남기며 내부 객체를 주입하지 않는다."
+    }
+  ]
+}

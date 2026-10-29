@@ -1,0 +1,40 @@
+{
+  "schema": "r41_independent_policy_supplement.v1",
+  "development_stage": "post03_policy_refinement_before_candidate04",
+  "untouched_holdout": false,
+  "original_gold_manifest_and_raw_scores_unchanged": true,
+  "frozen_gold_sha256": "9b7accff964c1918ec099eaf2036b68cd2b575ef266ff178f307b70b95d751f6",
+  "frozen_manifest_sha256": "395a7b88b5f3e033edf631d881aeae7879686c491b0e8d2770329d85f7ee5668",
+  "policy_document": "Post03_Lexical_Class_Adjudication_V1_KO.md",
+  "amendments": [
+    {
+      "case_id": "zero_marker_derived",
+      "variants": [
+        "fused"
+      ],
+      "expected_before": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": "unavailable",
+        "n_target": false
+      },
+      "expected_after": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "nominalized",
+        "tail": "nominalized",
+        "surface_status": "unavailable",
+        "n_target": true
+      },
+      "reason_ko": "정확한 전체 원형/태그/유형 문법과 승인된 끝 자모 실현은 어휘 범주를 입증한다. 영폭 원시 표지는 강한 자모 소유 증명의 부재이며 그 범주를 미해결로 만들지 않는다.",
+      "surface_atom_identity_authority_added": false
+    }
+  ],
+  "score_reporting_ko": "원본 고정 기대값으로 계산한 원점수와 정책 보완 판정을 각각 보존하고 나란히 보고한다. 원본 실패를 삭제하거나 미열람 검증 성능으로 다시 이름 붙이지 않는다.",
+  "project_runtime_g2p_kiwi_executed_by_adjudicator": false,
+  "candidate_bodies_case_results_or_old_tests_viewed": false
+}

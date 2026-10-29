@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "g2p-ko"
-version = "1.0.0"
+version = "1.0.0b1"
 description = "한국어 TTS 입력을 위한 보수적 CPU 전용 텍스트 정규화·G2P"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -22,7 +22,10 @@ classifiers = [
   "Programming Language :: Python :: 3.13",
   "Programming Language :: Python :: 3.14",
 ]
-dependencies = ["kiwipiepy>=0.23.2"]
+dependencies = ["kiwipiepy==0.24.1"]
+
+[project.optional-dependencies]
+number-reader = ["huggingface-hub>=0.34,<2", "numpy>=2,<3", "tokenizers>=0.21,<1", "onnxruntime>=1.30,<2; python_version >= '3.11'"]
 
 [project.urls]
 Repository = "https://github.com/smbslt3/g2p-korean"
@@ -49,6 +52,13 @@ include = [
   "/docs",
   "/tests",
   "/tools",
+]
+exclude = [
+  "/tests/test_repository_policy.py",
+  "/docs/ADVERSARIAL_*",
+  "/docs/G2P_IMPLEMENTATION_FINDINGS_*",
+  "/docs/KIWI_*",
+  "/docs/KOREAN_G2P_IMPLEMENTATION_COMPARISON_*",
 ]
 [tool.pytest.ini_options]
 testpaths = ["tests"]

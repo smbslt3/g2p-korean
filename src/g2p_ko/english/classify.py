@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import unicodedata
+
 _LETTER_NAMES = {
     "a": "에이",
     "b": "비",
@@ -33,6 +35,13 @@ _LETTER_NAMES = {
 _APOSTROPHES = frozenset({"'", "\u2019"})
 
 
+def ascii_letter_form(value: str) -> str | None:
+    """전각·수학용 영문도 대응되는 알파벳 이름으로 읽는다. 숫자는 변환하지 않는다."""
+
+    letters = unicodedata.normalize("NFKC", value)
+    return letters if letters.isascii() and letters.isalpha() else None
+
+
 def spell_ascii_letters(value: str) -> str:
     """검증된 ASCII 알파벳을 한국어 글자 이름으로 읽는다."""
 
@@ -42,7 +51,7 @@ def spell_ascii_letters(value: str) -> str:
 def resolve_english(value: str) -> str | None:
     """ASCII 알파벳과 아포스트로피를 소문자 기준 글자 이름으로 읽는다."""
 
-    lowered = value.lower()
+    lowered = unicodedata.normalize("NFKC", value).lower()
     if not lowered:
         return None
     names: list[str] = []

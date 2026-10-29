@@ -1,0 +1,590 @@
+{
+  "versions": {
+    "kiwipiepy": "0.24.1",
+    "kiwipiepy_model": "0.24.0",
+    "pytest": "8.4.2",
+    "model_type": "cong"
+  },
+  "cases": [
+    {
+      "text": "문자 메시지",
+      "tokens": [
+        {
+          "form": "문자",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "문자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "메시지",
+          "tag": "NNG",
+          "normalized_start": 3,
+          "normalized_end": 6,
+          "morphemes": [
+            [
+              "메시지",
+              "NNG"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "문자 메시지를 보았다",
+      "tokens": [
+        {
+          "form": "문자",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "문자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "메시지",
+          "tag": "NNG",
+          "normalized_start": 3,
+          "normalized_end": 6,
+          "morphemes": [
+            [
+              "메시지",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "normalized_start": 6,
+          "normalized_end": 7,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "보",
+          "tag": "VV",
+          "normalized_start": 8,
+          "normalized_end": 9,
+          "morphemes": [
+            [
+              "보",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "았",
+          "tag": "EP",
+          "normalized_start": 9,
+          "normalized_end": 10,
+          "morphemes": [
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "normalized_start": 10,
+          "normalized_end": 11,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "문자메시지",
+      "tokens": [
+        {
+          "form": "문자",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "문자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "메시지",
+          "tag": "NNG",
+          "normalized_start": 2,
+          "normalized_end": 5,
+          "morphemes": [
+            [
+              "메시지",
+              "NNG"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "문자 체계",
+      "tokens": [
+        {
+          "form": "문자",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "문자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "체계",
+          "tag": "NNG",
+          "normalized_start": 3,
+          "normalized_end": 5,
+          "morphemes": [
+            [
+              "체계",
+              "NNG"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "문자는 기호다",
+      "tokens": [
+        {
+          "form": "문자",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "문자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "기호",
+          "tag": "NNG",
+          "normalized_start": 4,
+          "normalized_end": 6,
+          "morphemes": [
+            [
+              "기호",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "VCP+EF",
+          "normalized_start": 6,
+          "normalized_end": 7,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "문자를 읽었다",
+      "tokens": [
+        {
+          "form": "문자",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "문자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "읽",
+          "tag": "VV",
+          "normalized_start": 4,
+          "normalized_end": 5,
+          "morphemes": [
+            [
+              "읽",
+              "VV"
+            ]
+          ]
+        },
+        {
+          "form": "었",
+          "tag": "EP",
+          "normalized_start": 5,
+          "normalized_end": 6,
+          "morphemes": [
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "normalized_start": 6,
+          "normalized_end": 7,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "문자를 보냈다",
+      "tokens": [
+        {
+          "form": "문자",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "문자",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "를",
+              "JKO"
+            ]
+          ]
+        },
+        {
+          "form": "보냈",
+          "tag": "VV+EP",
+          "normalized_start": 4,
+          "normalized_end": 6,
+          "morphemes": [
+            [
+              "보내",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "normalized_start": 6,
+          "normalized_end": 7,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "문자는 이름이다",
+      "tokens": [
+        {
+          "form": "문자",
+          "tag": "NNP",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "문자",
+              "NNP"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        },
+        {
+          "form": "이름",
+          "tag": "NNG",
+          "normalized_start": 4,
+          "normalized_end": 6,
+          "morphemes": [
+            [
+              "이름",
+              "NNG"
+            ]
+          ]
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "normalized_start": 6,
+          "normalized_end": 7,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "normalized_start": 7,
+          "normalized_end": 8,
+          "morphemes": [
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "일산동구",
+      "tokens": [
+        {
+          "form": "일산동구",
+          "tag": "NNP",
+          "normalized_start": 0,
+          "normalized_end": 4,
+          "morphemes": [
+            [
+              "일산동구",
+              "NNP"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "일산동구에서",
+      "tokens": [
+        {
+          "form": "일산동구",
+          "tag": "NNP",
+          "normalized_start": 0,
+          "normalized_end": 4,
+          "morphemes": [
+            [
+              "일산동구",
+              "NNP"
+            ]
+          ]
+        },
+        {
+          "form": "에서",
+          "tag": "JKB",
+          "normalized_start": 4,
+          "normalized_end": 6,
+          "morphemes": [
+            [
+              "에서",
+              "JKB"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "일산동구는",
+      "tokens": [
+        {
+          "form": "일산동구",
+          "tag": "NNP",
+          "normalized_start": 0,
+          "normalized_end": 4,
+          "morphemes": [
+            [
+              "일산동구",
+              "NNP"
+            ]
+          ]
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "normalized_start": 4,
+          "normalized_end": 5,
+          "morphemes": [
+            [
+              "는",
+              "JX"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "일산 동구",
+      "tokens": [
+        {
+          "form": "일산",
+          "tag": "NNP",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "일산",
+              "NNP"
+            ]
+          ]
+        },
+        {
+          "form": "동구",
+          "tag": "NNP",
+          "normalized_start": 3,
+          "normalized_end": 5,
+          "morphemes": [
+            [
+              "동구",
+              "NNP"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "새일산동구",
+      "tokens": [
+        {
+          "form": "새일산동구",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 5,
+          "morphemes": [
+            [
+              "새일산동구",
+              "NNG"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "일산서구",
+      "tokens": [
+        {
+          "form": "일산서구",
+          "tag": "NNP",
+          "normalized_start": 0,
+          "normalized_end": 4,
+          "morphemes": [
+            [
+              "일산서구",
+              "NNP"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "일산",
+      "tokens": [
+        {
+          "form": "일산",
+          "tag": "NNP",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "일산",
+              "NNP"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "text": "글자",
+      "tokens": [
+        {
+          "form": "글자",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 2,
+          "morphemes": [
+            [
+              "글자",
+              "NNG"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

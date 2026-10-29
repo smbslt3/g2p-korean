@@ -28,29 +28,34 @@ def test_internal_pipeline_keeps_intermediate_and_pronunciation_outputs() -> Non
         ("26개", "스물여섯 개", "스물려섣 깨"),
     ],
 )
-def test_g2p_applies_tts_normalizer_before_pronunciation(
+def test_g2p_accepts_the_upstream_normalizer_output(
     source: str,
     normalized: str,
     pronunciation: str,
 ) -> None:
     assert KoreanTTSNormalizer()(source) == normalized
-    assert G2P()(source) == pronunciation
+    assert G2P()(normalized) == pronunciation
 
 
 def test_english_letter_names_are_always_enabled() -> None:
     result = convert_pipeline("API OpenAI hello ray's")
 
-    assert result.normalized_text == "에이피아이 오피이엔에이아이 에이치이엘엘오 알에이와이에스"
+    assert result.normalized_text == "에이피아이 오픈에이아이 에이치이엘엘오 알에이와이'에스"
     assert [
         item.after
         for item in result.rewrites
         if item.rule_id == "english.letter_names.v1"
     ] == [
         "에이피아이",
-        "오피이엔에이아이",
         "에이치이엘엘오",
-        "알에이와이에스",
+        "알에이와이",
+        "에스",
     ]
+    assert any(
+        item.before == "OpenAI" and item.after == "오픈에이아이"
+        and item.rule_id == "english.conventional.v1"
+        for item in result.rewrites
+    )
     assert result.complete
 
 

@@ -15,25 +15,6 @@ def is_numeric_character(character: str) -> bool:
     return character.isnumeric()
 
 
-def _is_hangul_lead(character: str) -> bool:
-    return 0x1100 <= ord(character) <= 0x115F or 0xA960 <= ord(character) <= 0xA97C
-
-
-def _is_hangul_vowel(character: str) -> bool:
-    return 0x1160 <= ord(character) <= 0x11A7 or 0xD7B0 <= ord(character) <= 0xD7C6
-
-
-def _is_hangul_tail(character: str) -> bool:
-    return 0x11A8 <= ord(character) <= 0x11FF or 0xD7CB <= ord(character) <= 0xD7FB
-
-
-def _is_hangul_lv_syllable(character: str) -> bool:
-    """현대 한글 완성형 중 종성이 없는 LV 음절인지 판정한다."""
-
-    code_point = ord(character)
-    return 0xAC00 <= code_point <= 0xD7A3 and (code_point - 0xAC00) % 28 == 0
-
-
 @dataclass(frozen=True, slots=True)
 class NormalizedText:
     """NFC 문자열의 각 code point가 가리키는 원문 span을 담는다."""
@@ -93,7 +74,7 @@ def _validate_input(source: str, max_length: int) -> bool:
 def normalize_nfc(source: str, *, max_length: int = 10_000) -> NormalizedText:
     """NFC 결과와 모든 결과 문자에 대응하는 원문 span을 만든다.
 
-    일반 결합문자와 conjoining Hangul jamo 조합은 하나의 원자 단위로 정규화한다.
+    일반 결합문자와 정준 조합은 하나의 원자 단위로 정규화한다.
     따라서 NFD 입력이 한 음절로 합쳐져도 원문 code point 위치는 유지된다.
     """
 
@@ -116,7 +97,8 @@ def normalize_nfc(source: str, *, max_length: int = 10_000) -> NormalizedText:
     rewrites: list[Rewrite] = []
     cluster: list[str] = []
     cluster_start = 0
-    state = "other"
+    trailing_class = 0
+    composed_tail = ""
 
     def flush(end: int) -> None:
         if not cluster:
@@ -139,29 +121,29 @@ def normalize_nfc(source: str, *, max_length: int = 10_000) -> NormalizedText:
             )
 
     for index, character in enumerate(source):
-        joins_hangul = (
-            (state == "lead" and _is_hangul_vowel(character))
-            or (state == "lead_vowel" and _is_hangul_tail(character))
-        )
-        is_combining = unicodedata.combining(character) != 0
-        if cluster and not is_combining and not joins_hangul:
+        decomposed = unicodedata.normalize("NFD", character)
+        leading_class = unicodedata.combining(decomposed[0])
+        next_trailing_class = unicodedata.combining(decomposed[-1])
+        character_nfc = unicodedata.normalize("NFC", character)
+
+        joins_cluster = bool(leading_class)
+        joined_tail = ""
+        if cluster and not joins_cluster and not trailing_class:
+            # 등급 0 사이에서도 한글 자모와 일부 문자권은 정준 조합한다.
+            # 마지막 조합 문자만 확인해 클러스터 전체의 반복 정규화를 피한다.
+            joined_tail = unicodedata.normalize("NFC", composed_tail + character_nfc)
+            joins_cluster = joined_tail != composed_tail + character_nfc
+        if cluster and not joins_cluster:
             flush(index)
             cluster = []
-            state = "other"
         if not cluster:
             cluster_start = index
         cluster.append(character)
-        if _is_hangul_lead(character):
-            state = "lead"
-        elif _is_hangul_lv_syllable(character):
-            # NFC는 완성형 LV 음절 뒤의 conjoining 종성도 한 음절로 합친다.
-            state = "lead_vowel"
-        elif state == "lead" and _is_hangul_vowel(character):
-            state = "lead_vowel"
-        elif state == "lead_vowel" and _is_hangul_tail(character):
-            state = "complete"
-        elif not is_combining:
-            state = "other"
+        trailing_class = next_trailing_class
+        if not trailing_class:
+            composed_tail = joined_tail[-1] if joined_tail and joins_cluster else character_nfc[-1]
+        else:
+            composed_tail = ""
     flush(len(source))
     return NormalizedText(source, "".join(chunks), tuple(spans), tuple(rewrites))
 

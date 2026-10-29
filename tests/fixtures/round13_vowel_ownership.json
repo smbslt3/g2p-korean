@@ -1,0 +1,1889 @@
+{
+  "cases": [
+    {
+      "name": "도의의_split",
+      "text": "도의의",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "도의의_merged",
+      "text": "도의의",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "도의의_whole_lexical",
+      "text": "도의의",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "예의의_split",
+      "text": "예의의",
+      "parts": [
+        [
+          "예",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [
+        0
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "예의의_merged",
+      "text": "예의의",
+      "parts": [
+        [
+          "예",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [
+        0
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "예의의_whole_lexical",
+      "text": "예의의",
+      "parts": [
+        [
+          "예",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [
+        0
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "의의가_split",
+      "text": "의의가",
+      "parts": [
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "가",
+          "JKS"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [
+        0
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "의의가_merged",
+      "text": "의의가",
+      "parts": [
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "가",
+          "JKS"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [
+        0
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "의의가_whole_lexical",
+      "text": "의의가",
+      "parts": [
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "가",
+          "JKS"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [
+        0
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "자유의지의_split",
+      "text": "자유의지의",
+      "parts": [
+        [
+          "자유",
+          "NNG"
+        ],
+        [
+          "의지",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "2": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "4": {
+          "role": "JKG",
+          "owner": [
+            4,
+            5
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "자유의지의_merged",
+      "text": "자유의지의",
+      "parts": [
+        [
+          "자유",
+          "NNG"
+        ],
+        [
+          "의지",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "2": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "4": {
+          "role": "JKG",
+          "owner": [
+            4,
+            5
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "자유의지의_whole_lexical",
+      "text": "자유의지의",
+      "parts": [
+        [
+          "자유",
+          "NNG"
+        ],
+        [
+          "의지",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "2": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "4": {
+          "role": "JKG",
+          "owner": [
+            4,
+            5
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "법의학의_split",
+      "text": "법의학의",
+      "parts": [
+        [
+          "법",
+          "NNG"
+        ],
+        [
+          "의학",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "3": {
+          "role": "JKG",
+          "owner": [
+            3,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "법의학의_merged",
+      "text": "법의학의",
+      "parts": [
+        [
+          "법",
+          "NNG"
+        ],
+        [
+          "의학",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "3": {
+          "role": "JKG",
+          "owner": [
+            3,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "법의학의_whole_lexical",
+      "text": "법의학의",
+      "parts": [
+        [
+          "법",
+          "NNG"
+        ],
+        [
+          "의학",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "3": {
+          "role": "JKG",
+          "owner": [
+            3,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "계몽의_split",
+      "text": "계몽의",
+      "parts": [
+        [
+          "계몽의",
+          "NNG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "0": {
+          "role": "original_ye",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅖ",
+            "ㅔ"
+          ]
+        },
+        "2": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "계몽의_merged",
+      "text": "계몽의",
+      "parts": [
+        [
+          "계몽의",
+          "NNG"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "0": {
+          "role": "original_ye",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅖ",
+            "ㅔ"
+          ]
+        },
+        "2": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "계몽의_whole_lexical",
+      "text": "계몽의",
+      "parts": [
+        [
+          "계몽의",
+          "NNG"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "0": {
+          "role": "original_ye",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅖ",
+            "ㅔ"
+          ]
+        },
+        "2": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "계몽의_genitive_split",
+      "text": "계몽의",
+      "parts": [
+        [
+          "계몽",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "0": {
+          "role": "original_ye",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅖ",
+            "ㅔ"
+          ]
+        },
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "계몽의_genitive_merged",
+      "text": "계몽의",
+      "parts": [
+        [
+          "계몽",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "0": {
+          "role": "original_ye",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅖ",
+            "ㅔ"
+          ]
+        },
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "계몽의_genitive_whole_lexical",
+      "text": "계몽의",
+      "parts": [
+        [
+          "계몽",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "0": {
+          "role": "original_ye",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅖ",
+            "ㅔ"
+          ]
+        },
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "신의학_split",
+      "text": "신의학",
+      "parts": [
+        [
+          "신",
+          "XPN"
+        ],
+        [
+          "의학",
+          "NNG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "신의학_merged",
+      "text": "신의학",
+      "parts": [
+        [
+          "신",
+          "XPN"
+        ],
+        [
+          "의학",
+          "NNG"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "신의학_whole_lexical",
+      "text": "신의학",
+      "parts": [
+        [
+          "신",
+          "XPN"
+        ],
+        [
+          "의학",
+          "NNG"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "의학론의_split",
+      "text": "의학론의",
+      "parts": [
+        [
+          "의학",
+          "NNG"
+        ],
+        [
+          "론",
+          "XSN"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "3": {
+          "role": "JKG",
+          "owner": [
+            3,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [
+        0
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "의학론의_merged",
+      "text": "의학론의",
+      "parts": [
+        [
+          "의학",
+          "NNG"
+        ],
+        [
+          "론",
+          "XSN"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "3": {
+          "role": "JKG",
+          "owner": [
+            3,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [
+        0
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "의학론의_whole_lexical",
+      "text": "의학론의",
+      "parts": [
+        [
+          "의학",
+          "NNG"
+        ],
+        [
+          "론",
+          "XSN"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "3": {
+          "role": "JKG",
+          "owner": [
+            3,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [
+        0
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "반의어성의_split",
+      "text": "반의어성의",
+      "parts": [
+        [
+          "반",
+          "XPN"
+        ],
+        [
+          "의어",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "4": {
+          "role": "JKG",
+          "owner": [
+            4,
+            5
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "반의어성의_merged",
+      "text": "반의어성의",
+      "parts": [
+        [
+          "반",
+          "XPN"
+        ],
+        [
+          "의어",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "4": {
+          "role": "JKG",
+          "owner": [
+            4,
+            5
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "반의어성의_whole_lexical",
+      "text": "반의어성의",
+      "parts": [
+        [
+          "반",
+          "XPN"
+        ],
+        [
+          "의어",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "whole_lexical",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            4
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "4": {
+          "role": "JKG",
+          "owner": [
+            4,
+            5
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "separate_word_initial",
+      "text": "자유 의지의",
+      "parts": [
+        [
+          "자유",
+          "NNG",
+          0,
+          2
+        ],
+        [
+          "의지",
+          "NNG",
+          3,
+          5
+        ],
+        [
+          "의",
+          "JKG",
+          5,
+          6
+        ]
+      ],
+      "mode": "explicit",
+      "slots": {
+        "5": {
+          "role": "JKG",
+          "owner": [
+            5,
+            6
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [
+        3
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "quoted_initial",
+      "text": "도의 “의지의”",
+      "parts": [
+        [
+          "도",
+          "NNG",
+          0,
+          1
+        ],
+        [
+          "의",
+          "NNG",
+          1,
+          2
+        ],
+        [
+          "의지",
+          "NNG",
+          4,
+          6
+        ],
+        [
+          "의",
+          "JKG",
+          6,
+          7
+        ]
+      ],
+      "mode": "explicit",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "6": {
+          "role": "JKG",
+          "owner": [
+            6,
+            7
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [
+        4
+      ],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "single_adverb",
+      "text": "거의",
+      "parts": [
+        [
+          "거의",
+          "MAG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다."
+    },
+    {
+      "name": "tag_part_mismatch",
+      "text": "도의의",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "tag_mismatch",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        1,
+        2
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "missing_composition",
+      "text": "도의의",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "missing_composition",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        1,
+        2
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "partial_coverage",
+      "text": "도의가",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        1
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "particle_then_lexical",
+      "text": "도의의",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ],
+        [
+          "의",
+          "NNG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        1,
+        2
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "suffix_before_noun",
+      "text": "성의",
+      "parts": [
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "의",
+          "NNG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        1
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "adverb_plus_noun",
+      "text": "거의의",
+      "parts": [
+        [
+          "거",
+          "MAG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        1,
+        2
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "prefix_without_noun",
+      "text": "신의",
+      "parts": [
+        [
+          "신",
+          "XPN"
+        ],
+        [
+          "의",
+          "XPN"
+        ]
+      ],
+      "mode": "split",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        1
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "overlap",
+      "text": "도의의",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "overlap",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        1,
+        2
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "contraction",
+      "text": "계",
+      "parts": [
+        [
+          "기",
+          "NNG"
+        ],
+        [
+          "에",
+          "JKB"
+        ]
+      ],
+      "mode": "merged",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        0
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "cross_word_token",
+      "text": "도 의",
+      "parts": [
+        [
+          "도 의",
+          "NNG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        2
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "cross_quote_token",
+      "text": "도“의”",
+      "parts": [
+        [
+          "도“의”",
+          "NNG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        2
+      ],
+      "reason_ko": "단어 전체의 정확한 역할 소유가 입증되지 않아 새 슬롯을 승인하지 않는다."
+    },
+    {
+      "name": "english_repeats_nfd",
+      "text": "AI 도의의 AI 도의의",
+      "parts": [
+        [
+          "도",
+          "NNG",
+          3,
+          4
+        ],
+        [
+          "의",
+          "NNG",
+          4,
+          5
+        ],
+        [
+          "의",
+          "JKG",
+          5,
+          6
+        ],
+        [
+          "도",
+          "NNG",
+          10,
+          11
+        ],
+        [
+          "의",
+          "NNG",
+          11,
+          12
+        ],
+        [
+          "의",
+          "JKG",
+          12,
+          13
+        ]
+      ],
+      "mode": "explicit",
+      "slots": {
+        "4": {
+          "role": "lexical_noninitial",
+          "owner": [
+            3,
+            5
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "5": {
+          "role": "JKG",
+          "owner": [
+            5,
+            6
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        },
+        "11": {
+          "role": "lexical_noninitial",
+          "owner": [
+            10,
+            12
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "12": {
+          "role": "JKG",
+          "owner": [
+            12,
+            13
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [],
+      "reason_ko": "정확한 명사 계열 단어 소유와 후행 조사 역할을 검증한다.",
+      "english_expansion": true
+    },
+    {
+      "name": "correct_base_mixed_quote",
+      "text": "협의 “의학의”",
+      "parts": [
+        [
+          "협의",
+          "NNG",
+          0,
+          2
+        ],
+        [
+          "의학",
+          "NNG",
+          4,
+          6
+        ],
+        [
+          "의",
+          "JKG",
+          6,
+          7
+        ]
+      ],
+      "mode": "explicit",
+      "slots": {
+        "1": {
+          "role": "lexical_noninitial",
+          "owner": [
+            0,
+            2
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅣ"
+          ]
+        },
+        "6": {
+          "role": "JKG",
+          "owner": [
+            6,
+            7
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [
+        4
+      ],
+      "unknown": []
+    },
+    {
+      "name": "genuine_multi_syllable_group",
+      "text": "도의의",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "group_first_two": true,
+      "slots": {
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [
+        1
+      ]
+    },
+    {
+      "name": "local_base_outside_domain_stays_unknown",
+      "text": "협의",
+      "parts": [
+        [
+          "협의",
+          "NNG"
+        ]
+      ],
+      "mode": "split",
+      "base_overrides": {
+        "0": "혀",
+        "1": "베"
+      },
+      "slots": {},
+      "excluded": [],
+      "unknown": [
+        1
+      ]
+    }
+  ],
+  "original_review_spec_disagreement": [
+    {
+      "name": "local_coarse_precision",
+      "text": "도의의",
+      "parts": [
+        [
+          "도",
+          "NNG"
+        ],
+        [
+          "의",
+          "NNG"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "mode": "split",
+      "slots": {
+        "2": {
+          "role": "JKG",
+          "owner": [
+            2,
+            3
+          ],
+          "vowels": [
+            "ㅢ",
+            "ㅔ"
+          ]
+        }
+      },
+      "excluded": [],
+      "unknown": [
+        1
+      ],
+      "reason_ko": "단일 글자라도 operation 정밀도는 정확한 국소 대응으로 승인하지 않는다.",
+      "coarse_index": 1
+    }
+  ],
+  "scope_ko": "지역 소유 로직의 통제된 정렬 계약이다. 원래46검사의45/46 점수와 과도한 OPERATION 단독 거부 기대는 별도로 보존한다. 인공 기본 문자열을 실제 전체 발음 정답으로 사용하지 않는다."
+}

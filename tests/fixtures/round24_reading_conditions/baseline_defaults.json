@@ -1,0 +1,787 @@
+[
+  {
+    "source": "곰 인형",
+    "result": {
+      "source": "곰 인형",
+      "normalized_text": "곰 인형",
+      "surface_pronunciation": "곰 닌형",
+      "diagnostics": {
+        "normalization": {
+          "source": "곰 인형",
+          "diagnostics": []
+        },
+        "pronunciation": {
+          "source": "곰 인형",
+          "diagnostics": []
+        }
+      },
+      "complete": true
+    },
+    "alignment": {
+      "source": "곰 인형",
+      "output": "곰 닌형",
+      "status": "exact",
+      "source_coverage_unavailable": false,
+      "entries": [
+        {
+          "output_start": 0,
+          "output_end": 1,
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 1,
+              "surface": "곰",
+              "source_length": 4
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 1,
+          "output_end": 2,
+          "source_spans": [
+            {
+              "start": 1,
+              "end": 2,
+              "surface": " ",
+              "source_length": 4
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 2,
+          "output_end": 3,
+          "source_spans": [
+            {
+              "start": 2,
+              "end": 3,
+              "surface": "인",
+              "source_length": 4
+            }
+          ],
+          "relation": "substitution",
+          "stage": "phonology",
+          "kind": "phonological_rule",
+          "rule_id": "ko.n_insertion.word",
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 3,
+          "output_end": 4,
+          "source_spans": [
+            {
+              "start": 3,
+              "end": 4,
+              "surface": "형",
+              "source_length": 4
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        }
+      ]
+    }
+  },
+  {
+    "source": "달 여행",
+    "result": {
+      "source": "달 여행",
+      "normalized_text": "달 여행",
+      "surface_pronunciation": "달 려행",
+      "diagnostics": {
+        "normalization": {
+          "source": "달 여행",
+          "diagnostics": []
+        },
+        "pronunciation": {
+          "source": "달 여행",
+          "diagnostics": []
+        }
+      },
+      "complete": true
+    },
+    "alignment": {
+      "source": "달 여행",
+      "output": "달 려행",
+      "status": "exact",
+      "source_coverage_unavailable": false,
+      "entries": [
+        {
+          "output_start": 0,
+          "output_end": 1,
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 1,
+              "surface": "달",
+              "source_length": 4
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 1,
+          "output_end": 2,
+          "source_spans": [
+            {
+              "start": 1,
+              "end": 2,
+              "surface": " ",
+              "source_length": 4
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 2,
+          "output_end": 3,
+          "source_spans": [
+            {
+              "start": 2,
+              "end": 3,
+              "surface": "여",
+              "source_length": 4
+            }
+          ],
+          "relation": "substitution",
+          "stage": "phonology",
+          "kind": "phonological_rule",
+          "rule_id": "ko.liquid.20",
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 3,
+          "output_end": 4,
+          "source_spans": [
+            {
+              "start": 3,
+              "end": 4,
+              "surface": "행",
+              "source_length": 4
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        }
+      ]
+    }
+  },
+  {
+    "source": "옷 안",
+    "result": {
+      "source": "옷 안",
+      "normalized_text": "옷 안",
+      "surface_pronunciation": "오 단",
+      "diagnostics": {
+        "normalization": {
+          "source": "옷 안",
+          "diagnostics": []
+        },
+        "pronunciation": {
+          "source": "옷 안",
+          "diagnostics": []
+        }
+      },
+      "complete": true
+    },
+    "alignment": {
+      "source": "옷 안",
+      "output": "오 단",
+      "status": "exact",
+      "source_coverage_unavailable": false,
+      "entries": [
+        {
+          "output_start": 0,
+          "output_end": 1,
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 1,
+              "surface": "옷",
+              "source_length": 3
+            }
+          ],
+          "relation": "substitution",
+          "stage": "phonology",
+          "kind": "phonological_rule",
+          "rule_id": "ko.liaison.lexical",
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 1,
+          "output_end": 2,
+          "source_spans": [
+            {
+              "start": 1,
+              "end": 2,
+              "surface": " ",
+              "source_length": 3
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 2,
+          "output_end": 3,
+          "source_spans": [
+            {
+              "start": 2,
+              "end": 3,
+              "surface": "안",
+              "source_length": 3
+            }
+          ],
+          "relation": "substitution",
+          "stage": "phonology",
+          "kind": "phonological_rule",
+          "rule_id": "ko.liaison.lexical",
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        }
+      ]
+    }
+  },
+  {
+    "source": "국 물",
+    "result": {
+      "source": "국 물",
+      "normalized_text": "국 물",
+      "surface_pronunciation": "궁 물",
+      "diagnostics": {
+        "normalization": {
+          "source": "국 물",
+          "diagnostics": []
+        },
+        "pronunciation": {
+          "source": "국 물",
+          "diagnostics": []
+        }
+      },
+      "complete": true
+    },
+    "alignment": {
+      "source": "국 물",
+      "output": "궁 물",
+      "status": "exact",
+      "source_coverage_unavailable": false,
+      "entries": [
+        {
+          "output_start": 0,
+          "output_end": 1,
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 1,
+              "surface": "국",
+              "source_length": 3
+            }
+          ],
+          "relation": "substitution",
+          "stage": "phonology",
+          "kind": "phonological_rule",
+          "rule_id": "ko.nasalization",
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 1,
+          "output_end": 2,
+          "source_spans": [
+            {
+              "start": 1,
+              "end": 2,
+              "surface": " ",
+              "source_length": 3
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 2,
+          "output_end": 3,
+          "source_spans": [
+            {
+              "start": 2,
+              "end": 3,
+              "surface": "물",
+              "source_length": 3
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        }
+      ]
+    }
+  },
+  {
+    "source": "AI 곰 인형",
+    "result": {
+      "source": "AI 곰 인형",
+      "normalized_text": "에이아이 곰 인형",
+      "surface_pronunciation": "에이아이 곰 닌형",
+      "diagnostics": {
+        "normalization": {
+          "source": "AI 곰 인형",
+          "diagnostics": []
+        },
+        "pronunciation": {
+          "source": "AI 곰 인형",
+          "diagnostics": []
+        }
+      },
+      "complete": true
+    },
+    "alignment": {
+      "source": "AI 곰 인형",
+      "output": "에이아이 곰 닌형",
+      "status": "coarse",
+      "source_coverage_unavailable": false,
+      "entries": [
+        {
+          "output_start": 0,
+          "output_end": 4,
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 2,
+              "surface": "AI",
+              "source_length": 7
+            }
+          ],
+          "relation": "grouped",
+          "stage": "lexical",
+          "kind": "lexical_reading",
+          "rule_id": "english.letter_names.v1",
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "operation"
+        },
+        {
+          "output_start": 4,
+          "output_end": 5,
+          "source_spans": [
+            {
+              "start": 2,
+              "end": 3,
+              "surface": " ",
+              "source_length": 7
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 5,
+          "output_end": 6,
+          "source_spans": [
+            {
+              "start": 3,
+              "end": 4,
+              "surface": "곰",
+              "source_length": 7
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 6,
+          "output_end": 7,
+          "source_spans": [
+            {
+              "start": 4,
+              "end": 5,
+              "surface": " ",
+              "source_length": 7
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 7,
+          "output_end": 8,
+          "source_spans": [
+            {
+              "start": 5,
+              "end": 6,
+              "surface": "인",
+              "source_length": 7
+            }
+          ],
+          "relation": "substitution",
+          "stage": "phonology",
+          "kind": "phonological_rule",
+          "rule_id": "ko.n_insertion.word",
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 8,
+          "output_end": 9,
+          "source_spans": [
+            {
+              "start": 6,
+              "end": 7,
+              "surface": "형",
+              "source_length": 7
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        }
+      ]
+    }
+  },
+  {
+    "source": "곰 인형",
+    "result": {
+      "source": "곰 인형",
+      "normalized_text": "곰 인형",
+      "surface_pronunciation": "곰 닌형",
+      "diagnostics": {
+        "normalization": {
+          "source": "곰 인형",
+          "diagnostics": []
+        },
+        "pronunciation": {
+          "source": "곰 인형",
+          "diagnostics": []
+        }
+      },
+      "complete": true
+    },
+    "alignment": {
+      "source": "곰 인형",
+      "output": "곰 닌형",
+      "status": "coarse",
+      "source_coverage_unavailable": false,
+      "entries": [
+        {
+          "output_start": 0,
+          "output_end": 1,
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 3,
+              "surface": "곰",
+              "source_length": 10
+            }
+          ],
+          "relation": "contraction",
+          "stage": "unicode",
+          "kind": "unicode_normalization",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "operation"
+        },
+        {
+          "output_start": 1,
+          "output_end": 2,
+          "source_spans": [
+            {
+              "start": 3,
+              "end": 4,
+              "surface": " ",
+              "source_length": 10
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 2,
+          "output_end": 3,
+          "source_spans": [
+            {
+              "start": 4,
+              "end": 7,
+              "surface": "인",
+              "source_length": 10
+            }
+          ],
+          "relation": "contraction",
+          "stage": "phonology",
+          "kind": "phonological_rule",
+          "rule_id": "ko.n_insertion.word",
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "operation"
+        },
+        {
+          "output_start": 3,
+          "output_end": 4,
+          "source_spans": [
+            {
+              "start": 7,
+              "end": 10,
+              "surface": "형",
+              "source_length": 10
+            }
+          ],
+          "relation": "contraction",
+          "stage": "unicode",
+          "kind": "unicode_normalization",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "operation"
+        }
+      ]
+    }
+  },
+  {
+    "source": "곰   인형",
+    "result": {
+      "source": "곰   인형",
+      "normalized_text": "곰   인형",
+      "surface_pronunciation": "곰   닌형",
+      "diagnostics": {
+        "normalization": {
+          "source": "곰   인형",
+          "diagnostics": []
+        },
+        "pronunciation": {
+          "source": "곰   인형",
+          "diagnostics": []
+        }
+      },
+      "complete": true
+    },
+    "alignment": {
+      "source": "곰   인형",
+      "output": "곰   닌형",
+      "status": "exact",
+      "source_coverage_unavailable": false,
+      "entries": [
+        {
+          "output_start": 0,
+          "output_end": 1,
+          "source_spans": [
+            {
+              "start": 0,
+              "end": 1,
+              "surface": "곰",
+              "source_length": 6
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 1,
+          "output_end": 2,
+          "source_spans": [
+            {
+              "start": 1,
+              "end": 2,
+              "surface": " ",
+              "source_length": 6
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 2,
+          "output_end": 3,
+          "source_spans": [
+            {
+              "start": 2,
+              "end": 3,
+              "surface": " ",
+              "source_length": 6
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 3,
+          "output_end": 4,
+          "source_spans": [
+            {
+              "start": 3,
+              "end": 4,
+              "surface": " ",
+              "source_length": 6
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 4,
+          "output_end": 5,
+          "source_spans": [
+            {
+              "start": 4,
+              "end": 5,
+              "surface": "인",
+              "source_length": 6
+            }
+          ],
+          "relation": "substitution",
+          "stage": "phonology",
+          "kind": "phonological_rule",
+          "rule_id": "ko.n_insertion.word",
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        },
+        {
+          "output_start": 5,
+          "output_end": 6,
+          "source_spans": [
+            {
+              "start": 5,
+              "end": 6,
+              "surface": "형",
+              "source_length": 6
+            }
+          ],
+          "relation": "identity",
+          "stage": null,
+          "kind": "identity",
+          "rule_id": null,
+          "anchor": null,
+          "insertion_rule": null,
+          "precision": "codepoint"
+        }
+      ]
+    }
+  },
+  {
+    "source": "",
+    "result": {
+      "source": "",
+      "normalized_text": "",
+      "surface_pronunciation": "",
+      "diagnostics": {
+        "normalization": {
+          "source": "",
+          "diagnostics": []
+        },
+        "pronunciation": {
+          "source": "",
+          "diagnostics": []
+        }
+      },
+      "complete": true
+    },
+    "alignment": {
+      "source": "",
+      "output": "",
+      "status": "exact",
+      "source_coverage_unavailable": false,
+      "entries": []
+    }
+  }
+]

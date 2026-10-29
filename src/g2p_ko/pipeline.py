@@ -2,11 +2,16 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from collections.abc import Iterable
+from dataclasses import dataclass, replace
 from typing import cast
 
-from .errors import InternalInvariantError
+from .errors import InputValidationError, InternalInvariantError
 from .english import resolve_english
+from .english.classify import ascii_letter_form
+from .english.context import is_standalone_latin_word
+from .english.conventional import CONVENTIONAL_READINGS
+from .english.structures import scan_english_structures
 from .korean.engine import pronounce, pronounce_text
 from .merge import Marker, join_segments, merge_segments, merge_text_segments
 from .model import (
@@ -19,10 +24,12 @@ from .model import (
     Severity,
     SourceSpan,
 )
-from .validation import validate_output
-from .routing import Candidate, is_unsupported_script_character, route_candidates
-from .scanner import ProtectedRange, scan_protected
+from .validation import normalize_pause_boundaries, validate_output
+from .routing import Candidate, route_spelling_candidates
+from .scanner import ProtectedRange
 from .unicode import NormalizedText, normalize_nfc, normalize_nfc_text
+from .reading_conditions import ReadingBoundaryExecution, _MappedReadingBoundary
+from .number_normalizer import normalize_numbers
 
 
 @dataclass(frozen=True, slots=True)
@@ -41,13 +48,15 @@ class _PipelineResult:
     normalized_text: str
     surface_pronunciation: str
     normalized_segments: tuple[OutputSegment, ...]
+    pronunciation_segments: tuple[OutputSegment, ...]
     rewrites: tuple[Rewrite, ...]
     diagnostics: tuple[Diagnostic, ...]
     complete: bool
+    condition_executions: tuple[ReadingBoundaryExecution, ...] = ()
 
 
 class Pipeline:
-    """발화형 문자열을 영문 철자화와 표면 발음 결과로 조합한다."""
+    """발화형 문자열을 영문 읽기와 표면 발음 결과로 조합한다."""
 
     def __init__(
         self,
@@ -59,55 +68,82 @@ class Pipeline:
     def run(
         self,
         source: str,
+        *,
+        pause_boundaries: Iterable[int] = (),
     ) -> _PipelineResult:
-        """영문 철자화와 한국어 표면 발음 단계를 모두 실행한다."""
+        """영문 읽기와 한국어 표면 발음 단계를 모두 실행한다."""
 
-        return cast(_PipelineResult, self._run(source, trace=True))
+        return cast(
+            _PipelineResult,
+            self._run(source, trace=True, pause_boundaries=pause_boundaries),
+        )
 
-    def run_text(self, source: str) -> str:
+    def run_text(self, source: str, *, pause_boundaries: Iterable[int] = ()) -> str:
         """trace와 상세 결과 model 없이 표면 발음 문자열만 반환한다."""
 
-        return cast(str, self._run(source, trace=False))
+        return cast(str, self._run(source, trace=False, pause_boundaries=pause_boundaries))
 
-    def _run(self, source: str, *, trace: bool) -> _PipelineResult | str:
+    def run_normalized(
+        self, source: str, *, pause_boundaries: Iterable[int] = (),
+        reading_conditions: tuple[_MappedReadingBoundary, ...] = (),
+    ) -> _PipelineResult:
+        """공개 진입점에서 원문 길이를 검증한 NFC 입력의 상세 결과를 만든다."""
+
+        return cast(
+            _PipelineResult,
+            self._run(
+                source,
+                trace=True,
+                input_already_validated=True,
+                pause_boundaries=pause_boundaries,
+                reading_conditions=reading_conditions,
+            ),
+        )
+
+    def _run(
+        self,
+        source: str,
+        *,
+        trace: bool,
+        input_already_validated: bool = False,
+        pause_boundaries: Iterable[int] = (),
+        reading_conditions: tuple[_MappedReadingBoundary, ...] = (),
+    ) -> _PipelineResult | str:
         """라우팅 의미를 공유하고 상세 model 생성만 선택적으로 수행한다."""
 
+        # NFC가 늘린 길이에는 원문 예산을 다시 적용하지 않는다.
+        input_limit = len(source) if input_already_validated else self._max_length
         if trace:
-            normalized = normalize_nfc(source, max_length=self._max_length)
+            normalized = normalize_nfc(source, max_length=input_limit)
             text = normalized.text
-            protected = self._snap_protected(
-                normalized,
-                scan_protected(text),
-            )
         else:
             normalized = None
-            text = normalize_nfc_text(source, max_length=self._max_length)
-            protected = scan_protected(text)
-        routed = route_candidates(text, protected)
+            text = normalize_nfc_text(source, max_length=input_limit)
+        text = normalize_numbers(text)
+        pauses = normalize_pause_boundaries(pause_boundaries, len(text))
+        routed = route_spelling_candidates(text)
+        protected = scan_english_structures(text) if any(
+            candidate.handler is Handler.ENGLISH for candidate in routed.candidates
+        ) else ()
 
         diagnostics: list[Diagnostic] | None = [] if trace else None
         unresolved: list[SourceSpan] | None = [] if trace else None
         rewrites: list[Rewrite] | None = (
             list(normalized.rewrites) if normalized is not None else None
         )
-        markers = self._base_markers(text, protected, routed.numeric_ranges)
+        markers = self._numeric_markers(text, routed.numeric_ranges)
         if normalized is not None and diagnostics is not None and unresolved is not None:
-            self._apply_protected_script_policy(
-                diagnostics,
-                unresolved,
-                normalized,
-                protected,
-            )
-            for candidate in routed.opaque_candidates:
-                self._preserve_opaque_candidate(
-                    diagnostics,
-                    unresolved,
-                    normalized,
-                    candidate,
+            for start, end in routed.numeric_ranges:
+                span = normalized.source_span(start, end)
+                self._diagnose(
+                    diagnostics, "unconverted_numeric",
+                    "숫자는 앞단의 korean-number-reader에서 한글로 변환해야 합니다.",
+                    span, "input.number_reader_required",
                 )
+                unresolved.append(span)
 
         for candidate in routed.candidates:
-            resolution = self._resolve_candidate(text, candidate)
+            resolution = self._resolve_candidate(text, candidate, protected)
             if resolution is None:
                 markers.append(self._preserved_marker(text, candidate))
                 if normalized is not None and diagnostics is not None and unresolved is not None:
@@ -142,9 +178,18 @@ class Pipeline:
                     )
                 )
 
+        mapped_pauses = self._map_pause_boundaries(text, markers, pauses)
+        mapped_conditions = tuple(
+            replace(request, output_offset=self._map_pause_boundaries(
+                text, markers, (request.nfc_offset,),
+            )[0]) for request in reading_conditions
+        )
         if normalized is None:
             text_segments = merge_text_segments(text, markers)
-            pronunciation_text = pronounce_text(text_segments)
+            pronunciation_text = pronounce_text(
+                text_segments,
+                pause_boundaries=mapped_pauses,
+            )
             if sum(len(segment.text) for segment in text_segments) != len(
                 pronunciation_text
             ):
@@ -163,7 +208,9 @@ class Pipeline:
         diagnostics.extend(validation_diagnostics)
         complete = not unresolved and not validation_diagnostics
 
-        pronounced = pronounce(segments)
+        pronounced = pronounce(
+            segments, pause_boundaries=mapped_pauses, reading_conditions=mapped_conditions,
+        ) if mapped_conditions else pronounce(segments, pause_boundaries=mapped_pauses)
         pronunciation_text = join_segments(pronounced.segments)
         pronunciation_segments = pronounced.segments
         if len(normalized_text) != len(pronunciation_text):
@@ -191,30 +238,61 @@ class Pipeline:
             normalized_text,
             pronunciation_text,
             segments,
+            pronunciation_segments,
             tuple(rewrites),
             tuple(sorted_diagnostics),
             complete,
+            pronounced.condition_executions,
         )
 
     @staticmethod
-    def _base_markers(
+    def _map_pause_boundaries(
         text: str,
-        protected: tuple[ProtectedRange, ...],
+        markers: list[Marker],
+        pauses: tuple[int, ...],
+    ) -> tuple[int, ...]:
+        """NFC 원문 좌표를 후보 치환 뒤의 segment 좌표로 옮긴다."""
+
+        ordered = sorted(markers, key=lambda item: (item.start, item.end))
+        output_length = len(text) + sum(
+            len(marker.text) - (marker.end - marker.start) for marker in ordered
+        )
+        mapped: list[int] = []
+        for pause in pauses:
+            shift = 0
+            position: int | None = None
+            for marker in ordered:
+                source_length = marker.end - marker.start
+                replacement_length = len(marker.text)
+                if pause < marker.start:
+                    break
+                if pause == marker.start:
+                    position = marker.start + shift
+                    break
+                if marker.start < pause < marker.end:
+                    if source_length != replacement_length:
+                        raise InputValidationError(
+                            "길이가 바뀌는 영문 치환 내부에는 pause 경계를 놓을 수 없습니다."
+                        )
+                    position = marker.start + shift + pause - marker.start
+                    break
+                if pause == marker.end:
+                    position = marker.start + shift + replacement_length
+                    break
+                shift += replacement_length - source_length
+            if position is None:
+                position = pause + shift
+            if not 0 <= position <= output_length:
+                raise InternalInvariantError("치환 뒤 pause 좌표가 출력 범위를 벗어났습니다.")
+            mapped.append(position)
+        return tuple(sorted(set(mapped)))
+
+    @staticmethod
+    def _numeric_markers(
+        text: str,
         numeric_ranges: tuple[tuple[int, int], ...],
     ) -> list[Marker]:
         markers: list[Marker] = []
-        for item in protected:
-            markers.append(
-                Marker(
-                    item.start,
-                    item.end,
-                    text[item.start : item.end],
-                    Handler.PROTECTED,
-                    f"protected_{item.kind}",
-                    f"protected.{item.kind}",
-                    Boundary.HARD,
-                )
-            )
         for start, end in numeric_ranges:
             markers.append(
                 Marker(
@@ -245,11 +323,22 @@ class Pipeline:
     def _resolve_candidate(
         text: str,
         candidate: Candidate,
+        protected: tuple[ProtectedRange, ...],
     ) -> _Resolution | None:
         """trace 여부와 무관한 외국어 치환 결과만 계산한다."""
 
         source = text[candidate.start : candidate.end]
         if candidate.handler is Handler.ENGLISH:
+            letters = ascii_letter_form(source)
+            conventional = CONVENTIONAL_READINGS.get(letters.upper()) if letters else None
+            if conventional is not None and is_standalone_latin_word(
+                text, candidate.start, candidate.end, protected=protected,
+            ):
+                return _Resolution(
+                    conventional,
+                    "english_conventional",
+                    "english.conventional.v1",
+                )
             resolved = resolve_english(source)
             if resolved is not None:
                 return _Resolution(
@@ -285,34 +374,6 @@ class Pipeline:
         unresolved.append(span)
 
     @staticmethod
-    def _preserve_opaque_candidate(
-        diagnostics: list[Diagnostic],
-        unresolved: list[SourceSpan],
-        normalized: NormalizedText,
-        candidate: Candidate,
-    ) -> None:
-        """숫자 구조 내부 후보는 resolver에 보내지 않고 문자 체계만 보고한다."""
-
-        span = normalized.source_span(candidate.start, candidate.end)
-        if candidate.handler is Handler.ENGLISH:
-            Pipeline._diagnose(
-                diagnostics,
-                "unconverted_latin",
-                "숫자 포함 Latin 구조는 부분 변환하지 않고 보존했습니다.",
-                span,
-                "routing.numeric_latin",
-            )
-        else:
-            Pipeline._diagnose(
-                diagnostics,
-                "unconverted_han",
-                "숫자 포함 Han 구조는 부분 변환하지 않고 보존했습니다.",
-                span,
-                "routing.numeric_han",
-            )
-        unresolved.append(span)
-
-    @staticmethod
     def _diagnose(
         diagnostics: list[Diagnostic],
         code: str,
@@ -323,52 +384,6 @@ class Pipeline:
         diagnostics.append(
             Diagnostic(code, message, Severity.WARNING, (span,), rule_id, RewriteStage.LEXICAL)
         )
-
-    @staticmethod
-    def _apply_protected_script_policy(
-        diagnostics: list[Diagnostic],
-        unresolved: list[SourceSpan],
-        normalized: NormalizedText,
-        protected: tuple[ProtectedRange, ...],
-    ) -> None:
-        """보호 구간 내부의 미지원 alpha도 진단하고 보존한다."""
-
-        for item in protected:
-            index = item.start
-            while index < item.end:
-                if not is_unsupported_script_character(normalized.text[index]):
-                    index += 1
-                    continue
-                start = index
-                while (
-                    index < item.end
-                    and is_unsupported_script_character(normalized.text[index])
-                ):
-                    index += 1
-                span = normalized.source_span(start, index)
-                Pipeline._diagnose(
-                    diagnostics,
-                    "unsupported_script",
-                    "보호 구간 내 미지원 문자 체계를 보존했습니다.",
-                    span,
-                    "routing.protected_unsupported_script",
-                )
-                unresolved.append(span)
-
-    @staticmethod
-    def _snap_protected(
-        normalized: NormalizedText,
-        ranges: tuple[ProtectedRange, ...],
-    ) -> tuple[ProtectedRange, ...]:
-        result: list[ProtectedRange] = []
-        for item in ranges:
-            start, end = normalized.snap_range(item.start, item.end)
-            if result and start < result[-1].end:
-                previous = result[-1]
-                result[-1] = ProtectedRange(previous.start, max(previous.end, end), previous.kind)
-            else:
-                result.append(ProtectedRange(start, end, item.kind))
-        return tuple(result)
 
     @staticmethod
     def _sorted_unique_diagnostics(items: list[Diagnostic]) -> list[Diagnostic]:

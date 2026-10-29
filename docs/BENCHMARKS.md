@@ -32,6 +32,11 @@ uv sync --dev --locked
 uv run --no-sync python tools\benchmark.py --repeats 5 --output benchmarks\benchmark.json
 ```
 
+최상위 JSON의 `status`는 모든 하위 측정이 성공하거나 의도적으로 `not_measured`일
+때 `ok`입니다. 작업자 실패나 하위 측정의 `error`는 JSON에 해당 위치와 함께 남고
+명령은 종료 코드 1을 반환합니다. 출력 파일을 쓸 수 없으면 `output_failed` JSON을
+표준 오류로 내보내고 종료 코드 1을 반환합니다.
+
 비교할 때는 같은 Python, 운영체제, CPU, 입력 크기와 반복 수를 사용하고 JSON의
 개별 `samples`도 함께 확인합니다. 다른 부하가 있는 동안 얻은 수치나 서로 다른
 cold/warm 항목을 직접 비교하지 않습니다.

@@ -5,24 +5,32 @@ from __future__ import annotations
 from collections.abc import Iterable, Sequence
 from dataclasses import dataclass
 from io import StringIO
-from typing import Mapping
 
 from ..analyzer import KiwiAnalyzer
-from ..errors import BackendUnavailableError
 from ..merge import _TextSegment
 from ..model import (
-    AnalysisToken,
-    Boundary,
     Diagnostic,
     Handler,
     OutputSegment,
     Rewrite,
-    RewriteStage,
-    Severity,
     SourceSpan,
 )
-from .hangul import HangulToken, character_source_spans, decompose_syllable, is_modern_syllable
-from .official import _안전_정확_열거_발음
+from ._shared import (
+    _Segment,
+    _Unit,
+    _RewriteLog,
+    _has_hard_boundary,
+    _is_blocked_pair,
+    _has_phonological_barrier,
+    _is_blocked_phonological_pair,
+    _next_syllable,
+    _pair_text,
+    _record,
+    _trace_before,
+)
+from .hangul import character_source_spans, decompose_syllable, is_modern_syllable
+from .morphology import _Annotation, _apply_lexical_liaisons, _apply_morphology_rules
+from .official import LEXICAL_PRONUNCIATIONS, NOUN_ONLY_PRONUNCIATIONS
 from .rules import (
     CODA_TRANSITIONS,
     HIEUH_ASSIMILATION,
@@ -30,79 +38,32 @@ from .rules import (
     HIEUH_REMAINDER,
     LIAISON_CLUSTER,
     NASAL_CODA,
+    PALATAL_J_ONSETS,
+    PALATAL_J_VOWELS,
     RULES,
     TENSE_ONSET,
 )
+from ..validation import normalize_pause_boundaries
+from ..reading_conditions import ReadingBoundaryExecution, _MappedReadingBoundary
+from .reading_conditions import plan_reading_conditions, finish_reading_conditions
+from .formal_attachment import apply_formal_attachments
+from .boundary_consumers import apply_rule_boundaries
 
 
-_MORPHOLOGY_CODAS = frozenset({"ㄴ", "ㄵ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄾ", "ㅁ"})
 _SINO_N_INSERTION_LEFT = frozenset({"십", "백", "천", "만", "억"})
 _NATIVE_N_INSERTION_LEFT = frozenset({"열", "물", "른", "흔", "쉰", "순", "든"})
-
-@dataclass(slots=True)
-class _Unit:
-    """한 출력 문자와 변환 중 바뀔 수 있는 음운 토큰을 함께 보관한다."""
-
-    segment_index: int
-    handler: Handler
-    source_spans: tuple[SourceSpan, ...]
-    raw: str | None = None
-    syllable: HangulToken | None = None
-
-    @property
-    def text(self) -> str:
-        if self.syllable is not None:
-            return self.syllable.text
-        assert self.raw is not None
-        return self.raw
+# 문자열 경로의 토큰은 유효성 검사에만 필요한 하나의 빈 span을 공유한다.
+_NO_PROVENANCE = (SourceSpan(0, 0, "", 0),)
 
 
 @dataclass(frozen=True, slots=True)
-class _MorphologyCandidate:
-    """분석 적용 또는 보수적 차단에 쓰는 한 음운 후보다."""
-
-    rule_ids: tuple[str, ...]
-    left: int
-    right: int
-    crossed_space: bool
-    deferred: bool = False
-    block_unit: bool = False
-
-
-@dataclass(frozen=True, slots=True)
-class _OfficialEojeol:
-    """원문 한글 어절 전체와 정확히 일치한 공식 열거 발음 후보다."""
+class _LexicalPronunciation:
+    """원문 어절 또는 확인한 형태소 범위의 어휘 발음 후보다."""
 
     left: int
     right: int
     pronunciation: str
-
-
-@dataclass(frozen=True, slots=True)
-class _Annotation:
-    """검증된 분석 token을 normalized offset으로 조회하는 내부 색인이다."""
-
-    _tokens_ending_at: Mapping[int, AnalysisToken]
-    _tokens_starting_at: Mapping[int, AnalysisToken]
-
-    @classmethod
-    def from_tokens(cls, tokens: tuple[AnalysisToken, ...]) -> _Annotation:
-        """원래 token 순서를 보존한 offset 색인을 한 번만 만든다."""
-
-        return cls(
-            {token.normalized_end: token for token in tokens},
-            {token.normalized_start: token for token in tokens},
-        )
-
-    def ending_at(self, offset: int) -> AnalysisToken | None:
-        """지정한 code point 직후에 끝나는 token을 반환한다."""
-
-        return self._tokens_ending_at.get(offset)
-
-    def starting_at(self, offset: int) -> AnalysisToken | None:
-        """지정한 code point에서 시작하는 token을 반환한다."""
-
-        return self._tokens_starting_at.get(offset)
+    rule_id: str = "ko.lexical.verified"
 
 
 @dataclass(frozen=True, slots=True)
@@ -112,6 +73,7 @@ class _Pronunciation:
     segments: tuple[OutputSegment, ...]
     rewrites: tuple[Rewrite, ...]
     diagnostics: tuple[Diagnostic, ...]
+    condition_executions: tuple[ReadingBoundaryExecution, ...] = ()
 
     @property
     def text(self) -> str:
@@ -120,96 +82,147 @@ class _Pronunciation:
 
 def pronounce(
     segments: Sequence[OutputSegment],
+    *,
+    pause_boundaries: Iterable[int] = (),
+    reading_conditions: tuple[_MappedReadingBoundary, ...] = (),
 ) -> _Pronunciation:
-    """정규화 segment에 문맥 독립 한국어 음운 규칙을 적용한다.
+    """정규화 segment에 한국어 음운 규칙과 확인한 형태소 문맥을 적용한다.
 
     ``HARD`` 경계와 한국어 이외 segment는 절대로 넘지 않는다. 공백은 보존하되,
-    문장부호는 음운 이웃 관계를 끊는다. 첫 슬라이스에서 품사·형태소 경계가
-    필수인 규칙은 적용하지 않고 진단만 남긴다.
+    문장부호는 음운 이웃 관계를 끊는다. 형태소 분석에 실패하면 의존 규칙을
+    차단하고 해당 원문 범위에 진단을 남긴다.
     """
 
     items = tuple(segments)
-    text = "".join(item.text for item in items)
-
-    units = _build_units(items)
-    rewrites: list[Rewrite] = []
-
-    official_eojeols = _collect_safe_official_eojeols(units, items)
-    # 구개음화는 종성+ㅎ 격음화보다 먼저 판정해야 ‘굳히다’를 [구치다]로 만든다.
-    _apply_jyeo(units, rewrites)
-    _apply_consonant_ui(units, rewrites)
-    diagnostics, blocked_pairs, blocked_units = _apply_morphology_rules(
-        text, units, items, KiwiAnalyzer(), rewrites
+    pauses = normalize_pause_boundaries(
+        pause_boundaries,
+        sum(len(segment.text) for segment in items),
     )
-    # 기존 형태소 규칙의 분석·trace 계약을 먼저 보존하고, 남은 차이만 공식 발음으로 보완한다.
-    _apply_safe_official_eojeols(units, official_eojeols, rewrites)
-    _apply_palatalization(units, items, rewrites, blocked_pairs, blocked_units)
-    _apply_hieuh_consonants(units, items, rewrites, blocked_pairs, blocked_units)
-    _apply_hieuh_before_vowel(units, items, rewrites, blocked_pairs, blocked_units)
-    _apply_numeral_n_insertion(units, items, rewrites, blocked_pairs, blocked_units)
-    _apply_liaison(units, items, rewrites, blocked_pairs, blocked_units)
-    _apply_coda_neutralization(units, items, rewrites, blocked_pairs, blocked_units)
-    _apply_liquid_assimilation(units, items, rewrites, blocked_pairs, blocked_units)
-    _apply_nasalization(units, items, rewrites, blocked_pairs, blocked_units)
-    _apply_tensification(units, items, rewrites, blocked_pairs, blocked_units)
-
+    condition_executions: list[ReadingBoundaryExecution] = []
+    units, rewrites, diagnostics = _run_rules(
+        items,
+        trace=True,
+        pause_boundaries=pauses,
+        reading_conditions=reading_conditions,
+        condition_executions=condition_executions,
+    )
+    assert rewrites is not None
     pronunciation_segments = _render_segments(units, items)
-    return _Pronunciation(
-        pronunciation_segments,
-        tuple(rewrites),
-        tuple(diagnostics),
+    return _Pronunciation(pronunciation_segments, tuple(rewrites), tuple(diagnostics), tuple(condition_executions))
+
+
+def pronounce_text(
+    segments: Sequence[_TextSegment],
+    *,
+    pause_boundaries: Iterable[int] = (),
+) -> str:
+    """상세 추적 없이 동일한 음운 규칙을 적용한 발음 문자열을 반환한다."""
+
+    # 이전 상세 경로도 빈 조각을 생략했으므로 경계 판정을 같은 입력으로 수행한다.
+    items = tuple(item for item in segments if item.text)
+    pauses = normalize_pause_boundaries(
+        pause_boundaries,
+        sum(len(segment.text) for segment in items),
     )
+    units, _, _ = _run_rules(items, trace=False, pause_boundaries=pauses)
+    return "".join(unit.text for unit in units)
 
 
-def pronounce_text(segments: Sequence[_TextSegment]) -> str:
-    """문자열 경로를 상세 경로와 같은 음운 엔진으로 변환한다.
+def _run_rules(
+    items: tuple[_Segment, ...],
+    *,
+    trace: bool,
+    pause_boundaries: tuple[int, ...] = (),
+    reading_conditions: tuple[_MappedReadingBoundary, ...] = (),
+    condition_executions: list[ReadingBoundaryExecution] | None = None,
+) -> tuple[list[_Unit], list[Rewrite] | None, list[Diagnostic]]:
+    """두 출력 경로에 같은 순서와 같은 음운 규칙을 실행한다."""
 
-    임시 span은 이미 정규화된 병합 문자열만 가리킨다. 외부에 노출하지 않고
-    두 공개 결과 경로가 완전히 같은 발음을 내도록 하는 데만 사용한다.
-    """
+    text = "".join(item.text for item in items)
+    units = _build_units(items, trace=trace)
+    rewrites: list[Rewrite] | None = _RewriteLog() if trace else None
+    plan = plan_reading_conditions(units, items, reading_conditions, pause_boundaries)
+    pause_boundaries = plan.pauses
 
-    items = tuple(segments)
-    source = "".join(item.text for item in items)
-    detailed: list[OutputSegment] = []
-    cursor = 0
-    for item in items:
-        end = cursor + len(item.text)
-        if item.text:
-            detailed.append(
-                OutputSegment(
-                    text=item.text,
-                    source_spans=(SourceSpan.from_source(source, cursor, end),),
-                    handler=item.handler,
-                    reason=item.reason,
-                    rule_id=item.rule_id,
-                    boundary_before=item.boundary_before,
-                    boundary_after=item.boundary_after,
-                )
-            )
-        cursor = end
-    return pronounce(detailed).text
+    lexical_matches = _collect_exact_lexical_pronunciations(units, items)
+    # 구개음화는 종성+ㅎ 격음화보다 먼저 판정해야 ‘굳히다’를 [구치다]로 만든다.
+    morphology_kwargs = {"reading_relations": plan.relations} if plan.relations else {}
+    formal_decisions = {} if plan.relations else None
+    boundary_decisions = []
+    def prepare_sounds():
+        # 형식 경계는 원문 결정을 먼저 고정하고 제10항 어휘 단순화를 미룬다.
+        _apply_consonant_ui(units, rewrites)
+        _apply_balb_neolb(units, items, rewrites, pause_boundaries,
+            frozenset(left for (left, _), decision in (formal_decisions or {}).items()
+                      if decision.kind == "formal" and decision.status == "selected"
+                      and decision.applicability == "eligible")
+            | frozenset(decision.pair[0] for decision in boundary_decisions
+                        if decision.status == "verified" and decision.applicability == "eligible"))
+    diagnostics, blocked_pairs, blocked_units, annotation = _apply_morphology_rules(
+        text, units, items, KiwiAnalyzer(), rewrites, trace=trace,
+        pause_boundaries=pause_boundaries, formal_decisions=formal_decisions,
+        boundary_decisions=boundary_decisions, before_rules=prepare_sounds, **morphology_kwargs,
+    )
+    lexical_matches += _collect_morpheme_pronunciations(text, units, items, annotation, lexical_matches)
+    # 형태소 규칙으로 결정하지 못한 어휘 내부 발음을 검증된 자료로 보완한다.
+    _apply_lexical_pronunciations(units, lexical_matches, rewrites, items, pause_boundaries)
+    # 소유·역할은 원문에서 고정하되 살아 있는 정확 예외가 받침을 복원한 뒤 한 번 옮긴다.
+    boundary_events = apply_rule_boundaries(boundary_decisions, units, rewrites)
+    # 새 문법 미해결은 경쟁 경계 소비만 예약한다. 음절 자체의 받침·비음화는 독립이다.
+    reserved_pairs = frozenset(event.boundary.pair for event in boundary_events
+                               if event.applicability in {"unresolved", "blocked"})
+    formal_events = apply_formal_attachments(formal_decisions or {}, units, rewrites)
+    _apply_lexical_liaisons(units, items, annotation, rewrites, pause_boundaries,
+                           formal_decisions=formal_decisions, blocked_pairs=blocked_pairs | reserved_pairs, **morphology_kwargs)
+    _apply_hieuh_consonants(units, items, rewrites, blocked_pairs | reserved_pairs | frozenset(formal_events),
+                           blocked_units, pause_boundaries)
+    # 구개음화·격음화로 새로 생긴 ‘쳐’도 같은 호출에서 ‘처’로 실현한다.
+    _apply_jyeo(units, rewrites)
+    _apply_hieuh_before_vowel(units, items, rewrites, blocked_pairs | reserved_pairs, blocked_units, pause_boundaries)
+    _apply_numeral_n_insertion(units, items, rewrites, blocked_pairs, blocked_units, pause_boundaries)
+    _apply_liaison(units, items, rewrites, blocked_pairs | reserved_pairs, blocked_units, pause_boundaries)
+    _apply_cluster_tensification(units, items, rewrites, blocked_pairs, blocked_units, pause_boundaries)
+    _apply_coda_neutralization(units, items, rewrites, blocked_pairs, blocked_units, pause_boundaries)
+    _apply_liquid_assimilation(units, items, rewrites, blocked_pairs, blocked_units, pause_boundaries)
+    _apply_nasalization(units, items, rewrites, blocked_pairs, blocked_units, pause_boundaries)
+    _apply_tensification(units, items, rewrites, blocked_pairs, blocked_units, pause_boundaries)
+    # 연음·경음화 뒤의 현재 성분으로 정규 표기를 확정한다. 이미 바뀐 음절은 건너뛴다.
+    _apply_palatal_j_glide(units, rewrites)
+
+    if condition_executions is not None:
+        condition_executions.extend(finish_reading_conditions(plan, units, rewrites, annotation, items,
+                                                             formal_events=formal_events))
+
+    return units, rewrites, diagnostics
 
 
-def _build_units(segments: tuple[OutputSegment, ...]) -> list[_Unit]:
+def _build_units(segments: tuple[_Segment, ...], *, trace: bool) -> list[_Unit]:
     units: list[_Unit] = []
     for segment_index, segment in enumerate(segments):
-        provenance = segment.source_spans or ((segment.anchor,) if segment.anchor is not None else ())
-        char_spans = character_source_spans(segment.text, provenance)
-        # 영어 provenance는 출력 segment에 유지하되, 문자 이름 규칙으로 생성된 한글만
+        if trace:
+            assert isinstance(segment, OutputSegment)
+            provenance = segment.source_spans or ((segment.anchor,) if segment.anchor is not None else ())
+            char_spans = character_source_spans(segment.text, provenance)
+        else:
+            char_spans = None
+        # 영어 provenance는 출력 segment에 유지하되, 영문 읽기 규칙으로 생성된 한글만
         # 한국어 음운 이웃으로 취급한다. 미변환 Latin segment에는 적용하지 않는다.
         phonological_handler = (
             Handler.KOREAN
-            if segment.handler is Handler.ENGLISH and segment.rule_id == "english.letter_names.v1"
+            if segment.handler is Handler.ENGLISH and segment.rule_id in {
+                "english.letter_names.v1", "english.conventional.v1",
+            }
             else segment.handler
         )
-        for character, spans in zip(segment.text, char_spans):
+        for offset, character in enumerate(segment.text):
+            spans = char_spans[offset] if char_spans is not None else ()
             if phonological_handler is Handler.KOREAN and is_modern_syllable(character):
                 units.append(
                     _Unit(
                         segment_index,
                         phonological_handler,
                         spans,
-                        syllable=decompose_syllable(character, spans),
+                        syllable=decompose_syllable(character, spans or _NO_PROVENANCE),
                     )
                 )
             else:
@@ -245,92 +258,25 @@ def _render_segments(
     )
 
 
-def _next_syllable(
+def _collect_exact_lexical_pronunciations(
     units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    index: int,
-) -> tuple[int, bool] | None:
-    """공백만 건너뛴 다음 한국어 음절과 단어 경계 여부를 찾는다."""
+    segments: tuple[_Segment, ...],
+) -> tuple[_LexicalPronunciation, ...]:
+    """원문에서 남겨 둔 어휘 예외와 정확히 일치하는 한글 어절을 찾는다."""
 
-    crossed_space = False
-    for candidate in range(index + 1, len(units)):
-        unit = units[candidate]
-        if unit.syllable is not None:
-            if unit.handler is not Handler.KOREAN:
-                return None
-            if _has_hard_boundary(units[index].segment_index, unit.segment_index, segments):
-                return None
-            return candidate, crossed_space
-        # U+0020만 단어 사이 공백으로 허용한다. 탭·줄바꿈은 구·문장 경계를 넘지 않는다.
-        if unit.handler is not Handler.KOREAN or unit.raw != " ":
-            return None
-        crossed_space = True
-    return None
-
-
-def _has_hard_boundary(
-    left_segment: int,
-    right_segment: int,
-    segments: tuple[OutputSegment, ...],
-) -> bool:
-    if left_segment == right_segment:
-        return False
-    start, end = sorted((left_segment, right_segment))
-    for index in range(start, end):
-        if (
-            segments[index].boundary_after is Boundary.HARD
-            or segments[index + 1].boundary_before is Boundary.HARD
-        ):
-            return True
-    return False
-
-
-def _pair_text(units: list[_Unit], left: int, right: int) -> str:
-    return "".join(unit.text for unit in units[left : right + 1])
-
-
-def _record(
-    rewrites: list[Rewrite],
-    units: list[_Unit],
-    left: int,
-    right: int,
-    before: str,
-    rule_id: str,
-) -> None:
-    after = _pair_text(units, left, right)
-    if before == after:
-        return
-    source_spans = _ordered_unique_spans(
-        span for unit in units[left : right + 1] for span in unit.source_spans
-    )
-    rewrites.append(
-        Rewrite(source_spans, before, after, Handler.KOREAN, rule_id, RewriteStage.PHONOLOGY)
-    )
-
-
-def _ordered_unique_spans(spans: Iterable[SourceSpan]) -> tuple[SourceSpan, ...]:
-    unique: dict[tuple[int, int, str], SourceSpan] = {}
-    for span in spans:
-        unique.setdefault((span.start, span.end, span.surface), span)
-    return tuple(sorted(unique.values(), key=lambda item: (item.start, item.end, item.surface)))
-
-
-def _collect_safe_official_eojeols(
-    units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-) -> tuple[_OfficialEojeol, ...]:
-    """원문에서 고시의 비모호 열거형과 정확히 일치한 한글 어절을 찾는다."""
-
-    matches: list[_OfficialEojeol] = []
+    matches: list[_LexicalPronunciation] = []
     run_start: int | None = None
 
     def collect_run(left: int, right: int) -> None:
-        pronunciation = _안전_정확_열거_발음.get(_pair_text(units, left, right))
+        word = _pair_text(units, left, right)
+        if word in NOUN_ONLY_PRONUNCIATIONS:
+            return
+        pronunciation = LEXICAL_PRONUNCIATIONS.get(word)
         if pronunciation is None:
             return
         if len(pronunciation) != right - left + 1:
-            raise AssertionError("공식 열거 발음은 표기와 같은 음절 수여야 합니다.")
-        matches.append(_OfficialEojeol(left, right, pronunciation))
+            raise AssertionError("어휘 발음은 표기와 같은 음절 수여야 합니다.")
+        matches.append(_LexicalPronunciation(left, right, pronunciation))
 
     for index, unit in enumerate(units):
         is_korean_syllable = unit.handler is Handler.KOREAN and unit.syllable is not None
@@ -354,589 +300,160 @@ def _collect_safe_official_eojeols(
     return tuple(matches)
 
 
-def _apply_safe_official_eojeols(
-    units: list[_Unit],
-    matches: tuple[_OfficialEojeol, ...],
-    rewrites: list[Rewrite],
+def _collect_morpheme_pronunciations(
+    text: str, units: list[_Unit], segments: tuple[_Segment, ...],
+    annotation: _Annotation | None, exact: tuple[_LexicalPronunciation, ...],
+) -> tuple[_LexicalPronunciation, ...]:
+    """복합어를 여러 형태소로 분석해도 양 끝의 경계가 확인되면 발음을 보완한다."""
+
+    if annotation is None:
+        return ()
+    matches: list[_LexicalPronunciation] = []
+    occupied = [False] * len(units)
+    for item in exact:
+        occupied[item.left : item.right + 1] = [True] * (item.right - item.left + 1)
+    for word, pronunciation in sorted(LEXICAL_PRONUNCIATIONS.items(), key=lambda item: -len(item[0])):
+        start = text.find(word)
+        while start >= 0:
+            end = start + len(word)
+            noun = annotation.starting_at(start)
+            noun_confirmed = word not in NOUN_ONLY_PRONUNCIATIONS or (
+                noun is not None and noun.form == word
+                and all(tag.startswith("NN") for tag in noun.tag.split("+"))
+            )
+            if (
+                noun_confirmed and annotation.starting_at(start) is not None
+                and annotation.ending_at(end) is not None
+                and not any(occupied[start:end])
+                and not _has_hard_boundary(units[start].segment_index, units[end - 1].segment_index, segments)
+                and all(unit.syllable is not None for unit in units[start:end])
+            ):
+                # 조사 앞에서는 어말 대표음 대신 기저 받침으로 연음한다.
+                original = decompose_syllable(word[-1], _NO_PROVENANCE)
+                final = decompose_syllable(pronunciation[-1], _NO_PROVENANCE)
+                transition = CODA_TRANSITIONS.get(original.coda or "")
+                replacement = pronunciation
+                if transition is not None and final.coda == transition.target:
+                    replacement = pronunciation[:-1] + final.changed(coda=original.coda).text
+                matches.append(_LexicalPronunciation(start, end - 1, replacement, "ko.official.morpheme"))
+                occupied[start:end] = [True] * len(word)
+            start = text.find(word, start + 1)
+    return tuple(matches)
+
+
+def _apply_balb_neolb(
+    units: list[_Unit], segments: tuple[_Segment, ...], rewrites: list[Rewrite] | None,
+    pause_boundaries: tuple[int, ...],
+    deferred_donors: frozenset[int] = frozenset(),
 ) -> None:
-    """기존 규칙 실행 뒤 남은 차이를 공식 열거 발음으로 보완한다."""
+    """제10항의 밟- 및 넓죽·넓둥글·넓적 계열을 처리한다."""
+
+    for index, unit in enumerate(units):
+        if index in deferred_donors:
+            continue
+        if unit.text not in {"밟", "넓"} or unit.syllable is None:
+            continue
+        neighbor = _next_syllable(units, segments, index)
+        if unit.text == "밟" and neighbor is not None:
+            right, crossed_space = neighbor
+            following = units[right].syllable
+            assert following is not None
+            # ‘밟아’와 ‘밟히다’는 각각 연음·격음화 규칙에서 ㄹ을 보존한다.
+            if (
+                not crossed_space
+                and not _has_phonological_barrier(
+                    units, index, right, segments, pause_boundaries,
+                )
+                and following.onset in {"ㅇ", "ㅎ"}
+            ):
+                continue
+        if unit.text == "넓":
+            if neighbor is None or neighbor[1]:
+                continue
+            tail = "".join(item.text for item in units[index : index + 3])
+            prefix = next((word for word in ("넓죽", "넓둥글", "넓적") if tail.startswith(word)), None)
+            if prefix is None or _has_phonological_barrier(
+                units, index, index + len(prefix) - 1, segments, pause_boundaries,
+            ):
+                continue
+        before = unit.text if rewrites is not None else ""
+        unit.syllable = unit.syllable.changed(coda="ㅂ")
+        _record(rewrites, units, index, index, before, "ko.lexical.balb_neolb")
+
+
+def _apply_lexical_pronunciations(
+    units: list[_Unit],
+    matches: tuple[_LexicalPronunciation, ...],
+    rewrites: list[Rewrite] | None,
+    segments: tuple[_Segment, ...],
+    pause_boundaries: tuple[int, ...],
+) -> None:
+    """확인한 어휘 범위의 발음을 적용하고 근거 규칙을 기록한다."""
 
     for match in matches:
-        before = _pair_text(units, match.left, match.right)
+        if _has_phonological_barrier(
+            units, match.left, match.right, segments, pause_boundaries,
+        ):
+            continue
+        before = _trace_before(rewrites, units, match.left, match.right)
         for unit, character in zip(
             units[match.left : match.right + 1],
             match.pronunciation,
         ):
-            unit.syllable = decompose_syllable(character, unit.source_spans)
+            unit.syllable = decompose_syllable(character, unit.source_spans or _NO_PROVENANCE)
         _record(
             rewrites,
             units,
             match.left,
             match.right,
             before,
-            RULES["ko.official.enumerated"].id,
+            match.rule_id,
         )
 
 
-def _apply_jyeo(units: list[_Unit], rewrites: list[Rewrite]) -> None:
-    """용언 활용형에서 안전하게 관찰되는 져·쪄·쳐 계열을 처리한다."""
+def _apply_jyeo(units: list[_Unit], rewrites: list[Rewrite] | None) -> None:
+    """기존 ㅕ 처리 시점과 ko.vowel.jyeo 추적을 유지한다."""
+
+    _apply_palatal_j_glide(units, rewrites, legacy_jyeo=True)
+
+
+def _apply_palatal_j_glide(
+    units: list[_Unit], rewrites: list[Rewrite] | None, *, legacy_jyeo: bool = False,
+) -> None:
+    """한국어 음운 단위의 경구개음 뒤 j계 모음을 정규 표기로 바꾼다."""
 
     for index, unit in enumerate(units):
         token = unit.syllable
-        if token is None or token.onset not in {"ㅈ", "ㅉ", "ㅊ"} or token.vowel != "ㅕ":
+        if token is None or unit.handler is not Handler.KOREAN or token.onset not in PALATAL_J_ONSETS:
             continue
-        before = unit.text
-        unit.syllable = token.changed(vowel="ㅓ")
-        _record(rewrites, units, index, index, before, RULES["ko.vowel.jyeo"].id)
+        vowel = PALATAL_J_VOWELS.get(token.vowel)
+        if vowel is None or (legacy_jyeo and token.vowel != "ㅕ"):
+            continue
+        rule_id = "ko.vowel.jyeo" if legacy_jyeo else "ko.vowel.palatal_j_canonical"
+        before = unit.text if rewrites is not None else ""
+        unit.syllable = token.changed(vowel=vowel)
+        _record(rewrites, units, index, index, before, RULES[rule_id].id)
 
 
-def _apply_consonant_ui(units: list[_Unit], rewrites: list[Rewrite]) -> None:
+def _apply_consonant_ui(units: list[_Unit], rewrites: list[Rewrite] | None) -> None:
     """자음 초성 음절의 ㅢ를 문맥 없이 ㅣ로 실현한다."""
 
     for index, unit in enumerate(units):
         token = unit.syllable
         if token is None or token.onset == "ㅇ" or token.vowel != "ㅢ":
             continue
-        before = unit.text
+        before = unit.text if rewrites is not None else ""
         unit.syllable = token.changed(vowel="ㅣ")
         _record(rewrites, units, index, index, before, RULES["ko.vowel.consonant_ui"].id)
 
 
-def _apply_morphology_rules(
-    text: str,
-    units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    analyzer: KiwiAnalyzer,
-    rewrites: list[Rewrite],
-) -> tuple[list[Diagnostic], frozenset[tuple[int, int]], frozenset[int]]:
-    """분석 규칙과 의도적으로 미룬 어휘 후보를 분리해 처리한다."""
-
-    candidates = _collect_morphology_candidates(units, segments)
-    if not candidates:
-        return [], frozenset(), frozenset()
-    deferred = tuple(item for item in candidates if item.deferred)
-    analyzable = tuple(item for item in candidates if not item.deferred)
-    diagnostics = _skipped_rule_diagnostics(units, deferred)
-    blocked_pairs = _blocked_pairs(deferred)
-    blocked_units = _blocked_units(deferred)
-    if not analyzable:
-        return diagnostics, blocked_pairs, blocked_units
-    annotation, analyzer_diagnostics = _analyze_once(text, analyzer, units, analyzable)
-    diagnostics.extend(analyzer_diagnostics)
-    if annotation is None:
-        # 초기 M2의 호환 진단은 분석 실패를 감추지 않되, 규칙이 적용되지 않았음을
-        # 호출자가 기존처럼 식별할 수 있게 함께 남긴다.
-        diagnostics.extend(_skipped_rule_diagnostics(units, analyzable))
-        return (
-            diagnostics,
-            blocked_pairs | _blocked_pairs(analyzable),
-            blocked_units | _blocked_units(analyzable),
-        )
-
-    for candidate in analyzable:
-        if candidate.rule_ids == (RULES["ko.ui.particle"].id,):
-            _apply_particle_ui(units, candidate, annotation, rewrites)
-        elif candidate.rule_ids == (RULES["ko.stem.rieul_giyeok"].id,):
-            _apply_rieul_giyeok_stem(units, candidate, annotation, rewrites)
-        elif candidate.rule_ids == (RULES["ko.stem.tensing.24"].id,):
-            _apply_stem_tensing_24(units, candidate, annotation, rewrites)
-        elif candidate.rule_ids == (RULES["ko.stem.tensing.25"].id,):
-            _apply_stem_tensing_25(units, candidate, annotation, rewrites)
-        elif candidate.rule_ids == (RULES["ko.modifier.tensing.27"].id,):
-            _apply_modifier_tensing_27(units, candidate, annotation, rewrites)
-    return diagnostics, blocked_pairs, blocked_units
-
-
-def _blocked_pairs(
-    candidates: tuple[_MorphologyCandidate, ...],
-) -> frozenset[tuple[int, int]]:
-    """적용을 미룬 후보의 인접 음절 pair를 만든다."""
-
-    return frozenset((item.left, item.right) for item in candidates)
-
-
-def _blocked_units(candidates: tuple[_MorphologyCandidate, ...]) -> frozenset[int]:
-    """어휘 보류 후보에서 어떤 규칙도 바꾸지 않을 음절을 만든다."""
-
-    return frozenset(
-        index
-        for item in candidates
-        if item.block_unit
-        for index in range(item.left, item.right + 1)
-    )
-
-
-def _is_blocked_pair(
-    blocked_pairs: frozenset[tuple[int, int]],
-    blocked_units: frozenset[int],
-    left: int,
-    right: int,
-) -> bool:
-    return left in blocked_units or right in blocked_units or (left, right) in blocked_pairs
-
-
-def _collect_morphology_candidates(
-    units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-) -> tuple[_MorphologyCandidate, ...]:
-    """표면형만으로 가능한 후보를 모으되, 실제 적용은 분석 뒤로 미룬다."""
-
-    candidates: list[_MorphologyCandidate] = []
-    for index, unit in enumerate(units):
-        token = unit.syllable
-        if token is None:
-            continue
-        if _is_adjacent_korean_syllable_before(units, segments, index) and (
-            token.onset == "ㅇ" and token.vowel == "ㅢ" and token.coda is None
-        ):
-            candidates.append(_MorphologyCandidate((RULES["ko.ui.particle"].id,), index, index, False))
-        if token.coda not in _MORPHOLOGY_CODAS:
-            continue
-        neighbor = _next_syllable(units, segments, index)
-        deferred = (
-            _deferred_lexical_candidate(units, segments, index, neighbor)
-            if token.coda == "ㄼ" and unit.text in {"밟", "넓"}
-            else None
-        )
-        if deferred is not None:
-            candidates.append(deferred)
-            continue
-        if neighbor is None:
-            continue
-        right, crossed_space = neighbor
-        next_token = units[right].syllable
-        assert next_token is not None
-        if token.coda == "ㄺ" and next_token.onset == "ㄱ" and not crossed_space:
-            candidates.append(
-                _MorphologyCandidate((RULES["ko.stem.rieul_giyeok"].id,), index, right, False)
-            )
-        if (
-            token.coda in {"ㄴ", "ㄵ", "ㅁ", "ㄻ"}
-            and next_token.onset in {"ㄱ", "ㄷ", "ㅅ", "ㅈ"}
-            and not crossed_space
-        ):
-            candidates.append(
-                _MorphologyCandidate((RULES["ko.stem.tensing.24"].id,), index, right, False)
-            )
-        if (
-            token.coda in {"ㄼ", "ㄾ"}
-            and next_token.onset in {"ㄱ", "ㄷ", "ㅅ", "ㅈ"}
-            and not crossed_space
-        ):
-            candidates.append(
-                _MorphologyCandidate((RULES["ko.stem.tensing.25"].id,), index, right, False)
-            )
-        if (
-            token.coda == "ㄹ"
-            and crossed_space
-            and next_token.onset in {"ㄱ", "ㄷ", "ㅂ", "ㅅ", "ㅈ"}
-        ):
-            candidates.append(
-                _MorphologyCandidate((RULES["ko.modifier.tensing.27"].id,), index, right, True)
-            )
-    return tuple(candidates)
-
-
-def _deferred_lexical_candidate(
-    units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    index: int,
-    neighbor: tuple[int, bool] | None,
-) -> _MorphologyCandidate | None:
-    """근거 corpus가 없는 밟·넓 예외는 발음을 추측하지 않고 차단한다."""
-
-    unit = units[index]
-    surface = unit.text
-    if surface == "밟":
-        if neighbor is None:
-            return _MorphologyCandidate(
-                (RULES["ko.lexical.balb_neolb"].id,), index, index, False, True, True
-            )
-        right, crossed_space = neighbor
-        next_token = units[right].syllable
-        assert next_token is not None
-        if not crossed_space and next_token.onset == "ㅇ":
-            # 모음 앞 겹받침 연음은 이미 검증된 일반 규칙이므로 보존 차단하지 않는다.
-            return None
-        if crossed_space:
-            return _MorphologyCandidate(
-                (RULES["ko.lexical.balb_neolb"].id,), index, index, True, True, True
-            )
-        return _MorphologyCandidate(
-            (RULES["ko.lexical.balb_neolb"].id,), index, right, False, True, True
-        )
-    if surface != "넓":
-        return None
-    for prefix in ("넓죽", "넓둥글"):
-        if _matches_lexical_prefix(units, segments, index, prefix):
-            assert neighbor is not None
-            right, crossed_space = neighbor
-            if not crossed_space:
-                return _MorphologyCandidate(
-                    (RULES["ko.lexical.balb_neolb"].id,), index, right, False, True, True
-                )
-    return None
-
-
-def _matches_lexical_prefix(
-    units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    index: int,
-    prefix: str,
-) -> bool:
-    """공백·HARD 경계를 넘지 않는 정확한 어휘 표면 접두사만 확인한다."""
-
-    if index + len(prefix) > len(units):
-        return False
-    for offset, character in enumerate(prefix):
-        unit = units[index + offset]
-        if unit.handler is not Handler.KOREAN or unit.syllable is None or unit.text != character:
-            return False
-        if offset and _has_hard_boundary(
-            units[index + offset - 1].segment_index,
-            unit.segment_index,
-            segments,
-        ):
-            return False
-    return True
-
-
-def _is_adjacent_korean_syllable_before(
-    units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    index: int,
-) -> bool:
-    """조사 후보 바로 앞이 같은 한국어 island의 연속 음절인지 확인한다."""
-
-    if index == 0:
-        return False
-    previous = units[index - 1]
-    current = units[index]
-    return (
-        previous.handler is Handler.KOREAN
-        and previous.syllable is not None
-        and not _has_hard_boundary(previous.segment_index, current.segment_index, segments)
-    )
-
-
-def _analyze_once(
-    text: str,
-    analyzer: KiwiAnalyzer,
-    units: list[_Unit],
-    candidates: tuple[_MorphologyCandidate, ...],
-) -> tuple[_Annotation | None, list[Diagnostic]]:
-    """후보가 있을 때만 분석기를 한 번 호출하고 offset 계약을 검증한다."""
-
-    try:
-        tokens = tuple(analyzer.analyze(text))
-        _validate_analysis_tokens(tokens, text)
-    except BackendUnavailableError:
-        return None, _analyzer_failure_diagnostics(
-            units,
-            candidates,
-            "analyzer_unavailable",
-            "형태소 의존 규칙 후보가 있지만 분석기를 사용할 수 없어 적용하지 않았습니다.",
-        )
-    except Exception:
-        return None, _analyzer_failure_diagnostics(
-            units,
-            candidates,
-            "analyzer_failed",
-            "형태소 분석 결과를 검증할 수 없어 후보 규칙을 적용하지 않았습니다.",
-        )
-    return _Annotation.from_tokens(tokens), []
-
-
-def _validate_analysis_tokens(
-    tokens: tuple[AnalysisToken, ...],
-    text: str,
-) -> None:
-    """분석 token의 표면형과 normalized 좌표를 현재 문자열에 맞춰 검증한다."""
-
-    previous_end = 0
-    for token in tokens:
-        if not isinstance(token, AnalysisToken):
-            raise ValueError("분석기는 AnalysisToken만 반환해야 합니다.")
-        if not (0 <= token.normalized_start < token.normalized_end <= len(text)):
-            raise ValueError("분석 token의 normalized 좌표가 문자열 범위를 벗어났습니다.")
-        if token.normalized_start < previous_end:
-            raise ValueError("분석 token은 원문 순서의 비중첩 범위여야 합니다.")
-        if not token.tag or not token.form:
-            raise ValueError("분석 token에는 form과 tag가 필요합니다.")
-        if token.form != text[token.normalized_start : token.normalized_end]:
-            raise ValueError("분석 token의 표면형이 normalized 좌표와 다릅니다.")
-        previous_end = token.normalized_end
-
-
-def _analyzer_failure_diagnostics(
-    units: list[_Unit],
-    candidates: tuple[_MorphologyCandidate, ...],
-    code: str,
-    message: str,
-) -> list[Diagnostic]:
-    diagnostics: list[Diagnostic] = []
-    seen: set[tuple[str, int, int]] = set()
-    for candidate in candidates:
-        for rule_id in candidate.rule_ids:
-            key = (rule_id, candidate.left, candidate.right)
-            if key in seen:
-                continue
-            seen.add(key)
-            diagnostics.append(
-                Diagnostic(
-                    code,
-                    message,
-                    Severity.WARNING,
-                    _candidate_spans(units, candidate),
-                    rule_id,
-                    RewriteStage.PHONOLOGY,
-                )
-            )
-    return diagnostics
-
-
-def _skipped_rule_diagnostics(
-    units: list[_Unit],
-    candidates: tuple[_MorphologyCandidate, ...],
-) -> list[Diagnostic]:
-    """분석 실패 뒤에도 규칙 미적용을 식별하는 호환 진단을 남긴다."""
-
-    diagnostics: list[Diagnostic] = []
-    seen: set[tuple[str, int, int]] = set()
-    for candidate in candidates:
-        for rule_id in candidate.rule_ids:
-            key = (rule_id, candidate.left, candidate.right)
-            if key in seen:
-                continue
-            seen.add(key)
-            diagnostics.append(
-                Diagnostic(
-                    "morphology_rule_skipped",
-                    "형태소 분석 결과가 없어 형태소 의존 규칙을 적용하지 않았습니다.",
-                    Severity.WARNING,
-                    _candidate_spans(units, candidate),
-                    rule_id,
-                    RewriteStage.PHONOLOGY,
-                )
-            )
-    return diagnostics
-
-
-def _candidate_spans(
-    units: list[_Unit],
-    candidate: _MorphologyCandidate,
-) -> tuple[SourceSpan, ...]:
-    return _ordered_unique_spans(
-        span for unit in units[candidate.left : candidate.right + 1] for span in unit.source_spans
-    )
-
-
-def _has_tag_ending_at(annotation: _Annotation, offset: int, prefix: str) -> bool:
-    item = annotation.ending_at(offset)
-    return item is not None and _tag_has_prefix(item.tag, prefix)
-
-
-def _has_tag_starting_at(annotation: _Annotation, offset: int, prefix: str) -> bool:
-    item = annotation.starting_at(offset)
-    return item is not None and _tag_has_prefix(item.tag, prefix)
-
-
-def _tag_has_prefix(tag: str, prefix: str) -> bool:
-    """분석기의 결합 품사 태그도 개별 품사로 안전하게 판정한다."""
-
-    return any(part.startswith(prefix) for part in tag.split("+"))
-
-
-def _apply_particle_ui(
-    units: list[_Unit],
-    candidate: _MorphologyCandidate,
-    annotation: _Annotation,
-    rewrites: list[Rewrite],
-) -> None:
-    unit = units[candidate.left]
-    token = unit.syllable
-    assert token is not None
-    item = annotation.starting_at(candidate.left)
-    if (
-        item is None
-        or item.normalized_end != candidate.left + 1
-        or not _tag_has_prefix(item.tag, "J")
-    ):
-        return
-    before = unit.text
-    unit.syllable = token.changed(vowel="ㅔ")
-    _record(rewrites, units, candidate.left, candidate.left, before, RULES["ko.ui.particle"].id)
-
-
-def _is_verb_stem_before_ending(
-    annotation: _Annotation,
-    left: int,
-    right: int,
-) -> bool:
-    return _has_tag_ending_at(annotation, left + 1, "V") and _has_tag_starting_at(
-        annotation, right, "E"
-    )
-
-
-def _apply_rieul_giyeok_stem(
-    units: list[_Unit],
-    candidate: _MorphologyCandidate,
-    annotation: _Annotation,
-    rewrites: list[Rewrite],
-) -> None:
-    if not _is_verb_stem_before_ending(annotation, candidate.left, candidate.right):
-        return
-    left = units[candidate.left]
-    right = units[candidate.right]
-    token = left.syllable
-    next_token = right.syllable
-    assert token is not None and next_token is not None
-    before = _pair_text(units, candidate.left, candidate.right)
-    left.syllable = token.changed(coda="ㄹ")
-    right.syllable = next_token.changed(onset="ㄲ")
-    _record(
-        rewrites,
-        units,
-        candidate.left,
-        candidate.right,
-        before,
-        RULES["ko.stem.rieul_giyeok"].id,
-    )
-
-
-def _apply_stem_tensing_24(
-    units: list[_Unit],
-    candidate: _MorphologyCandidate,
-    annotation: _Annotation,
-    rewrites: list[Rewrite],
-) -> None:
-    if not _is_verb_stem_before_ending(annotation, candidate.left, candidate.right):
-        return
-    left = units[candidate.left]
-    right = units[candidate.right]
-    token = left.syllable
-    next_token = right.syllable
-    assert token is not None and next_token is not None
-    coda = {"ㄴ": "ㄴ", "ㄵ": "ㄴ", "ㅁ": "ㅁ", "ㄻ": "ㅁ"}[token.coda or ""]
-    tense = TENSE_ONSET.get(next_token.onset)
-    if tense is None:
-        return
-    before = _pair_text(units, candidate.left, candidate.right)
-    left.syllable = token.changed(coda=coda)
-    right.syllable = next_token.changed(onset=tense)
-    _record(
-        rewrites,
-        units,
-        candidate.left,
-        candidate.right,
-        before,
-        RULES["ko.stem.tensing.24"].id,
-    )
-
-
-def _apply_stem_tensing_25(
-    units: list[_Unit],
-    candidate: _MorphologyCandidate,
-    annotation: _Annotation,
-    rewrites: list[Rewrite],
-) -> None:
-    if not _is_verb_stem_before_ending(annotation, candidate.left, candidate.right):
-        return
-    left = units[candidate.left]
-    right = units[candidate.right]
-    token = left.syllable
-    next_token = right.syllable
-    assert token is not None and next_token is not None
-    tense = TENSE_ONSET.get(next_token.onset)
-    if tense is None:
-        return
-    before = _pair_text(units, candidate.left, candidate.right)
-    left.syllable = token.changed(coda="ㄹ")
-    right.syllable = next_token.changed(onset=tense)
-    _record(
-        rewrites,
-        units,
-        candidate.left,
-        candidate.right,
-        before,
-        RULES["ko.stem.tensing.25"].id,
-    )
-
-
-def _apply_modifier_tensing_27(
-    units: list[_Unit],
-    candidate: _MorphologyCandidate,
-    annotation: _Annotation,
-    rewrites: list[Rewrite],
-) -> None:
-    if not _has_tag_ending_at(annotation, candidate.left + 1, "ETM"):
-        return
-    right = units[candidate.right]
-    next_token = right.syllable
-    assert next_token is not None
-    tense = TENSE_ONSET.get(next_token.onset)
-    if tense is None:
-        return
-    before = _pair_text(units, candidate.left, candidate.right)
-    right.syllable = next_token.changed(onset=tense)
-    _record(
-        rewrites,
-        units,
-        candidate.left,
-        candidate.right,
-        before,
-        RULES["ko.modifier.tensing.27"].id,
-    )
-
-
-def _apply_palatalization(
-    units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    rewrites: list[Rewrite],
-    blocked_pairs: frozenset[tuple[int, int]],
-    blocked_units: frozenset[int],
-) -> None:
-    for index, unit in enumerate(units):
-        token = unit.syllable
-        if token is None or token.coda not in {"ㄷ", "ㅌ", "ㄾ"}:
-            continue
-        neighbor = _next_syllable(units, segments, index)
-        if neighbor is None:
-            continue
-        right, crossed_space = neighbor
-        if _is_blocked_pair(blocked_pairs, blocked_units, index, right):
-            continue
-        next_token = units[right].syllable
-        assert next_token is not None
-        if (
-            not crossed_space
-            and next_token.onset == "ㅇ"
-            and next_token.vowel in {"ㅣ", "ㅕ"}
-        ):
-            before = _pair_text(units, index, right)
-            remaining = "ㄹ" if token.coda == "ㄾ" else None
-            onset = "ㅈ" if token.coda == "ㄷ" else "ㅊ"
-            unit.syllable = token.changed(coda=remaining)
-            units[right].syllable = next_token.changed(onset=onset)
-            _record(rewrites, units, index, right, before, RULES["ko.palatalization"].id)
-        elif (
-            not crossed_space
-            and token.coda == "ㄷ"
-            and next_token.onset == "ㅎ"
-            and next_token.vowel == "ㅣ"
-        ):
-            before = _pair_text(units, index, right)
-            unit.syllable = token.changed(coda=None)
-            units[right].syllable = next_token.changed(onset="ㅊ")
-            _record(rewrites, units, index, right, before, RULES["ko.palatalization"].id)
-
-
 def _apply_hieuh_consonants(
     units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    rewrites: list[Rewrite],
+    segments: tuple[_Segment, ...],
+    rewrites: list[Rewrite] | None,
     blocked_pairs: frozenset[tuple[int, int]],
     blocked_units: frozenset[int],
+    pause_boundaries: tuple[int, ...],
 ) -> None:
     aspiration = {"ㄱ": "ㅋ", "ㄷ": "ㅌ", "ㅈ": "ㅊ"}
     for index, unit in enumerate(units):
@@ -948,8 +465,10 @@ def _apply_hieuh_consonants(
         neighbor = _next_syllable(units, segments, index)
         if neighbor is None:
             continue
-        right, _ = neighbor
-        if _is_blocked_pair(blocked_pairs, blocked_units, index, right):
+        right, crossed_space = neighbor
+        if _is_blocked_phonological_pair(
+            blocked_pairs, blocked_units, units, segments, index, right, pause_boundaries,
+        ):
             continue
         next_token = units[right].syllable
         assert next_token is not None
@@ -957,7 +476,7 @@ def _apply_hieuh_consonants(
             remainder = HIEUH_REMAINDER[token.coda]
             if next_token.onset not in aspiration and next_token.onset not in {"ㅅ", "ㄴ"}:
                 continue
-            before = _pair_text(units, index, right)
+            before = _trace_before(rewrites, units, index, right)
             if next_token.onset in aspiration:
                 unit.syllable = token.changed(coda=remainder)
                 units[right].syllable = next_token.changed(onset=aspiration[next_token.onset])
@@ -973,8 +492,20 @@ def _apply_hieuh_consonants(
             continue
         if next_token.onset != "ㅎ" or token.coda not in HIEUH_ASSIMILATION:
             continue
-        before = _pair_text(units, index, right)
-        remainder, onset = HIEUH_ASSIMILATION[token.coda]
+        before = _trace_before(rewrites, units, index, right)
+        # ‘꽂히다·밝히다’의 접미사 앞과 ‘낮 한때·닭 한 마리’의
+        # 실질 형태소 앞은 다르다. 후자에서는 대표음화를 먼저 적용한다.
+        suffix = not crossed_space and (
+            next_token.vowel == "ㅣ"
+            or next_token.vowel == "ㅕ" and next_token.coda in {None, "ㅆ"}
+        )
+        coda = token.coda
+        if not suffix and coda in CODA_TRANSITIONS:
+            coda = CODA_TRANSITIONS[coda].target
+        assimilation = HIEUH_ASSIMILATION.get(coda)
+        if assimilation is None:
+            continue
+        remainder, onset = assimilation
         unit.syllable = token.changed(coda=remainder)
         units[right].syllable = next_token.changed(onset=onset)
         _record(rewrites, units, index, right, before, RULES["ko.hieuh.consonant"].id)
@@ -982,10 +513,11 @@ def _apply_hieuh_consonants(
 
 def _apply_hieuh_before_vowel(
     units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    rewrites: list[Rewrite],
+    segments: tuple[_Segment, ...],
+    rewrites: list[Rewrite] | None,
     blocked_pairs: frozenset[tuple[int, int]],
     blocked_units: frozenset[int],
+    pause_boundaries: tuple[int, ...],
 ) -> None:
     for index, unit in enumerate(units):
         token = unit.syllable
@@ -995,13 +527,15 @@ def _apply_hieuh_before_vowel(
         if neighbor is None:
             continue
         right, crossed_space = neighbor
-        if _is_blocked_pair(blocked_pairs, blocked_units, index, right):
+        if _is_blocked_phonological_pair(
+            blocked_pairs, blocked_units, units, segments, index, right, pause_boundaries,
+        ):
             continue
         next_token = units[right].syllable
         assert next_token is not None
         if crossed_space or next_token.onset != "ㅇ":
             continue
-        before = _pair_text(units, index, right)
+        before = _trace_before(rewrites, units, index, right)
         remainder = HIEUH_REMAINDER[token.coda]
         unit.syllable = token.changed(coda=None)
         if remainder is not None:
@@ -1011,10 +545,11 @@ def _apply_hieuh_before_vowel(
 
 def _apply_liaison(
     units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    rewrites: list[Rewrite],
+    segments: tuple[_Segment, ...],
+    rewrites: list[Rewrite] | None,
     blocked_pairs: frozenset[tuple[int, int]],
     blocked_units: frozenset[int],
+    pause_boundaries: tuple[int, ...],
 ) -> None:
     for index, unit in enumerate(units):
         token = unit.syllable
@@ -1025,13 +560,15 @@ def _apply_liaison(
         if neighbor is None:
             continue
         right, crossed_space = neighbor
-        if _is_blocked_pair(blocked_pairs, blocked_units, index, right):
+        if _is_blocked_phonological_pair(
+            blocked_pairs, blocked_units, units, segments, index, right, pause_boundaries,
+        ):
             continue
         next_token = units[right].syllable
         assert next_token is not None
         if crossed_space or next_token.onset != "ㅇ":
             continue
-        before = _pair_text(units, index, right)
+        before = _trace_before(rewrites, units, index, right)
         if token.coda in LIAISON_CLUSTER:
             remaining, onset = LIAISON_CLUSTER[token.coda]
             unit.syllable = token.changed(coda=remaining)
@@ -1046,10 +583,11 @@ def _apply_liaison(
 
 def _apply_numeral_n_insertion(
     units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    rewrites: list[Rewrite],
+    segments: tuple[_Segment, ...],
+    rewrites: list[Rewrite] | None,
     blocked_pairs: frozenset[tuple[int, int]],
     blocked_units: frozenset[int],
+    pause_boundaries: tuple[int, ...],
 ) -> None:
     """노멀라이저가 만드는 수사 합성어에만 보수적으로 ㄴ을 첨가한다."""
 
@@ -1061,7 +599,9 @@ def _apply_numeral_n_insertion(
         if neighbor is None:
             continue
         right, crossed_space = neighbor
-        if crossed_space or _is_blocked_pair(blocked_pairs, blocked_units, index, right):
+        if crossed_space or _is_blocked_phonological_pair(
+            blocked_pairs, blocked_units, units, segments, index, right, pause_boundaries,
+        ):
             continue
         next_token = units[right].syllable
         assert next_token is not None
@@ -1078,9 +618,13 @@ def _apply_numeral_n_insertion(
             and units[right + 1].syllable is not None
             and units[right + 1].text in {"섯", "덟"}
         )
+        if native and _has_phonological_barrier(
+            units, index, right + 1, segments, pause_boundaries,
+        ):
+            continue
         if not sino and not native:
             continue
-        before = _pair_text(units, index, right)
+        before = _trace_before(rewrites, units, index, right)
         units[right].syllable = next_token.changed(onset="ㄴ")
         _record(
             rewrites,
@@ -1094,10 +638,11 @@ def _apply_numeral_n_insertion(
 
 def _apply_coda_neutralization(
     units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    rewrites: list[Rewrite],
+    segments: tuple[_Segment, ...],
+    rewrites: list[Rewrite] | None,
     blocked_pairs: frozenset[tuple[int, int]],
     blocked_units: frozenset[int],
+    pause_boundaries: tuple[int, ...],
 ) -> None:
     for index, unit in enumerate(units):
         token = unit.syllable
@@ -1110,25 +655,63 @@ def _apply_coda_neutralization(
             right, crossed_space = neighbor
             if _is_blocked_pair(blocked_pairs, blocked_units, index, right):
                 continue
-            next_token = units[right].syllable
-            assert next_token is not None
-            if not crossed_space and next_token.onset == "ㅇ":
-                continue
-            last = right
+            if _has_phonological_barrier(units, index, right, segments, pause_boundaries):
+                last = index
+            else:
+                next_token = units[right].syllable
+                assert next_token is not None
+                if not crossed_space and next_token.onset == "ㅇ":
+                    continue
+                last = right
         else:
             last = index
         transition = CODA_TRANSITIONS[token.coda]
-        before = _pair_text(units, index, last)
+        before = _trace_before(rewrites, units, index, last)
         unit.syllable = token.changed(coda=transition.target)
         _record(rewrites, units, index, last, before, transition.rule_id)
 
 
+def _apply_cluster_tensification(
+    units: list[_Unit], segments: tuple[_Segment, ...], rewrites: list[Rewrite] | None,
+    blocked_pairs: frozenset[tuple[int, int]], blocked_units: frozenset[int],
+    pause_boundaries: tuple[int, ...],
+) -> None:
+    """ㄾ의 폐쇄음 단서가 사라지기 전에 뒤 자음을 경음화한다.
+
+    개미핥기처럼 용언에서 파생된 명사를 분석기가 한 토큰으로 반환해도
+    ㄾ의 ㅌ이 경음화를 유발한다. ㄼ까지 확장하면 여덟과를 잘못 바꾸므로
+    ㄼ은 형태소 어간 조건이 있는 제25항 경로에 유지한다.
+    """
+
+    for left, unit in enumerate(units):
+        token = unit.syllable
+        if token is None or token.coda != "ㄾ":
+            continue
+        neighbor = _next_syllable(units, segments, left)
+        if neighbor is None or neighbor[1]:
+            continue
+        right = neighbor[0]
+        if _is_blocked_phonological_pair(
+            blocked_pairs, blocked_units, units, segments, left, right, pause_boundaries,
+        ):
+            continue
+        following = units[right].syllable
+        assert following is not None
+        tense = TENSE_ONSET.get(following.onset)
+        if tense is None:
+            continue
+        before = _trace_before(rewrites, units, left, right)
+        units[right].syllable = following.changed(onset=tense)
+        _record(rewrites, units, left, right, before, "ko.cluster.tensing")
+
+
 def _apply_liquid_assimilation(
     units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    rewrites: list[Rewrite],
+    segments: tuple[_Segment, ...],
+    rewrites: list[Rewrite] | None,
     blocked_pairs: frozenset[tuple[int, int]],
     blocked_units: frozenset[int],
+    pause_boundaries: tuple[int, ...],
 ) -> None:
     for index, unit in enumerate(units):
         token = unit.syllable
@@ -1138,36 +721,39 @@ def _apply_liquid_assimilation(
         if neighbor is None:
             continue
         right, _ = neighbor
-        if _is_blocked_pair(blocked_pairs, blocked_units, index, right):
+        if _is_blocked_phonological_pair(
+            blocked_pairs, blocked_units, units, segments, index, right, pause_boundaries,
+        ):
             continue
         next_token = units[right].syllable
         assert next_token is not None
         if token.coda == "ㄴ" and next_token.onset == "ㄹ":
-            before = _pair_text(units, index, right)
+            before = _trace_before(rewrites, units, index, right)
             unit.syllable = token.changed(coda="ㄹ")
             units[right].syllable = next_token.changed(onset="ㄹ")
             _record(rewrites, units, index, right, before, RULES["ko.liquid.20"].id)
         elif token.coda == "ㄹ" and next_token.onset == "ㄴ":
-            before = _pair_text(units, index, right)
+            before = _trace_before(rewrites, units, index, right)
             units[right].syllable = next_token.changed(onset="ㄹ")
             _record(rewrites, units, index, right, before, RULES["ko.liquid.20"].id)
         elif next_token.onset == "ㄹ" and token.coda in {"ㄱ", "ㅂ"}:
-            before = _pair_text(units, index, right)
+            before = _trace_before(rewrites, units, index, right)
             unit.syllable = token.changed(coda="ㅇ" if token.coda == "ㄱ" else "ㅁ")
             units[right].syllable = next_token.changed(onset="ㄴ")
             _record(rewrites, units, index, right, before, RULES["ko.liquid.19"].id)
         elif next_token.onset == "ㄹ" and token.coda in {"ㅁ", "ㅇ"}:
-            before = _pair_text(units, index, right)
+            before = _trace_before(rewrites, units, index, right)
             units[right].syllable = next_token.changed(onset="ㄴ")
             _record(rewrites, units, index, right, before, RULES["ko.liquid.19"].id)
 
 
 def _apply_nasalization(
     units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    rewrites: list[Rewrite],
+    segments: tuple[_Segment, ...],
+    rewrites: list[Rewrite] | None,
     blocked_pairs: frozenset[tuple[int, int]],
     blocked_units: frozenset[int],
+    pause_boundaries: tuple[int, ...],
 ) -> None:
     for index, unit in enumerate(units):
         token = unit.syllable
@@ -1177,23 +763,26 @@ def _apply_nasalization(
         if neighbor is None:
             continue
         right, _ = neighbor
-        if _is_blocked_pair(blocked_pairs, blocked_units, index, right):
+        if _is_blocked_phonological_pair(
+            blocked_pairs, blocked_units, units, segments, index, right, pause_boundaries,
+        ):
             continue
         next_token = units[right].syllable
         assert next_token is not None
         if next_token.onset not in {"ㄴ", "ㅁ"}:
             continue
-        before = _pair_text(units, index, right)
+        before = _trace_before(rewrites, units, index, right)
         unit.syllable = token.changed(coda=NASAL_CODA[token.coda])
         _record(rewrites, units, index, right, before, RULES["ko.nasalization"].id)
 
 
 def _apply_tensification(
     units: list[_Unit],
-    segments: tuple[OutputSegment, ...],
-    rewrites: list[Rewrite],
+    segments: tuple[_Segment, ...],
+    rewrites: list[Rewrite] | None,
     blocked_pairs: frozenset[tuple[int, int]],
     blocked_units: frozenset[int],
+    pause_boundaries: tuple[int, ...],
 ) -> None:
     for index, unit in enumerate(units):
         token = unit.syllable
@@ -1203,13 +792,15 @@ def _apply_tensification(
         if neighbor is None:
             continue
         right, _ = neighbor
-        if _is_blocked_pair(blocked_pairs, blocked_units, index, right):
+        if _is_blocked_phonological_pair(
+            blocked_pairs, blocked_units, units, segments, index, right, pause_boundaries,
+        ):
             continue
         next_token = units[right].syllable
         assert next_token is not None
         tense = TENSE_ONSET.get(next_token.onset)
         if tense is None:
             continue
-        before = _pair_text(units, index, right)
+        before = _trace_before(rewrites, units, index, right)
         units[right].syllable = next_token.changed(onset=tense)
         _record(rewrites, units, index, right, before, RULES["ko.tensification"].id)

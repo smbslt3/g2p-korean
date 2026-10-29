@@ -1,0 +1,1982 @@
+{
+  "schema": "r39_independent_role_refs_v1",
+  "frozen_before_any_runtime_execution": true,
+  "expectation_origin": "국립국어원 제29항 붙임2의 국소 환경과 독립 작성한 형태소 역할·소유권 계약",
+  "source_policy": {
+    "allowed": [
+      "src/g2p_ko의 기존 공개 모델과 저수준 실행 API",
+      "국립국어원 어문 규범"
+    ],
+    "not_consulted": [
+      "기존 tests/fixtures",
+      "기존 출력·보고서",
+      "외부 G2P 구현",
+      "R36/B21",
+      "R38/B22",
+      "비공개 7개 pool",
+      "새 후보 실행 결과"
+    ],
+    "lexical_table_additions": false
+  },
+  "normative_sources": [
+    {
+      "url": "https://korean.go.kr/kornorms/m/m_regltn.do?regltn_code=0002",
+      "section": "표준 발음법 제29항 붙임 1·2",
+      "access": "공식 검색 색인에서 조문 확인; 직접 열기는 403",
+      "use": "이어 읽는 한 마디에서 자음 끝말과 ㅣ·y계 첫머리의 국소 ㄴ 첨가"
+    },
+    {
+      "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=27&pageIndex=1&qna_seq=327019",
+      "section": "구의 이어 읽기와 휴지 구분",
+      "access": "공식 검색 색인",
+      "use": "구 전체의 고정 표준 발음을 주장하지 않고 이어 읽기 조건의 국소 결과만 검사"
+    }
+  ],
+  "interpretation": [
+    "이 fixture의 긍정 사례는 예외를 주장하지 않는 통제된 형태소 입력의 프로그램상 이어 읽기 분기 검사다.",
+    "파생어 역할 증명은 독립성의 증거이며 모든 자연 발화의 ㄴ 첨가를 강제한다는 뜻은 아니다.",
+    "expect_local_right는 형태소 단계 직후 첫 음절이다. 비음화·유음화·전체 완성 발음은 검사하지 않는다.",
+    "단어의 어휘 존재성이나 Kiwi 분석 정답률은 평가하지 않는다. 형태소열은 입력 가정으로 명시했다.",
+    "소유·태그·범주·휴지·상충 읽기는 별도의 안전 계약이며 국립국어원이 이 내부 API를 정했다는 주장이 아니다."
+  ],
+  "cases": [
+    {
+      "id": "xr_noun_01_split",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뉴",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "xr_noun_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "xr_noun_01_fused",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연성",
+          "tag": "XR+XSN",
+          "start": 2,
+          "end": 5,
+          "morphemes": [
+            [
+              "유연",
+              "XR"
+            ],
+            [
+              "성",
+              "XSN"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뉴",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "xr_noun_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "xr_noun_02_split",
+      "text": "밤 요염성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "요염",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뇨",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "xr_noun_02",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "xr_noun_02_fused",
+      "text": "밤 요염성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "요염성",
+          "tag": "XR+XSN",
+          "start": 2,
+          "end": 5,
+          "morphemes": [
+            [
+              "요염",
+              "XR"
+            ],
+            [
+              "성",
+              "XSN"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뇨",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "xr_noun_02",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_noun_01_split",
+      "text": "밤 이질성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "이질",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "니",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_noun_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_noun_01_fused",
+      "text": "밤 이질성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "이질성",
+          "tag": "NNG+XSN",
+          "start": 2,
+          "end": 5,
+          "morphemes": [
+            [
+              "이질",
+              "NNG"
+            ],
+            [
+              "성",
+              "XSN"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "니",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_noun_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_noun_02_split",
+      "text": "밤 야만성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "야만",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "냐",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_noun_02",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_noun_02_fused",
+      "text": "밤 야만성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "야만성",
+          "tag": "NNG+XSN",
+          "start": 2,
+          "end": 5,
+          "morphemes": [
+            [
+              "야만",
+              "NNG"
+            ],
+            [
+              "성",
+              "XSN"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "냐",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_noun_02",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_verb_01_split",
+      "text": "밤 연구하다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "연구",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "하",
+          "tag": "XSV",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "verb",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "년",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_verb_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_verb_01_fused",
+      "text": "밤 연구하다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "연구하다",
+          "tag": "NNG+XSV+EF",
+          "start": 2,
+          "end": 6,
+          "morphemes": [
+            [
+              "연구",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "verb",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "년",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_verb_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_verb_02_split",
+      "text": "밤 요약하니",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "요약",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "하",
+          "tag": "XSV",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "니",
+          "tag": "EC",
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "verb",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뇨",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_verb_02",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_verb_02_fused",
+      "text": "밤 요약하니",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "요약하니",
+          "tag": "NNG+XSV+EC",
+          "start": 2,
+          "end": 6,
+          "morphemes": [
+            [
+              "요약",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "니",
+              "EC"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "verb",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뇨",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_verb_02",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_verb_03_split",
+      "text": "밤 유혹하고",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유혹",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "하",
+          "tag": "XSV",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "고",
+          "tag": "EC",
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "verb",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뉴",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_verb_03",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_verb_03_fused",
+      "text": "밤 유혹하고",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유혹하고",
+          "tag": "NNG+XSV+EC",
+          "start": 2,
+          "end": 6,
+          "morphemes": [
+            [
+              "유혹",
+              "NNG"
+            ],
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "고",
+              "EC"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "verb",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뉴",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_verb_03",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_adj_01_split",
+      "text": "밤 여유롭다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "여유",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "롭",
+          "tag": "XSA",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "adjective",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "녀",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_adj_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_adj_01_fused",
+      "text": "밤 여유롭다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "여유롭다",
+          "tag": "NNG+XSA+EF",
+          "start": 2,
+          "end": 6,
+          "morphemes": [
+            [
+              "여유",
+              "NNG"
+            ],
+            [
+              "롭",
+              "XSA"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "adjective",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "녀",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_adj_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_adj_02_split",
+      "text": "밤 예의스럽고",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "예의",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "스럽",
+          "tag": "XSA",
+          "start": 4,
+          "end": 6
+        },
+        {
+          "form": "고",
+          "tag": "EC",
+          "start": 6,
+          "end": 7
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "adjective",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "녜",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_adj_02",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_adj_02_fused",
+      "text": "밤 예의스럽고",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "예의스럽고",
+          "tag": "NNG+XSA+EC",
+          "start": 2,
+          "end": 7,
+          "morphemes": [
+            [
+              "예의",
+              "NNG"
+            ],
+            [
+              "스럽",
+              "XSA"
+            ],
+            [
+              "고",
+              "EC"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "adjective",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "녜",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_adj_02",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "xr_adv_01_split",
+      "text": "밤 여실히",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "여실",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "히",
+          "tag": "XSM",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "adverb",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "녀",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "xr_adv_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "xr_adv_01_fused",
+      "text": "밤 여실히",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "여실히",
+          "tag": "XR+XSM",
+          "start": 2,
+          "end": 5,
+          "morphemes": [
+            [
+              "여실",
+              "XR"
+            ],
+            [
+              "히",
+              "XSM"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "adverb",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "녀",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "xr_adv_01",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_particle_split",
+      "text": "밤 유연성은",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뉴",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_particle",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_copula_split",
+      "text": "밤 유연성이다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 5,
+          "end": 6
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 6,
+          "end": 7
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뉴",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_copula",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_particle_fused",
+      "text": "밤 유연성은",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연성은",
+          "tag": "XR+XSN+JX",
+          "start": 2,
+          "end": 6,
+          "morphemes": [
+            [
+              "유연",
+              "XR"
+            ],
+            [
+              "성",
+              "XSN"
+            ],
+            [
+              "은",
+              "JX"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뉴",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_particle",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "noun_copula_fused",
+      "text": "밤 유연성이다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연성이다",
+          "tag": "XR+XSN+VCP+EF",
+          "start": 2,
+          "end": 7,
+          "morphemes": [
+            [
+              "유연",
+              "XR"
+            ],
+            [
+              "성",
+              "XSN"
+            ],
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뉴",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": "noun_copula",
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "simple_noun_control",
+      "text": "밤 여울",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "여울",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 1,
+      "expect_local_right": "녀",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "simple_adverb_control",
+      "text": "밤 이따금",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "이따금",
+          "tag": "MAG",
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 1,
+      "expect_local_right": "니",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "bare_root_guard",
+      "text": "밤 유연",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "bare_prefix_root_guard",
+      "text": "밤 이유연",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "이",
+          "tag": "XPN",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 3,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "이",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "root_bad_tail_guard",
+      "text": "밤 유연성말",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "invalid_role_transition_guard",
+      "text": "밤 유연하스럽다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "하",
+          "tag": "XSA",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "스럽",
+          "tag": "XSA",
+          "start": 5,
+          "end": 7
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 7,
+          "end": 8
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "suffix_only_guard",
+      "text": "밤 이성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "이",
+          "tag": "XSN",
+          "start": 2,
+          "end": 3
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 3,
+          "end": 4
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "이",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "ending_on_noun_guard",
+      "text": "밤 유연성다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "copula_without_ending_guard",
+      "text": "밤 유연성이",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "tag_morpheme_mismatch_guard",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연성",
+          "tag": "XR+XSM",
+          "start": 2,
+          "end": 5,
+          "morphemes": [
+            [
+              "유연",
+              "XR"
+            ],
+            [
+              "성",
+              "XSN"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "missing_morphemes_guard",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연성",
+          "tag": "XR+XSN",
+          "start": 2,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "unlicensed_surface_replacement_guard",
+      "text": "밤 유연몸다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연몸다",
+          "tag": "XR+XSA+EF",
+          "start": 2,
+          "end": 6,
+          "morphemes": [
+            [
+              "유연",
+              "XR"
+            ],
+            [
+              "하",
+              "XSA"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "interior_start_guard",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 3,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": null,
+      "expect_local_right": null,
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_only"
+    },
+    {
+      "id": "no_derivation_noun_ending_certificate_guard",
+      "text": "밤 연구하다",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "연구",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "하",
+          "tag": "EF",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 5,
+          "end": 6
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": null,
+      "expect_local_right": null,
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_only"
+    },
+    {
+      "id": "external_pause_guard",
+      "text": "밤 요염성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "요염",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [
+        2
+      ],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 0,
+      "expect_local_right": "요",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "internal_pause_guard",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [
+        3
+      ],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "ordinary_liaison_conflict_guard",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": "ordinary_liaison",
+      "expect_role": "noun",
+      "expect_word_rule_count": 0,
+      "expect_local_right": "유",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "numeral_donor_guard",
+      "text": "삼 요염성",
+      "tokens": [
+        {
+          "form": "삼",
+          "tag": "NR",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "요염",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 0,
+      "expect_local_right": "요",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "non_insertion_vowel_control",
+      "text": "밤 아담성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "아담",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 0,
+      "expect_local_right": "아",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "liquid_donor_local_phase",
+      "text": "물 요염성",
+      "tokens": [
+        {
+          "form": "물",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "요염",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": "noun",
+      "expect_word_rule_count": 1,
+      "expect_local_right": "뇨",
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_and_local_rule"
+    },
+    {
+      "id": "gap_ownership_guard",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": null,
+      "expect_local_right": null,
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_only"
+    },
+    {
+      "id": "foreign_owned_unit_guard",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": null,
+      "expect_local_right": null,
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_only",
+      "protected_offsets": [
+        3
+      ]
+    },
+    {
+      "id": "internal_hard_boundary_guard",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": null,
+      "expect_local_right": null,
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_only",
+      "hard_boundaries": [
+        3
+      ]
+    },
+    {
+      "id": "overlap_ownership_guard",
+      "text": "밤 유연성",
+      "tokens": [
+        {
+          "form": "밤",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1
+        },
+        {
+          "form": "유연",
+          "tag": "XR",
+          "start": 2,
+          "end": 4
+        },
+        {
+          "form": "성",
+          "tag": "XSN",
+          "start": 4,
+          "end": 5
+        },
+        {
+          "form": "연성",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5
+        }
+      ],
+      "right_start": 2,
+      "boundary": [
+        0,
+        2
+      ],
+      "pause_boundaries": [],
+      "reading_relation": null,
+      "expect_role": null,
+      "expect_word_rule_count": null,
+      "expect_local_right": null,
+      "expect_failure_diagnostics": [],
+      "equivalence_group": null,
+      "scope": "certificate_only"
+    }
+  ]
+}

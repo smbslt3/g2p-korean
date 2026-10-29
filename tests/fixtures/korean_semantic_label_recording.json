@@ -1,0 +1,431 @@
+{
+  "created_utc": "2026-10-25T13:42:48.764893+00:00",
+  "scope_ko": "후보01과02의 결과를 보고 작성한 개발 회귀 대조다. 새 독립 평가가 아니다. 기존 C10_A08의 의미 정답을 보존하고 대응 대조를 추가했다.",
+  "cases": [
+    {
+      "id": "R01",
+      "text": "평가서는 현재 거래 가격을 ‘시가’라고 기록했다.",
+      "tokens": [
+        {
+          "form": "평가서",
+          "tag": "NNG",
+          "start": 0,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "현재",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "거래",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKB",
+          "start": 19,
+          "end": 21,
+          "morphemes": []
+        },
+        {
+          "form": "기록",
+          "tag": "NNG",
+          "start": 22,
+          "end": 24,
+          "morphemes": []
+        },
+        {
+          "form": "했다",
+          "tag": "XSV+EP+EF",
+          "start": 24,
+          "end": 26,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "였",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 26,
+          "end": 27,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 16,
+          "end": 18,
+          "sense_id": "siga.market_price",
+          "criterion": "exposed_unique_sense"
+        }
+      ]
+    },
+    {
+      "id": "R02",
+      "text": "책을 ‘시가’라고 기록했다.",
+      "tokens": [
+        {
+          "form": "책",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKB",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "기록",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "했다",
+          "tag": "XSV+EP+EF",
+          "start": 12,
+          "end": 14,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "였",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 4,
+          "end": 6,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ]
+    },
+    {
+      "id": "R03",
+      "text": "가격을 ‘시가’라고 기록하지 않았다.",
+      "tokens": [
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKB",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "기록",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "하",
+          "tag": "XSV",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "지",
+          "tag": "EC",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "않",
+          "tag": "VX",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "았",
+          "tag": "EP",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 5,
+          "end": 7,
+          "sense_id": null,
+          "criterion": "negative_relation_policy",
+          "allowed_sense_ids": [
+            null,
+            "siga.market_price"
+          ],
+          "forbidden_evidence_anchor_spans": [
+            [
+              11,
+              19
+            ]
+          ],
+          "forbidden_evidence_semantic_classes": [
+            "price",
+            "high_price"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "R04",
+      "text": "기자는 ‘시가’라고 기록했다.",
+      "tokens": [
+        {
+          "form": "기자",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKB",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "기록",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "했다",
+          "tag": "XSV+EP+EF",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "였",
+              "EP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 5,
+          "end": 7,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ]
+    }
+  ]
+}

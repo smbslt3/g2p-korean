@@ -1,0 +1,42 @@
+{
+  "schema": "provided_formal_attachment.author.reporting_amendment.v2",
+  "authority": "output/g2p_progressive_round37_20261027/REPORTING_DECISION_KO.md",
+  "phase": "post_comparison_unblinded_before_candidate02_outputs",
+  "reason_ko": "candidate01의 여섯 규칙 ID 정정 중 실제 형식 이벤트와 같은 pair의 비형식 변화를 섞은 세 행을 철회한다. one_madi/XPN/XR은 기존 비형식 경로이므로 v1 정정을 유지한다. ㅇ은 기존 계약대로 not_required다. 입력 53행과 추가 7검사의 입력/개수는 바꾸지 않으며 sound_effect와 형식 소유 규칙을 명시 검사한다. 원래 동결 JSON, v1 정정표와 모든 candidate01 결과는 보존한다.",
+  "corrections": {
+    "jkg_no_coda": {"sound_effect": "unchanged"},
+    "ng_no_additional_change": {"applicability": "not_required", "sound_effect": "unchanged", "rules": []},
+    "consonant_no_liaison": {"sound_effect": "unchanged", "rules": []},
+    "formal_unresolved_not_lexical": {"sound_effect": "unchanged", "rules": []},
+    "isolated_ending_host": {"sound_effect": "unchanged", "rules": []},
+    "bad_source_metadata": {"sound_effect": "unchanged", "rules": []}
+  },
+  "guard_amendments_ko": {
+    "check_h_particle_not_inherited": "기존 unknown 기대에 형식 이벤트 unchanged/규칙 없음 검사를 추가한다. 대표음화 원시 trace는 보존한다.",
+    "check_source_identity": "기존 unknown 기대에 형식 이벤트 unchanged/규칙 없음 검사를 추가한다. 대표음화 원시 trace는 보존한다."
+  },
+  "new_case_count": 0,
+  "unchanged_inputs": true,
+  "candidate03_guard_extension": {
+    "phase": "post_saved_fullsuite_and_actual8_unblinding_before_candidate03_outputs",
+    "original_matrix_count": 53,
+    "preserved_original_guard_count": 7,
+    "added_guard_count": 3,
+    "checks": {
+      "check_canonical_ending_allomorph_adapter": {
+        "source": "많 아", "raw_ending": ["어", "EF", 2, 1],
+        "source_ending": ["아", "EF", 2, 3], "expected": "마 나",
+        "status": "selected", "applicability": "eligible", "sound_effect": "changed",
+        "rules": ["ko.hieuh.vowel"]
+      },
+      "check_lexical_xr_suffix_tag_conflict": {
+        "source": "옷 어지간히", "top_tag": "XR+XSM", "component_tags": ["XR", "ZZ"],
+        "status": "selected", "applicability": "ineligible", "lexical_liaison_event": false
+      },
+      "check_lexical_xr_ending_tag_conflict": {
+        "source": "옷 우아해", "top_tag": "XR+XSA-R+EF", "component_tags": ["XR", "XSA-R", "EC"],
+        "status": "selected", "applicability": "ineligible", "lexical_liaison_event": false
+      }
+    }
+  }
+}

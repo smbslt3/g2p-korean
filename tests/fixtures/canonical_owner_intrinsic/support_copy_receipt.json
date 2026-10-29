@@ -1,0 +1,37 @@
+{
+  "created_utc": "2026-10-27T22:02:53.4104880Z",
+  "purpose": "출력 폴더 없이 현재 src를 검증하는 영구 회귀의 최소 지원 복사 영수증",
+  "accepted_v3_freeze_sha256": "c5555741061a27f214e798c837f806717253f67655a7ef25ff36e697ab362fbe",
+  "original_reference_manifest_sha256": "ce2b3131743fcc945028be135da47a2455c9a21a46dc461a31999fb7fbcc29a1",
+  "origin_sha256": {
+    "v3_runner": "c79e88cfe802e9bacc6885069b9d5766bab0906daf8d7c25b950f848fac25d23",
+    "v3_binding_plan": "33567d1953b63b42c4e96751cd9aaf43dce0c9b1f2851545d98cf242fe90351f",
+    "references": "af45b2f6c8caec541a5352e89fb61cb5304e367aaa13a904c4ad243dba14fd56"
+  },
+  "portable_adjustments": [
+    "runner의 참조 경로를 같은 폴더로 한정",
+    "출력 전용 동결·승인 경로 검사를 이 지원 영수증의 해시 검사로 대체",
+    "계획은 실행에 쓰는 ref_id/route/status/carrier_ref/control 및 모델·범위만 보존",
+    "지원 파일 영수증 해시는 체크아웃의 줄바꿈만 정규화하며 원본 SHA-256은 별도로 보존"
+  ],
+  "scope": {
+    "bound": 10,
+    "partial_explicit_raw_VV": 5,
+    "unbound": 9,
+    "official_full_phone": 4,
+    "native_controls": 6
+  },
+  "runtime_calls_during_copy": 0,
+  "source_imports_during_copy": 0,
+  "gold_changes": 0,
+  "new_reference_cases": 0,
+  "original_v3_artifacts_verified_unchanged": true,
+  "test_path": "tests/test_canonical_owner_intrinsic.py",
+  "test_sha256": "c3cb236a92e155ff59f53fdedf4fddced62aeacdbdeb08fcb4f1ea3332604934",
+  "artifact_sha256": {
+    "run_independent_refs.py": "46e01b22f19abb91865a7fcaae8808a07bc7ad39aecf5e9c651849b2d9ef947d",
+    "binding_plan.json": "d9549c627362a224cad0b832224785caf7cf71b671b4b9d7daadb404e843f9cf",
+    "references.json": "af45b2f6c8caec541a5352e89fb61cb5304e367aaa13a904c4ad243dba14fd56"
+  },
+  "artifact_hash_policy": "UTF-8 텍스트를 universal newline으로 읽은 뒤 BOM 없는 UTF-8로 해시. 체크아웃 줄바꿈 차이만 무시한다."
+}

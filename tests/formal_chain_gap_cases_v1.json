@@ -1,0 +1,399 @@
+{
+  "schema": "r40.post_candidate01_gap_scope_amendment.v1",
+  "frozen_at_utc": "2026-10-27T16:21:39.544327+00:00",
+  "evaluation_class": "후보01의 API 범위 판정 뒤 독립 작성한 공개 개발 검사다. 최초 비노출 참조로 집계하지 않는다.",
+  "candidate02_implementation_or_outputs_read": false,
+  "runtime_executed_before_this_freeze": false,
+  "original_joined_31_mutated": false,
+  "original_raw_scores_preserved": true,
+  "cases": [
+    {
+      "id": "gap_dev_suffix_chain_single",
+      "text": "높 여",
+      "role_start": 0,
+      "tokens": [
+        {
+          "form": "높",
+          "tag": "XR",
+          "normalized_start": 0,
+          "normalized_end": 1,
+          "morphemes": [
+            [
+              "높",
+              "XR"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "form": "여",
+          "tag": "XSV+EC",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "이",
+              "XSV"
+            ],
+            [
+              "어",
+              "EC"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "pair": [
+        0,
+        2
+      ],
+      "expect_recipient_proof": true,
+      "expect_decision_present": true,
+      "expect_status": "selected",
+      "expect_applicability": "eligible",
+      "expect_role": "XSV",
+      "expect_local_surface": "노 펴",
+      "expect_rule_ids": [
+        "ko.liaison.single"
+      ],
+      "expect_sound_effect": "changed",
+      "scope": "공백을 가로지르는 명시 ordinary_liaison의 통제 문법 조각이며 자연스러운 맞춤법 단어라는 주장은 하지 않는다."
+    },
+    {
+      "id": "gap_dev_suffix_chain_hieuh",
+      "text": "끓 여",
+      "role_start": 0,
+      "tokens": [
+        {
+          "form": "끓",
+          "tag": "VV",
+          "normalized_start": 0,
+          "normalized_end": 1,
+          "morphemes": [
+            [
+              "끓",
+              "VV"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "form": "여",
+          "tag": "XSV+EC",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "이",
+              "XSV"
+            ],
+            [
+              "어",
+              "EC"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "pair": [
+        0,
+        2
+      ],
+      "expect_recipient_proof": true,
+      "expect_decision_present": true,
+      "expect_status": "selected",
+      "expect_applicability": "eligible",
+      "expect_role": "XSV",
+      "expect_local_surface": "끄 려",
+      "expect_rule_ids": [
+        "ko.hieuh.vowel"
+      ],
+      "expect_sound_effect": "changed",
+      "scope": "공백을 가로지르는 명시 ordinary_liaison의 통제 문법 조각이며 자연스러운 맞춤법 단어라는 주장은 하지 않는다."
+    },
+    {
+      "id": "gap_dev_pause_guard",
+      "text": "끓 여",
+      "role_start": 0,
+      "tokens": [
+        {
+          "form": "끓",
+          "tag": "VV",
+          "normalized_start": 0,
+          "normalized_end": 1,
+          "morphemes": [
+            [
+              "끓",
+              "VV"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "form": "여",
+          "tag": "XSV+EC",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "이",
+              "XSV"
+            ],
+            [
+              "어",
+              "EC"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "pair": [
+        0,
+        2
+      ],
+      "expect_recipient_proof": true,
+      "expect_decision_present": true,
+      "expect_status": "blocked",
+      "expect_applicability": "blocked",
+      "expect_role": "XSV",
+      "expect_local_surface": "끓 여",
+      "expect_rule_ids": [],
+      "expect_sound_effect": "unchanged",
+      "scope": "공백을 가로지르는 명시 ordinary_liaison의 통제 문법 조각이며 자연스러운 맞춤법 단어라는 주장은 하지 않는다.",
+      "pause_boundaries": [
+        1
+      ]
+    },
+    {
+      "id": "gap_dev_wrong_initial_role_guard",
+      "text": "높 여",
+      "role_start": 0,
+      "tokens": [
+        {
+          "form": "높",
+          "tag": "XR",
+          "normalized_start": 0,
+          "normalized_end": 1,
+          "morphemes": [
+            [
+              "높",
+              "XR"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "form": "여",
+          "tag": "NNG+EC",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "이",
+              "NNG"
+            ],
+            [
+              "어",
+              "EC"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "pair": [
+        0,
+        2
+      ],
+      "expect_recipient_proof": false,
+      "expect_decision_present": false,
+      "expect_local_surface": "높 여",
+      "expect_rule_ids": [],
+      "expect_sound_effect": null,
+      "scope": "공백을 가로지르는 명시 ordinary_liaison의 통제 문법 조각이며 자연스러운 맞춤법 단어라는 주장은 하지 않는다."
+    },
+    {
+      "id": "gap_dev_left_lexical_origin_guard",
+      "text": "옷 외",
+      "role_start": 0,
+      "tokens": [
+        {
+          "form": "옷",
+          "tag": "NNG",
+          "normalized_start": 0,
+          "normalized_end": 1,
+          "morphemes": [
+            [
+              "옷",
+              "NNG"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "form": "외",
+          "tag": "VV+XSV",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "오",
+              "VV"
+            ],
+            [
+              "이",
+              "XSV"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "pair": [
+        0,
+        2
+      ],
+      "expect_recipient_proof": true,
+      "expect_decision_present": false,
+      "expect_local_surface": "옷 외",
+      "expect_rule_ids": [],
+      "expect_sound_effect": null,
+      "scope": "명시적 37항 증명은 가능해도 첫 초성과 공동 모음에 왼쪽 어휘 어간 유래가 있으므로 형식 접미사 수신자로 바꾸지 않는다."
+    },
+    {
+      "id": "gap_dev_source_mismatch_guard",
+      "text": "높 여",
+      "role_start": 0,
+      "tokens": [
+        {
+          "form": "높",
+          "tag": "XR",
+          "normalized_start": 0,
+          "normalized_end": 1,
+          "morphemes": [
+            [
+              "높",
+              "XR"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              0,
+              1
+            ]
+          ]
+        },
+        {
+          "form": "여",
+          "tag": "XSV+EC",
+          "normalized_start": 2,
+          "normalized_end": 3,
+          "morphemes": [
+            [
+              "이",
+              "XSV"
+            ],
+            [
+              "어",
+              "EC"
+            ]
+          ],
+          "morpheme_spans": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        }
+      ],
+      "pair": [
+        0,
+        2
+      ],
+      "expect_recipient_proof": true,
+      "expect_decision_present": true,
+      "expect_status": "unknown",
+      "expect_applicability": "unknown",
+      "expect_role": "XSV",
+      "expect_local_surface": "높 여",
+      "expect_rule_ids": [],
+      "expect_sound_effect": "unchanged",
+      "scope": "공백을 가로지르는 명시 ordinary_liaison의 통제 문법 조각이며 자연스러운 맞춤법 단어라는 주장은 하지 않는다.",
+      "unit_source_replacements": {
+        "2": "야"
+      }
+    }
+  ]
+}

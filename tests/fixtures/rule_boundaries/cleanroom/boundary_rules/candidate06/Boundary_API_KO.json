@@ -1,0 +1,163 @@
+{
+  "모듈": "g2p_ko.korean.boundary_consumers",
+  "함수": {
+    "certify_rule_boundaries": "(annotation, units, segments, pause_boundaries=(), *, reading_relations=None) -> 'tuple[RuleBoundary, ...]'",
+    "apply_rule_boundaries": "(boundaries, units, rewrites) -> 'tuple[BoundaryEvent, ...]'"
+  },
+  "자료형": {
+    "RuleBoundary": [
+      {
+        "이름": "pair",
+        "형": "tuple[int, int]"
+      },
+      {
+        "이름": "word_span",
+        "형": "tuple[int, int]"
+      },
+      {
+        "이름": "parts",
+        "형": "tuple[tuple[str, str], ...]"
+      },
+      {
+        "이름": "role",
+        "형": "str | None"
+      },
+      {
+        "이름": "relation",
+        "형": "str | None"
+      },
+      {
+        "이름": "source",
+        "형": "str"
+      },
+      {
+        "이름": "status",
+        "형": "str"
+      },
+      {
+        "이름": "applicability",
+        "형": "str"
+      },
+      {
+        "이름": "reason",
+        "형": "str"
+      },
+      {
+        "이름": "article",
+        "형": "str | None"
+      },
+      {
+        "이름": "donor_origin",
+        "형": "SourceAtom | None"
+      },
+      {
+        "이름": "recipient_origins",
+        "형": "tuple[SourceAtom, ...]"
+      },
+      {
+        "이름": "surface_proofs",
+        "형": "tuple[TokenSurfaceProof, ...]"
+      },
+      {
+        "이름": "grammar",
+        "형": "GrammarResult | None"
+      },
+      {
+        "이름": "coda",
+        "형": "str | None"
+      },
+      {
+        "이름": "onset",
+        "형": "str | None"
+      },
+      {
+        "이름": "vowel",
+        "형": "str | None"
+      },
+      {
+        "이름": "remainder",
+        "형": "str | None"
+      },
+      {
+        "이름": "moved_onset",
+        "형": "str | None"
+      },
+      {
+        "이름": "attachment_span",
+        "형": "tuple[int, int] | None"
+      },
+      {
+        "이름": "lexical_fact",
+        "형": "CanonicalBoundaryFact | None"
+      }
+    ],
+    "BoundaryEvent": [
+      {
+        "이름": "boundary",
+        "형": "RuleBoundary"
+      },
+      {
+        "이름": "status",
+        "형": "str"
+      },
+      {
+        "이름": "applicability",
+        "형": "str"
+      },
+      {
+        "이름": "reason",
+        "형": "str"
+      },
+      {
+        "이름": "changed",
+        "형": "bool"
+      },
+      {
+        "이름": "rule_ids",
+        "형": "tuple[str, ...]"
+      }
+    ],
+    "CanonicalBoundaryFact": [
+      {
+        "이름": "id",
+        "형": "str"
+      },
+      {
+        "이름": "owner_form",
+        "형": "str"
+      },
+      {
+        "이름": "owner_pos",
+        "형": "frozenset[str]"
+      },
+      {
+        "이름": "base_span",
+        "형": "tuple[int, int]"
+      },
+      {
+        "이름": "affix_span",
+        "형": "tuple[int, int]"
+      },
+      {
+        "이름": "role",
+        "형": "str"
+      },
+      {
+        "이름": "relation_alternatives",
+        "형": "tuple[str, ...]"
+      },
+      {
+        "이름": "base_headword",
+        "형": "str | None"
+      },
+      {
+        "이름": "base_category",
+        "형": "str | None"
+      },
+      {
+        "이름": "source_ids",
+        "형": "tuple[str, ...]"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3782 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-25T14:06:56.131530+00:00",
+  "source_ko": "부모가 후보를 보기 전에 독립 작성",
+  "scope_ko": "정상 분석의 핵어·중첩 인용 대조. 독립 의미 정답과 유보·근거·경계 정책을 구분하며 대표 정확도가 아니다.",
+  "cases": [
+    {
+      "id": "P01",
+      "text": "그는 “‘시가’는 가격이다.”라고 말했다.",
+      "tokens": [
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 21,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 5,
+          "end": 7,
+          "sense_id": "siga.market_price",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P02",
+      "text": "그는 “가격을 ‘시가’라고 정의했다.”라고 말했다.",
+      "tokens": [
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "정의",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 17,
+          "end": 18,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 20,
+          "end": 21,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 21,
+          "end": 23,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 24,
+          "end": 25,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 25,
+          "end": 26,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 26,
+          "end": 27,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 27,
+          "end": 28,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 9,
+          "end": 11,
+          "sense_id": "siga.market_price",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P03",
+      "text": "그는 “‘시가’는 가격이다.”라고 말하고 “‘시가’는 시다.”라고 말했다.",
+      "tokens": [
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "하",
+          "tag": "XSV",
+          "start": 20,
+          "end": 21,
+          "morphemes": []
+        },
+        {
+          "form": "고",
+          "tag": "EC",
+          "start": 21,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 23,
+          "end": 24,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 24,
+          "end": 25,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 27,
+          "end": 28,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 28,
+          "end": 29,
+          "morphemes": []
+        },
+        {
+          "form": "시",
+          "tag": "NNG",
+          "start": 30,
+          "end": 31,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "VCP+EF",
+          "start": 31,
+          "end": 32,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 32,
+          "end": 33,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 33,
+          "end": 34,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 34,
+          "end": 36,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 37,
+          "end": 38,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 38,
+          "end": 39,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 39,
+          "end": 40,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 40,
+          "end": 41,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 5,
+          "end": 7,
+          "sense_id": "siga.market_price",
+          "criterion": "unique_sense"
+        },
+        {
+          "spelling": "시가",
+          "start": 25,
+          "end": 27,
+          "sense_id": "siga.literary_poetry",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P04",
+      "text": "가격은 중요하다. 그는 “‘시가’라는 제목을 읽었다.”라고 말했다.",
+      "tokens": [
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "중요",
+          "tag": "XR",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "하",
+          "tag": "XSA",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "라는",
+          "tag": "VCP+ETM",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "라는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "제목",
+          "tag": "NNG",
+          "start": 21,
+          "end": 23,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 23,
+          "end": 24,
+          "morphemes": []
+        },
+        {
+          "form": "읽",
+          "tag": "VV",
+          "start": 25,
+          "end": 26,
+          "morphemes": []
+        },
+        {
+          "form": "었",
+          "tag": "EP",
+          "start": 26,
+          "end": 27,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 27,
+          "end": 28,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 28,
+          "end": 29,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 29,
+          "end": 30,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 30,
+          "end": 32,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 33,
+          "end": 34,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 34,
+          "end": 35,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 35,
+          "end": 36,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 36,
+          "end": 37,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 15,
+          "end": 17,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P05",
+      "text": "교사는 “그가 ‘가격을 「시가」라고 정의했다.’라고 말했다.”라고 설명했다.",
+      "tokens": [
+        {
+          "form": "교사",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "「",
+          "tag": "SSO",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "」",
+          "tag": "SSC",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 17,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "정의",
+          "tag": "NNG",
+          "start": 20,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 22,
+          "end": 23,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 23,
+          "end": 24,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 24,
+          "end": 25,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 25,
+          "end": 26,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 26,
+          "end": 28,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 29,
+          "end": 30,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 30,
+          "end": 31,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 31,
+          "end": 32,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 32,
+          "end": 33,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 33,
+          "end": 34,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 34,
+          "end": 36,
+          "morphemes": []
+        },
+        {
+          "form": "설명",
+          "tag": "NNG",
+          "start": 37,
+          "end": 39,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 39,
+          "end": 40,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 40,
+          "end": 41,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 41,
+          "end": 42,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 14,
+          "end": 16,
+          "sense_id": "siga.market_price",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P06",
+      "text": "그는 “‘시가’는 가격이다.”라고 말했다.",
+      "tokens": [
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 21,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 5,
+          "end": 7,
+          "sense_id": null,
+          "criterion": "hard_boundary_policy"
+        }
+      ],
+      "hard_boundaries": [
+        10
+      ],
+      "note_ko": ""
+    },
+    {
+      "id": "P07",
+      "text": "그는 “가격이다.”라고 말하고 “‘시가’라는 제목이다.”라고 말했다.",
+      "tokens": [
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "하",
+          "tag": "XSV",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "고",
+          "tag": "EC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 19,
+          "end": 21,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 21,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "라는",
+          "tag": "VCP+ETM",
+          "start": 22,
+          "end": 24,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "라는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "제목",
+          "tag": "NNG",
+          "start": 25,
+          "end": 27,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 27,
+          "end": 28,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 28,
+          "end": 29,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 29,
+          "end": 30,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 30,
+          "end": 31,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 31,
+          "end": 33,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 34,
+          "end": 35,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 35,
+          "end": 36,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 36,
+          "end": 37,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 37,
+          "end": 38,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 19,
+          "end": 21,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P08",
+      "text": "“‘시가”는 가격이다.’",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 2,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "”",
+          "tag": "SSC",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 2,
+          "end": 4,
+          "sense_id": null,
+          "criterion": "malformed_quote_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P09",
+      "text": "“잘못된 문장.\n‘시가’는 가격이다.",
+      "tokens": [
+        {
+          "form": "“",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "잘못된",
+          "tag": "VV+ETM",
+          "start": 1,
+          "end": 4,
+          "morphemes": [
+            [
+              "잘못되",
+              "VV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "문장",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 10,
+          "end": 12,
+          "sense_id": "siga.market_price",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [
+        9
+      ],
+      "note_ko": "HARD 이전의 닫히지 않은 인용이 다음 구간의 독립적인 정의를 막지 않는다."
+    },
+    {
+      "id": "P10",
+      "text": "관광객이 ‘고가’를 가리켰다.",
+      "tokens": [
+        {
+          "form": "관광객",
+          "tag": "NNG",
+          "start": 0,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 6,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "가리켰",
+          "tag": "VV+EP",
+          "start": 11,
+          "end": 14,
+          "morphemes": [
+            [
+              "가리키",
+              "VV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 6,
+          "end": 8,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P11",
+      "text": "‘고가’라는 말은 한옥을 가리킨다.",
+      "tokens": [
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "라는",
+          "tag": "VCP+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "라는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "가리킨다",
+          "tag": "VV+EF",
+          "start": 14,
+          "end": 18,
+          "morphemes": [
+            [
+              "가리키",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 1,
+          "end": 3,
+          "sense_id": "goga.old_house",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P12",
+      "text": "‘고가’라는 책은 한옥을 가리킨다.",
+      "tokens": [
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "라는",
+          "tag": "VCP+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "라는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "책",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "가리킨다",
+          "tag": "VV+EF",
+          "start": 14,
+          "end": 18,
+          "morphemes": [
+            [
+              "가리키",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 1,
+          "end": 3,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P13",
+      "text": "목수가 수리한 한옥을 ‘고가’라고 부른다.",
+      "tokens": [
+        {
+          "form": "목수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "수리",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "한",
+          "tag": "XSV+ETM",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 19,
+          "end": 22,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 13,
+          "end": 15,
+          "sense_id": "goga.old_house",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P14",
+      "text": "목수가 한옥을 수리한 그림을 ‘고가’라고 부른다.",
+      "tokens": [
+        {
+          "form": "목수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "수리",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "한",
+          "tag": "XSV+ETM",
+          "start": 10,
+          "end": 11,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "그림",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 20,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 23,
+          "end": 26,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 26,
+          "end": 27,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 17,
+          "end": 19,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P15",
+      "text": "한옥과 가격을 ‘고가’라고 부른다.",
+      "tokens": [
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 15,
+          "end": 18,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 9,
+          "end": 11,
+          "sense_id": null,
+          "criterion": "mixed_type_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P16",
+      "text": "연구자가 관찰한 곤충을 ‘잠자리’라고 부른다.",
+      "tokens": [
+        {
+          "form": "연구자",
+          "tag": "NNG",
+          "start": 0,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "관찰",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "한",
+          "tag": "XSV+ETM",
+          "start": 7,
+          "end": 8,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "곤충",
+          "tag": "NNG",
+          "start": 9,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 14,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 18,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 21,
+          "end": 24,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 24,
+          "end": 25,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 14,
+          "end": 17,
+          "sense_id": "jamjari.insect",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P17",
+      "text": "곤충을 그린 그림을 ‘잠자리’라고 부른다.",
+      "tokens": [
+        {
+          "form": "곤충",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "그린",
+          "tag": "VV+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "그리",
+              "VV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "그림",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 12,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 19,
+          "end": 22,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 12,
+          "end": 15,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P18",
+      "text": "장인이 만든 침구를 ‘잠자리’라고 부른다.",
+      "tokens": [
+        {
+          "form": "장인",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "만든",
+          "tag": "VV+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "만들",
+              "VV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "침구",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 12,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 19,
+          "end": 22,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 12,
+          "end": 15,
+          "sense_id": "jamjari.bedding",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P19",
+      "text": "시와 노래를 아우르는 운문 형식을 ‘시가’라고 부른다.",
+      "tokens": [
+        {
+          "form": "시",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "와",
+          "tag": "JC",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "노래",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "아우르는",
+          "tag": "VV+ETM",
+          "start": 7,
+          "end": 11,
+          "morphemes": [
+            [
+              "아우르",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "운문",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "형식",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 20,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 23,
+          "end": 25,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 26,
+          "end": 29,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 29,
+          "end": 30,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 20,
+          "end": 22,
+          "sense_id": "siga.literary_poetry",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P20",
+      "text": "시와 노래를 설명하는 책을 ‘시가’라고 부른다.",
+      "tokens": [
+        {
+          "form": "시",
+          "tag": "NNG",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "와",
+          "tag": "JC",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "노래",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "설명",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "하는",
+          "tag": "XSV+ETM",
+          "start": 9,
+          "end": 11,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "책",
+          "tag": "NNG",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 19,
+          "end": 21,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 22,
+          "end": 25,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 25,
+          "end": 26,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 16,
+          "end": 18,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P21",
+      "text": "교수가 정리한 민법 분야를 ‘사법’이라고 부른다.",
+      "tokens": [
+        {
+          "form": "교수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "정리",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "한",
+          "tag": "XSV+ETM",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 18,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "이라고",
+          "tag": "JKQ",
+          "start": 19,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 23,
+          "end": 26,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 26,
+          "end": 27,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 16,
+          "end": 18,
+          "sense_id": "sabeop.private_law",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P22",
+      "text": "의견이 다른 적은 인원을 ‘소수’라고 부른다.",
+      "tokens": [
+        {
+          "form": "의견",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "다른",
+          "tag": "VA+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "다르",
+              "VA"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "적은",
+          "tag": "VA+ETM",
+          "start": 7,
+          "end": 9,
+          "morphemes": [
+            [
+              "적",
+              "VA"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "인원",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "소수",
+          "tag": "NNG",
+          "start": 15,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 18,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "부른다",
+          "tag": "VV+EF",
+          "start": 21,
+          "end": 24,
+          "morphemes": [
+            [
+              "부르",
+              "VV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 24,
+          "end": 25,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "소수",
+          "start": 15,
+          "end": 17,
+          "sense_id": "sosu.minority_quantity",
+          "criterion": "unique_sense"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P23",
+      "text": "‘고가’라는 말은 한옥을 가리키지 않는다.",
+      "tokens": [
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 1,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "라는",
+          "tag": "VCP+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "라는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "가리키",
+          "tag": "VV",
+          "start": 14,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "지",
+          "tag": "EC",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "않",
+          "tag": "VX",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "는다",
+          "tag": "EF",
+          "start": 20,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 1,
+          "end": 3,
+          "sense_id": null,
+          "criterion": "negative_relation_policy",
+          "allowed_sense_ids": [
+            null,
+            "goga.old_house"
+          ],
+          "forbidden_evidence_anchor_spans": [
+            [
+              14,
+              22
+            ]
+          ],
+          "forbidden_evidence_semantic_classes": [
+            "dwelling_house"
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "P24",
+      "text": "목수가 남긴 ‘고가’를 보았다.",
+      "tokens": [
+        {
+          "form": "목수",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "남긴",
+          "tag": "VV+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "남기",
+              "VV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "‘",
+          "tag": "SSO",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "’",
+          "tag": "SSC",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "보았",
+          "tag": "VV+EP",
+          "start": 13,
+          "end": 15,
+          "morphemes": [
+            [
+              "보",
+              "VV"
+            ],
+            [
+              "았",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 8,
+          "end": 10,
+          "sense_id": null,
+          "criterion": "abstention_policy"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "V01",
+      "text": "그는 \"'시가'는 가격이다.\"라고 말했다.",
+      "tokens": [
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "\"",
+          "tag": "SSO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "'",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "'",
+          "tag": "SSC",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "\"",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 21,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 5,
+          "end": 7,
+          "sense_id": "siga.market_price",
+          "criterion": "equivalent_form_property"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "V02",
+      "text": "그는 「『시가』는 가격이다.」라고 말했다.",
+      "tokens": [
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "「",
+          "tag": "SSO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "『",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "』",
+          "tag": "SSC",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "」",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 21,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 5,
+          "end": 7,
+          "sense_id": "siga.market_price",
+          "criterion": "equivalent_form_property"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    },
+    {
+      "id": "V03",
+      "text": "그는 «‹시가›는 가격이다.»라고 말했다.",
+      "tokens": [
+        {
+          "form": "그",
+          "tag": "NP",
+          "start": 0,
+          "end": 1,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 1,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "«",
+          "tag": "SSO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "‹",
+          "tag": "SSO",
+          "start": 4,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "›",
+          "tag": "SSC",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "»",
+          "tag": "SSC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "라고",
+          "tag": "JKQ",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "말",
+          "tag": "NNG",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 21,
+          "end": 22,
+          "morphemes": []
+        },
+        {
+          "form": ".",
+          "tag": "SF",
+          "start": 22,
+          "end": 23,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 5,
+          "end": 7,
+          "sense_id": "siga.market_price",
+          "criterion": "equivalent_form_property"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": ""
+    }
+  ],
+  "parent_contract_sha256": "d0d5e797549610ac8e7efba5fe924c0e1393ce958816785f8ca1575377ff1bc7",
+  "hard_cut_case_ids": [
+    "P01",
+    "P02",
+    "P05",
+    "P11",
+    "P13",
+    "P19"
+  ]
+}

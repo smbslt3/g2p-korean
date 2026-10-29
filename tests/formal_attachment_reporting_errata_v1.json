@@ -1,0 +1,12 @@
+{
+  "schema": "provided_formal_attachment.author.reporting_errata.v1",
+  "reason_ko": "동결 원본 기대와 실패 실행은 보존한다. 아래 여섯 행은 연음 적격성만으로 실제 같은 pair에서 일어난 대표음·경음화 규칙을 생략한 기대 오류다. 원래 발음·적격성·선택/불명 기대는 바꾸지 않는다. 정확한 호출 양끝을 보존한 이벤트 로그에 실제 기록된 규칙을 보고한다. one_madi·XPN·XR의 해당 보고는 저장한 수용 기준선에서도 확인된다.",
+  "corrections": {
+    "consonant_no_liaison": {"rules": ["ko.tensification"]},
+    "formal_unresolved_not_lexical": {"rules": ["ko.coda.9"]},
+    "isolated_ending_host": {"rules": ["ko.coda.9"]},
+    "one_madi_unchanged": {"rules": ["ko.coda.9"]},
+    "prefix_not_suffix": {"rules": ["ko.coda.9"]},
+    "root_not_suffix": {"rules": ["ko.coda.9"]}
+  }
+}

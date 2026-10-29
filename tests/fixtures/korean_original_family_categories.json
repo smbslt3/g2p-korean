@@ -1,0 +1,839 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-25T12:44:04.803462+00:00",
+  "scope_ko": "동일한 범주 문법의 처음 세 계열 적용 여부를 보는 독립 추가 진단. 전체 정확도의 추정이 아니다.",
+  "candidate_observed": false,
+  "cases": [
+    {
+      "id": "O01",
+      "text": "곤충인 잠자리이다.",
+      "tokens": [
+        {
+          "form": "곤충",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 4,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "대상이 어떤 유형인지를 직접 명시한 계사 관형절이다.",
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 4,
+          "end": 7,
+          "sense_id": "jamjari.insect"
+        }
+      ]
+    },
+    {
+      "id": "O02",
+      "text": "침구인 잠자리이다.",
+      "tokens": [
+        {
+          "form": "침구",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 4,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "대상이 어떤 유형인지를 직접 명시한 계사 관형절이다.",
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 4,
+          "end": 7,
+          "sense_id": "jamjari.bedding"
+        }
+      ]
+    },
+    {
+      "id": "O03",
+      "text": "원소인 물질이다.",
+      "tokens": [
+        {
+          "form": "원소",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "물질",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "대상이 어떤 유형인지를 직접 명시한 계사 관형절이다.",
+      "targets": [
+        {
+          "spelling": "물질",
+          "start": 4,
+          "end": 6,
+          "sense_id": "muljil.substance"
+        }
+      ]
+    },
+    {
+      "id": "O04",
+      "text": "강변인 강가이다.",
+      "tokens": [
+        {
+          "form": "강변",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 2,
+          "end": 3,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "강가",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "대상이 어떤 유형인지를 직접 명시한 계사 관형절이다.",
+      "targets": [
+        {
+          "spelling": "강가",
+          "start": 4,
+          "end": 6,
+          "sense_id": "gangga.riverbank"
+        }
+      ]
+    },
+    {
+      "id": "O05",
+      "text": "해산물을 채취하는 활동인 물질이다.",
+      "tokens": [
+        {
+          "form": "해산물",
+          "tag": "NNG",
+          "start": 0,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 3,
+          "end": 4,
+          "morphemes": []
+        },
+        {
+          "form": "채취",
+          "tag": "NNG",
+          "start": 5,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "하는",
+          "tag": "XSV+ETM",
+          "start": 7,
+          "end": 9,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "활동",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "물질",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "해산물 채취 활동이라는 직접 정의이며, 성분의 근접 언급이 아니다.",
+      "targets": [
+        {
+          "spelling": "물질",
+          "start": 14,
+          "end": 16,
+          "sense_id": "muljil.diving"
+        }
+      ]
+    },
+    {
+      "id": "O06",
+      "text": "곤충의 명칭인 잠자리다.",
+      "tokens": [
+        {
+          "form": "곤충",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "명칭",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 8,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "VCP+EF",
+          "start": 11,
+          "end": 12,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "곤충 유형의 명칭이라는 정의를 포장 명사 너머로 연결한다.",
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 8,
+          "end": 11,
+          "sense_id": "jamjari.insect"
+        }
+      ]
+    },
+    {
+      "id": "O07",
+      "text": "곤충을 다룬 책인 잠자리를 읽었다.",
+      "tokens": [
+        {
+          "form": "곤충",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "다룬",
+          "tag": "VV+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "다루",
+              "VV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "책",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 8,
+          "end": 9,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 10,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "읽",
+          "tag": "VV",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "었",
+          "tag": "EP",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "책·소설의 내용을 그 제목의 의미로 전파하지 않는다.",
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 10,
+          "end": 13,
+          "sense_id": null
+        }
+      ]
+    },
+    {
+      "id": "O08",
+      "text": "원소를 다룬 책인 물질을 읽었다.",
+      "tokens": [
+        {
+          "form": "원소",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "다룬",
+          "tag": "VV+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "다루",
+              "VV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "책",
+          "tag": "NNG",
+          "start": 7,
+          "end": 8,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 8,
+          "end": 9,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "물질",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "읽",
+          "tag": "VV",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "었",
+          "tag": "EP",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "책·소설의 내용을 그 제목의 의미로 전파하지 않는다.",
+      "targets": [
+        {
+          "spelling": "물질",
+          "start": 10,
+          "end": 12,
+          "sense_id": null
+        }
+      ]
+    },
+    {
+      "id": "O09",
+      "text": "강변을 다룬 소설인 강가를 읽었다.",
+      "tokens": [
+        {
+          "form": "강변",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "다룬",
+          "tag": "VV+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "다루",
+              "VV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "소설",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "강가",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "읽",
+          "tag": "VV",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "었",
+          "tag": "EP",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "책·소설의 내용을 그 제목의 의미로 전파하지 않는다.",
+      "targets": [
+        {
+          "spelling": "강가",
+          "start": 11,
+          "end": 13,
+          "sense_id": null
+        }
+      ]
+    },
+    {
+      "id": "O10",
+      "text": "곤충과 침구를 아우르는 범주인 잠자리다.",
+      "tokens": [
+        {
+          "form": "곤충",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "과",
+          "tag": "JC",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "침구",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "아우르는",
+          "tag": "VV+ETM",
+          "start": 8,
+          "end": 12,
+          "morphemes": [
+            [
+              "아우르",
+              "VV"
+            ],
+            [
+              "는",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "범주",
+          "tag": "NNG",
+          "start": 13,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 15,
+          "end": 16,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "잠자리",
+          "tag": "NNG",
+          "start": 17,
+          "end": 20,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "VCP+EF",
+          "start": 20,
+          "end": 21,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "서로 다른 뜻을 지지하는 병렬 유형을 한 뜻으로 합치지 않는다.",
+      "targets": [
+        {
+          "spelling": "잠자리",
+          "start": 17,
+          "end": 20,
+          "sense_id": null
+        }
+      ]
+    }
+  ]
+}

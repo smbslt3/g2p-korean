@@ -1,4 +1,4 @@
-"""보호 구간을 제외하고 숫자·외국어 후보를 보수적으로 라우팅한다."""
+"""G2P의 영문 철자 라우팅과 기존 보호 토큰 분류 도구를 제공한다."""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ from enum import IntEnum
 import re
 
 from .model import Handler
+from .english.classify import ascii_letter_form
 from .scanner import ProtectedRange, overlaps
 from .unicode import is_numeric_character
 
@@ -33,6 +34,36 @@ class RoutingResult:
     numeric_ranges: tuple[tuple[int, int], ...]
     candidates: tuple[Candidate, ...]
     opaque_candidates: tuple[Candidate, ...]
+
+
+def route_spelling_candidates(text: str) -> RoutingResult:
+    """주소·코드·약어 구분 없이 모든 영문을 읽고 남은 숫자는 앞단 누락으로 분리한다."""
+
+    numeric: list[tuple[int, int]] = []
+    candidates: list[Candidate] = []
+
+    def kind(character: str) -> tuple[Handler, str] | None:
+        if is_numeric_character(character) and not is_han(character):
+            return Handler.NUMERIC, "unconverted_numeric"
+        if ascii_letter_form(character) is not None:
+            return Handler.ENGLISH, "latin_candidate"
+        return _script_candidate_kind(character)
+
+    cursor = 0
+    while cursor < len(text):
+        classification = kind(text[cursor])
+        if classification is None:
+            cursor += 1
+            continue
+        end = cursor + 1
+        while end < len(text) and kind(text[end]) == classification:
+            end += 1
+        if classification[0] is Handler.NUMERIC:
+            numeric.append((cursor, end))
+        else:
+            candidates.append(Candidate(cursor, end, *classification))
+        cursor = end
+    return RoutingResult(tuple(numeric), tuple(candidates), ())
 
 
 _LATIN = re.compile(

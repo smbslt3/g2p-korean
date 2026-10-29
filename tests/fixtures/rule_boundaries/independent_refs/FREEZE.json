@@ -1,0 +1,31 @@
+{
+  "adapter_may_change": true,
+  "candidate_inspected": false,
+  "cases": 78,
+  "constructor_invalid_cases": 3,
+  "families": {
+    "article15_semantic_eochi": 9,
+    "article17_formal_i_hi": 17,
+    "article29_nominal_compound": 12,
+    "authority_guard": 18,
+    "nine_entry_migration_preservation": 9,
+    "nine_entry_migration_tail": 9,
+    "particle_homograph": 3,
+    "single_consumption": 1
+  },
+  "format": "r42-independent-freeze-v1",
+  "frozen_at_utc": "2026-10-27T17:16:51.546136+00:00",
+  "gold_may_change_after_runtime": false,
+  "kiwi_executed_before_freeze": false,
+  "runtime_executed_before_freeze": false,
+  "sha256": {
+    "Boundary_Observation_Protocol_KO.md": "11178edbabd08cb72a99076a994a9b8050b742295c58adb8c7b3b446a7d2a55d",
+    "Frozen_Case_Index_KO.md": "014eed5972816abfdf434eacd492eafe609d9f3b0e79ec1983ce3c2d6febf8a7",
+    "Normative_References_KO.md": "50986ea05709eea7201cc5648b64f755f35cc213fe1d86ffa7111d9330720671",
+    "Source_Blind_Attestation_KO.md": "0cb9795867b56e2df59558f08e6773ee7310fac121596a0979b0fc42bd405f53",
+    "build_frozen_refs.py": "0aa423ca9e3245ffc0dcac7f629db658c5b8a62d848cc3a7b2136c239aa093fc",
+    "cases.jsonl": "f54177527be196a4b29d81abe22d4906d8f55c2cce7a92ada40bc957765b4e31",
+    "constructor_invalid.jsonl": "dd1f58d4e9d77f1f14faeaaa0cf9968eac934b5a130c02dec8394aef019b6487",
+    "run_refs.py": "d339e316977cdb08fec718868ff4ff86cda0966bb132ccd488bf1a48b96a7b81"
+  }
+}

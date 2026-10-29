@@ -3,17 +3,50 @@
 from __future__ import annotations
 
 from bisect import bisect_left
+from collections.abc import Iterable
 from dataclasses import dataclass
 import unicodedata
 from typing import Sequence
 
+from .errors import InputValidationError
 from .model import Diagnostic, Handler, OutputSegment, RewriteStage, Severity, SourceSpan
 from .routing import is_han
 from .unicode import is_numeric_character
 
 
 _ASCII_PUNCTUATION = frozenset(r"!\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~")
-_GENERIC_NEUTRAL = frozenset("。？！、・")
+_SEMANTIC_PUNCTUATION = frozenset("%*<>=^~∼؉؊٪‰‱")
+
+
+def normalize_pause_boundaries(
+    pause_boundaries: Iterable[int],
+    text_length: int,
+) -> tuple[int, ...]:
+    """NFC 텍스트의 pause 좌표를 검증하고 중복을 제거한다."""
+
+    if isinstance(pause_boundaries, (str, bytes, bytearray)) or not isinstance(
+        pause_boundaries, Iterable
+    ):
+        raise InputValidationError("pause_boundaries는 정수 iterable이어야 합니다.")
+    result: set[int] = set()
+    try:
+        for offset in pause_boundaries:
+            if not isinstance(offset, int) or isinstance(offset, bool):
+                raise InputValidationError(
+                    "pause_boundaries의 각 좌표는 불리언이 아닌 정수여야 합니다."
+                )
+            if offset < 0 or offset > text_length:
+                raise InputValidationError(
+                    "pause_boundaries의 좌표가 NFC 입력 범위를 벗어났습니다."
+                )
+            result.add(offset)
+    except InputValidationError:
+        raise
+    except Exception as exc:
+        raise InputValidationError(
+            "pause_boundaries iterable을 읽을 수 없습니다."
+        ) from exc
+    return tuple(sorted(result))
 
 
 def _is_hangul(character: str) -> bool:
@@ -21,9 +54,10 @@ def _is_hangul(character: str) -> bool:
     return (
         "가" <= character <= "힣"
         or 0x1100 <= code <= 0x11FF
-        or 0x3130 <= code <= 0x318F
+        or 0x3131 <= code <= 0x318E
         or 0xA960 <= code <= 0xA97C
-        or 0xD7B0 <= code <= 0xD7FB
+        or 0xD7B0 <= code <= 0xD7C6
+        or 0xD7CB <= code <= 0xD7FB
     )
 
 
@@ -32,7 +66,12 @@ def _allowed(character: str) -> bool:
         return True
     if character.isascii() and character in _ASCII_PUNCTUATION:
         return True
-    return character in _GENERIC_NEUTRAL
+    # 인용·구분·종결 문장부호는 보존하되 백분율과 의미 기호의 호환 표기는 제외한다.
+    # 기존 ASCII 기호 허용은 위 분기에서 유지하며 NFKC는 분류에만 사용한다.
+    return (
+        unicodedata.category(character).startswith("P")
+        and unicodedata.normalize("NFKC", character) not in _SEMANTIC_PUNCTUATION
+    )
 
 
 def _issue(character: str) -> tuple[str, str]:

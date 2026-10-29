@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from bisect import bisect_left
+from bisect import bisect_right
 from dataclasses import dataclass
 import re
 import unicodedata
@@ -33,23 +33,26 @@ _WINDOWS_PATH = re.compile(
     r"|[^\s<>\[\]{}()]+)"
 )
 _RELATIVE_PATH_SEGMENT = r"[A-Za-z0-9_.$()\-]+"
+# 명시적인 경로 표지가 있으면 Unicode 문자·숫자도 구성요소로 허용한다.
+# 표지 없는 역슬래시 후보는 ASCII 범위를 유지해 숫자·조사와 escape를 보호하지 않는다.
+_EXPLICIT_PATH_SEGMENT = r"[\w.$()\-]+"
 _WINDOWS_UNC_PATH = re.compile(
-    rf"(?<![A-Za-z0-9_\\])\\\\{_RELATIVE_PATH_SEGMENT}"
-    rf"\\{_RELATIVE_PATH_SEGMENT}(?:\\{_RELATIVE_PATH_SEGMENT})*"
-    rf"\\?(?![A-Za-z0-9_.$()\\-])"
+    rf"(?<![\w\\])\\\\{_EXPLICIT_PATH_SEGMENT}"
+    rf"\\{_EXPLICIT_PATH_SEGMENT}(?:\\{_EXPLICIT_PATH_SEGMENT})*"
+    rf"\\?(?![\w.$()\\-])"
 )
 _WINDOWS_EXPLICIT_RELATIVE_PATH = re.compile(
-    rf"(?<![\w.\\-])(?:\.{{1,2}}\\)+{_RELATIVE_PATH_SEGMENT}"
-    rf"(?:\\{_RELATIVE_PATH_SEGMENT})*\\?(?![A-Za-z0-9_.$()\\-])"
+    rf"(?<![\w.\\-])(?:\.{{1,2}}\\)+{_EXPLICIT_PATH_SEGMENT}"
+    rf"(?:\\{_EXPLICIT_PATH_SEGMENT})*\\?(?![\w.$()\\-])"
 )
 _WINDOWS_RELATIVE_PATH_CANDIDATE = re.compile(
     rf"(?<![A-Za-z0-9_.$()\\-]){_RELATIVE_PATH_SEGMENT}(?:\\{_RELATIVE_PATH_SEGMENT})+"
     rf"\\?(?![A-Za-z0-9_.$()\\-])"
 )
 _POSIX_RELATIVE_PATH = re.compile(
-    rf"(?<![\w./-])(?:\.\.?/)+{_RELATIVE_PATH_SEGMENT}"
-    rf"(?:/{_RELATIVE_PATH_SEGMENT})*/?"
-    rf"(?![A-Za-z0-9_.$()/-])"
+    rf"(?<![\w./-])(?:\.\.?/)+{_EXPLICIT_PATH_SEGMENT}"
+    rf"(?:/{_EXPLICIT_PATH_SEGMENT})*/?"
+    rf"(?![\w.$()/-])"
 )
 # `./`과 `../`는 위 정규식이 시작점부터 소유하게 해 일부 경로 보호를 막는다.
 _POSIX_PATH = re.compile(
@@ -97,10 +100,18 @@ _KOREAN_PARTICLES = (
 def overlaps(ranges: tuple[ProtectedRange, ...] | list[ProtectedRange], start: int, end: int) -> bool:
     """정렬된 보호 범위와 주어진 반열린 구간의 겹침을 이진 탐색한다."""
 
-    if not ranges:
+    if start >= end:
         return False
-    index = bisect_left(ranges, start, key=lambda item: item.end)
-    return index < len(ranges) and ranges[index].start < end
+    return _overlapping_index(ranges, start, end)[1]
+
+
+def _overlapping_index(
+    ranges: tuple[ProtectedRange, ...] | list[ProtectedRange], start: int, end: int
+) -> tuple[int, bool]:
+    """반열린 구간과 처음으로 겹칠 수 있는 위치 및 실제 겹침 여부를 반환한다."""
+
+    index = bisect_right(ranges, start, key=lambda item: item.end)
+    return index, index < len(ranges) and ranges[index].start < end
 
 
 def _trim_trailing(text: str, start: int, end: int) -> int:
@@ -131,20 +142,23 @@ def _inline_code_ranges(text: str) -> tuple[ProtectedRange, ...]:
         start = index
         while index < len(text) and text[index] == "`":
             index += 1
-        delimiter = text[start:index]
+        delimiter_length = index - start
         closed = False
         while index < len(text):
             if text[index] == "\\" and index + 1 < len(text):
                 index += 2
                 continue
-            if text.startswith(delimiter, index):
-                end = index + len(delimiter)
-                result.append(ProtectedRange(start, end, "inline_code"))
-                index = end
-                closed = True
-                break
             if text[index] in "\r\n":
                 break
+            if text[index] == "`":
+                run_start = index
+                while index < len(text) and text[index] == "`":
+                    index += 1
+                if index - run_start == delimiter_length:
+                    result.append(ProtectedRange(start, index, "inline_code"))
+                    closed = True
+                    break
+                continue
             index += 1
         if not closed and index >= len(text):
             break
@@ -203,8 +217,8 @@ def scan_protected(text: str) -> tuple[ProtectedRange, ...]:
         end = _safe_protected_end(text, start, end)
         if start >= end:
             return
-        index = bisect_left(found, start, key=lambda item: item.end)
-        if index < len(found) and found[index].start < end:
+        index, is_overlapping = _overlapping_index(found, start, end)
+        if is_overlapping:
             return
         found.insert(index, ProtectedRange(start, end, kind))
 

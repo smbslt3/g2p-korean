@@ -1,0 +1,29 @@
+{
+  "scope": "동결된 유한 의미·소유 참조의 공개 표면 증명 회귀만",
+  "files": {
+    "check_references.py": "85e69ee6f75a621b7ee9e1b7ff0fe398a5ac9f628be08f920b30bd1d43482f5e",
+    "references.jsonl": "c1789243a9d98af8041a96d68d0b8c61be35e786b0ca14d23485a5ab4e74724a"
+  },
+  "reference_count": 32,
+  "semantic_weak_records": 25,
+  "bound_strong_variants": 44,
+  "strong_input_unbound": [
+    "G10",
+    "G11",
+    "G12"
+  ],
+  "abstract_unbound": [
+    "A01",
+    "A02",
+    "A03",
+    "A04",
+    "A05",
+    "A06",
+    "A07"
+  ],
+  "phone_gold": 0,
+  "origin": "output/g2p_progressive_round44_20261028/independent_checker 및 independent_refs의 동결 바이트",
+  "runtime_reports_copied": false,
+  "runtime_sources_copied_to_fixture": false,
+  "limitations": "인공 입력의 공급 태그와 이형태를 가정한다. 어휘 실재성·태그 공급 정확도·발음·적용률·공개 통합 분류 회귀 전체를 인증하지 않는다. 3개 강한 입력과 7개 추상 조건은 미연결이다."
+}

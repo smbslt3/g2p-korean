@@ -1,0 +1,15 @@
+{
+  "status": "frozen",
+  "rule_ids": {
+    "24": "ko.stem.tensing.24",
+    "25": "ko.stem.tensing.25",
+    "11_daman": "ko.stem.rieul_giyeok"
+  },
+  "public_route": "G2P.convert_with_alignment",
+  "execution_scope": {
+    "semantic_records": 13,
+    "controlled_records": 9,
+    "controlled_pipeline_calls": 18,
+    "abstract_unbound": 4
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "상태": "승인 기반의 정적 API·기존 사실 목록만 제공; 구현·평가·새 사실 없음",
+  "기반": "output/g2p_progressive_round46_20261028/cleanroom/stem_ending/candidate01/src",
+  "소스": {
+    "경로": "g2p_ko/korean/semantic_policy.py",
+    "sha256": "1df18df73e4a043b6e9b61dfb2c5fea3716e12aaea982c0be715a4a6a4fdf1dd",
+    "사실_선언": "SENSE_FEATURES:79–112",
+    "공식_사전_source_ids": [],
+    "출처_한계": "기존 SenseFeatures에는 공식 사전 source_id/source_ids 필드가 없다. 아래 source_ids의 빈 배열은 그 부재를 뜻하며 독립 공식 출처를 새로 배정하지 않았다. 자체 소스의 위치와 해시는 공식 사전 출처 ID를 대신하지 않는다."
+  },
+  "API": {
+    "모듈": "g2p_ko.korean.semantic_policy",
+    "호출명": "select_senses",
+    "서명": "select_senses(text, tokens, hard_boundaries=frozenset()) -> tuple[SenseSelection, ...]",
+    "공개_범위": "내부 의미 선택기에서 직접 호출 가능한 기존 함수; G2P 공개 생성자에 새 인자를 제공하는 API는 아님",
+    "입력": {
+      "text": "정규화된 원문 문자열",
+      "tokens": "SemanticToken의 반복 가능 열; 함수가 tuple로 보존",
+      "hard_boundaries": "정규화 원문의 절단 위치 집합; 기본 빈 frozenset",
+      "SemanticToken": {
+        "form": "str",
+        "tag": "str",
+        "start": "int",
+        "end": "int",
+        "morphemes": "tuple[tuple[str, str], ...], 기본 ()"
+      },
+      "좌표": "start/end는 전체 text의 코드포인트 좌표이며 end는 끝 제외; morphemes는 공급된 원형·원태그의 출현 순서"
+    },
+    "반환_SenseSelection": {
+      "start": "int",
+      "end": "int",
+      "spelling": "str",
+      "sense_id": "str | None",
+      "evidence": "tuple[SenseEvidence, ...]",
+      "reason": "str"
+    },
+    "SenseEvidence": {
+      "relation": "str",
+      "target_start": "int",
+      "target_end": "int",
+      "anchor_start": "int",
+      "anchor_end": "int",
+      "semantic_class": "str"
+    },
+    "현재_reason": ["unsupported_analysis", "conflicting_evidence", "unsupported_modifier", "unsupported_relation", "selected", "insufficient_evidence"],
+    "극성_한계": "기존 SenseEvidence에는 긍정/부정 극성 필드가 없다. 이 메타데이터는 새 반환 필드나 판단 동작을 정하지 않는다."
+  },
+  "기존_동형_명사_목록": [
+    {"lemma": "문자", "senses": [
+      {"sense_id": "munja.text", "semantic_classes": ["writing_symbol"], "source_ids": []},
+      {"sense_id": "munja.message_shorthand", "semantic_classes": ["message"], "source_ids": []},
+      {"sense_id": "munja.classical_expression", "semantic_classes": ["classical_expression"], "source_ids": []},
+      {"sense_id": "munja.learning", "semantic_classes": ["learning"], "source_ids": []}
+    ]},
+    {"lemma": "잠자리", "senses": [
+      {"sense_id": "jamjari.bedding", "semantic_classes": ["bedding", "sleeping_place"], "source_ids": []},
+      {"sense_id": "jamjari.insect", "semantic_classes": ["animal", "insect"], "source_ids": []}
+    ]},
+    {"lemma": "강가", "senses": [
+      {"sense_id": "gangga.riverbank", "semantic_classes": ["location", "riverbank"], "source_ids": []},
+      {"sense_id": "gangga.marriage_event", "semantic_classes": ["marriage_event"], "source_ids": []}
+    ]},
+    {"lemma": "물질", "senses": [
+      {"sense_id": "muljil.diving", "semantic_classes": ["activity", "sea_harvesting"], "source_ids": []},
+      {"sense_id": "muljil.substance", "semantic_classes": ["substance"], "source_ids": []}
+    ]},
+    {"lemma": "고가", "senses": [
+      {"sense_id": "goga.expensive_price", "semantic_classes": ["price", "high_price"], "source_ids": []},
+      {"sense_id": "goga.old_house", "semantic_classes": ["dwelling_house"], "source_ids": []},
+      {"sense_id": "goga.elevated_structure", "semantic_classes": ["elevated_structure"], "source_ids": []}
+    ]},
+    {"lemma": "사법", "senses": [
+      {"sense_id": "sabeop.judicial_function", "semantic_classes": ["judicial_function"], "source_ids": []},
+      {"sense_id": "sabeop.private_law", "semantic_classes": ["private_law"], "source_ids": []}
+    ]},
+    {"lemma": "소수", "senses": [
+      {"sense_id": "sosu.minority_quantity", "semantic_classes": ["minority_quantity"], "source_ids": []},
+      {"sense_id": "sosu.prime_number", "semantic_classes": ["prime_number"], "source_ids": []},
+      {"sense_id": "sosu.decimal_number", "semantic_classes": ["decimal_number"], "source_ids": []}
+    ]},
+    {"lemma": "시가", "senses": [
+      {"sense_id": "siga.market_price", "semantic_classes": ["price"], "source_ids": []},
+      {"sense_id": "siga.literary_poetry", "semantic_classes": ["literary_poetry"], "source_ids": []},
+      {"sense_id": "siga.spouse_family", "semantic_classes": ["spouse_family"], "source_ids": []}
+    ]},
+    {"lemma": "개수", "senses": [
+      {"sense_id": "gaesu.count_quantity", "semantic_classes": ["count_quantity"], "source_ids": []},
+      {"sense_id": "gaesu.renovation", "semantic_classes": ["renovation"], "source_ids": []},
+      {"sense_id": "gaesu.washing_water", "semantic_classes": ["washing_water"], "source_ids": []},
+      {"sense_id": "gaesu.armour_sleeve", "semantic_classes": ["armour_sleeve"], "source_ids": []}
+    ]},
+    {"lemma": "말발", "senses": [
+      {"sense_id": "malbal.speech_ability", "semantic_classes": ["speech_ability"], "source_ids": []},
+      {"sense_id": "malbal.equinus", "semantic_classes": ["equinus"], "source_ids": []}
+    ]},
+    {"lemma": "평가", "senses": [
+      {"sense_id": "pyeongga.house", "semantic_classes": ["dwelling_house", "house_construction"], "source_ids": []},
+      {"sense_id": "pyeongga.parity", "semantic_classes": ["ordinary_price", "monetary_parity"], "source_ids": []},
+      {"sense_id": "pyeongga.appraisal", "semantic_classes": ["assessment", "value_appraisal"], "source_ids": []}
+    ]}
+  ],
+  "기존_유형_핵어_자료_발췌": {
+    "원천": "기존 _NOUN_CLASSES; 이 목록 자체는 유형 단정 읽기를 증명하지 않음",
+    "항목": [
+      {"lemma": "곤충", "noun_classes": ["animal", "insect"], "source_ids": []},
+      {"lemma": "침구", "noun_classes": ["bedding"], "source_ids": []},
+      {"lemma": "수면장소", "noun_classes": ["sleeping_place"], "source_ids": []},
+      {"lemma": "화학물질", "noun_classes": ["substance"], "source_ids": []}
+    ]
+  },
+  "기존_지정_범주_표현": {
+    "소스_위치": ["_Mention:571–582", "_Event:597–606", "_NOMINAL_PACKAGINGS:2068–2073", "_package_nominal:2938–2989"],
+    "명시_표현": [
+      {"표지": "category_package", "뜻": "기존 실제 범주 포장 구성에서 도출된 표지. facts의 포장 관계·원래 핵어 좌표와 운반 유형 출처를 함께 보존한다."},
+      {"표지": "designation_reference", "뜻": "owners가 가리키는 실제 명칭 출현을 보존하는 지칭 표현. 이것만으로 특정 유형의 단정은 아님."},
+      {"표지": "quoted_nominal", "뜻": "닫힌 인용 명사 참여를 나타내며 유형 단정 자체를 뜻하지 않음."}
+    ],
+    "기존_포장_핵어_분류": ["membership_head", "form_head", "designation_head", "range_head"],
+    "기존_범주_관계_출처": ["lexical_nominal_head", "composed_nominal_head_identity", "직접 또는 속격 포장 관계의 _packaging 출처"],
+    "유형_실체_단정_모드": {
+      "일반_전용_필드": null,
+      "판정": "일반적으로 미입증",
+      "한계": "SemanticToken·_Mention·_Event에 asserted TYPE 대 concrete ENTITY를 구별하는 전용 필드가 없다. 기존 범주 포장 출처는 명시한 범주 구성을 나타낼 수 있으나 모든 명사 술어의 해석을 판별하지 않는다. _independent_nominal_identity도 실제 세계의 동일 실체 판정기가 아니다.",
+      "기본_형태의_상태": "JKS/JKC, 화제 JX, 관형절 빈자리라는 통사 역할만으로는 평범한 X/Y 명사의 유형 단정 대 실체 부정을 결정할 수 없다. 별도 기존 구성 출처가 없으면 미입증이다.",
+      "단독으로_불충분": ["_possible_classes의 가능한 뜻 합집합", "noun_classes", "같은 철자", "quoted_nominal", "designation_reference", "known lexical type에서 실제 실체 동일성 추론"]
+    }
+  },
+  "검토_제한": "정적 소스만 읽었다. 프로젝트 모듈 import·런타임·모델·Kiwi 실행이 없고 사례·정답·시험·결과·독립 참고·비공개 자료·이력·메모리·외부 구현을 읽지 않았다. 이 파일은 기존 사실·API 메타데이터이며 판단 코드·발음·어휘 추가가 아니다."
+}

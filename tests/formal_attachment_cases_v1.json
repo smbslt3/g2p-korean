@@ -1,0 +1,1690 @@
+{
+  "schema": "provided_formal_attachment.author.v1",
+  "cases": [
+    {
+      "id": "jks_i",
+      "source": "밭 이",
+      "tokens": [
+        [
+          "밭",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이",
+          "JKS",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "바 치",
+      "rules": [
+        "ko.palatalization"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "jkc_i",
+      "source": "솥 이",
+      "tokens": [
+        [
+          "솥",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이",
+          "JKC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "소 치",
+      "rules": [
+        "ko.palatalization"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "jkg_no_coda",
+      "source": "나 의",
+      "tokens": [
+        [
+          "나",
+          "NP",
+          0,
+          [],
+          []
+        ],
+        [
+          "의",
+          "JKG",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "나 의",
+      "rules": [],
+      "applicability": "not_required",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "jko_original_s",
+      "source": "옷 을",
+      "tokens": [
+        [
+          "옷",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "을",
+          "JKO",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "오 슬",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "jkb_original_t",
+      "source": "밭 에",
+      "tokens": [
+        [
+          "밭",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "에",
+          "JKB",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "바 테",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "jkv_not_excluded",
+      "source": "벗 아",
+      "tokens": [
+        [
+          "벗",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "아",
+          "JKV",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "버 사",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "jkq_not_excluded",
+      "source": "꽃 이라고",
+      "tokens": [
+        [
+          "꽃",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이라고",
+          "JKQ",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "꼬 치라고",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "jx_i",
+      "source": "밭 이나",
+      "tokens": [
+        [
+          "밭",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이나",
+          "JX",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "바 치나",
+      "rules": [
+        "ko.palatalization"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "jc_not_excluded",
+      "source": "꽃 이랑",
+      "tokens": [
+        [
+          "꽃",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이랑",
+          "JC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "꼬 치랑",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "ep_bare_stem",
+      "source": "먹 었",
+      "tokens": [
+        [
+          "먹",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "었",
+          "EP",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "머 걷",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "ef_bare_stem",
+      "source": "먹 어",
+      "tokens": [
+        [
+          "먹",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "어",
+          "EF",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "머 거",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "ec_bare_stem",
+      "source": "먹 어서",
+      "tokens": [
+        [
+          "먹",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "어서",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "머 거서",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "etm_bare_stem",
+      "source": "먹 을",
+      "tokens": [
+        [
+          "먹",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "을",
+          "ETM",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "머 글",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "etn_bare_stem",
+      "source": "먹 음",
+      "tokens": [
+        [
+          "먹",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "음",
+          "ETN",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "머 금",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "xsn_actual",
+      "source": "먹 이",
+      "tokens": [
+        [
+          "먹",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "이",
+          "XSN",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "머 기",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "xsv_actual_with_ending",
+      "source": "먹 이다",
+      "tokens": [
+        [
+          "먹",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "이다",
+          "XSV+EF",
+          2,
+          [
+            [
+              "이",
+              "XSV"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "머 기다",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "xsa_actual_with_ending",
+      "source": "먹 음직하다",
+      "tokens": [
+        [
+          "먹",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "음직하다",
+          "XSA+EF",
+          2,
+          [
+            [
+              "음직하",
+              "XSA"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "머 금지카다",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "xsm_actual_i",
+      "source": "굳 이",
+      "tokens": [
+        [
+          "굳",
+          "VA",
+          0,
+          [],
+          []
+        ],
+        [
+          "이",
+          "XSM",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "구 지",
+      "rules": [
+        "ko.palatalization"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "vcp_i_with_ending",
+      "source": "밭 이다",
+      "tokens": [
+        [
+          "밭",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이다",
+          "VCP+EF",
+          2,
+          [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "바 치다",
+      "rules": [
+        "ko.palatalization"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "suffix_hi_actual_d",
+      "source": "굳 히다",
+      "tokens": [
+        [
+          "굳",
+          "VA",
+          0,
+          [],
+          []
+        ],
+        [
+          "히다",
+          "XSV+EF",
+          2,
+          [
+            [
+              "히",
+              "XSV"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "구 치다",
+      "rules": [
+        "ko.palatalization"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "h_e",
+      "source": "놓 아",
+      "tokens": [
+        [
+          "놓",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "아",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "노 아",
+      "rules": [
+        "ko.hieuh.vowel"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "nh_e",
+      "source": "않 아",
+      "tokens": [
+        [
+          "않",
+          "VX",
+          0,
+          [],
+          []
+        ],
+        [
+          "아",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "아 나",
+      "rules": [
+        "ko.hieuh.vowel"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "lh_e",
+      "source": "닳 아",
+      "tokens": [
+        [
+          "닳",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "아",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "다 라",
+      "rules": [
+        "ko.hieuh.vowel"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "lh_x",
+      "source": "끓 이다",
+      "tokens": [
+        [
+          "끓",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "이다",
+          "XSV+EF",
+          2,
+          [
+            [
+              "이",
+              "XSV"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "끄 리다",
+      "rules": [
+        "ko.hieuh.vowel"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "h_x",
+      "source": "놓 이다",
+      "tokens": [
+        [
+          "놓",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "이다",
+          "XSV+EF",
+          2,
+          [
+            [
+              "이",
+              "XSV"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "노 이다",
+      "rules": [
+        "ko.hieuh.vowel"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_gs_s_tense",
+      "source": "몫 을",
+      "tokens": [
+        [
+          "몫",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "을",
+          "JKO",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "목 쓸",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_nj",
+      "source": "앉 아",
+      "tokens": [
+        [
+          "앉",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "아",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "안 자",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_lg",
+      "source": "읽 어",
+      "tokens": [
+        [
+          "읽",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "어",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "일 거",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_lm",
+      "source": "삶 이",
+      "tokens": [
+        [
+          "삶",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이",
+          "JKS",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "살 미",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_lb",
+      "source": "넓 어",
+      "tokens": [
+        [
+          "넓",
+          "VA",
+          0,
+          [],
+          []
+        ],
+        [
+          "어",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "널 버",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_ls_s_tense",
+      "source": "곬 이",
+      "tokens": [
+        [
+          "곬",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이",
+          "JKS",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "골 씨",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_lt",
+      "source": "핥 아",
+      "tokens": [
+        [
+          "핥",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "아",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "할 타",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_lt_i_suffix",
+      "source": "핥 이다",
+      "tokens": [
+        [
+          "핥",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "이다",
+          "XSV+EF",
+          2,
+          [
+            [
+              "이",
+              "XSV"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "할 치다",
+      "rules": [
+        "ko.palatalization"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_lp",
+      "source": "읊 어",
+      "tokens": [
+        [
+          "읊",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "어",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "을 퍼",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "cluster_bs_s_tense",
+      "source": "값 이",
+      "tokens": [
+        [
+          "값",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이",
+          "JKS",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "갑 씨",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "original_double_g",
+      "source": "밖 에",
+      "tokens": [
+        [
+          "밖",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "에",
+          "JKB",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "바 께",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "ng_no_additional_change",
+      "source": "방 에",
+      "tokens": [
+        [
+          "방",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "에",
+          "JKB",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "방 에",
+      "rules": [],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "left_merged_ending",
+      "source": "먹을 이나",
+      "tokens": [
+        [
+          "먹을",
+          "VV+ETM",
+          0,
+          [
+            [
+              "먹",
+              "VV"
+            ],
+            [
+              "을",
+              "ETM"
+            ]
+          ],
+          []
+        ],
+        [
+          "이나",
+          "JX",
+          3,
+          [],
+          []
+        ]
+      ],
+      "offset": 3,
+      "expected": "머그 리나",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "left_fused_tail",
+      "source": "갔 음",
+      "tokens": [
+        [
+          "갔",
+          "VV+EP",
+          0,
+          [
+            [
+              "가",
+              "VV"
+            ],
+            [
+              "았",
+              "EP"
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        [
+          "음",
+          "ETN",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "가 씀",
+      "rules": [
+        "ko.liaison.single"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "duplicate_physical_pair",
+      "source": "값 이",
+      "tokens": [
+        [
+          "값",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이",
+          "JKS",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "갑 씨",
+      "rules": [
+        "ko.liaison.cluster"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 3,
+      "barrier": null
+    },
+    {
+      "id": "consonant_no_liaison",
+      "source": "먹 고",
+      "tokens": [
+        [
+          "먹",
+          "VV",
+          0,
+          [],
+          []
+        ],
+        [
+          "고",
+          "EC",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "먹 꼬",
+      "rules": [],
+      "applicability": "not_required",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "formal_unresolved_not_lexical",
+      "source": "밭 여",
+      "tokens": [
+        [
+          "밭",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "여",
+          "VCP+EF",
+          2,
+          [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "어",
+              "EF"
+            ]
+          ],
+          [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ]
+          ]
+        ]
+      ],
+      "offset": 2,
+      "expected": "받 여",
+      "rules": [],
+      "applicability": "unknown",
+      "status": "unknown",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null,
+      "reason": "recipient_ownership_unresolved"
+    },
+    {
+      "id": "isolated_ending_host",
+      "source": "었 음",
+      "tokens": [
+        [
+          "었",
+          "EP",
+          0,
+          [],
+          []
+        ],
+        [
+          "음",
+          "ETN",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "얻 음",
+      "rules": [],
+      "applicability": "unknown",
+      "status": "unknown",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null,
+      "reason": "host_attachment_unproven"
+    },
+    {
+      "id": "first_lexical_keeps_route",
+      "source": "옷 아래",
+      "tokens": [
+        [
+          "옷",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "아래",
+          "NNG",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "오 다래",
+      "rules": [
+        "ko.liaison.lexical"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "default_unchanged",
+      "source": "옷 을",
+      "tokens": [
+        [
+          "옷",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "을",
+          "JKO",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "옫 을",
+      "rules": [],
+      "applicability": "not_required",
+      "status": "selected",
+      "relation": "default",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "one_madi_unchanged",
+      "source": "옷 을",
+      "tokens": [
+        [
+          "옷",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "을",
+          "JKO",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "옫 을",
+      "rules": [],
+      "applicability": "ineligible",
+      "status": "selected",
+      "relation": "one_madi",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "pause_wins",
+      "source": "옷 을",
+      "tokens": [
+        [
+          "옷",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "을",
+          "JKO",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "옫 을",
+      "rules": [],
+      "applicability": "not_required",
+      "status": "selected",
+      "relation": "pause",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "hard_wins",
+      "source": "옷 을",
+      "tokens": [
+        [
+          "옷",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "을",
+          "JKO",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "옫 을",
+      "rules": [],
+      "applicability": "blocked",
+      "status": "blocked",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": "hard",
+      "reason": "hard_boundary"
+    },
+    {
+      "id": "protected_wins",
+      "source": "옷 을",
+      "tokens": [
+        [
+          "옷",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "을",
+          "JKO",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "옷 을",
+      "rules": [],
+      "applicability": "blocked",
+      "status": "blocked",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": "protected",
+      "reason": "protected_or_non_korean"
+    },
+    {
+      "id": "bad_source_metadata",
+      "source": "옷 을",
+      "tokens": [
+        [
+          "옷",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "이",
+          "JKO",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "옷 을",
+      "rules": [],
+      "applicability": "unknown",
+      "status": "unknown",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "prefix_not_suffix",
+      "source": "밭 애",
+      "tokens": [
+        [
+          "밭",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "애",
+          "XPN",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "받 애",
+      "rules": [],
+      "applicability": "ineligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "root_not_suffix",
+      "source": "밭 애",
+      "tokens": [
+        [
+          "밭",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "애",
+          "XR",
+          2,
+          [],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "받 애",
+      "rules": [],
+      "applicability": "ineligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    },
+    {
+      "id": "negative_copula_not_positive",
+      "source": "밭 아니다",
+      "tokens": [
+        [
+          "밭",
+          "NNG",
+          0,
+          [],
+          []
+        ],
+        [
+          "아니다",
+          "VCN+EF",
+          2,
+          [
+            [
+              "아니",
+              "VCN"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ],
+          []
+        ]
+      ],
+      "offset": 2,
+      "expected": "바 다니다",
+      "rules": [
+        "ko.liaison.lexical"
+      ],
+      "applicability": "eligible",
+      "status": "selected",
+      "relation": "ordinary_liaison",
+      "repeats": 1,
+      "barrier": null
+    }
+  ]
+}

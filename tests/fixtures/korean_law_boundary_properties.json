@@ -1,0 +1,440 @@
+[
+  {
+    "id": "LF01",
+    "text": "민법",
+    "manual_tokens": [
+      {
+        "form": "민법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "민법",
+            "NNG"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "민뻡"
+    ]
+  },
+  {
+    "id": "LF02",
+    "text": "민법이",
+    "manual_tokens": [
+      {
+        "form": "민법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "민법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "이",
+        "tag": "JKS",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "이",
+            "JKS"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "민뻐비"
+    ]
+  },
+  {
+    "id": "LF03",
+    "text": "민법과",
+    "manual_tokens": [
+      {
+        "form": "민법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "민법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "과",
+        "tag": "JC",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "과",
+            "JC"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "민뻡꽈"
+    ]
+  },
+  {
+    "id": "LF04",
+    "text": "헌법",
+    "manual_tokens": [
+      {
+        "form": "헌법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "헌법",
+            "NNG"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "헌뻡"
+    ]
+  },
+  {
+    "id": "LF05",
+    "text": "헌법이",
+    "manual_tokens": [
+      {
+        "form": "헌법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "헌법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "이",
+        "tag": "JKS",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "이",
+            "JKS"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "헌뻐비"
+    ]
+  },
+  {
+    "id": "LF06",
+    "text": "헌법과",
+    "manual_tokens": [
+      {
+        "form": "헌법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "헌법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "과",
+        "tag": "JC",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "과",
+            "JC"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "헌뻡꽈"
+    ]
+  },
+  {
+    "id": "LF10",
+    "text": "형법",
+    "manual_tokens": [
+      {
+        "form": "형법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "형법",
+            "NNG"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "형뻡"
+    ]
+  },
+  {
+    "id": "LF11",
+    "text": "형법이",
+    "manual_tokens": [
+      {
+        "form": "형법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "형법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "이",
+        "tag": "JKS",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "이",
+            "JKS"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "형뻐비"
+    ]
+  },
+  {
+    "id": "LF12",
+    "text": "형법과",
+    "manual_tokens": [
+      {
+        "form": "형법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "형법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "과",
+        "tag": "JC",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "과",
+            "JC"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "형뻡꽈"
+    ]
+  },
+  {
+    "id": "LF13",
+    "text": "불법",
+    "manual_tokens": [
+      {
+        "form": "불법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "불법",
+            "NNG"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "불법",
+      "불뻡"
+    ]
+  },
+  {
+    "id": "LF14",
+    "text": "불법이",
+    "manual_tokens": [
+      {
+        "form": "불법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "불법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "이",
+        "tag": "JKS",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "이",
+            "JKS"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "불버비",
+      "불뻐비"
+    ]
+  },
+  {
+    "id": "LF15",
+    "text": "불법과",
+    "manual_tokens": [
+      {
+        "form": "불법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "불법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "과",
+        "tag": "JC",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "과",
+            "JC"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "불법꽈",
+      "불뻡꽈"
+    ]
+  },
+  {
+    "id": "LF16",
+    "text": "방법",
+    "manual_tokens": [
+      {
+        "form": "방법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "방법",
+            "NNG"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "방법"
+    ]
+  },
+  {
+    "id": "LF17",
+    "text": "방법이",
+    "manual_tokens": [
+      {
+        "form": "방법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "방법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "이",
+        "tag": "JKS",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "이",
+            "JKS"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "방버비"
+    ]
+  },
+  {
+    "id": "LF18",
+    "text": "방법과",
+    "manual_tokens": [
+      {
+        "form": "방법",
+        "tag": "NNG",
+        "normalized_start": 0,
+        "normalized_end": 2,
+        "morphemes": [
+          [
+            "방법",
+            "NNG"
+          ]
+        ]
+      },
+      {
+        "form": "과",
+        "tag": "JC",
+        "normalized_start": 2,
+        "normalized_end": 3,
+        "morphemes": [
+          [
+            "과",
+            "JC"
+          ]
+        ]
+      }
+    ],
+    "allowed_pronunciations": [
+      "방법꽈"
+    ]
+  }
+]

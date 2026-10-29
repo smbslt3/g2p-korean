@@ -1,0 +1,184 @@
+{
+  "status": "frozen",
+  "scope_counts": {
+    "bound_full_phone": 4,
+    "partial_constructed_exact_raw_tag": 5,
+    "conditional_abstract_native": 6,
+    "unbound": 9
+  },
+  "model": {
+    "kiwipiepy": "0.24.1",
+    "kiwipiepy_model": "0.24.0",
+    "model_type": "cong"
+  },
+  "records": [
+    {
+      "ref_id": "R45-IREF-01",
+      "route": "g2p_full",
+      "status": "bound_full_phone",
+      "carrier_ref": "R45-IREF-01",
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-02",
+      "route": "g2p_full",
+      "status": "bound_full_phone",
+      "carrier_ref": "R45-IREF-02",
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-03",
+      "route": "g2p_full",
+      "status": "bound_full_phone",
+      "carrier_ref": "R45-IREF-03",
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-04",
+      "route": "g2p_full",
+      "status": "bound_full_phone",
+      "carrier_ref": "R45-IREF-04",
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-05",
+      "route": "native_event",
+      "status": "partial_exact_raw_tag_required",
+      "carrier_ref": "R45-IREF-05",
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-06",
+      "route": "native_event",
+      "status": "partial_exact_raw_tag_required",
+      "carrier_ref": "R45-IREF-06",
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-07",
+      "route": "native_event",
+      "status": "partial_exact_raw_tag_required",
+      "carrier_ref": "R45-IREF-07",
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-08",
+      "route": "native_event",
+      "status": "partial_exact_raw_tag_required",
+      "carrier_ref": "R45-IREF-08",
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-09",
+      "route": "native_event",
+      "status": "partial_exact_raw_tag_required",
+      "carrier_ref": "R45-IREF-09",
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-10",
+      "route": "unbound",
+      "status": "unsupported_without_native_evidence",
+      "carrier_ref": null,
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-11",
+      "route": "unbound",
+      "status": "unsupported_without_native_evidence",
+      "carrier_ref": null,
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-12",
+      "route": "unbound",
+      "status": "unsupported_artificial_spelling",
+      "carrier_ref": null,
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-13",
+      "route": "unbound",
+      "status": "unsupported_without_native_evidence",
+      "carrier_ref": null,
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-14",
+      "route": "unbound",
+      "status": "unsupported_without_native_evidence",
+      "carrier_ref": null,
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-15",
+      "route": "unbound",
+      "status": "unsupported_without_native_evidence",
+      "carrier_ref": null,
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-16",
+      "route": "native_event",
+      "status": "conditional_compatible_original_pos",
+      "carrier_ref": "R45-IREF-01",
+      "control": "hard"
+    },
+    {
+      "ref_id": "R45-IREF-17",
+      "route": "native_event",
+      "status": "conditional_compatible_original_pos",
+      "carrier_ref": "R45-IREF-01",
+      "control": "protected"
+    },
+    {
+      "ref_id": "R45-IREF-18",
+      "route": "native_event",
+      "status": "conditional_compatible_original_pos",
+      "carrier_ref": "R45-IREF-01",
+      "control": "pause"
+    },
+    {
+      "ref_id": "R45-IREF-19",
+      "route": "native_event",
+      "status": "conditional_compatible_original_pos",
+      "carrier_ref": "R45-IREF-01",
+      "control": "read"
+    },
+    {
+      "ref_id": "R45-IREF-20",
+      "route": "native_event",
+      "status": "conditional_compatible_original_pos",
+      "carrier_ref": "R45-IREF-01",
+      "control": "nonlocal"
+    },
+    {
+      "ref_id": "R45-IREF-21",
+      "route": "unbound",
+      "status": "unsupported_without_native_evidence",
+      "carrier_ref": null,
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-22",
+      "route": "unbound",
+      "status": "unsupported_without_native_evidence",
+      "carrier_ref": null,
+      "control": null
+    },
+    {
+      "ref_id": "R45-IREF-23",
+      "route": "native_event",
+      "status": "conditional_compatible_original_pos",
+      "carrier_ref": "R45-IREF-01",
+      "control": "repeat"
+    },
+    {
+      "ref_id": "R45-IREF-24",
+      "route": "unbound",
+      "status": "unsupported_without_native_evidence",
+      "carrier_ref": null,
+      "control": null
+    }
+  ]
+}

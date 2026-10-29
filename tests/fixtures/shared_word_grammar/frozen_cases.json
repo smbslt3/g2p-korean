@@ -1,0 +1,3432 @@
+{
+  "schema": "r41_independent_references.v1",
+  "source_blind": true,
+  "basis_ko": "자체 src/API와 깨끗한 R39 접두 계약 및 R41 문법 의미 계약만 읽었다. 기존 시험·정답·평가 출력·후보 코드를 보거나 실행하지 않았다.",
+  "scope_ko": "문법 적격성과 정확 품사·문법 호스트·표면 증명·규칙별 조건은 별개다. 인위적 부정 형태소열은 단어의 규범 판정이 아니라 완전 소비·형식 상태 제한을 검증한다.",
+  "certificate_cases": [
+    {
+      "id": "lexical_noun",
+      "parts": [
+        [
+          "여백",
+          "NNG"
+        ]
+      ],
+      "surface": "여백",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "단순 독립 명사의 보존 대조군이다."
+    },
+    {
+      "id": "lexical_modifier",
+      "parts": [
+        [
+          "이",
+          "MM"
+        ]
+      ],
+      "surface": "이",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "modifier",
+        "assert_category": true,
+        "host": "modifier",
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": false
+      },
+      "note_ko": "어휘 연음과 단어 ㄴ 첨가의 기존 범주 정책은 다르다."
+    },
+    {
+      "id": "lexical_conjunction",
+      "parts": [
+        [
+          "그리고",
+          "MAJ"
+        ]
+      ],
+      "surface": "그리고",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "adverb",
+        "assert_category": true,
+        "host": "adverbial",
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "lexical_numeral",
+      "parts": [
+        [
+          "일",
+          "NR"
+        ]
+      ],
+      "surface": "일",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": "nominal",
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_numeral",
+      "parts": [
+        [
+          "제",
+          "XPN"
+        ],
+        [
+          "일",
+          "NR"
+        ]
+      ],
+      "surface": "제일",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": false
+      },
+      "note_ko": "접두사의 존재만으로 기존 ㄴ 첨가 seed 범위를 넓히지 않는다."
+    },
+    {
+      "id": "prefix_noun",
+      "parts": [
+        [
+          "온",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "surface": "온몸",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "접두 파생의 독립 어휘 적격성은 성립하지만 명사 품사 승계는 단정하지 않는다."
+    },
+    {
+      "id": "prefix_other_noun",
+      "parts": [
+        [
+          "외",
+          "XPN"
+        ],
+        [
+          "숙모",
+          "NNG"
+        ]
+      ],
+      "surface": "외숙모",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "모음 시작의 다른 접두 파생 구성이다."
+    },
+    {
+      "id": "prefix_liaison_noun",
+      "parts": [
+        [
+          "알",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "surface": "알몸",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "실질적 독립 어기와 접두사만 있는 구성이다."
+    },
+    {
+      "id": "prefix_adverb",
+      "parts": [
+        [
+          "맨",
+          "XPN"
+        ],
+        [
+          "먼저",
+          "MAG"
+        ]
+      ],
+      "surface": "맨먼저",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "접두 파생을 명사 어기에만 제한하지 않는다."
+    },
+    {
+      "id": "prefix_repeat",
+      "parts": [
+        [
+          "극",
+          "XPN"
+        ],
+        [
+          "초",
+          "XPN"
+        ],
+        [
+          "단파",
+          "NNG"
+        ]
+      ],
+      "surface": "극초단파",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused",
+        "mixed"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "연속 접두사 뒤의 한 독립 어기를 확인한다. 명사 인접을 사용하지 않는다."
+    },
+    {
+      "id": "derived_noun",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ]
+      ],
+      "surface": "음악성",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "plural_nominal",
+      "parts": [
+        [
+          "이름",
+          "NNG"
+        ],
+        [
+          "들",
+          "XSN"
+        ]
+      ],
+      "surface": "이름들",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "새 명사 범주는 이전 명사의 예외 신원 보존 증거가 아니다."
+    },
+    {
+      "id": "root_derived_noun",
+      "parts": [
+        [
+          "희소",
+          "XR"
+        ],
+        [
+          "성",
+          "XSN"
+        ]
+      ],
+      "surface": "희소성",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "접미 파생이 실제 범주를 부여한 어근은 접두사만 붙인 어근과 다르다."
+    },
+    {
+      "id": "derived_noun_particle",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "도",
+          "JX"
+        ]
+      ],
+      "surface": "음악성도",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": "nominal",
+        "tail": "particles",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "derived_verb_finite",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "공부하다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "final",
+        "tail": "final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "derived_adjective_prefinal",
+      "parts": [
+        [
+          "건강",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSA"
+        ],
+        [
+          "겠",
+          "EP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "건강하겠다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "adjective",
+        "assert_category": true,
+        "host": "final",
+        "tail": "final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "derived_verb_prefinals",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "시",
+          "EP"
+        ],
+        [
+          "겠",
+          "EP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "공부하시겠다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused",
+        "mixed"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "final",
+        "tail": "final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "derived_verb_conjunctive",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "고",
+          "EC"
+        ]
+      ],
+      "surface": "공부하고",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "connective",
+        "tail": "connective",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "derived_verb_adnominal",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "는",
+          "ETM"
+        ]
+      ],
+      "surface": "공부하는",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "adnominal",
+        "tail": "adnominal",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "derived_verb_nominalized",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "기",
+          "ETN"
+        ]
+      ],
+      "surface": "공부하기",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "nominalized",
+        "tail": "nominalized",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "ETN은 문법적 명사화이며 사전상 품사를 명사로 바꾸지 않는다."
+    },
+    {
+      "id": "nominalized_case",
+      "parts": [
+        [
+          "연구",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "를",
+          "JKO"
+        ]
+      ],
+      "surface": "연구하기를",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "nominalized",
+        "tail": "particles",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "nominalized_aux_stack",
+      "parts": [
+        [
+          "건강",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSA"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "만",
+          "JX"
+        ],
+        [
+          "도",
+          "JX"
+        ]
+      ],
+      "surface": "건강하기만도",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "adjective",
+        "assert_category": true,
+        "host": "nominalized",
+        "tail": "particles",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "derived_adverb",
+      "parts": [
+        [
+          "조용",
+          "XR"
+        ],
+        [
+          "히",
+          "XSM"
+        ]
+      ],
+      "surface": "조용히",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "adverb",
+        "assert_category": true,
+        "host": null,
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "adverb_aux_particle",
+      "parts": [
+        [
+          "조용",
+          "XR"
+        ],
+        [
+          "히",
+          "XSM"
+        ],
+        [
+          "도",
+          "JX"
+        ]
+      ],
+      "surface": "조용히도",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "adverb",
+        "assert_category": true,
+        "host": "adverbial",
+        "tail": "particles",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "connective_aux_particle",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "고",
+          "EC"
+        ],
+        [
+          "도",
+          "JX"
+        ]
+      ],
+      "surface": "공부하고도",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "connective",
+        "tail": "particles",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "bare_predicate_legacy",
+      "parts": [
+        [
+          "보",
+          "VV"
+        ]
+      ],
+      "surface": "보",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "predicate",
+        "tail": "open_inflection",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefinal_predicate_legacy",
+      "parts": [
+        [
+          "보",
+          "VV"
+        ],
+        [
+          "겠",
+          "EP"
+        ]
+      ],
+      "surface": "보겠",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "predicate",
+        "tail": "prefinal",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "root_derived_adjective",
+      "parts": [
+        [
+          "시원",
+          "XR"
+        ],
+        [
+          "스럽",
+          "XSA"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "시원스럽다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "adjective",
+        "assert_category": true,
+        "host": "final",
+        "tail": "final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "explicit_causative",
+      "parts": [
+        [
+          "씻",
+          "VV"
+        ],
+        [
+          "이",
+          "XSV"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "씻이다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "final",
+        "tail": "final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "copula_finite",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "이",
+          "VCP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "음악성이다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": "final",
+        "tail": "copula_final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "copula_prefinal",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "이",
+          "VCP"
+        ],
+        [
+          "었",
+          "EP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "음악성이었다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": "final",
+        "tail": "copula_final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "copula_nominalized_particle",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "이",
+          "VCP"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "만",
+          "JX"
+        ]
+      ],
+      "surface": "음악성이기만",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": "nominalized",
+        "tail": "copula_particles",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "copula_conjunctive",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "이",
+          "VCP"
+        ],
+        [
+          "면",
+          "EC"
+        ]
+      ],
+      "surface": "음악성이면",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": "connective",
+        "tail": "copula_connective",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "nominalized_copula",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "이",
+          "VCP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "공부하기이다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "final",
+        "tail": "copula_final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "auxiliary_after_contraction",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "어",
+          "EC"
+        ],
+        [
+          "보",
+          "VX"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "공부해보다",
+      "spans": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "variants": [
+        "fused",
+        "shared_tail"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "final",
+        "tail": "auxiliary_final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "EC 뒤의 명시된 보조용언은 새 활용 어간을 시작하며 앞 축약의 유래를 보존한다."
+    },
+    {
+      "id": "contracted_derivation",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "어",
+          "EC"
+        ]
+      ],
+      "surface": "공부해",
+      "spans": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "variants": [
+        "fused",
+        "shared_tail"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "connective",
+        "tail": "connective",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "기존 유한 표면 증명과 공동 음절 유래를 그대로 재사용한다."
+    },
+    {
+      "id": "contracted_regular",
+      "parts": [
+        [
+          "보",
+          "VV"
+        ],
+        [
+          "아",
+          "EC"
+        ]
+      ],
+      "surface": "봐",
+      "spans": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "variants": [
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "connective",
+        "tail": "connective",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "단순 용언의 허용된 규칙 축약 대조군이다."
+    },
+    {
+      "id": "bare_prefix",
+      "parts": [
+        [
+          "헛",
+          "XPN"
+        ]
+      ],
+      "surface": "헛",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "bare_root",
+      "parts": [
+        [
+          "아늑",
+          "XR"
+        ]
+      ],
+      "surface": "아늑",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefixed_root",
+      "parts": [
+        [
+          "헛",
+          "XPN"
+        ],
+        [
+          "시원",
+          "XR"
+        ]
+      ],
+      "surface": "헛시원",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": "접두사는 비독립 어근에 독립 품사를 새로 부여하지 않는다."
+    },
+    {
+      "id": "bare_suffix",
+      "parts": [
+        [
+          "스럽",
+          "XSA"
+        ]
+      ],
+      "surface": "스럽",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "bare_ending",
+      "parts": [
+        [
+          "고",
+          "EC"
+        ]
+      ],
+      "surface": "고",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "bare_particle",
+      "parts": [
+        [
+          "만",
+          "JX"
+        ]
+      ],
+      "surface": "만",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "unsupported_independent_class",
+      "parts": [
+        [
+          "어머",
+          "IC"
+        ]
+      ],
+      "surface": "어머",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": "기존 N/V/M 적격 범위를 새로 넓히지 않는다."
+    },
+    {
+      "id": "noun_ending",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "음악다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "verb_case_without_nominalization",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "를",
+          "JKO"
+        ]
+      ],
+      "surface": "공부하를",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "adjective_case_without_nominalization",
+      "parts": [
+        [
+          "건강",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSA"
+        ],
+        [
+          "의",
+          "JKG"
+        ]
+      ],
+      "surface": "건강하의",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "two_terminal_endings",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "다",
+          "EF"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "공부하다다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": "복합 어미·재분석 구조가 증명되지 않았다. 단순한 E 반복으로 허가하지 않는다."
+    },
+    {
+      "id": "nominalizer_after_finite",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "다",
+          "EF"
+        ],
+        [
+          "기",
+          "ETN"
+        ]
+      ],
+      "surface": "공부하다기",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefinal_without_terminal",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "시",
+          "EP"
+        ],
+        [
+          "겠",
+          "EP"
+        ]
+      ],
+      "surface": "공부하시겠",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "predicate",
+        "tail": "prefinal",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "기존 파생 활용의 열린 선어말 상태를 보존하되 완료 종결형과 구별한다."
+    },
+    {
+      "id": "adnominal_case_without_host",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "는",
+          "ETM"
+        ],
+        [
+          "이",
+          "JKS"
+        ]
+      ],
+      "surface": "공부하는이",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "conjunctive_case_without_host",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "고",
+          "EC"
+        ],
+        [
+          "가",
+          "JKS"
+        ]
+      ],
+      "surface": "공부하고가",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "ending_after_particle",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "도",
+          "JX"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "음악성도다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "derivation_after_terminal",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "다",
+          "EF"
+        ],
+        [
+          "성",
+          "XSN"
+        ]
+      ],
+      "surface": "공부하다성",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "invalid_suffix_input",
+      "parts": [
+        [
+          "새",
+          "MM"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "새하다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "nominal_derivation_then_ending",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "음",
+          "XSN"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "공부하음다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "noncausative_verb_suffix",
+      "parts": [
+        [
+          "먹",
+          "VV"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "먹하다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "excluded",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "adjacent_nouns_recipient",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "교육",
+          "NNG"
+        ]
+      ],
+      "surface": "음악교육",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "noun",
+        "assert_category": true,
+        "host": "nominal",
+        "tail": null,
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "정확히 소유한 명사열의 기존 어휘 수신 적격성만 보존한다. 합성 구조는 주장하지 않는다."
+    },
+    {
+      "id": "adjacent_nouns_with_suffix",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "교육",
+          "NNG"
+        ],
+        [
+          "적",
+          "XSN"
+        ]
+      ],
+      "surface": "음악교육적",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "unknown_tag",
+      "parts": [
+        [
+          "온",
+          "XPN"
+        ],
+        [
+          "몸",
+          "ZZZ"
+        ]
+      ],
+      "surface": "온몸",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_outer_copula",
+      "parts": [
+        [
+          "알",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ],
+        [
+          "이",
+          "VCP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "알몸이다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": "final",
+        "tail": "copula_final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "단일 독립 어기 바깥의 유일한 계사 결합으로 숙주를 증명한다. 어휘 품사 승계는 주장하지 않는다."
+    },
+    {
+      "id": "unknown_prefix_suffix_input",
+      "parts": [
+        [
+          "알",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ]
+      ],
+      "surface": "알몸성",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": "접두 이후 범주와 접미사 입력 범위를 평면 순서만으로 확정하지 않는다."
+    },
+    {
+      "id": "prefix_outer_aux_particle",
+      "parts": [
+        [
+          "알",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ],
+        [
+          "도",
+          "JX"
+        ]
+      ],
+      "surface": "알몸도",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": "lexical_unknown",
+        "tail": "particles",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_outer_case",
+      "parts": [
+        [
+          "알",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ],
+        [
+          "을",
+          "JKO"
+        ]
+      ],
+      "surface": "알몸을",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": "nominal",
+        "tail": "particles",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_outer_finite",
+      "parts": [
+        [
+          "되",
+          "XPN"
+        ],
+        [
+          "살",
+          "VV"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "되살다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": "final",
+        "tail": "final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_outer_prefinal_finite",
+      "parts": [
+        [
+          "드",
+          "XPN"
+        ],
+        [
+          "높",
+          "VA"
+        ],
+        [
+          "겠",
+          "EP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "드높겠다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": "final",
+        "tail": "final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_outer_nominalized_case",
+      "parts": [
+        [
+          "되",
+          "XPN"
+        ],
+        [
+          "살",
+          "VV"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "를",
+          "JKO"
+        ]
+      ],
+      "surface": "되살기를",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": "nominalized",
+        "tail": "particles",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_outer_conjunctive",
+      "parts": [
+        [
+          "드",
+          "XPN"
+        ],
+        [
+          "높",
+          "VA"
+        ],
+        [
+          "게",
+          "EC"
+        ]
+      ],
+      "surface": "드높게",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": "connective",
+        "tail": "connective",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_outer_adnominal",
+      "parts": [
+        [
+          "드",
+          "XPN"
+        ],
+        [
+          "높",
+          "VA"
+        ],
+        [
+          "은",
+          "ETM"
+        ]
+      ],
+      "surface": "드높은",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": null,
+        "assert_category": true,
+        "host": "adnominal",
+        "tail": "adnominal",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_outer_auxiliary",
+      "parts": [
+        [
+          "되",
+          "XPN"
+        ],
+        [
+          "살",
+          "VV"
+        ],
+        [
+          "아",
+          "EC"
+        ],
+        [
+          "보",
+          "VX"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "되살아보다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "final",
+        "tail": "auxiliary_final",
+        "surface_status": "verified",
+        "n_target": true
+      },
+      "note_ko": "새 보조용언의 정확한 범주는 앞 접두 구성의 품사 미확정과 별개다."
+    },
+    {
+      "id": "prefix_ambiguous_noun_chain_copula",
+      "parts": [
+        [
+          "초",
+          "XPN"
+        ],
+        [
+          "고속",
+          "NNG"
+        ],
+        [
+          "열차",
+          "NNG"
+        ],
+        [
+          "이",
+          "VCP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "초고속열차이다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "prefix_inner_derivation_copula",
+      "parts": [
+        [
+          "알",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "이",
+          "VCP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "알몸성이다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "unstructured_second_predicate",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "고",
+          "EC"
+        ],
+        [
+          "먹",
+          "VV"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "공부하고먹다",
+      "spans": null,
+      "variants": [
+        "split",
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "unsupported_irregular_surface",
+      "parts": [
+        [
+          "돕",
+          "VV-I"
+        ],
+        [
+          "아",
+          "EC"
+        ]
+      ],
+      "surface": "도와",
+      "spans": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "variants": [
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "connective",
+        "tail": "connective",
+        "surface_status": "unavailable",
+        "n_target": true
+      },
+      "note_ko": "충돌 없는 기존 단순 용언의 제한된 어휘 적격성만 보존한다. 미지원 불규칙의 자모 유래를 새로 만들지 않는다."
+    },
+    {
+      "id": "unsupported_copula_surface",
+      "parts": [
+        [
+          "음악",
+          "NNG"
+        ],
+        [
+          "성",
+          "XSN"
+        ],
+        [
+          "이",
+          "VCP"
+        ],
+        [
+          "었",
+          "EP"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "surface": "음악성였다",
+      "spans": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "variants": [
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "unexplained_surface_mismatch",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "어",
+          "EC"
+        ]
+      ],
+      "surface": "공부쐐",
+      "spans": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "variants": [
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "missing_morphemes",
+      "parts": [
+        [
+          "온",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "surface": "온몸",
+      "spans": null,
+      "variants": [
+        "fused"
+      ],
+      "mutation": "missing_morphemes",
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "tag_parts_conflict",
+      "parts": [
+        [
+          "온",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "surface": "온몸",
+      "spans": null,
+      "variants": [
+        "fused"
+      ],
+      "mutation": "tag_parts_conflict",
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "canonical_identity_conflict",
+      "parts": [
+        [
+          "온",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "surface": "온몸",
+      "spans": null,
+      "variants": [
+        "fused"
+      ],
+      "mutation": "canonical_identity_conflict",
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "missing_token_ownership",
+      "parts": [
+        [
+          "온",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "surface": "온몸",
+      "spans": null,
+      "variants": [
+        "split"
+      ],
+      "mutation": "missing_first_token",
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "overlap_token_ownership",
+      "parts": [
+        [
+          "온",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "surface": "온몸",
+      "spans": null,
+      "variants": [
+        "fused"
+      ],
+      "mutation": "overlap_token",
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "raw_span_identity_conflict",
+      "parts": [
+        [
+          "온",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "surface": "온몸",
+      "spans": null,
+      "variants": [
+        "fused"
+      ],
+      "mutation": "reversed_spans",
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": null,
+        "n_target": false
+      },
+      "note_ko": ""
+    },
+    {
+      "id": "zero_marker_legacy",
+      "parts": [
+        [
+          "하",
+          "VV"
+        ],
+        [
+          "ㅁ",
+          "ETN"
+        ]
+      ],
+      "surface": "함",
+      "spans": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "variants": [
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "eligible",
+        "final_category": "verb",
+        "assert_category": true,
+        "host": "nominalized",
+        "tail": "nominalized",
+        "surface_status": "unavailable",
+        "n_target": true
+      },
+      "note_ko": "기존 영폭 어미 표지는 강한 자모 소유 증명이 아니지만 모순으로 바꾸지 않는다."
+    },
+    {
+      "id": "zero_marker_derived",
+      "parts": [
+        [
+          "공부",
+          "NNG"
+        ],
+        [
+          "하",
+          "XSV"
+        ],
+        [
+          "ㅁ",
+          "ETN"
+        ]
+      ],
+      "surface": "공부함",
+      "spans": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "variants": [
+        "fused"
+      ],
+      "mutation": null,
+      "equivalence": true,
+      "expected": {
+        "lexical_status": "unresolved",
+        "final_category": null,
+        "assert_category": false,
+        "host": null,
+        "tail": null,
+        "surface_status": "unavailable",
+        "n_target": false
+      },
+      "note_ko": ""
+    }
+  ],
+  "public_gap_cases": [
+    {
+      "id": "gap_prefix_ordinary",
+      "reference": "prefix_liaison_noun",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.liaison.lexical"
+      }
+    },
+    {
+      "id": "gap_prefix_fused",
+      "reference": "prefix_liaison_noun",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "variant": "fused",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.liaison.lexical"
+      }
+    },
+    {
+      "id": "gap_derived_nominalized",
+      "reference": "nominalized_case",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.liaison.lexical"
+      }
+    },
+    {
+      "id": "gap_copula",
+      "reference": "copula_prefinal",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.liaison.lexical"
+      }
+    },
+    {
+      "id": "gap_excluded_root",
+      "reference": "bare_root",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "selected",
+        "applicability": "ineligible",
+        "sound_effect": "unchanged"
+      }
+    },
+    {
+      "id": "gap_excluded_bad_tail",
+      "reference": "noun_ending",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "selected",
+        "applicability": "ineligible",
+        "sound_effect": "unchanged"
+      }
+    },
+    {
+      "id": "gap_unknown_tag",
+      "reference": "unknown_tag",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "unknown",
+        "applicability": "unknown"
+      }
+    },
+    {
+      "id": "gap_missing_parts",
+      "reference": "missing_morphemes",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "unknown",
+        "applicability": "unknown"
+      }
+    },
+    {
+      "id": "gap_owned_noun_recipient",
+      "reference": "adjacent_nouns_recipient",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.liaison.lexical"
+      }
+    },
+    {
+      "id": "gap_unsupported_copula",
+      "reference": "unsupported_copula_surface",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "unknown",
+        "applicability": "unknown"
+      }
+    },
+    {
+      "id": "gap_one_madi_prefix",
+      "parts": [
+        [
+          "양",
+          "XPN"
+        ],
+        [
+          "어머니",
+          "NNG"
+        ]
+      ],
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "one_madi",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.n_insertion.word"
+      }
+    },
+    {
+      "id": "gap_one_madi_non_y",
+      "reference": "prefix_noun",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "one_madi",
+      "expected": {
+        "status": "selected",
+        "applicability": "ineligible",
+        "sound_effect": "changed"
+      }
+    },
+    {
+      "id": "gap_one_madi_numeral_donor",
+      "parts": [
+        [
+          "양",
+          "XPN"
+        ],
+        [
+          "어머니",
+          "NNG"
+        ]
+      ],
+      "left": "십",
+      "left_tag": "NR",
+      "relation": "one_madi",
+      "expected": {
+        "status": "selected",
+        "applicability": "ineligible",
+        "sound_effect": "unchanged"
+      }
+    },
+    {
+      "id": "gap_pause",
+      "parts": [
+        [
+          "양",
+          "XPN"
+        ],
+        [
+          "어머니",
+          "NNG"
+        ]
+      ],
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "pause",
+      "expected": {
+        "status": "selected",
+        "applicability": "not_required",
+        "sound_effect": "barrier"
+      }
+    },
+    {
+      "id": "gap_modifier_ordinary",
+      "reference": "lexical_modifier",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "ordinary_liaison",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.liaison.lexical"
+      }
+    },
+    {
+      "id": "gap_modifier_one_madi",
+      "reference": "lexical_modifier",
+      "left": "밤",
+      "left_tag": "NNG",
+      "relation": "one_madi",
+      "expected": {
+        "status": "selected",
+        "applicability": "ineligible",
+        "sound_effect": "unchanged"
+      }
+    },
+    {
+      "id": "gap_identity_particle_split",
+      "parts": [
+        [
+          "이름",
+          "NNG"
+        ],
+        [
+          "도",
+          "JX"
+        ]
+      ],
+      "left": "작품",
+      "left_tag": "NNG",
+      "relation": "one_madi",
+      "variant": "split",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.liaison.lexical",
+        "forbidden_rule": "ko.n_insertion.word"
+      }
+    },
+    {
+      "id": "gap_identity_particle_fused",
+      "parts": [
+        [
+          "이름",
+          "NNG"
+        ],
+        [
+          "도",
+          "JX"
+        ]
+      ],
+      "left": "작품",
+      "left_tag": "NNG",
+      "relation": "one_madi",
+      "variant": "fused",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.liaison.lexical",
+        "forbidden_rule": "ko.n_insertion.word"
+      }
+    },
+    {
+      "id": "gap_new_nominal_identity_split",
+      "reference": "plural_nominal",
+      "left": "작품",
+      "left_tag": "NNG",
+      "relation": "one_madi",
+      "variant": "split",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.n_insertion.word"
+      }
+    },
+    {
+      "id": "gap_new_nominal_identity_fused",
+      "reference": "plural_nominal",
+      "left": "작품",
+      "left_tag": "NNG",
+      "relation": "one_madi",
+      "variant": "fused",
+      "expected": {
+        "status": "selected",
+        "applicability": "eligible",
+        "sound_effect": "changed",
+        "rule": "ko.n_insertion.word"
+      }
+    }
+  ],
+  "barriers": [
+    "protected",
+    "hard",
+    "pause"
+  ],
+  "constructor_rejections": [
+    {
+      "id": "negative_start",
+      "form": "몸",
+      "tag": "NNG",
+      "start": -1,
+      "end": 1
+    },
+    {
+      "id": "empty_range",
+      "form": "몸",
+      "tag": "NNG",
+      "start": 1,
+      "end": 1
+    },
+    {
+      "id": "raw_span_count",
+      "form": "온몸",
+      "tag": "XPN+NNG",
+      "start": 0,
+      "end": 2,
+      "morphemes": [
+        [
+          "온",
+          "XPN"
+        ],
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "spans": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "id": "raw_span_outside",
+      "form": "몸",
+      "tag": "NNG",
+      "start": 0,
+      "end": 1,
+      "morphemes": [
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "spans": [
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "id": "raw_span_bool",
+      "form": "몸",
+      "tag": "NNG",
+      "start": 0,
+      "end": 1,
+      "morphemes": [
+        [
+          "몸",
+          "NNG"
+        ]
+      ],
+      "spans": [
+        [
+          false,
+          1
+        ]
+      ]
+    }
+  ],
+  "public_api_rejections": [
+    {
+      "source": "밖알몸",
+      "offset": 1,
+      "relation": "ordinary_liaison"
+    },
+    {
+      "source": "밖알몸",
+      "offset": 1,
+      "relation": "one_madi"
+    },
+    {
+      "source": "밖\t알몸",
+      "offset": 1,
+      "relation": "ordinary_liaison"
+    },
+    {
+      "source": "밖\n알몸",
+      "offset": 1,
+      "relation": "one_madi"
+    }
+  ],
+  "kiwi_observation_inputs": [
+    "밖 알몸",
+    "밖 양어머니",
+    "공부하기를",
+    "음악성이었다",
+    "극초단파"
+  ],
+  "kiwi_observation_policy_ko": "실제 Kiwi 토큰과 공개 API 실행은 선택 관찰 자료다. 관찰 결과로 독립 기대값을 고치거나 분석기 버전에 무관한 정답을 주장하지 않는다."
+}

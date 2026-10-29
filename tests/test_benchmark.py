@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import os
 from pathlib import Path
 import statistics
@@ -334,3 +335,66 @@ def test_benchmark_schema_exposes_default_and_morphology_semantics(
         ("kiwi_morphology", 2, (10,)),
         ("tts_normalizer", 2, (10,)),
     ]
+
+
+@pytest.mark.parametrize(
+    ("cold_status", "expected_status", "expected_exit"),
+    (("ok", "ok", 0), ("not_measured", "ok", 0), ("error", "error", 1)),
+)
+def test_main_reports_nested_measurement_status_and_exit_code(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    tmp_path: Path,
+    cold_status: str,
+    expected_status: str,
+    expected_exit: int,
+) -> None:
+    result = {
+        "baseline": {"cold_import": {"status": "ok"}},
+        "scenarios": {
+            "default": {"workloads": {"10": {"cold": {"status": cold_status}}}}
+        },
+    }
+    monkeypatch.setattr(_BENCHMARK, "run_benchmark", lambda *, repeats: result)
+    output = tmp_path / "benchmark.json"
+
+    assert _BENCHMARK.main(["--repeats", "1", "--output", str(output)]) == expected_exit
+    assert json.loads(output.read_text(encoding="utf-8"))["status"] == expected_status
+    assert capsys.readouterr().err == ""
+
+
+def test_main_reports_output_write_failure(
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    tmp_path: Path,
+) -> None:
+    monkeypatch.setattr(_BENCHMARK, "run_benchmark", lambda *, repeats: {"baseline": {}})
+    output = tmp_path / "missing" / "benchmark.json"
+
+    assert _BENCHMARK.main(["--output", str(output)]) == 1
+    failure = json.loads(capsys.readouterr().err)
+    assert failure["status"] == "error"
+    assert failure["error"] == "output_failed"
+    assert not output.exists()
+
+
+def test_main_preserves_worker_failure_in_json_and_returns_failure(
+    monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path,
+) -> None:
+    monkeypatch.setattr(_BENCHMARK, "_SIZES", (1,))
+    monkeypatch.setattr(_BENCHMARK, "_fresh_import", lambda _repeats: {"status": "ok"})
+
+    def failed_worker(*_args: object) -> object:
+        raise RuntimeError("테스트용 작업자 실패")
+
+    monkeypatch.setattr(_BENCHMARK, "_run_scenario_process", failed_worker)
+    output = tmp_path / "benchmark.json"
+
+    assert _BENCHMARK.main(["--repeats", "1", "--output", str(output)]) == 1
+    result = json.loads(output.read_text(encoding="utf-8"))
+    assert result["status"] == "error"
+    assert all(
+        scenario["construction"]["status"] == "error"
+        for scenario in result["scenarios"].values()
+    )

@@ -1,0 +1,520 @@
+{
+  "parent": [
+    {
+      "id": "L01",
+      "input": "알겠어요",
+      "lemma": "알다",
+      "value": "long",
+      "basis_ko": "어간에 직접 붙는 첫 선어말어미 겠은 자음으로 시작한다. 뒤 어요를 어간에 직접 붙은 모음 어미로 오인하지 않는다."
+    },
+    {
+      "id": "L02",
+      "input": "알았겠어요",
+      "lemma": "알다",
+      "value": "short",
+      "basis_ko": "첫 선어말어미 았이 모음으로 시작하므로 단음화한다."
+    },
+    {
+      "id": "L03",
+      "input": "알았겠지만",
+      "lemma": "알다",
+      "value": "short",
+      "basis_ko": "뒤 겠·지만보다 어간에 직접 붙은 았의 조건을 적용한다."
+    },
+    {
+      "id": "L04",
+      "input": "알겠니",
+      "lemma": "알다",
+      "value": "long",
+      "basis_ko": "첫 어미 겠의 자음 시작 조건이다."
+    },
+    {
+      "id": "L05",
+      "input": "알기로",
+      "lemma": "알다",
+      "value": "long",
+      "basis_ko": "명사형 기는 자음 시작 어미다."
+    },
+    {
+      "id": "L06",
+      "input": "알기만",
+      "lemma": "알다",
+      "value": "long",
+      "basis_ko": "명사형 어미 기와 후행 조사를 구별한다."
+    },
+    {
+      "id": "L07",
+      "input": "알아서도",
+      "lemma": "알다",
+      "value": "short",
+      "basis_ko": "모음 시작 연결어미가 어간에 붙는다."
+    },
+    {
+      "id": "L08",
+      "input": "좋겠어요",
+      "lemma": "좋다",
+      "value": "long",
+      "basis_ko": "장음 어간이며 자음 시작 첫 어미다."
+    },
+    {
+      "id": "L09",
+      "input": "좋아서도",
+      "lemma": "좋다",
+      "value": "long",
+      "basis_ko": "좋다는 모음 어미 앞 단음화의 어휘 예외다."
+    },
+    {
+      "id": "L10",
+      "input": "없었겠지만",
+      "lemma": "없다",
+      "value": "long",
+      "basis_ko": "없다는 모음 어미 앞 단음화의 어휘 예외다."
+    },
+    {
+      "id": "L11",
+      "input": "없었는데도",
+      "lemma": "없다",
+      "value": "long",
+      "basis_ko": "첫 모음 시작 어미와 관계없이 확인된 어휘 예외를 유지한다."
+    },
+    {
+      "id": "L12",
+      "input": "알고",
+      "lemma": "알다",
+      "value": "long",
+      "nucleus_source_span": [
+        0,
+        3
+      ],
+      "owner_source_span": [
+        0,
+        4
+      ],
+      "output_nucleus_span": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "L13",
+      "input": "나는 좋아.",
+      "lemma": "좋다",
+      "value": "long",
+      "nucleus_source_span": [
+        3,
+        6
+      ],
+      "owner_source_span": [
+        3,
+        7
+      ],
+      "output_nucleus_span": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "L14",
+      "input": "알다 알아 알고",
+      "lemmas": [
+        "알다",
+        "알다",
+        "알다"
+      ],
+      "values": [
+        "long",
+        "short",
+        "long"
+      ],
+      "nucleus_source_spans": [
+        [
+          0,
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "owner_source_spans": [
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          6,
+          8
+        ]
+      ]
+    },
+    {
+      "id": "L15",
+      "input": "알이 좋은가요?",
+      "required_supported_root": {
+        "lemma": "좋다",
+        "value": "long",
+        "nucleus_source_span": [
+          3,
+          4
+        ]
+      },
+      "forbid_supported_root_at": [
+        0
+      ],
+      "basis_ko": "앞 알은 명사이며 알다의 장음을 주입하지 않는다."
+    },
+    {
+      "id": "L16",
+      "input": "알리다",
+      "forbid_supported_registered_root": true,
+      "basis_ko": "등록하지 않은 파생 표제어에 알다 속성을 부분문자열로 주입하지 않는다."
+    },
+    {
+      "id": "L17",
+      "input": "맛없어",
+      "forbid_supported_registered_root": true,
+      "basis_ko": "비첫 어근의 복합어 장단은 첫 범위 밖이다."
+    },
+    {
+      "id": "L18",
+      "input": "OK 알고",
+      "lemma": "알다",
+      "value": "long",
+      "nucleus_source_span": [
+        3,
+        4
+      ],
+      "condition_ko": "기존 공개 원문 정렬이 한국어 모음 핵의 출력 위치를 정확하게 제공하는 경우다. 다른 단어의 영어 확장만으로 전역 미지원하지 않는다."
+    }
+  ],
+  "supplied": [
+    {
+      "id": "C01",
+      "text": "압니다",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "ᆸ니다",
+          "EF"
+        ]
+      ],
+      "value": "long"
+    },
+    {
+      "id": "C02",
+      "text": "안",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "ᆫ",
+          "ETM"
+        ]
+      ],
+      "value": "long"
+    },
+    {
+      "id": "C03",
+      "text": "아는",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "는",
+          "ETM"
+        ]
+      ],
+      "value": "long"
+    },
+    {
+      "id": "C04",
+      "text": "아니",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "니",
+          "EF"
+        ]
+      ],
+      "value": "long"
+    },
+    {
+      "id": "C05",
+      "text": "안니다",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "ᆸ니다",
+          "EF"
+        ]
+      ],
+      "value": "unknown"
+    },
+    {
+      "id": "C06",
+      "text": "압다",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "ᆫ다",
+          "EF"
+        ]
+      ],
+      "value": "unknown"
+    },
+    {
+      "id": "C07",
+      "text": "아니다",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "ᆸ니다",
+          "EF"
+        ]
+      ],
+      "value": "unknown"
+    },
+    {
+      "id": "C08",
+      "text": "알니다",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "ᆸ니다",
+          "EF"
+        ]
+      ],
+      "value": "unknown"
+    },
+    {
+      "id": "C09",
+      "text": "알겠어요",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "겠",
+          "EP"
+        ],
+        [
+          "어요",
+          "EF"
+        ]
+      ],
+      "value": "long"
+    },
+    {
+      "id": "C10",
+      "text": "알았겠어요",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "었",
+          "EP"
+        ],
+        [
+          "겠",
+          "EP"
+        ],
+        [
+          "어요",
+          "EF"
+        ]
+      ],
+      "value": "short"
+    },
+    {
+      "id": "C11",
+      "text": "알기만",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "만",
+          "JX"
+        ]
+      ],
+      "value": "long"
+    }
+  ],
+  "structural": [
+    {
+      "id": "S01",
+      "text": "알기에는",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "에",
+          "JKB"
+        ],
+        [
+          "는",
+          "JX"
+        ]
+      ],
+      "value": "long"
+    },
+    {
+      "id": "S02",
+      "text": "알기조차",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "조차",
+          "JX"
+        ]
+      ],
+      "value": "long"
+    },
+    {
+      "id": "S03",
+      "text": "압니다만",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "ᆸ니다",
+          "EF"
+        ],
+        [
+          "만",
+          "JX"
+        ]
+      ],
+      "value": "long"
+    },
+    {
+      "id": "S04",
+      "text": "알만",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "만",
+          "JX"
+        ]
+      ],
+      "value": "unknown"
+    },
+    {
+      "id": "S05",
+      "text": "알기만다",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "만",
+          "JX"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "value": "unknown"
+    },
+    {
+      "id": "S06",
+      "text": "알기좋다",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "기",
+          "ETN"
+        ],
+        [
+          "좋",
+          "VA"
+        ],
+        [
+          "다",
+          "EF"
+        ]
+      ],
+      "value": "unknown"
+    },
+    {
+      "id": "S07",
+      "text": "압니나",
+      "parts": [
+        [
+          "알",
+          "VV"
+        ],
+        [
+          "ᆸ니다",
+          "EF"
+        ]
+      ],
+      "value": "unknown"
+    }
+  ]
+}

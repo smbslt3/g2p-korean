@@ -3,9 +3,11 @@
 from __future__ import annotations
 
 from threading import Lock
+from operator import index as integer_index
 
 from .errors import BackendUnavailableError
 from .model import AnalysisToken
+from .analysis_features import align_morphemes
 
 
 _runtime_kiwi: object | None = None
@@ -42,7 +44,12 @@ class KiwiAnalyzer:
 
     __slots__ = ()
 
-    def analyze(self, text: str) -> tuple[AnalysisToken, ...]:
+    def analyze_components(self, text: str) -> tuple[AnalysisToken, ...]:
+        """복합 용언과 사이시옷을 함께 분해해 한 번의 분석으로 경계를 제공한다."""
+
+        return self.analyze(text, split_complex=True, saisiot=True)
+
+    def analyze(self, text: str, *, split_complex: bool = False, saisiot: bool = False) -> tuple[AnalysisToken, ...]:
         tokenize = getattr(_get_kiwi(), "tokenize", None)
         if tokenize is None:
             raise BackendUnavailableError(
@@ -53,13 +60,24 @@ class KiwiAnalyzer:
         # 활용형을 분해한 형태소들은 원문 좌표가 서로 겹칠 수 있다. 겹치는
         # 구간의 태그를 합치고 표면형은 원문에서 복원해 비중첩 annotation을 만든다.
         결과: list[AnalysisToken] = []
+        원시_형태소: list[tuple[str | None, str, int, int]] = []
         대기_태그: dict[int, list[str]] = {}
-        for part in tokenize(text):
-            시작 = int(part.start)
-            길이 = int(part.len)
-            태그 = str(part.tag)
+        if saisiot:
+            parts = tokenize(text, split_complex=True, saisiot=True)
+        else:
+            parts = tokenize(text, split_complex=True) if split_complex else tokenize(text)
+        for part in parts:
+            # 문자열·실수·불리언을 좌표나 품사로 묵시 변환하면 잘못된 분석을 숨긴다.
+            if isinstance(part.start, bool) or isinstance(part.len, bool):
+                raise ValueError("Kiwi token offset에는 불리언을 사용할 수 없습니다.")
+            시작 = integer_index(part.start)
+            길이 = integer_index(part.len)
+            태그 = part.tag
+            if not isinstance(태그, str) or not 태그:
+                raise ValueError("Kiwi token tag는 비어 있지 않은 문자열이어야 합니다.")
             if 시작 < 0 or 시작 > len(text) or 길이 < 0:
                 raise ValueError("Kiwi token offset이 입력 범위를 벗어났습니다.")
+            원시_형태소.append((getattr(part, "form", None), 태그, 시작, 길이))
             if 길이 == 0:
                 if (
                     결과
@@ -95,7 +113,18 @@ class KiwiAnalyzer:
                 )
             else:
                 결과.append(AnalysisToken(text[시작:끝], 태그, 시작, 끝))
-        return tuple(결과)
+        # 표면형 병합 후에도 한 번 받은 분석의 기본형과 원래 품사를 보존한다.
+        형태소들 = align_morphemes(
+            원시_형태소, ((item.normalized_start, item.normalized_end) for item in 결과),
+        )
+        원시_범위들 = tuple(tuple((start, start + length)
+            for form, _, start, length in 원시_형태소
+            if form is not None and item.normalized_start <= start < item.normalized_end)
+            for item in 결과)
+        return tuple(
+            AnalysisToken(item.form, item.tag, item.normalized_start, item.normalized_end, 형태소, 원시범위)
+            for item, 형태소, 원시범위 in zip(결과, 형태소들, 원시_범위들)
+        )
 
     def saisiot_positions(self, text: str) -> tuple[int, ...]:
         """Kiwi가 분해한 사이시옷이 들어 있는 음절의 offset을 반환한다."""

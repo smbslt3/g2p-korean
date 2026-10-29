@@ -3,7 +3,7 @@
 import pytest
 
 from g2p_ko.korean.engine import pronounce
-from g2p_ko.korean.official import _안전_정확_열거_발음
+from tests._korean_examples import OFFICIAL_EXAMPLES as _안전_정확_열거_발음
 from g2p_ko.model import Boundary, Handler, OutputSegment, RewriteStage, SourceSpan
 from tests._internal_pipeline import convert_pipeline
 
@@ -57,16 +57,17 @@ def test_context_independent_rules_emit_pronunciation_and_trace(
     assert all(item.stage is RewriteStage.PHONOLOGY for item in result.rewrites)
 
 
-def test_product_official_inventory_excludes_only_ambiguous_headwords() -> None:
-    assert len(_안전_정확_열거_발음) == 113
-    assert {"물질", "문고리", "잠자리", "강가"}.isdisjoint(_안전_정확_열거_발음)
+def test_independent_official_fixture_excludes_ambiguous_headwords() -> None:
+    assert len(_안전_정확_열거_발음) == 114
+    assert {"물질", "잠자리", "강가"}.isdisjoint(_안전_정확_열거_발음)
+    assert _안전_정확_열거_발음["문고리"] == "문꼬리"
 
 
 @pytest.mark.parametrize(
     ("source", "expected"),
     tuple(_안전_정확_열거_발음.items()),
 )
-def test_safe_official_enumerations_apply_to_complete_eojeols(
+def test_general_rules_preserve_independent_official_examples(
     source: str,
     expected: str,
 ) -> None:
@@ -76,23 +77,31 @@ def test_safe_official_enumerations_apply_to_complete_eojeols(
     assert result.rewrites
 
 
-@pytest.mark.parametrize("source", ["물질", "문고리", "잠자리", "강가"])
-def test_ambiguous_dictionary_pronunciations_are_not_forced(source: str) -> None:
+@pytest.mark.parametrize(("source", "attested_readings"), [
+    ("물질", {"물질", "물찔"}),
+    ("잠자리", {"잠자리", "잠짜리"}),
+    ("강가", {"강가", "강까"}),
+])
+def test_bare_homographs_have_attested_readings_without_enumerated_override(
+    source: str, attested_readings: set[str],
+) -> None:
     result = pronounce((_segment(source, 0, len(source)),))
 
-    assert result.text == source
+    # 단독 표기에는 여러 표준 발음이 있으므로 원문 유지 자체를 정답으로 삼지 않는다.
+    # 이 검사는 뜻 선택의 정확도를 평가하지 않으며, 장음은 현재 출력에 표현하지 않는다.
+    assert result.text in attested_readings
     assert "ko.official.enumerated" not in [item.rule_id for item in result.rewrites]
 
 
 @pytest.mark.parametrize(
     ("source", "expected"),
     [
-        ("발전기", "발전기"),
-        ("경제발전", "경제발전"),
-        ("발전은", "발저는"),
+        ("발전기", "발쩐기"),
+        ("경제발전", "경제발쩐"),
+        ("발전은", "발쩌는"),
     ],
 )
-def test_official_enumerations_do_not_expand_to_longer_hangul_runs(
+def test_verified_lexemes_follow_confirmed_morpheme_boundaries(
     source: str,
     expected: str,
 ) -> None:
@@ -102,15 +111,14 @@ def test_official_enumerations_do_not_expand_to_longer_hangul_runs(
     assert "ko.official.enumerated" not in [item.rule_id for item in result.rewrites]
 
 
-def test_non_hangul_boundaries_allow_independent_official_matches() -> None:
+def test_non_hangul_boundaries_allow_independent_lexical_rules() -> None:
     source = "발전, 산새"
 
     result = pronounce((_segment(source, 0, len(source)),))
 
     assert result.text == "발쩐, 산쌔"
-    assert [
-        item.rule_id for item in result.rewrites if item.rule_id == "ko.official.enumerated"
-    ] == ["ko.official.enumerated", "ko.official.enumerated"]
+    assert {"ko.sino.tensing.26", "ko.lexical.tensing"} <= {item.rule_id for item in result.rewrites}
+    assert not any(item.rule_id == "ko.official.enumerated" for item in result.rewrites)
 
 
 def test_hard_boundary_blocks_an_official_match_across_segments() -> None:
@@ -132,14 +140,14 @@ def test_morpheme_boundary_allows_an_official_match_across_segments() -> None:
     result = pronounce((left, right))
 
     assert result.text == "발쩐"
-    assert "ko.official.enumerated" in [item.rule_id for item in result.rewrites]
+    assert "ko.sino.tensing.26" in [item.rule_id for item in result.rewrites]
 
 
 def test_official_rewrite_preserves_character_source_spans() -> None:
     source = "발전"
 
     result = pronounce((_segment(source, 0, len(source)),))
-    rewrite = next(item for item in result.rewrites if item.rule_id == "ko.official.enumerated")
+    rewrite = next(item for item in result.rewrites if item.rule_id == "ko.sino.tensing.26")
 
     assert rewrite.before == source
     assert rewrite.after == "발쩐"

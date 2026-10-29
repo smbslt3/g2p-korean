@@ -1,0 +1,1506 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-10-25T12:58:52.797495+00:00",
+  "scope_ko": "후보를 보기 전 고정한 부모 정상 분석 대조이며 대표 정확도 평가가 아니다.",
+  "source_ko": "부모 독립 작성",
+  "cases": [
+    {
+      "id": "S01",
+      "text": "마을에 남은 한옥인 고가를 보았다.",
+      "tokens": [
+        {
+          "form": "마을",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "에",
+          "tag": "JKB",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "남은",
+          "tag": "VV+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "남",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "보았",
+          "tag": "VV+EP",
+          "start": 15,
+          "end": 17,
+          "morphemes": [
+            [
+              "보",
+              "VV"
+            ],
+            [
+              "았",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 11,
+          "end": 13,
+          "sense_id": "goga.old_house"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "장소에 남아 있다는 지속 관계가 직접 한옥 분류를 지우지 않는다.",
+      "evaluation_kind": "unique_sense"
+    },
+    {
+      "id": "S02",
+      "text": "마을에 남은 고가를 보았다.",
+      "tokens": [
+        {
+          "form": "마을",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "에",
+          "tag": "JKB",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "남은",
+          "tag": "VV+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "남",
+              "VV"
+            ],
+            [
+              "은",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "보았",
+          "tag": "VV+EP",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "보",
+              "VV"
+            ],
+            [
+              "았",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 7,
+          "end": 9,
+          "sense_id": null
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "지속·장소 관계만으로 주택 또는 가격 유형을 만들지 않는다.",
+      "evaluation_kind": "abstention_control"
+    },
+    {
+      "id": "S03",
+      "text": "작가가 남긴 고가를 보았다.",
+      "tokens": [
+        {
+          "form": "작가",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "가",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "남긴",
+          "tag": "VV+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "남기",
+              "VV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "보았",
+          "tag": "VV+EP",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "보",
+              "VV"
+            ],
+            [
+              "았",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 7,
+          "end": 9,
+          "sense_id": null
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "다른 논항 구조의 활동을 지속 관계로 취급하지 않는다.",
+      "evaluation_kind": "abstention_control"
+    },
+    {
+      "id": "S04",
+      "text": "비싼 한옥인 고가를 보았다.",
+      "tokens": [
+        {
+          "form": "비싼",
+          "tag": "VA+ETM",
+          "start": 0,
+          "end": 2,
+          "morphemes": [
+            [
+              "비싸",
+              "VA"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "한옥",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 5,
+          "end": 6,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "보았",
+          "tag": "VV+EP",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "보",
+              "VV"
+            ],
+            [
+              "았",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 7,
+          "end": 9,
+          "sense_id": "goga.old_house"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "비싼 속성과 주택 유형을 함께 보존한다.",
+      "evaluation_kind": "unique_sense"
+    },
+    {
+      "id": "S05",
+      "text": "가격이 비싼 고가를 보았다.",
+      "tokens": [
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "JKS",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "비싼",
+          "tag": "VA+ETM",
+          "start": 4,
+          "end": 6,
+          "morphemes": [
+            [
+              "비싸",
+              "VA"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "보았",
+          "tag": "VV+EP",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "보",
+              "VV"
+            ],
+            [
+              "았",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 7,
+          "end": 9,
+          "sense_id": null
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "다른 명사 주어의 가격 속성만으로 표적의 유형은 알 수 없다. 복수 해석이 가능한 속성 문맥에서 보수적 유보를 요구하는 정책 대조이며 유일 언어 정답으로 집계하지 않는다.",
+      "evaluation_kind": "conservative_property_abstention_policy"
+    },
+    {
+      "id": "S06",
+      "text": "가격 구간의 명칭인 고가다.",
+      "tokens": [
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "구간",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "명칭",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "VCP+EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 11,
+          "end": 13,
+          "sense_id": "goga.expensive_price"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "가격 범주를 가리키는 명칭이라는 명시적 정의다.",
+      "evaluation_kind": "unique_sense"
+    },
+    {
+      "id": "S07",
+      "text": "가격 구간을 설명한 책인 고가다.",
+      "tokens": [
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "구간",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "설명",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "한",
+          "tag": "XSV+ETM",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "책",
+          "tag": "NNG",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 12,
+          "end": 13,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "VCP+EF",
+          "start": 16,
+          "end": 17,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 14,
+          "end": 16,
+          "sense_id": null
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "가격 설명을 담는 책을 가격 범주로 분류하지 않는다.",
+      "evaluation_kind": "abstention_control"
+    },
+    {
+      "id": "S08",
+      "text": "가격 구간의 제목을 읽고 고가를 보았다.",
+      "tokens": [
+        {
+          "form": "가격",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "구간",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "제목",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "읽",
+          "tag": "VV",
+          "start": 11,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "고",
+          "tag": "EC",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "고가",
+          "tag": "NNG",
+          "start": 14,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 16,
+          "end": 17,
+          "morphemes": []
+        },
+        {
+          "form": "보았",
+          "tag": "VV+EP",
+          "start": 18,
+          "end": 20,
+          "morphemes": [
+            [
+              "보",
+              "VV"
+            ],
+            [
+              "았",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 20,
+          "end": 21,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "고가",
+          "start": 14,
+          "end": 16,
+          "sense_id": null
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "다른 절에서 읽은 제목과 뒤의 표적 사이에는 정의 관계가 없다.",
+      "evaluation_kind": "abstention_control"
+    },
+    {
+      "id": "S09",
+      "text": "교사는 민법을 사법의 분야로 분류했다.",
+      "tokens": [
+        {
+          "form": "교사",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "분류",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 8,
+          "end": 10,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "분류의 실제 목적어와 범주 핵어를 확인하며 행위자·이질 분류·제목을 구분한다.",
+      "evaluation_kind": "unique_sense"
+    },
+    {
+      "id": "S10",
+      "text": "교사는 형법을 사법의 분야로 분류했다.",
+      "tokens": [
+        {
+          "form": "교사",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "형법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "분류",
+          "tag": "NNG",
+          "start": 16,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 18,
+          "end": 19,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 19,
+          "end": 20,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 8,
+          "end": 10,
+          "sense_id": null
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "분류의 실제 목적어와 범주 핵어를 확인하며 행위자·이질 분류·제목을 구분한다.",
+      "evaluation_kind": "abstention_control"
+    },
+    {
+      "id": "S11",
+      "text": "교사는 민법을 사법의 제목으로 분류했다.",
+      "tokens": [
+        {
+          "form": "교사",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "제목",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "으로",
+          "tag": "JKB",
+          "start": 14,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "분류",
+          "tag": "NNG",
+          "start": 17,
+          "end": 19,
+          "morphemes": []
+        },
+        {
+          "form": "했",
+          "tag": "XSV+EP",
+          "start": 19,
+          "end": 20,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "었",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 20,
+          "end": 21,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 8,
+          "end": 10,
+          "sense_id": null
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "분류의 실제 목적어와 범주 핵어를 확인하며 행위자·이질 분류·제목을 구분한다.",
+      "evaluation_kind": "abstention_control"
+    },
+    {
+      "id": "S12",
+      "text": "민법은 사법의 분야로 분류된다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "분류",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "된다",
+          "tag": "XSV+EF",
+          "start": 14,
+          "end": 16,
+          "morphemes": [
+            [
+              "되",
+              "XSV"
+            ],
+            [
+              "ᆫ다",
+              "EF"
+            ]
+          ]
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 4,
+          "end": 6,
+          "sense_id": "sabeop.private_law"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "피동 분류에서는 주어가 구성원이며 로 논항이 분류다.",
+      "evaluation_kind": "unique_sense"
+    },
+    {
+      "id": "S13",
+      "text": "민법은 사법의 분야로 분류되지 않는다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "은",
+          "tag": "JX",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "의",
+          "tag": "JKG",
+          "start": 6,
+          "end": 7,
+          "morphemes": []
+        },
+        {
+          "form": "분야",
+          "tag": "NNG",
+          "start": 8,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "로",
+          "tag": "JKB",
+          "start": 10,
+          "end": 11,
+          "morphemes": []
+        },
+        {
+          "form": "분류",
+          "tag": "NNG",
+          "start": 12,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "되",
+          "tag": "XSV",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        },
+        {
+          "form": "지",
+          "tag": "EC",
+          "start": 15,
+          "end": 16,
+          "morphemes": []
+        },
+        {
+          "form": "않",
+          "tag": "VX",
+          "start": 17,
+          "end": 18,
+          "morphemes": []
+        },
+        {
+          "form": "는다",
+          "tag": "EF",
+          "start": 18,
+          "end": 20,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 4,
+          "end": 6,
+          "sense_id": null,
+          "allowed_sense_ids": [
+            null,
+            "sabeop.private_law"
+          ],
+          "forbidden_evidence_anchor_spans": [
+            [
+              12,
+              15
+            ]
+          ],
+          "forbidden_evidence_semantic_classes": [
+            "private_law",
+            "judicial_function"
+          ]
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "부정 분류 술어를 긍정 유형 근거로 기록하지 않는다. 유보 또는 별도 근거의 private_law 선택을 허용하며 유일 의미 정확도로 집계하지 않는다.",
+      "evaluation_kind": "negated_classification_relation_control"
+    },
+    {
+      "id": "S14",
+      "text": "민법을 분류한 책인 사법이다.",
+      "tokens": [
+        {
+          "form": "민법",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "을",
+          "tag": "JKO",
+          "start": 2,
+          "end": 3,
+          "morphemes": []
+        },
+        {
+          "form": "분류",
+          "tag": "NNG",
+          "start": 4,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "한",
+          "tag": "XSV+ETM",
+          "start": 6,
+          "end": 7,
+          "morphemes": [
+            [
+              "하",
+              "XSV"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "책",
+          "tag": "NNG",
+          "start": 8,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 9,
+          "end": 10,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "사법",
+          "tag": "NNG",
+          "start": 11,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 14,
+          "end": 15,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "사법",
+          "start": 11,
+          "end": 13,
+          "sense_id": null
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "분류 내용이 책의 유형으로 전파되지 않는다.",
+      "evaluation_kind": "abstention_control"
+    },
+    {
+      "id": "S15",
+      "text": "고전 시가는 문학 작품이다.",
+      "tokens": [
+        {
+          "form": "고전",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "는",
+          "tag": "JX",
+          "start": 5,
+          "end": 6,
+          "morphemes": []
+        },
+        {
+          "form": "문학",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "작품",
+          "tag": "NNG",
+          "start": 10,
+          "end": 12,
+          "morphemes": []
+        },
+        {
+          "form": "이",
+          "tag": "VCP",
+          "start": 12,
+          "end": 13,
+          "morphemes": []
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 3,
+          "end": 5,
+          "sense_id": "siga.literary_poetry"
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "문학 작품의 명시적 분류와 고전 수식이 가격과 구별된다.",
+      "evaluation_kind": "unique_sense"
+    },
+    {
+      "id": "S16",
+      "text": "회화 작품인 시가를 보았다.",
+      "tokens": [
+        {
+          "form": "회화",
+          "tag": "NNG",
+          "start": 0,
+          "end": 2,
+          "morphemes": []
+        },
+        {
+          "form": "작품",
+          "tag": "NNG",
+          "start": 3,
+          "end": 5,
+          "morphemes": []
+        },
+        {
+          "form": "인",
+          "tag": "VCP+ETM",
+          "start": 5,
+          "end": 6,
+          "morphemes": [
+            [
+              "이",
+              "VCP"
+            ],
+            [
+              "ᆫ",
+              "ETM"
+            ]
+          ]
+        },
+        {
+          "form": "시가",
+          "tag": "NNG",
+          "start": 7,
+          "end": 9,
+          "morphemes": []
+        },
+        {
+          "form": "를",
+          "tag": "JKO",
+          "start": 9,
+          "end": 10,
+          "morphemes": []
+        },
+        {
+          "form": "보았",
+          "tag": "VV+EP",
+          "start": 11,
+          "end": 13,
+          "morphemes": [
+            [
+              "보",
+              "VV"
+            ],
+            [
+              "았",
+              "EP"
+            ]
+          ]
+        },
+        {
+          "form": "다",
+          "tag": "EF",
+          "start": 13,
+          "end": 14,
+          "morphemes": []
+        }
+      ],
+      "targets": [
+        {
+          "spelling": "시가",
+          "start": 7,
+          "end": 9,
+          "sense_id": null
+        }
+      ],
+      "hard_boundaries": [],
+      "note_ko": "작품이라는 일반 명사만으로 문학 시가를 고르지 않는다.",
+      "evaluation_kind": "abstention_control"
+    }
+  ],
+  "relative_hard_cut_case_ids": [
+    "S01",
+    "S04",
+    "S06"
+  ]
+}

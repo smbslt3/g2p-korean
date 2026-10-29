@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from g2p_ko import Handler, RewriteStage, SourceSpan
+from g2p_ko import G2P, Handler, RewriteStage, SourceSpan
 from g2p_ko.normalizer import KoreanTTSNormalizer
 from g2p_ko.unicode import normalize_nfc, normalize_nfc_text
 
@@ -57,3 +57,23 @@ def test_tts_normalizer_uses_the_same_hangul_nfc_in_fast_and_trace_paths() -> No
         SourceSpan(3, 5, "3개", len(source)),
     )
     assert normalizer.normalize(normalized_text) == normalized_text
+
+
+def test_class_zero_canonical_composition_agrees_across_public_apis() -> None:
+    source = "\u09c7\u09be"
+    expected = "\u09cb"
+    normalized = normalize_nfc(source)
+    span = SourceSpan(0, len(source), source, len(source))
+
+    assert normalized.text == expected == normalize_nfc_text(source)
+    assert normalized.character_spans == (span,)
+    assert normalized.rewrites[0].source_spans == (span,)
+    assert normalized.rewrites[0].after == expected
+
+    normalizer = KoreanTTSNormalizer()
+    assert normalizer(source) == expected
+    assert normalizer.convert(source).normalized_text == expected
+
+    g2p = G2P()
+    assert g2p(source) == expected
+    assert g2p.convert(source).normalized_text == expected

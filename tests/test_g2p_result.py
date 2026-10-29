@@ -8,10 +8,10 @@ from g2p_ko import G2P, G2PResult, InputValidationError
 
 
 def test_convert_exposes_intermediate_pronunciation_and_completion() -> None:
-    result = G2P().convert("사과 3개와 국물")
+    result = G2P().convert("사과 세 개와 국물")
 
     assert isinstance(result, G2PResult)
-    assert result.source == "사과 3개와 국물"
+    assert result.source == "사과 세 개와 국물"
     assert result.normalized_text == "사과 세 개와 국물"
     assert result.surface_pronunciation == "사과 세 개와 궁물"
     assert result.complete
@@ -32,22 +32,23 @@ def test_string_and_detailed_paths_return_the_same_pronunciation(normalize: bool
     ).surface_pronunciation
 
 
-def test_normalization_failure_is_not_lost_when_pronunciation_stage_completes() -> None:
+def test_unconverted_number_is_reported_in_pronunciation_input_coordinates() -> None:
     result = G2P().convert("A-1")
 
     assert not result.complete
-    assert result.diagnostics.normalization.diagnostics
+    assert result.diagnostics.normalization.diagnostics == ()
+    assert [item.code for item in result.diagnostics.pronunciation.diagnostics] == ["unconverted_numeric"]
     assert result.diagnostics.normalization.source == "A-1"
     assert result.diagnostics.pronunciation.source == "A-1"
 
 
-def test_undecidable_balb_exception_remains_incomplete() -> None:
+def test_known_balb_exception_is_complete() -> None:
     result = G2P().convert("밟")
 
-    assert not result.complete
-    assert result.surface_pronunciation == "밟"
+    assert result.complete
+    assert result.surface_pronunciation == "밥"
     assert result.diagnostics.normalization.diagnostics == ()
-    assert result.diagnostics.pronunciation.diagnostics
+    assert result.diagnostics.pronunciation.diagnostics == ()
     assert result.diagnostics.pronunciation.source == "밟"
 
 
@@ -104,8 +105,8 @@ def test_normalized_text_and_pronunciation_keep_code_point_alignment(source: str
             assert pronounced == normalized
 
 
-def test_user_lexicon_participates_in_detailed_conversion() -> None:
-    result = G2P(lexicon={"NAVER": "네이버"}).convert("NAVER 뉴스")
+def test_brand_spelling_participates_in_detailed_conversion() -> None:
+    result = G2P().convert("NAVER 뉴스")
 
     assert result.normalized_text == "네이버 뉴스"
     assert result.surface_pronunciation == "네이버 뉴스"

@@ -1,0 +1,40 @@
+{
+  "문서": "독립 참조 작성에 직접 확인한 일차 자료",
+  "자료": [
+    {
+      "id": "S1",
+      "title": "국가법령정보센터, 한글 맞춤법",
+      "url": "https://www.law.go.kr/LSW/admRulLinkProc.do?admRulNm=%ED%95%9C%EA%B8%80%EB%A7%9E%EC%B6%A4%EB%B2%95&mode=20",
+      "consulted": "2026-10-28",
+      "scope": "고시 표제·시행 정보 확인. 동적 본문 추출에 한계가 있어 구체 조항 내용은 S2에서 확인함."
+    },
+    {
+      "id": "S2",
+      "title": "국립국어원 2018년 한글 맞춤법·표준어 규정 해설",
+      "url": "https://www.korean.go.kr/common/download.do?c_file_name=0528a905-2eb3-4c5a-978c-f424dd6a6c47_0.pdf&file_path=reportData&o_file_name=%ED%95%9C%EA%B8%80%EB%A7%9E%EC%B6%A4%EB%B2%95+%ED%91%9C%EC%A4%80%EC%96%B4%EA%B7%9C%EC%A0%95+%ED%95%B4%EC%84%A4.pdf",
+      "consulted": "2026-10-28",
+      "scope": "인쇄 94~98쪽의 제39·40항 및 해설. 단순 받침 진단의 교차 확인에는 인쇄 230~231쪽 제8·9항만 사용함."
+    },
+    {
+      "id": "S3",
+      "title": "온라인가나다 313881, 2025-04-28 답변",
+      "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=313881",
+      "consulted": "2026-10-28",
+      "scope": "하 앞 받침의 소리를 기준으로 한 두 분기와 예시."
+    },
+    {
+      "id": "S4",
+      "title": "온라인가나다 327793, 2026-03-03 답변",
+      "url": "https://korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=98&pageIndex=1&qna_seq=327793",
+      "consulted": "2026-10-28",
+      "scope": "지 않 축약과 뒤 어미의 신원을 구별함."
+    },
+    {
+      "id": "S5",
+      "title": "온라인가나다 324341, 2025-12-01 답변",
+      "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=73&pageIndex=1&qna_seq=324341",
+      "consulted": "2026-10-28",
+      "scope": "표준 발음법 제9항의 단순 받침 대표음 진단. 사례 전체의 발음 정답으로 사용하지 않음."
+    }
+  ]
+}

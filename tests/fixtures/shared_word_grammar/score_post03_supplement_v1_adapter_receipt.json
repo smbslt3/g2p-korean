@@ -1,0 +1,30 @@
+{
+  "schema": "r41_post03_score_adapter_receipt.v1",
+  "frozen_at_utc": "2026-10-27T17:50:23.611240+00:00",
+  "development_stage": "post03_policy_refinement_before_candidate04",
+  "untouched_holdout": false,
+  "original_gold_manifest_runners_and_result_files_mutated": false,
+  "actual_candidate_results_or_source_read": false,
+  "project_runtime_or_g2p_kiwi_executed": false,
+  "synthetic_preflight_checks": 23,
+  "sha256": {
+    "post03_lexical_class_adjudication_v1.json": "d9a190f979295b1047066d348ddf0480f91a9a581b63393c165254dcff68fe06",
+    "Post03_Lexical_Class_Adjudication_V1_KO.md": "8f9a9490eb1877f968ee9d2bf1fa0ad1725aa879d081350e4032465409ca2117",
+    "post03_lexical_class_adjudication_v1_receipt.json": "d83845eaf54bc0670114b04f3782bab1d45e2c152e43c2869beb38f9c2124204",
+    "score_post03_supplement_v1.py": "9376a1dad8dc36d4918fc880b25503daf158189172915394b3d4510f308f13a5",
+    "score_post03_supplement_v1_preflight.py": "c48ddf9b9b6546fb5ce4ac9ab225ed12a63d0731c6e0868c7cf15c5982a9b900",
+    "score_post03_supplement_v1_preflight.json": "f41e5484811565671545c07b0a4e83a184c6d59fc3d2088c6659fbbc5f8eb5d2",
+    "Post03_Scoring_Adapter_V1_KO.md": "d2f4e560b2877996430eb9a7fad0ba28174046d0bd3b1ebdb506b3e6a86f3a5a"
+  },
+  "original_fixture_sha256_unchanged": {
+    "freeze_manifest.json": "395a7b88b5f3e033edf631d881aeae7879686c491b0e8d2770329d85f7ee5668",
+    "frozen_cases.json": "9b7accff964c1918ec099eaf2036b68cd2b575ef266ff178f307b70b95d751f6",
+    "run_frozen.py": "5cce5d215081152c2002d2d93d6dcd08d3c9bd99de38eda5ee6a5d7cd53f6fce",
+    "run_frozen_v2.py": "bc7ed89154f07d7418475f06954a0b769715bfa3e69896ed36d41a13dc81231f"
+  },
+  "integration_test": "tests/test_shared_word_grammar.py",
+  "integration_test_sha256": "ff60f0de949dbeb617b25cc2491fdee5410eeda92fd66a11734eabfe03508a6f",
+  "other_tests_modified": false,
+  "fixture_copy_output_guard_preserved": true,
+  "copied_to": "tests/fixtures/shared_word_grammar"
+}

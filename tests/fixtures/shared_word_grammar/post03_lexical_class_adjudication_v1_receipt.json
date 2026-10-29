@@ -1,0 +1,20 @@
+{
+  "schema": "r41_post03_policy_adjudication_receipt.v1",
+  "recorded_at_utc": "2026-10-27T17:44:30.350086+00:00",
+  "development_stage": "post03_policy_refinement_before_candidate04",
+  "untouched_holdout": false,
+  "original_manifest_sha256": "395a7b88b5f3e033edf631d881aeae7879686c491b0e8d2770329d85f7ee5668",
+  "original_gold_sha256": "9b7accff964c1918ec099eaf2036b68cd2b575ef266ff178f307b70b95d751f6",
+  "original_frozen_files_unchanged": true,
+  "sha256": {
+    "Post03_Lexical_Class_Adjudication_V1_KO.md": "8f9a9490eb1877f968ee9d2bf1fa0ad1725aa879d081350e4032465409ca2117",
+    "post03_lexical_class_adjudication_v1.json": "d9a190f979295b1047066d348ddf0480f91a9a581b63393c165254dcff68fe06"
+  },
+  "reviewed_clean_source_sha256": {
+    "output/g2p_progressive_round40_20261028/cleanroom/surface_proofs/candidate03/src/g2p_ko/analyzer.py": "a5899119569bad9cfcfff36d3e7e4037500b27274a28e3a90929dc2755c02f22",
+    "output/g2p_progressive_round41_20261028/contract/Shared_Grammatical_Word_Certificate_KO.md": "2873b90c583e06a852b75ec51cc8afa946188d502720ad603de3a9a1fa02f116",
+    "output/g2p_progressive_round41_20261028/contract/Prefix_Outer_Tail_Witness_V2_KO.md": "498dfab6dc226dd37700507925fa4a8968cb0ea27b67842805f749c2e4d205d4"
+  },
+  "project_runtime_g2p_kiwi_executed": false,
+  "candidate_bodies_case_results_or_old_tests_viewed": false
+}
