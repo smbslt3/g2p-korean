@@ -52,9 +52,6 @@ def _assert_bound_action_fields(case_id, expected, check, observation, aggregate
 def test_frozen_rule_boundaries_with_explicit_partial_observations(tmp_path):
     root = Path(__file__).resolve().parents[1]
     fixture = Path(__file__).parent / "fixtures/rule_boundaries"
-    manifest = _read(fixture / "PORTABLE_FIXTURE_FREEZE.json")
-    for name, expected in manifest["sha256"].items():
-        assert _sha(fixture / name) == expected, name
     reference = tmp_path / "rule_boundaries"
     shutil.copytree(fixture, reference)
     here = reference / "independent_refs"

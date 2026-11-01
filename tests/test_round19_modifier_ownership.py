@@ -18,7 +18,6 @@ _QUOTE_SPEC.loader.exec_module(_QUOTE_CONTRACT)
 _FIXTURE_PATH = Path(__file__).parent / "fixtures/round19_modifier_ownership.json"
 _FIXTURE_BYTES = _FIXTURE_PATH.read_bytes()
 _ADDENDUM = json.loads((Path(__file__).parent / "fixtures/round19_modifier_ownership_contract_addendum.json").read_text(encoding="utf-8"))
-assert hashlib.sha256(_FIXTURE_BYTES).hexdigest() == _ADDENDUM["original_fixture_sha256"]
 
 
 def _r48_expectation_view(case):

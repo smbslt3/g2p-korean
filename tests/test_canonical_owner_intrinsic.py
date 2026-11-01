@@ -13,7 +13,7 @@ def test_canonical_owner_intrinsic_and_provenance(tmp_path):
     support = root / "tests" / "fixtures" / "canonical_owner_intrinsic"
     completed = subprocess.run(
         [
-            sys.executable, "-I", str(support / "run_independent_refs.py"),
+            sys.executable, "-I", "-X", "utf8", str(support / "run_independent_refs.py"),
             "--src", str(source), "--out", str(tmp_path / "execution"),
         ],
         capture_output=True, text=True, encoding="utf-8", timeout=180,

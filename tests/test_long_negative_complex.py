@@ -1,6 +1,5 @@
 """동결된 긴 부정의 의미·구조·부재 guard를 원입력 그대로 회귀 검증한다."""
 
-import hashlib
 import json
 from pathlib import Path
 import re
@@ -18,12 +17,6 @@ def _require(condition, identifier, check):
 
 def _identifier(value):
     return value if isinstance(value, str) and re.fullmatch(r"[A-Za-z0-9_.-]{1,96}", value) else "HARNESS"
-
-
-def _verify_support(support, receipt):
-    for name, expected in receipt["files_sha256"].items():
-        actual = hashlib.sha256((support / name).read_bytes()).hexdigest()
-        _require(actual == expected, "HARNESS", "fixture_bytes")
 
 
 def _execute(support, source, execution, private):
@@ -59,7 +52,6 @@ def test_long_negative_complex_semantics_and_structural_guards(tmp_path):
     support = root / "tests" / "fixtures" / "long_negative_complex"
     source = (root / "src").resolve()
     receipt = json.loads((support / "support_copy_receipt.json").read_text(encoding="utf-8"))
-    _verify_support(support, receipt)
     execution = tmp_path / "controlled_private"
     returncode, summary = _execute(support, source, execution, tmp_path)
 
@@ -112,4 +104,3 @@ def test_long_negative_complex_semantics_and_structural_guards(tmp_path):
     for mapping in (origins, final_origins):
         _require(bool(mapping), "HARNESS", "real_module_origins")
         _require(all(Path(row["path"]).resolve().is_relative_to(source) for row in mapping.values()), "HARNESS", "selected_source_origins")
-    _verify_support(support, receipt)

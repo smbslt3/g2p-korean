@@ -13,7 +13,7 @@ def test_stem_ending_consumers_and_packaging(tmp_path):
     support = root / "tests" / "fixtures" / "stem_ending_consumers"
     completed = subprocess.run(
         [
-            sys.executable, "-I", str(support / "run_references.py"),
+            sys.executable, "-I", "-X", "utf8", str(support / "run_references.py"),
             "--src", str(source), "--out", str(tmp_path / "execution"),
         ],
         capture_output=True, text=True, encoding="utf-8", timeout=180,

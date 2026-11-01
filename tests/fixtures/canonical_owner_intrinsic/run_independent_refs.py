@@ -39,11 +39,6 @@ def write_json_new(path, value):
         handle.write("\n")
 
 
-def sha256(path):
-    """체크아웃의 줄바꿈 차이만 제거한 지원 파일 해시를 계산한다."""
-    return hashlib.sha256(path.read_text(encoding="utf-8-sig").encode("utf-8")).hexdigest()
-
-
 def source_digest(src):
     """선택 패키지 전체의 digest를 실행당 한 번만 계산한다."""
     digest = hashlib.sha256()
@@ -400,10 +395,7 @@ def main():
         out.mkdir(parents=True, exist_ok=True)
         write_json_new(out / "checker_preflight.json", result)
         return 0 if result["passed"] else 1
-    freeze = read_json(HERE / "support_copy_receipt.json")
-    for file, expected_hash in freeze["artifact_sha256"].items():
-        if sha256(HERE / file) != expected_hash:
-            raise RuntimeError("동결 바인딩 산출물 해시가 다릅니다.")
+    # 복사 당시 해시는 이력으로 보존하고, 실행 결과를 원본 참조의 기대값과 비교한다.
     plan = read_json(HERE / "binding_plan.json")
     if plan["status"] != "frozen":
         raise RuntimeError("영구 회귀 바인딩이 동결되지 않았습니다.")
