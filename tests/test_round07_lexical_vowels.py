@@ -62,8 +62,7 @@ class LexicalVowelGateTests(unittest.TestCase):
         self.pipeline = Pipeline(max_length=1000)
         self.analyzer = KiwiAnalyzer()
 
-    def test_exact_runtime_and_inventory_partition(self) -> None:
-        self.assertEqual(Path(sys.executable).resolve(), Path(r"D:\Projects\g2p_korean\.venv\Scripts\python.exe"))
+    def test_pinned_kiwi_and_inventory_partition(self) -> None:
         self.assertEqual(importlib.metadata.version("kiwipiepy"), "0.24.1")
         self.assertEqual(importlib.metadata.version("kiwipiepy_model"), "0.24.0")
         self.assertEqual(_LEXICAL_LIAISON_VOWELS | _N_INSERTION_VOWELS, frozenset(JUNGSEONG))
