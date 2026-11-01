@@ -20,10 +20,10 @@ from ._shared import (
     _trace_before,
 )
 from .rules import CODA_TRANSITIONS, RULES, TENSE_ONSET
-from .hangul import JUNGSEONG
+from .hangul import JUNGSEONG, is_modern_syllable
 from .ending_ownership import ending_coda_owner, source_owner
 from .owned_sino import owned_sino_spans
-from .owned_lexical import registered_owned_roots, owned_root_matches
+from .owned_lexical import registered_owned_roots, owned_root_matches, _truthful
 from .word_roles import (derived_word_role, lexical_liaison_target, certify_word,
                          word_n_insertion_projection, lexical_component_liaison_target,
                          adnominal_core_evidence, contextual_zero_copula)
@@ -32,7 +32,7 @@ from .boundary_consumers import certify_rule_boundaries, apply_rule_boundaries
 from .official import LEXICAL_PRONUNCIATIONS, NOUN_ONLY_PRONUNCIATIONS
 from .boundary_policy import licenses_n_insertion, needs_suffix_liquid_analysis
 from .attachment_policy import licenses_nominal_attachment
-from .word_grammar import ENDINGS as _SHARED_ENDINGS, base_tag as _base_tag, parse_parts
+from .word_grammar import ENDINGS as _SHARED_ENDINGS, NOUNS as _SHARED_NOUNS, base_tag as _base_tag, parse_parts
 from .nominal_surface import (licensed_positive_copula_tail as _matches_positive_copula_tail,
                               is_vowel_final_nominal_source as _is_vowel_final_nominal_source)
 from .semantic_policy import SemanticToken, SENSE_FEATURES, TARGET_SPELLINGS, select_senses
@@ -218,7 +218,10 @@ def _apply_morphology_rules(
         if ((candidate.left, candidate.right) in handled_pairs and candidate.rule_ids in {
                 ("ko.palatalization",), ("ko.n_insertion.compound",),
                 ("ko.n_insertion.word",), ("ko.liaison.lexical",)}):
-            continue
+            if not _can_reconsider_licensed_palatalization_boundary(
+                candidate, boundaries, units, segments, annotation, pause_boundaries,
+            ):
+                continue
         if _has_phonological_barrier(
             units, candidate.left, candidate.right, segments, pause_boundaries,
         ):
@@ -248,6 +251,13 @@ def _apply_morphology_rules(
                 _apply_word_n_insertion(units, candidate, annotation, segments, rewrites, pause_boundaries)
         elif candidate.rule_ids == ("ko.n_insertion.compound",):
             _apply_compound_n_insertion(units, candidate, annotation, segments, rewrites)
+        elif candidate.rule_ids == (RULES["ko.derivational.seong_tensing"].id,):
+            # 이 후보는 구간 분석만 요청한다. 발음 변경은 검증된 annotation과
+            # 어휘 발음 보완이 끝난 뒤 한 번 적용한다.
+            pass
+        elif candidate.rule_ids == (RULES["ko.derivational.kwon_tensing"].id,):
+            # 접미사 분석을 요청하고 발음 변경은 상위 소유 검증 뒤 적용한다.
+            pass
     _apply_lexical_boundary_tensing(units, structures, rewrites, segments, pause_boundaries, owned_onsets)
     _apply_sino_tensing(units, segments, annotation, rewrites, contextual_sino, pause_boundaries)
     _apply_suffix_liquid_nasalization(units, segments, annotation, rewrites, pause_boundaries)
@@ -295,6 +305,14 @@ def _collect_morphology_candidates(
             right, crossed_space = neighbor
             next_token = units[right].syllable
             assert next_token is not None
+            if not crossed_space and next_token.text == "권":
+                candidates.append(_MorphologyCandidate(
+                    (RULES["ko.derivational.kwon_tensing"].id,), index, right, False,
+                ))
+            if not crossed_space and next_token.text == "성":
+                candidates.append(_MorphologyCandidate(
+                    (RULES["ko.derivational.seong_tensing"].id,), index, right, False,
+                ))
             if needs_suffix_liquid_analysis(
                 left_coda=token.coda, right_onset=next_token.onset,
                 has_two_syllable_base_candidate=_is_adjacent_korean_syllable_before(units, segments, index),
@@ -639,6 +657,14 @@ def _contextual_lexical_properties(text, units, segments, annotation):
         ):
             continue
         root = match.root
+        if match.internal_onset_only:
+            if all(unit.handler is Handler.KOREAN and unit.syllable is not None
+                   for unit in units[match.owner_start:match.owner_end]):
+                for constraint in root.internal_onsets:
+                    if 0 < constraint.offset < len(root.spelling):
+                        owned_onsets.append((match.start + constraint.offset,
+                                             constraint.source_onset, constraint.required_onset))
+            continue
         if root.tense_boundaries and all(
             units[match.start + offset].syllable is not None
             and units[match.start + offset].syllable.onset == onset
@@ -943,7 +969,7 @@ def _apply_sino_tensing(
         start = annotation.text.find(stem)
         while start >= 0:
             end = start + len(stem)
-            if (
+            fully_nominal = (
                 annotation.starting_at(start) is not None
                 and annotation.ending_at(end) is not None
                 and not _has_hard_boundary(units[start].segment_index, units[end - 1].segment_index, segments)
@@ -951,8 +977,36 @@ def _apply_sino_tensing(
                     (token := annotation.covering(offset)) is not None and _tag_has_prefix(token.tag, "N")
                     for offset in range(start, end)
                 )
-            ):
+            )
+            if fully_nominal:
                 spans.add((start, end))
+            else:
+                origin = SINO_ORIGINS.get(stem)
+                host = annotation.ending_at(end - 1) if end > start else None
+                suffix = annotation.starting_at(end - 1) if end > start else None
+                if (
+                    stem.endswith("성")
+                    and origin is not None
+                    and "NNG" in origin.pos
+                    and any(hanja.endswith("性") for hanja in origin.hanja_variants)
+                    and host is not None
+                    and host.normalized_start == start
+                    and host.normalized_end == end - 1
+                    and host.tag == "NNG"
+                    and host.form == stem[:-1]
+                    and annotation.text[host.normalized_start:host.normalized_end] == host.form
+                    and suffix is not None
+                    and suffix.normalized_start == end - 1
+                    and suffix.form == "성"
+                    and suffix.tag == "XSN"
+                    and suffix.normalized_end == end
+                    and annotation.text[start:end] == stem
+                    and not _has_hard_boundary(
+                        units[start].segment_index, units[end - 1].segment_index, segments,
+                    )
+                ):
+                    # 사전에서 확인한 한자어 性은 XSN으로 분해되어도 제26항 근거를 유지한다.
+                    spans.add((start, end))
             start = annotation.text.find(stem, start + 1)
     for start, end in sorted(spans):
         for right in range(start + 1, end):
@@ -970,6 +1024,99 @@ def _apply_sino_tensing(
             before = _trace_before(rewrites, units, right - 1, right)
             units[right].syllable = right_token.changed(onset=TENSE_ONSET[right_token.onset])
             _record(rewrites, units, right - 1, right, before, "ko.sino.tensing.26")
+
+
+def _apply_derived_seong_tensing(
+    units: list[_Unit], segments: tuple[_Segment, ...], annotation: _Annotation,
+    rewrites: list[Rewrite] | None, pause_boundaries: tuple[int, ...] = (),
+) -> None:
+    """확인된 명사 또는 XR 어근+성/XSN의 ㅅ만 경음화한다."""
+
+    text = annotation.text
+    for suffix in annotation._tokens_starting_at.values():
+        right = suffix.normalized_start
+        if (
+            suffix.form != "성"
+            or suffix.tag != "XSN"
+            or suffix.normalized_end != right + 1
+            or right <= 0
+            or right + 1 > len(text)
+            or text[right:right + 1] != "성"
+        ):
+            continue
+
+        host = annotation.ending_at(right)
+        if (
+            host is None
+            or host.normalized_end != right
+        ):
+            continue
+        host_tag = _base_tag(host.tag)
+        if host_tag not in _SHARED_NOUNS and host_tag != "XR":
+            continue
+        if host_tag in _SHARED_NOUNS and sum(
+            is_modern_syllable(character) for character in host.form
+        ) < 2:
+            continue
+        if (
+            host.normalized_start < 0
+            or host.normalized_end > len(text)
+            or text[host.normalized_start:host.normalized_end] != host.form
+            or annotation.covering(right - 1) != host
+            or annotation.covering(right) != suffix
+        ):
+            continue
+
+        left = right - 1
+        before_token = units[left].syllable
+        suffix_token = units[right].syllable
+        if (
+            before_token is None
+            or suffix_token is None
+            or suffix_token.onset != "ㅅ"
+            or _has_phonological_barrier(units, left, right, segments, pause_boundaries)
+        ):
+            continue
+
+        before = _trace_before(rewrites, units, left, right)
+        units[right].syllable = suffix_token.changed(onset="ㅆ")
+        _record(
+            rewrites, units, left, right, before,
+            RULES["ko.derivational.seong_tensing"].id,
+        )
+
+
+def _apply_derived_kwon_tensing(
+    units: list[_Unit], segments: tuple[_Segment, ...], annotation: _Annotation,
+    rewrites: list[Rewrite] | None, pause_boundaries: tuple[int, ...] = (),
+) -> None:
+    """진실한 명사+권/XSN에서 접미사의 첫소리만 경음화한다."""
+
+    text = annotation.text
+    for suffix in annotation._tokens_starting_at.values():
+        right = suffix.normalized_start
+        if (suffix.form != "권" or suffix.tag != "XSN"
+                or suffix.normalized_end != right + 1 or text[right:right + 1] != "권"):
+            continue
+        host = annotation.ending_at(right)
+        host_tags = frozenset({"NNG", "NNP"})
+        if (host is None or host.normalized_end != right
+                or host.tag not in host_tags
+                or not _truthful(host, text, host.normalized_start, right, host_tags)
+                or not _truthful(suffix, text, right, right + 1, frozenset({"XSN"}))
+                or annotation.covering(right - 1) != host
+                or annotation.covering(right) != suffix):
+            continue
+
+        left = right - 1
+        host_token, suffix_token = units[left].syllable, units[right].syllable
+        if (host_token is None or suffix_token is None or suffix_token.onset != "ㄱ"
+                or _has_phonological_barrier(units, left, right, segments, pause_boundaries)):
+            continue
+
+        before = _trace_before(rewrites, units, left, right)
+        units[right].syllable = suffix_token.changed(onset="ㄲ")
+        _record(rewrites, units, left, right, before, RULES["ko.derivational.kwon_tensing"].id)
 
 
 def _apply_suffix_liquid_nasalization(
@@ -1157,6 +1304,101 @@ def _apply_confirmed_palatalization(
     _record(rewrites, units, left, right, before, "ko.palatalization")
 
 
+def _can_reconsider_licensed_palatalization_boundary(
+    candidate: _MorphologyCandidate,
+    boundaries,
+    units: list[_Unit],
+    segments: tuple[_Segment, ...],
+    annotation: _Annotation | None,
+    pause_boundaries: tuple[int, ...],
+) -> bool:
+    """보수적 공유 경계 판정 뒤에도 근거가 분명한 구개음화만 다시 검토한다."""
+
+    if candidate.rule_ids != ("ko.palatalization",) or annotation is None:
+        return False
+    pair = (candidate.left, candidate.right)
+    rejected = tuple(
+        boundary for boundary in boundaries
+        if boundary.pair == pair and boundary.applicability != "not_required"
+    )
+    if not rejected or any(boundary.reason not in {
+        "particle_host_excluded", "unresolved_missing_lexical_structure",
+    } for boundary in rejected):
+        return False
+    return _has_licensed_lexical_palatalization_boundary(
+        units, segments, annotation, *pair, annotation.covering(pair[0]), pause_boundaries,
+    )
+
+
+def _is_reduplicative_adverb_palatalization_boundary(
+    units: list[_Unit],
+    annotation: _Annotation,
+    left: int,
+    right: int,
+    containing: AnalysisToken | None,
+) -> bool:
+    """분석기가 온전한 XX이 부사로 확인한 반복형만 경계 근거로 삼는다."""
+
+    if containing is None or containing.tag != "MAG":
+        return False
+    start, end = containing.normalized_start, containing.normalized_end
+    form = containing.form
+    return (
+        end - start == 3
+        and len(form) == 3
+        and annotation.text[start:end] == form
+        and form[0] == form[1]
+        and form[2] == "이"
+        and left == start + 1
+        and right == start + 2
+        and units[left].syllable is not None
+        and units[left].syllable.coda in {"ㄷ", "ㅌ"}
+        and units[right].text == "이"
+    )
+
+
+def _is_contracted_derivational_i_palatalization_boundary(
+    units: list[_Unit],
+    left: int,
+    right: int,
+    containing: AnalysisToken | None,
+) -> bool:
+    """VV의 끝 이가 어/었과 실제로 축약된 표면 증명만 허용한다."""
+
+    if containing is None:
+        return False
+    parts = containing.morphemes
+    if (
+        len(parts) != 2
+        or parts[0][1] != "VV"
+        or parts[1][1] not in {"EC", "EP"}
+        or parts[1][0] not in {"어", "었"}
+        or not parts[0][0].endswith("이")
+    ):
+        return False
+    proof = verified_token_surface(containing)
+    if (
+        proof is None
+        or proof.contracted_boundary != (0, 1)
+        or proof.rule_steps != ("맞춤법.36",)
+        or proof.shared_offset != right
+        or proof.ending_initial != parts[1][0]
+        or len(proof.morpheme_spans) != 2
+    ):
+        return False
+    stem_form = parts[0][0]
+    stem_start, _ = proof.morpheme_spans[0]
+    syllable = units[left].syllable
+    return (
+        len(stem_form) >= 2
+        and left == stem_start + len(stem_form) - 2
+        and right == stem_start + len(stem_form) - 1
+        and syllable is not None
+        and syllable.coda in {"ㄷ", "ㅌ"}
+        and units[left].text == stem_form[-2]
+    )
+
+
 def _has_licensed_lexical_palatalization_boundary(
     units: list[_Unit],
     segments: tuple[_Segment, ...],
@@ -1176,6 +1418,12 @@ def _has_licensed_lexical_palatalization_boundary(
             )
         ):
             return True
+    if _is_reduplicative_adverb_palatalization_boundary(
+        units, annotation, left, right, containing,
+    ) or _is_contracted_derivational_i_palatalization_boundary(
+        units, left, right, containing,
+    ):
+        return True
 
     # Exact 명사 속성은 source 범위를 먼저 확인하고 원 분석 품사를 그대로 둔다.
     original_tokens = tuple(annotation._tokens_starting_at.values())

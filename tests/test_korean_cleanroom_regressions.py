@@ -5,6 +5,7 @@ from types import SimpleNamespace
 
 import pytest
 
+from g2p_ko.analyzer import KiwiAnalyzer
 from g2p_ko import G2P
 from g2p_ko.korean.boundary_policy import licenses_n_insertion
 import g2p_ko.korean.engine as engine_module
@@ -106,3 +107,46 @@ def test_fused_prenominal_surface_keeps_real_verb_and_ending_tags() -> None:
     with patch("g2p_ko.analyzer._get_kiwi", return_value=CorrectKiwi()):
         result = engine_module.pronounce((segment,))
     assert result.text == "볼릴"
+
+
+@pytest.mark.parametrize(
+    ("source", "expected"),
+    (
+        ("똑같이", "똑까치"),
+        ("낱낱이", "난나치"),
+        ("샅샅이", "삳싸치"),
+        ("덧붙이다", "덛뿌치다"),
+        ("덧붙였다", "덛뿌첟따"),
+        ("덧붙여", "덛뿌처"),
+    ),
+)
+def test_licensed_palatalization_readings(source, expected):
+    assert G2P()(source) == expected
+
+
+@pytest.mark.parametrize(
+    ("source", "expected"),
+    (
+        ("같이", "가치"),
+        ("이같이", "이가치"),
+        ("굳이", "구지"),
+        ("곧이어서", "고디어서"),
+        ("붙임머리", "부침머리"),
+    ),
+)
+def test_existing_palatalization_controls(source, expected):
+    assert G2P()(source) == expected
+
+
+def test_pause_and_hard_boundaries_still_block_cross_boundary_change():
+    engine = G2P()
+    assert engine("똑같이", pause_boundaries=(2,)) == "똑깓이"
+    assert engine("똑같,이") == "똑깓,이"
+
+
+def test_contracted_stem_reading_keeps_original_analyzer_evidence():
+    tokens = KiwiAnalyzer().analyze_components("덧붙였다")
+    assert tokens[0].form == "덧붙였"
+    assert tokens[0].tag == "VV+EP"
+    assert tokens[0].morphemes == (("덧붙이", "VV"), ("었", "EP"))
+    assert tokens[0].morpheme_spans == ((0, 3), (2, 3))

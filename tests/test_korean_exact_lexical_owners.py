@@ -102,10 +102,14 @@ def test_four_exact_full_compounds_accept_declared_owner_shapes_and_particles(
     assert result == expected
 
 
-@pytest.mark.parametrize("mode", ("longer_whole", "longer_split"))
-def test_longer_nominal_owner_and_adjacent_nominal_fragments_are_rejected(monkeypatch, mode):
+@pytest.mark.parametrize(("mode", "expected"), (
+    ("longer_whole", "형성평가집"),
+    ("longer_split", "형성평까집"),
+))
+def test_only_an_actual_evaluation_root_in_a_longer_noun_chain_inherits_its_onset(monkeypatch, mode, expected):
     text = "형성평가집"
-    assert _pronounce_with_tokens(monkeypatch, text, "형성평가", mode) == text
+    # 통짜 명사의 부분 문자열을 추측하지 않고 독립 NNG 어근의 내부 초성만 전달한다.
+    assert _pronounce_with_tokens(monkeypatch, text, "형성평가", mode) == expected
 
 
 @pytest.mark.parametrize("mode", ("forged_particle", "forged_predicate"))

@@ -29,7 +29,13 @@ from ._shared import (
     _trace_before,
 )
 from .hangul import character_source_spans, decompose_syllable, is_modern_syllable
-from .morphology import _Annotation, _apply_lexical_liaisons, _apply_morphology_rules
+from .morphology import (
+    _Annotation,
+    _apply_derived_kwon_tensing,
+    _apply_derived_seong_tensing,
+    _apply_lexical_liaisons,
+    _apply_morphology_rules,
+)
 from .official import LEXICAL_PRONUNCIATIONS, NOUN_ONLY_PRONUNCIATIONS
 from .rules import (
     CODA_TRANSITIONS,
@@ -166,6 +172,9 @@ def _run_rules(
     lexical_matches += _collect_morpheme_pronunciations(text, units, items, annotation, lexical_matches)
     # 형태소 규칙으로 결정하지 못한 어휘 내부 발음을 검증된 자료로 보완한다.
     _apply_lexical_pronunciations(units, lexical_matches, rewrites, items, pause_boundaries)
+    if annotation is not None:
+        _apply_derived_seong_tensing(units, items, annotation, rewrites, pause_boundaries)
+        _apply_derived_kwon_tensing(units, items, annotation, rewrites, pause_boundaries)
     # 소유·역할은 원문에서 고정하되 살아 있는 정확 예외가 받침을 복원한 뒤 한 번 옮긴다.
     boundary_events = apply_rule_boundaries(boundary_decisions, units, rewrites)
     # 새 문법 미해결은 경쟁 경계 소비만 예약한다. 음절 자체의 받침·비음화는 독립이다.

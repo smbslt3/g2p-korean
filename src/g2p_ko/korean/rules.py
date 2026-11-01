@@ -45,6 +45,12 @@ RULES = {
     "ko.n_insertion.compound": RuleDefinition("ko.n_insertion.compound", "29", "복합어·접미사 경계의 ㄴ 첨가", True),
     "ko.n_insertion.reduplication": RuleDefinition("ko.n_insertion.reduplication", "29.1", "반복 부사 내부의 ㄴ 첨가", True),
     "ko.sino.tensing.26": RuleDefinition("ko.sino.tensing.26", "26", "확인한 한자어 내부 ㄹ 뒤 된소리", True),
+    "ko.derivational.seong_tensing": RuleDefinition(
+        "ko.derivational.seong_tensing", "형태소", "명사 또는 XR 어근 뒤 접미사 성의 된소리", True,
+    ),
+    "ko.derivational.kwon_tensing": RuleDefinition(
+        "ko.derivational.kwon_tensing", "형태소", "명사 뒤 접미사 권의 된소리", True,
+    ),
     "ko.lexical.tensing": RuleDefinition("ko.lexical.tensing", "28·어휘", "어휘별 경음화 경계", True),
     "ko.liquid.suffix.20": RuleDefinition("ko.liquid.suffix.20", "20.단서", "명사·ㄹ 계열 접미사 경계의 비음화", True),
     "ko.cluster.tensing": RuleDefinition("ko.cluster.tensing", "23·25", "ㄾ 단순화에 앞선 된소리되기"),

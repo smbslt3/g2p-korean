@@ -25,6 +25,11 @@ OWNED_SINO_STRUCTURES = (
         (("실지", frozenset({"NNG"}), "實地"),
          ("로", frozenset({"JKB", "MAG"}), None)),
     ),
+    OwnedSinoStructure(
+        frozenset({"MAG"}),
+        (("열심", frozenset({"NNG"}), "熱心"),
+         ("히", frozenset({"XSM"}), None)),
+    ),
 )
 
 

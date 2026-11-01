@@ -32,7 +32,7 @@ class InternalOnsetConstraint:
 
 @dataclass(frozen=True)
 class OwnedLexicalRoot:
-    """뜻 신원, 원어 및 어근 안의 선택적 경음화 경계만 보관한다."""
+    """뜻 신원, 원어, 내부 경계와 일반 성분 소유의 명시 허가를 보관한다."""
 
     identity: str
     spelling: str
@@ -46,8 +46,11 @@ class OwnedLexicalRoot:
     identity_classes: frozenset[str] = frozenset()
     internal_onsets: tuple[InternalOnsetConstraint, ...] = ()
     component_analyses: tuple[tuple[tuple[str, str], ...], ...] | None = None
+    allow_internal_onset_inheritance: bool = False
 
     def __post_init__(self):
+        if type(self.allow_internal_onset_inheritance) is not bool:
+            raise ValueError("일반 내부 초성 상속 허가는 참·거짓 값이어야 합니다.")
         # 전체 명사의 품사와 내부 성분의 품사는 서로 상속하지 않는다.
         # None은 기존 선언의 소유 계약을 보존하고, 빈 튜플은 통짜 분석만 허용한다.
         if self.component_analyses is not None:
@@ -92,6 +95,7 @@ class OwnedRootMatch:
     owner_end: int
     evidence_kind: str
     identity_decision: object = None
+    internal_onset_only: bool = False
 
 
 @dataclass(frozen=True)
@@ -118,6 +122,15 @@ NOMINAL_SUFFIX_LICENSES = (
 
 _COMMON = frozenset({"NNG"})
 _NOMINAL = frozenset({"NNG", "NNP"})
+
+
+def _owned_tensing_noun(identity, spelling, offset, source_onset, required_onset):
+    """새 확인 명사는 내부 초성과 일반 성분 상속 허가를 함께 기록한다."""
+    return OwnedLexicalRoot(
+        identity, spelling, _COMMON, ((spelling, "NNG"),), "", default_reading=True,
+        internal_onsets=(InternalOnsetConstraint(offset, source_onset, required_onset, "lexical_syllable"),),
+        allow_internal_onset_inheritance=True,
+    )
 
 OWNED_LEXICAL_ROOTS = (
     OwnedLexicalRoot(
@@ -158,6 +171,7 @@ OWNED_INTERNAL_ONSET_ROOTS = (
 
 # 성분열은 관찰한 정상 분석의 구조 메타데이터이며 어원·보편 접미사 규칙이 아니다.
 # 발가락은 확인한 통짜 명사만 허용하고, 두 고유어에는 한자 신원을 붙이지 않는다.
+# 추가 어휘는 단일 NNG 소유와 내부 초성만 기록해 음절을 형태소로 나누지 않는다.
 OWNED_DECLARED_INTERNAL_ONSET_ROOTS = (
     OwnedLexicalRoot(
         "ganeungseong_possibility_可能性", "가능성", _COMMON,
@@ -182,6 +196,26 @@ OWNED_DECLARED_INTERNAL_ONSET_ROOTS = (
         (("달빛", "NNG"),), "", default_reading=True,
         internal_onsets=(InternalOnsetConstraint(1, "ㅂ", "ㅃ", "lexical_syllable"),),
         component_analyses=(),
+    ),
+    *(
+        _owned_tensing_noun(identity, spelling, offset, source, target)
+        for identity, spelling, offset, source, target in (
+            ("pyeongga_evaluation", "평가", 1, "ㄱ", "ㄲ"),
+            ("sageon_event", "사건", 1, "ㄱ", "ㄲ"),
+            ("jogeon_condition", "조건", 1, "ㄱ", "ㄲ"),
+            ("yeogeon_condition", "여건", 1, "ㄱ", "ㄲ"),
+            ("gwanjeom_perspective", "관점", 1, "ㅈ", "ㅉ"),
+            ("sijeom_timepoint", "시점", 1, "ㅈ", "ㅉ"),
+            ("chojeom_focus", "초점", 1, "ㅈ", "ㅉ"),
+            ("jaengjeom_issue", "쟁점", 1, "ㅈ", "ㅉ"),
+            ("jeungkwon_securities", "증권", 1, "ㄱ", "ㄲ"),
+            ("ingwon_human_rights", "인권", 1, "ㄱ", "ㄲ"),
+            ("jugwon_sovereignty", "주권", 1, "ㄱ", "ㄲ"),
+            ("jeonggwon_regime", "정권", 1, "ㄱ", "ㄲ"),
+            ("chaegwon_bond", "채권", 1, "ㄱ", "ㄲ"),
+            ("silbap_thread_end", "실밥", 1, "ㅂ", "ㅃ"),
+            ("nungil_gaze", "눈길", 1, "ㄱ", "ㄲ"),
+        )
     ),
 )
 
@@ -385,6 +419,42 @@ def _outside_owned(text, annotation, start, end, nominal_tail_validator):
     )
 
 
+def _token_aligned_nng_component_owner(text, annotation, start, end, nominal_tail_validator):
+    """정확한 NNG 토큰 어근을 이웃한 진실한 NNG 성분 사슬 안에서만 소유한다."""
+    root = annotation.starting_at(start)
+    if not _simple_owned_token(root, text, start, end, _COMMON):
+        return None
+
+    owner_start, owner_end = start, end
+    while True:
+        previous = annotation.ending_at(owner_start)
+        if (previous is None or previous.normalized_end != owner_start
+                or previous.tag != "NNG"
+                or not _simple_owned_token(previous, text, previous.normalized_start, owner_start, _COMMON)):
+            break
+        owner_start = previous.normalized_start
+    while True:
+        following = annotation.starting_at(owner_end)
+        if (following is None or following.normalized_start != owner_end
+                or following.tag != "NNG"
+                or not _simple_owned_token(following, text, owner_end, following.normalized_end, _COMMON)):
+            break
+        owner_end = following.normalized_end
+
+    if owner_start > 0 and text[owner_start - 1].isalnum():
+        return None
+    derivation = annotation.starting_at(owner_end)
+    if (derivation is not None and derivation.tag in {"XSV", "XSA", "XSN"}
+            and _truthful(derivation, text, owner_end, derivation.normalized_end,
+                          frozenset({derivation.tag}))):
+        return owner_start, derivation.normalized_end
+    if owner_start == start and owner_end == end:
+        return None
+    if not _licensed_tail(text, annotation, owner_end, annotation.ending_at(owner_end), nominal_tail_validator):
+        return None
+    return owner_start, owner_end
+
+
 def _composition_part_owned(text, annotation, start, part, roots, source_annotation=None):
     """등록 어근의 명시 성분 계약을 결합 안에서도 같은 소비기로 검증한다."""
     root = roots.get(part.root_identity)
@@ -530,6 +600,26 @@ def owned_root_decisions(text, annotation, selections=(), *, nominal_tail_valida
 
 def owned_root_matches(text, annotation, selections=(), *, nominal_tail_validator=None, hard_boundaries=frozenset()):
     """명시적 경쟁 신원과 관련 미지원 관계는 모든 적용 경로보다 먼저 차단한다."""
+    for root in registered_owned_roots():
+        if (not root.internal_onsets or not root.allow_internal_onset_inheritance
+                or "NNG" not in root.owner_pos or not root.default_reading
+                or root.sense_ids or root.identity_classes):
+            continue
+        start = text.find(root.spelling)
+        while start >= 0:
+            end = start + len(root.spelling)
+            explicit_selection = any(
+                choice.start == start and choice.end == end and choice.spelling == root.spelling
+                and choice.reason != "insufficient_evidence"
+                for choice in selections
+            )
+            owner = _token_aligned_nng_component_owner(text, annotation, start, end,
+                                                       nominal_tail_validator)
+            if (not explicit_selection and owner is not None
+                    and not any(owner[0] < boundary < owner[1] for boundary in hard_boundaries)):
+                yield OwnedRootMatch(root, start, end, owner[0], owner[1],
+                                     "token_aligned_nng_component", internal_onset_only=True)
+            start = text.find(root.spelling, start + 1)
     for decision in owned_root_decisions(text, annotation, selections,
                                         nominal_tail_validator=nominal_tail_validator, hard_boundaries=hard_boundaries):
         if decision.applies:
