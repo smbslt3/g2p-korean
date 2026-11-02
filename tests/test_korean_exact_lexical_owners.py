@@ -85,7 +85,7 @@ def test_real_kiwi_versions_and_latest_split_whole_shapes():
     assert {
         spelling for spelling, structure in LEXICAL_STRUCTURES.items()
         if structure.owner_pos
-    } == set(FULL_FORMS) | {"글자", "땅바닥"}
+    } == set(FULL_FORMS) | {"글자", "땅바닥", "다같이", "붙임성"}
     for full in FULL_FORMS:
         assert engine.pronounce((_segment(full),)).text == full[:-2] + "평까"
 

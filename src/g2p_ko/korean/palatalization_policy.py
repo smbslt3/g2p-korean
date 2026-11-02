@@ -24,8 +24,8 @@ class PalatalizationBoundary:
             raise ValueError("구개음화 경계 범위는 exact, prefix, suffix 중 하나여야 합니다.")
         owner_pos = frozenset(self.owner_pos)
         if self.scope == "exact":
-            if not owner_pos or not owner_pos <= {"NNG", "NNP"}:
-                raise ValueError("exact 구개음화 owner는 NNG 또는 NNP로 선언해야 합니다.")
+            if not owner_pos or not owner_pos <= {"NNG", "NNP", "MAG"}:
+                raise ValueError("exact 구개음화 owner 품사가 올바르지 않습니다.")
         elif owner_pos:
             raise ValueError("prefix·suffix 경계에는 exact owner 품사를 선언하지 않습니다.")
         object.__setattr__(self, "owner_pos", owner_pos)
@@ -53,6 +53,8 @@ PALATALIZATION_BOUNDARIES = (
     PalatalizationBoundary("해돋이", 2, "prefix"),
     PalatalizationBoundary("맏이", 1, "prefix"),
     PalatalizationBoundary("같이", 1, "prefix"),
+    PalatalizationBoundary("다같이", 2, "exact", frozenset({"MAG"})),
+    PalatalizationBoundary("붙임성", 1, "exact", frozenset({"NNG"})),
     # ‘붙이’ 접미 경계는 포함 어휘의 끝에 있을 때만 허용한다.
     PalatalizationBoundary("붙이", 1, "suffix"),
     # 전체 명사 owner 또는 NNG 성분열을 확인한 뒤에만 쓰는 정확 속성이다.

@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import unicodedata
 from dataclasses import dataclass, replace
 
 from ..model import Handler
@@ -182,6 +183,72 @@ def _source_atom(parts, index, offset, role):
     return SourceAtom(index, offset, role, jamo) if jamo is not None else None
 
 
+def _morpheme_records(annotation, start, end):
+    """주어진 표면 범위의 원형 형태소와 실제 정렬 구간을 짝짓는다."""
+    cursor, records = start, []
+    while cursor < end:
+        token = annotation.starting_at(cursor)
+        if (token is None or token.normalized_start != cursor
+                or not cursor < token.normalized_end <= end
+                or token.form != annotation.text[cursor:token.normalized_end]):
+            return None
+        parts = token.morphemes or ((token.form, token.tag),)
+        if tuple(tag for _, tag in parts) != tuple(token.tag.split("+")):
+            return None
+        spans = token.morpheme_spans
+        if len(spans) == len(parts):
+            aligned = tuple(spans)
+        elif "".join(form for form, _ in parts) == token.form:
+            local, values = cursor, []
+            for form, _ in parts:
+                values.append((local, local + len(form)))
+                local += len(form)
+            aligned = tuple(values)
+        else:
+            return None
+        if any(begin < cursor or finish > token.normalized_end or begin > finish
+               for begin, finish in aligned):
+            return None
+        records.extend((part, span) for part, span in zip(parts, aligned))
+        cursor = token.normalized_end
+    return tuple(records)
+
+
+def _surface_jamo(text, offset, role):
+    """표면 음절의 지정한 자모를 정규 분해형으로 돌려준다."""
+    if not 0 <= offset < len(text):
+        return None
+    bounds = {"onset": (0x1100, 0x1112), "vowel": (0x1161, 0x1175),
+              "coda": (0x11A8, 0x11C2)}[role]
+    return next((jamo for jamo in unicodedata.normalize("NFD", text[offset])
+                 if bounds[0] <= ord(jamo) <= bounds[1]), None)
+
+
+def _local_boundary_origins(annotation, parts, index, left, right, certificate):
+    """전체 단어 증명 없이도 인접 원형 자모의 실제 음절 정렬을 확인한다."""
+    records = _morpheme_records(annotation, certificate.start, certificate.end)
+    if records is None or tuple(part for part, _ in records) != tuple(parts):
+        return None
+    donor_part, donor_span = records[index - 1]
+    recipient_part, recipient_span = records[index]
+    if (donor_span[1] - donor_span[0] != len(donor_part[0])
+            or recipient_span[1] - recipient_span[0] != len(recipient_part[0])):
+        return None
+    donor_offset, recipient_offset = left - donor_span[0], right - recipient_span[0]
+    if (not 0 <= donor_offset < len(donor_part[0])
+            or not 0 <= recipient_offset < len(recipient_part[0])):
+        return None
+    donor = _source_atom(parts, index - 1, donor_offset, "coda")
+    onset = _source_atom(parts, index, recipient_offset, "onset")
+    vowel = _source_atom(parts, index, recipient_offset, "vowel")
+    if (donor is None or onset is None or vowel is None
+            or _surface_jamo(annotation.text, left, "coda") != donor.jamo
+            or _surface_jamo(annotation.text, right, "onset") != onset.jamo
+            or _surface_jamo(annotation.text, right, "vowel") != vowel.jamo):
+        return None
+    return donor, (onset, vowel)
+
+
 def _actual_origin(atom, expected):
     return atom is not None and expected is not None and expected in atom[1]
 
@@ -267,6 +334,9 @@ def _boundary_grammar(certificate, parts, index, role, atoms, right, annotation)
         if role == "formal_ending_i" and not grammar.boundaries[index].inflection:
             return None
         return grammar, (certificate.start, certificate.end), "analysis"
+    local = _local_attachment_grammar(certificate, parts, index, role, annotation)
+    if local is not None:
+        return local
     if parts[index] == ("이", "VCP") or role == "formal_ending_i":
         return None
     if (certificate.grammar_status != "unresolved"
@@ -288,6 +358,70 @@ def _boundary_grammar(certificate, parts, index, role, atoms, right, annotation)
     if not positions:
         return None
     return grammar, (min(positions), certificate.end), "analysis_local_attachment"
+
+
+def _local_attachment_grammar(certificate, parts, index, role, annotation):
+    """바깥 성분이 미해결이어도 바로 맞닿은 합법 형태소 접합만 증명한다."""
+    if not 0 < index < len(parts):
+        return None
+    records = _morpheme_records(annotation, certificate.start, certificate.end)
+    if records is None or tuple(part for part, _ in records) != tuple(parts):
+        return None
+
+    def result(grammar, first=index - 1, last=index + 1, source="analysis_local_attachment"):
+        if grammar.lexical_status != "eligible":
+            return None
+        return grammar, (records[first][1][0], records[last - 1][1][1]), source
+
+    if role in {"formal_suffix_i", "formal_suffix_hi", "semantic_suffix_eochi"}:
+        grammar = parse_parts(parts[index - 1:index + 1])
+        return result(grammar)
+    if role == "formal_ending_i":
+        grammar = parse_parts(parts[index - 1:index + 1])
+        if grammar.lexical_status == "eligible" and grammar.boundaries[1].inflection:
+            return result(grammar)
+        return None
+    if role == "lexical_component":
+        grammar = parse_parts(parts[index - 1:index + 1])
+        return result(grammar)
+    if role != "formal_particle":
+        return None
+
+    form, tag = parts[index]
+    if tag == "VCP" and form == "이" and base_tag(parts[index - 1][1]) in NOUNS:
+        end = index + 1
+        while end < len(parts) and parts[end][1] in ENDINGS:
+            end += 1
+        if end > index + 1:
+            grammar = parse_parts(parts[index:end], initial_host="nominal")
+            return result(grammar, index - 1, end, "analysis_local_nominal_copula")
+        # 계사 형태 자체는 명사에 바로 붙었다는 경계 역할을 증명한다.
+        # 끝 어미나 더 큰 문장의 문법 완결성은 이 음운 경계의 권한이 아니다.
+        grammar = parse_parts((parts[index - 1],))
+        return result(grammar, index - 1, index + 1, "analysis_local_nominal_copula")
+
+    grammar = parse_parts(parts[index - 1:index + 1])
+    return result(grammar)
+
+
+def _local_boundary_choices(certificate, annotation, parts, pair):
+    """검증된 자모 정렬과 접합 문법이 있는 내부 형태소 경계만 돌려준다."""
+    left, right = pair
+    choices = []
+    for index in range(1, len(parts)):
+        role, relation = _role(parts, index, annotation, right, certificate.surface_proofs)
+        if role is None:
+            continue
+        grammar_evidence = _boundary_grammar(
+            certificate, parts, index, role, {}, right, annotation,
+        )
+        origins = _local_boundary_origins(annotation, parts, index, left, right, certificate)
+        if grammar_evidence is None or origins is None:
+            continue
+        grammar, attachment_span, source = grammar_evidence
+        donor, recipient = origins
+        choices.append((parts, role, relation, source, donor, recipient, grammar, attachment_span))
+    return choices
 
 
 def _owned_non_n_fact(certificate, text, left, right):
@@ -583,6 +717,10 @@ def certify_rule_boundaries(annotation, units, segments, pause_boundaries=(), *,
                 if canonical is not None:
                     choice, lexical_fact = canonical
                     choices.append(choice)
+        if not choices and certificate.surface_status != "conflict":
+            choices.extend(_local_boundary_choices(
+                certificate, annotation, parts, (left, right),
+            ))
         intrinsic = _intrinsic_boundary(certificate, annotation, (left, right))
         if intrinsic is not None:
             choice, intrinsic_fact, intrinsic_mapping = intrinsic
@@ -672,7 +810,7 @@ def certify_rule_boundaries(annotation, units, segments, pause_boundaries=(), *,
                               moved_onset="ㅈ" if donor.coda == "ㄷ" else "ㅊ")
         elif role in {"formal_particle", "formal_suffix_i", "formal_suffix_hi", "formal_ending_i"}:
             common["article"] = "17"
-            if (donor.coda in {"ㄷ", "ㅌ", "ㄾ"} and (
+            if (donor.coda in {"ㄷ", "ㅌ", "ㄾ"} and recipient.vowel in {"ㅣ", "ㅕ"} and (
                     recipient.onset == "ㅇ" and role != "formal_suffix_hi"
                     or donor.coda == "ㄷ" and recipient.onset == "ㅎ" and role == "formal_suffix_hi")):
                 common.update(applicability="eligible", reason="underlying_formal_i_hi",

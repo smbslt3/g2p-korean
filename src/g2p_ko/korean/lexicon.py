@@ -42,10 +42,11 @@ class LexicalStructure:
             raise ValueError("성분은 비어 있지 않은 표기와 품사 문자열의 쌍이어야 합니다.")
         object.__setattr__(self, "parts", parts)
         owner_pos = frozenset(self.owner_pos)
-        if any(pos not in {"NNG", "NNP"} for pos in owner_pos):
-            raise ValueError("정확 owner 품사는 NNG 또는 NNP만 허용합니다.")
+        if any(pos not in {"NNG", "NNP", "MAG"} for pos in owner_pos):
+            raise ValueError("정확 owner 품사는 NNG, NNP 또는 MAG만 허용합니다.")
         object.__setattr__(self, "owner_pos", owner_pos)
-        if type(self.allow_owned_composition) is not bool or (self.allow_owned_composition and not owner_pos):
+        if (type(self.allow_owned_composition) is not bool
+                or (self.allow_owned_composition and (not owner_pos or "MAG" in owner_pos))):
             raise ValueError("성분 재사용은 명시적인 명사 소유 품사와 불리언 설정이 필요합니다.")
         for name in ("tense_boundaries", "nasal_liquid_boundaries"):
             boundaries = tuple(getattr(self, name))
@@ -95,6 +96,12 @@ def _compound(
 
 # 합성 경계는 어휘별로 선언하며 임의의 명사 결합을 자동 등록하지 않는다.
 LEXICAL_STRUCTURES: Mapping[str, LexicalStructure] = MappingProxyType({
+    # 단일 MAG로 포장된 정확 표기에서만 같은/이 경계를 복원한다.
+    "다같이": LexicalStructure((("다", "MAG"), ("같", "VA"), ("이", "EC")),
+                                owner_pos=frozenset({"MAG"})),
+    # 통짜 NNG의 정확 소유를 확인한 뒤 -성 경음화 경계를 연다.
+    "붙임성": LexicalStructure((("붙임", "NNG"), ("성", "XSN")),
+                                owner_pos=frozenset({"NNG"})),
     "솜이불": _compound("솜", "이불"),
     "홑이불": _compound("홑", "이불", first_tag="XPN"),
     "꽃잎": _compound("꽃", "잎"),

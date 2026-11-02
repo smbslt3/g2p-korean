@@ -20,7 +20,7 @@ from ._shared import (
     _trace_before,
 )
 from .rules import CODA_TRANSITIONS, RULES, TENSE_ONSET
-from .hangul import JUNGSEONG, is_modern_syllable
+from .hangul import JONGSEONG, JUNGSEONG, is_modern_syllable
 from .ending_ownership import ending_coda_owner, source_owner
 from .owned_sino import owned_sino_spans
 from .owned_lexical import registered_owned_roots, owned_root_matches, _truthful
@@ -723,6 +723,17 @@ def _valid_exact_structure_owner(
     allowed = structure.owner_pos
     if not allowed:
         return True
+    if allowed == {"MAG"}:
+        if not 0 <= start < end <= len(text) or text[start:end] != structure.spelling:
+            return False
+        owned = tuple(token for token in original_tokens
+                      if token.normalized_start < end and start < token.normalized_end)
+        if (len(owned) != 1 or owned[0].normalized_start != start or owned[0].normalized_end != end
+                or owned[0].form != structure.spelling or owned[0].tag != "MAG"):
+            return False
+        parts = owned[0].morphemes or ((owned[0].form, owned[0].tag),)
+        return (parts == ((structure.spelling, "MAG"),)
+                and tuple(tag for _, tag in parts) == tuple(owned[0].tag.split("+")))
     if (
         not allowed <= {"NNG", "NNP"}
         or not 0 <= start < end <= len(text)
@@ -1321,10 +1332,21 @@ def _can_reconsider_licensed_palatalization_boundary(
         boundary for boundary in boundaries
         if boundary.pair == pair and boundary.applicability != "not_required"
     )
-    if not rejected or any(boundary.reason not in {
-        "particle_host_excluded", "unresolved_missing_lexical_structure",
-    } for boundary in rejected):
+    if not rejected:
         return False
+    ordinary_reasons = {"particle_host_excluded", "unresolved_missing_lexical_structure"}
+    if any(boundary.reason not in ordinary_reasons for boundary in rejected):
+        containing = annotation.covering(pair[0])
+        local_contraction = (
+            len(rejected) == 1 and rejected[0].reason == "surface_evidence_conflict"
+            and containing is not None and not surface_proof_conflict(containing)
+            and verified_token_surface(containing) is not None
+            and _is_contracted_derivational_i_palatalization_boundary(
+                units, *pair, containing,
+            )
+        )
+        if not local_contraction:
+            return False
     return _has_licensed_lexical_palatalization_boundary(
         units, segments, annotation, *pair, annotation.covering(pair[0]), pause_boundaries,
     )
@@ -1371,8 +1393,8 @@ def _is_contracted_derivational_i_palatalization_boundary(
     if (
         len(parts) != 2
         or parts[0][1] != "VV"
-        or parts[1][1] not in {"EC", "EP"}
-        or parts[1][0] not in {"어", "었"}
+        or parts[1][1] not in _SHARED_ENDINGS
+        or not parts[1][0].startswith(("어", "었"))
         or not parts[0][0].endswith("이")
     ):
         return False
@@ -1382,7 +1404,7 @@ def _is_contracted_derivational_i_palatalization_boundary(
         or proof.contracted_boundary != (0, 1)
         or proof.rule_steps != ("맞춤법.36",)
         or proof.shared_offset != right
-        or proof.ending_initial != parts[1][0]
+        or not parts[1][0].startswith(proof.ending_initial or "\0")
         or len(proof.morpheme_spans) != 2
     ):
         return False
@@ -1397,6 +1419,59 @@ def _is_contracted_derivational_i_palatalization_boundary(
         and syllable.coda in {"ㄷ", "ㅌ"}
         and units[left].text == stem_form[-2]
     )
+
+
+def _is_overlapping_inflectional_i_palatalization_boundary(
+    units: list[_Unit], left: int, right: int, containing: AnalysisToken | None,
+) -> bool:
+    """겹친 활용 범위에서 어간 끝 이와 어미 종성이 따로 소유되는지 확인한다."""
+    if containing is None:
+        return False
+    parts = containing.morphemes
+    spans = containing.morpheme_spans
+    if (not parts or len(spans) != len(parts)
+            or tuple(tag for _, tag in parts) != tuple(containing.tag.split("+"))):
+        return False
+    left_syllable, right_syllable = units[left].syllable, units[right].syllable
+    if (left_syllable is None or right_syllable is None
+            or left_syllable.coda not in {"ㄷ", "ㅌ", "ㄾ"}
+            or right_syllable.onset != "ㅇ" or right_syllable.vowel != "ㅣ"):
+        return False
+    for index, ((form, tag), span) in enumerate(zip(parts, spans)):
+        if (_base_tag(tag) not in {"VV", "VA", "VX"} or not form.endswith("이")
+                or span[1] - span[0] != len(form)
+                or left != span[0] + len(form) - 2 or right != span[1] - 1
+                or units[left].text != form[-2]
+                or unicodedata.normalize("NFD", form[-1])[-1] != "ᅵ"):
+            continue
+        tail = parts[index + 1:]
+        if not tail or any(tag not in _SHARED_ENDINGS for _, tag in tail):
+            continue
+        if right_syllable.coda is not None:
+            coda_owned = False
+            for tail_index in range(index + 1, len(parts)):
+                tail_form, _ = parts[tail_index]
+                begin, end = spans[tail_index]
+                offset = right - begin
+                owner = _trailing_coda(tail_form, offset) if begin <= right < end else None
+                if owner is not None and owner == right_syllable.coda:
+                    coda_owned = True
+                    break
+            if not coda_owned:
+                continue
+        return True
+    return False
+
+
+def _trailing_coda(form: str, offset: int) -> str | None:
+    """원형 형태소의 대응 음절에서 종성 하나만 읽는다."""
+    if not 0 <= offset < len(form):
+        return None
+    atoms = unicodedata.normalize("NFD", form[offset])
+    coda = next((jamo for jamo in atoms if 0x11A8 <= ord(jamo) <= 0x11C2), None)
+    if coda is None:
+        return None
+    return JONGSEONG[ord(coda) - 0x11A7]
 
 
 def _has_licensed_lexical_palatalization_boundary(
@@ -1421,6 +1496,8 @@ def _has_licensed_lexical_palatalization_boundary(
     if _is_reduplicative_adverb_palatalization_boundary(
         units, annotation, left, right, containing,
     ) or _is_contracted_derivational_i_palatalization_boundary(
+        units, left, right, containing,
+    ) or _is_overlapping_inflectional_i_palatalization_boundary(
         units, left, right, containing,
     ):
         return True
@@ -1453,10 +1530,33 @@ def _has_licensed_lexical_palatalization_boundary(
             or _valid_exact_owner_with_particle_tail(
                 text, start, end, feature, original_tokens,
             )
+            or _valid_expanded_exact_structure_owner(annotation, start, end, feature)
         ):
             continue
         return True
     return False
+
+
+def _valid_expanded_exact_structure_owner(annotation, start, end, feature) -> bool:
+    """검증 후 분해된 정확 어휘 구조가 원래 exact owner 권한을 잇는지 확인한다."""
+    structure = LEXICAL_STRUCTURES.get(feature.spelling)
+    if (structure is None or not structure.owner_pos
+            or not structure.owner_pos <= feature.owner_pos
+            or annotation.text[start:end] != feature.spelling
+            or structure.spelling != feature.spelling):
+        return False
+    cursor, expected_boundaries = start, set()
+    for index, (form, tag) in enumerate(structure.parts):
+        if index:
+            expected_boundaries.add(cursor)
+        token = annotation.starting_at(cursor)
+        if (token is None or token.form != form or token.tag != tag
+                or token.normalized_start != cursor or token.normalized_end != cursor + len(form)
+                or annotation.text[cursor:cursor + len(form)] != form):
+            return False
+        cursor += len(form)
+    return (cursor == end and expected_boundaries
+            and expected_boundaries <= annotation.compound_boundaries)
 
 
 def _valid_exact_owner_with_particle_tail(
